@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-scroll'
+import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import {FaTimes} from "react-icons/fa"
 import {CiMenuFries} from "react-icons/ci"
@@ -7,14 +7,12 @@ import {FaUser} from "react-icons/fa"
 import {AiFillHeart} from "react-icons/ai"
 import {HiShoppingBag} from "react-icons/hi"
 import { FaSearch } from "react-icons/fa"
+import {Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 
-const Nav = () => {
-    const [click, setClick] = useState(false)
-    const handleClick = () => setClick(!click)
-        
 
-
+const Nav2 = () => {
+    // for hamburger menu
     const content =
     <>
         <div className='lg:hidden block absolute top-16 w-full left-0 rigth-0 bg-teal-dark transition'>
@@ -23,16 +21,16 @@ const Nav = () => {
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Products</li>
                 </Link>
                 <Link to="/Saree">
-                    <li>Saree</li>
+                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Saree</li>
                 </Link>
                 <Link to="/Kurtas">
-                    <li>Kurtas</li>
+                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Kurtas</li>
                 </Link>
                 <Link to="/Dresses">
-                    <li>Dresses</li>
+                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Dresses</li>
                 </Link>
                 <Link to="/Contact">
-                    <li>Contact us</li>
+                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Contact us</li>
                 </Link>
 
             </ul>
@@ -40,65 +38,66 @@ const Nav = () => {
     </>
   return (
     <nav>
-        <div className="h-10vh bg-teal-dark flex justify-between z-50 text-white lg:py px-20 py-4 flex-1">
-            <div className="lg:flex md:flex lg: flex-1 items-center justify-end font-normal hidden">
-                <div className="flex-10  h-[24]">
-                    <ul className="flex  gap-[24px] inline-flex flex-end ml-[54px] mr-[16px] text-[16px]">
-                        <Link to="/" >
-                            <li>Products</li>
+        <div className='h-auto md:h-[73px] w-full lg:h-auto align-center bg-teal-dark w-full text-base  md:py-[24px] md:px-[54px]'>
+            <div id="parent-container" className='flex w-full justify-between items-center py-4 md:py-0 align-center'>
+                <div className='flex hidden md:flex lg:flex lg:'>
+                    <ul className='flex text-white space-x-[24px] font-[Poppins] text-[16px]'>
+                        <Link to="/">
+                            <li className='hover:text-[#CC911D] transition cursor-pointer'>Product</li>
                         </Link>
                         <Link to="/Saree">
-                            <li>Saree</li>
+                            <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
                         </Link>
                         <Link to="/Kurtas">
-                            <li>Kurtas</li>
+                            <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
                         </Link>
                         <Link to="/Dresses">
-                            <li>Dresses</li>
+                            <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
                         </Link>
-                        <Link to="/Contact">
-                           <li>Contact us</li>
+                        <Link to="Contact">
+                            <li className='hover:text-[#CC911D] transition cursor-pointer'>Contact Us</li>
                         </Link>
                     </ul>
+                </div>    
+                <div className='flex ml-7 md:ml-0 justify-self-start align-center md:max-lg:justify-center'>
+                    <Link to='/'><img src={logo} alt="logo" /></Link>
                 </div>
-                <div className='flex items-center flex-shrink-0  flex-1'>
-                    <img src={logo} alt='logo' className='w-[88px] h-[38px] ml-[130px] mr-[211px] '/>
-                    {/* <span className='text-3x1 font-bold'>ZINZRAA</span> */}
+                
+                <div className='flex gap-[16px] '>
+                    <div className='flex md:flex bg-grey-ray md:w-[211px] h-[28px] md:gap-[22px] rounded-[2px] items-center hidden'>
+                        <FaSearch className='text-[#848484] ml-[17px]' />
+                        <input
+                        placeholder='search your product'
+                        className="bg-transparent border-none text-xs focus:outline-none"
+                        />
+                    </div>
+                    <div className='flex space-x-[30px]  md:space-x-[16px] items-center mr-7  md:mr-0'>
+                    <Link to="/Login">
+                        <FaUser className="text-white"/>
+                    </Link>
+                    <Link to="/Wishlist">
+                        <AiFillHeart className="text-white"/>
+                    </Link>
+                    <Link to="/Cart">
+                        <HiShoppingBag className="text-white"/>
+                    </Link>
+                    </div>
                 </div>
-                <div>
-                <div className="flex bg-grey-ray w-[211px] h-[28px]  items-center inline-flex mr-[16px] ">
-                    <FaSearch className="mr-[22px] ml-[17px] "/>
-                    <input placeholder="search your product" className="bg-transparent border-none text-xs items-center focus:outline-none w-[122px] h-[18px]">
-                    </input>
-                </div>
-                </div>
-
-                    <div className='flex-1 h-[24px] w-[24px]'>
-                        <ul className='flex  gap-[16px]  inline-flex flex-end mr-[54px] ml-[16px]'>
-                        <Link to="">
-                            <li><FaUser/></li>
-                        </Link>
-                        <Link to="">
-                            <li><AiFillHeart/></li>
-                        </Link>
-                        <Link to="">
-                           <li><HiShoppingBag/></li>
-                        </Link>
-                    
-                        </ul>
-                        
-
-                    </div>     
             </div>
-            {/* <div>
-                {click && content}
+            <div className= 'flex justify-center'>
+            <div className='flex bg-grey-ray h-[28px] gap-[30px]  rounded-[20px] items-center md:hidden mb-[10px] self-end'>
+                            <FaSearch className='text-[#848484] ml-[17px]' />
+                            <input
+                            placeholder='search your product'
+                            className="bg-transparent border-none text-xs focus:outline-none"
+                            />
+                </div>
             </div>
-            <button>
-                {click ? <FaTimes/> : <CiMenuFries/>}
-            </button>  */}
+                
+    
         </div>
     </nav>
   )
 }
 
-export default Nav
+export default Nav2

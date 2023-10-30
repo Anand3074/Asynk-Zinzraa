@@ -10,7 +10,7 @@ export default {
         'teal-dark': '#032B2A',
         'grey-kie': '#848484',
         'grey-ray': '#D9D9D9',
-        'pinkfu':  '#FF005C',
+        'pinkfu': '#FF005C',
         'white-off':'#F9F8F8',
         'gold-pi': '#CC911D',
         
@@ -28,6 +28,7 @@ export default {
         '90': 90,
         '100': 100,
       },
+      maxWidth: { 50: '50%', 60: '60%', 70: '70%', 80: '80%', 90: '90%'},
     },
   },
   plugins: [],
