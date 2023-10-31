@@ -5,15 +5,20 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'Fashion' : ['Fashion-Wacks'],
+      'playfair': ['Playfair Display SC'],
+
+    },
     extend: {
       backgroundColor: {
         'teal-dark': '#032B2A',
         'grey-kie': '#848484',
         'grey-ray': '#D9D9D9',
-        'pinkfu': '#FF005C',
+        'pink-fu': '#FF005C',
         'white-off':'#F9F8F8',
         'gold-pi': '#CC911D',
-        
+        'gold-ha' : '#CC911D-800/10'
       },
       zIndex: {
         '0': 0,
@@ -28,6 +33,7 @@ export default {
         '90': 90,
         '100': 100,
       },
+
       maxWidth: { 50: '50%', 60: '60%', 70: '70%', 80: '80%', 90: '90%'},
     },
   },

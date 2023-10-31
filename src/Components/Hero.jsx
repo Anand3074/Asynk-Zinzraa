@@ -6,16 +6,30 @@ const Hero = () => {
   
     
     return (
-      <div className='bg-white-off w-100% h-[464px]'>  
-        <div className='relative'>
-          <img src={hero1} className='absolute w-[813px] w-[464px] z-10 left-0 right-[467px] '/>
-          <img src={vec1} className='absolute z-8 align-center  align-center top-[232px] left-[577px]'/> 
-         
-        </div>
-            {/* <div className="w-[373px] h-[180px] mr-[40px] relative">
-            Top Picks of kalki koechlin
-            </div> */}
-      </div>
+      <div className='flex w-full  space-between'>
+            <div className='w-2/3 '>
+            <div className='z-10 w-80vw'>
+                    <img src={hero1} alt='hero' className='w-[65vw]'/>
+            </div>
+
+            </div>
+            <div className='flex flex-col w-1/3 '> 
+                <div className='font-normal font-Fashion text-[#CC911D] md:text-[64px] justify-center'>
+                    <div className='text-center'>
+                        <p >Top Picks of</p>
+                        <p>kalki koechlin</p>
+                    </div> 
+                </div>
+                <div className='z-4 relative'>
+                    <img src={vec1} className='' alt='vector'/>
+                </div>
+                <div className=' relative justify-center z-10'>
+                    <button className='bg-gold-pi font-playfair md:text-[32px] md:px-[116px] md:py-[16.5px] text-white '>
+                        SHOP NOW
+                    </button>
+                </div>
+            </div> 
+         </div>
     )
   }
   
