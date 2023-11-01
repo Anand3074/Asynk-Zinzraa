@@ -4,10 +4,12 @@ import { BrowserRouter as  Router, Routes , Route, BrowserRouter } from 'react-r
 import Saree from './Pages/Saree.jsx'
 import Kurtas from './Pages/Kurtas.jsx'
 import Dresses from './Pages/Dresses.jsx'
-import Contact from './Pages/Contact.jsx'
+// import Contact from './Pages/Contact.jsx'
 import Login from './Pages/Login.jsx'
 import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Test/Cart.jsx'
+import Contact from './Components/userphoto.jsx'
+
 
 const App = () => {
   return (

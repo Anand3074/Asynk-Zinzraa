@@ -13,6 +13,7 @@ export default {
       'noto': ['Noto Serif'],
       'nunito': ['Nunito'],
       'inter': ['Inter'],
+      'montserrat': ['Montserrat'],
 
 
     },

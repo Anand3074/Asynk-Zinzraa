@@ -4,25 +4,27 @@ import vec1 from '../assets/vec1.png'
 
 const Hero = () => {
     return (
-      <div className='flex w-full  space-between'>
-            <div className='w-2/3 '>
-            <div className='z-10 w-80vw'>
+      <div className='flex relative w-full  space-between'>
+            <div className=' '>
+            <div className='z-10 '>
                     <img src={hero1} alt='hero' className='w-[65vw]'/>
             </div>
 
             </div>
             <div className='flex flex-col w-1/3 '> 
-                <div className='font-normal font-Fashion text-[#CC911D] md:text-[64px] justify-center'>
-                    <div className='text-center'>
-                        <p >Top Picks of</p>
-                        <p>kalki koechlin</p>
+                <div className='font-extralight light font-fashion text-[#CC911D] md:text-[64px] justify-center'>
+                    <div className='text-center mt-[2.5vw]'>
+                        <div>Top Picks of</div>
+                        <div>kalki koechlin</div>
                     </div> 
                 </div>
-                <div className='z-4 relative'>
+                <div className='z-4 absolute lg:right-[19.9vw] right-[19.8vw] xl:left-[50vw]
+                md:right-[18.5vw] top-[22.4vw] w-[30vw] sm:right-[17.8vw]'>
                     <img src={vec1} className='' alt='vector'/>
                 </div>
-                <div className=' relative justify-center z-10'>
-                    <button className='bg-gold-pi font-playfair md:text-[32px] md:px-[116px] md:py-[16.5px] text-white '>
+                <div className='justify-center z-10'>
+                    <button className='bg-[#cc911dcc] font-playfair md:text-[32px] text-[11px] mx-[1.8vw] mt-[12vw] py-[1vw]  w-[30vw] text-white '>
+                        {/* md:px-[116px] md:py-[16.5px] */}
                         SHOP NOW
                     </button>
                 </div>
