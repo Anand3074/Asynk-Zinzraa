@@ -6,8 +6,9 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'Fashion' : ['Fashion-Wacks'],
+      'fashion' : ['Fashion Wacks'],
       'playfair': ['Playfair Display SC'],
+      'inria': ['Inria Serif'],
 
     },
     extend: {

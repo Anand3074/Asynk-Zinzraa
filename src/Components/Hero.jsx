@@ -3,8 +3,6 @@ import hero1 from '../assets/hero1.png'
 import vec1 from '../assets/vec1.png'
 
 const Hero = () => {
-  
-    
     return (
       <div className='flex w-full  space-between'>
             <div className='w-2/3 '>
