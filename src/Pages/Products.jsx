@@ -4,6 +4,9 @@ import Collections from '../Components/Collections.jsx'
 import Categ1 from '../Components/Categ1.jsx'
 import Wtrends from '../Components/Wtrend.jsx'
 import Kalki from '../Components/kalki.jsx'
+import Testimonial from '../Components/Testimonial.jsx'
+import Trusty from '../Components/trusty.jsx'
+import Footer from '../Components/Footer.jsx'
 
 
 
@@ -31,7 +34,16 @@ const Products = () => {
       <div>
       <Collections/>
       </div>
-      
+      <div>
+      <Testimonial/> 
+      </div>
+      <div>
+        <Trusty/>
+      </div>
+      <div>
+      <Footer/>
+      </div>
+
     </div> 
   )
 }
