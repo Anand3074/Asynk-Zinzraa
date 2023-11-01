@@ -8,11 +8,9 @@ import Testimonial from '../Components/Testimonial.jsx'
 import Trusty from '../Components/trusty.jsx'
 import Footer from '../Components/Footer.jsx'
 
-
-
 const Products = () => {
   return (
-    <div> 
+    <div>
       <div>
           <Hero/>
       </div>
