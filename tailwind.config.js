@@ -9,6 +9,9 @@ export default {
       'fashion' : ['Fashion Wacks'],
       'playfair': ['Playfair Display SC'],
       'inria': ['Inria Serif'],
+      'lora': ['Lora'],
+      'noto': ['Noto Serif'],
+
 
     },
     extend: {

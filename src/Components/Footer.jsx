@@ -25,14 +25,14 @@ const Footer = () => {
         field5: 'Dresses',
     }
   return (
-    <div className='flex w-full h-[436px] bg-teal-dark '>
-            <div className='w-[1170px] h-[404px] ml-[55px] mr-[55px]'>
-                <div className='flex items-center justify-center'>
-                    <img src={logof} className='mt-[16px] w-[204px] h-[88px]'/>    
+    <div className='flex w-full md:h-[436px] h- bg-teal-dark justify-center'>
+            <div className='md:w-[1170px] flex flex-col md:h-[404px] md:ml-[55px] md:mr-[55px] justify-center'>
+                <div className='md:flex  justify-center'>
+                    <img src={logof} className=''/>    
                 </div>
-                <div className='flex mt-[29px] space-between gap-[123px] text-white justify-end '>
-                    <div className='flex flex-1' >
-                        <ul className='justify-end'>
+                <div className='flex flex-col md:flex-row mt-[29px]  md:gap-[123px]  text-white  justify-center md:justify-end '>
+                    <div className='flex justify-center' >
+                        <ul className='md:justify-end justify-center mb-[25px]' >
                             <li>{contact.title}</li>
                             <li>Email: {contact.email}</li>
                             <li>Contact:{contact.phone}</li>
@@ -40,35 +40,35 @@ const Footer = () => {
                             <li></li>
                         </ul>
                     </div>
-                    <div className='flex flex-1 w-[217px]' >
-                        <ul className='justify-center items-center'>
-                            <li>{ImpLink.field}</li>
-                            <li>{ImpLink.field1}</li>
-                            <li>{ImpLink.field2}</li>
-                            <li>{ImpLink.field3}</li>
-                            <li>{ImpLink.field4}</li>
-                            <li>{ImpLink.field5}</li>
+                    <div className='flex md:w-[217px] justify-center mb-[25px]' >
+                        <ul className='justify-center items-center '>
+                            <li className='justify-center'>{ImpLink.field}</li>
+                            <li className='justify-center'>{ImpLink.field1}</li>
+                            <li className='justify-center'>{ImpLink.field2}</li>
+                            <li className='justify-center'>{ImpLink.field3}</li>
+                            <li className='justify-center'>{ImpLink.field4}</li>
+                            <li className='justify-center'>{ImpLink.field5}</li>
                         
                         </ul>
                     </div>
-                    <div className='flex flex-1' >
-                        <ul className='justify-center'>
-                            <li>{ShopCategory.field}</li>
-                            <li>{ShopCategory.field1}</li>
-                            <li>{ShopCategory.field2}</li>
-                            <li>{ShopCategory.field3}</li>
-                            <li>{ShopCategory.field4}</li>
-                            <li>{ShopCategory.field5}</li>
+                    <div className='flex  justify-center mb-[25px]' >
+                        <ul className='flex flex-col'>
+                            <li className='justify-center'>{ShopCategory.field}</li>
+                            <li className='justify-center'>{ShopCategory.field1}</li>
+                            <li className='justify-center'>{ShopCategory.field2}</li>
+                            <li className='justify-center'>{ShopCategory.field3}</li>
+                            <li className='justify-center'>{ShopCategory.field4}</li>
+                            <li className='justify-center'>{ShopCategory.field5}</li>
                         </ul>
                     </div>
                 </div>
-                <div className='flex justify-center text-white mt-[21px]'>
+                <div className='flex justify-center text-white md:mt-[21px] mb-[25px]'>
                     We accept all major credit cards / debit cards and Netbanking
                 </div>
-                <div className="w-[1170px] mx-auto">
-                    <hr className="my-6 border-t border-gray-300 mt-[16px]" />   
+                <div className="md:w-[1170px] mx-auto mb-[25px]">
+                    <hr className="my-6 border-t border-gray-300 md:mt-[16px]" />   
                 </div>
-                <div className='flex justify-center text-white mt-[17px]'>
+                <div className='flex justify-center text-white md:mt-[17px]'>
                 © 2023 Zinzraa Fashion Pvt. Ltd. All Rights Reserved
                 </div>
 
