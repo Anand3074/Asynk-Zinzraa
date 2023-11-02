@@ -1,9 +1,7 @@
 import React from 'react'
 import elestar from '../assets/ele1.png'
 import Cards from './Cards'
-import Card1 from '../assets/card1.png'
-import Card2 from '../assets/card2.png'
-import Card3 from '../assets/card3.png'
+
 
 const Collections = ({group}) => {
   return (

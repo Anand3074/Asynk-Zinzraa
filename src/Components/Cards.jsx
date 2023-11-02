@@ -1,10 +1,12 @@
 import React from 'react'
 import {FiHeart} from 'react-icons/fi'
 import {IoEllipse} from 'react-icons/io5'
+import { Link } from 'react-router-dom'
 
 const Cards = ({Products}) => {
   return (
-    <div className='w-[28vw] h-[45vw]' >
+    <Link to='/Detail'>
+        <div className='w-[28vw] h-[45vw]' >
         <div className='' id='container'>
             <div className='flex relative'>
                 <div className='z-150'>
@@ -40,6 +42,7 @@ const Cards = ({Products}) => {
             </div>
         </div>
     </div>
+</Link>
   )
 }
 

@@ -15,7 +15,9 @@ import Card3 from '../assets/card3.png'
 import colr1 from '../assets/colr1.png'
 import colr2 from '../assets/colr2.png'
 import colr3 from '../assets/colr3.png'
-
+import c1 from '../assets/c1.png'
+import c2 from '../assets/c2.png'
+import c3 from '../assets/c3.png'
 
 
 const Products = () => {
@@ -48,17 +50,17 @@ const Products = () => {
     icon : ele1,
     Products : [
       {
-          image : Card1,
+          image : c1,
           specific : "Daisy Grey Silk Fabricated Saree With Mirror Work ",
           price : '$6500',
           oldprice : '$8999'},
       {
-          image : Card2,
+          image : c2,
           specific : "Daisy Purple Silk Fabricated Saree With Mirror Work",
           price : '$6500',
           oldprice : '$8066'}, 
       {
-          image : Card3,
+          image : c3,
           specific : "Daisy Green Silk Fabricated Saree With Mirror Work",
           price : '$6500',
           oldprice : '$7566'
