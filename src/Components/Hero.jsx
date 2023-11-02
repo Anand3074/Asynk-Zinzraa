@@ -12,7 +12,7 @@ const Hero = () => {
 
             </div>
             <div className='flex flex-col w-1/3 '> 
-                <div className='font-extralight light font-fashion text-[#CC911D] md:text-[64px] justify-center'>
+                <div className='font-normal font-fashion text-[#CC911D] text-[5vw] justify-center'>
                     <div className='text-center mt-[2.5vw]'>
                         <div>Top Picks of</div>
                         <div>kalki koechlin</div>
