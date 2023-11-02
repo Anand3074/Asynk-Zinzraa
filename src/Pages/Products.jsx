@@ -7,8 +7,25 @@ import Kalki from '../Components/kalki.jsx'
 import Testimonial from '../Components/Testimonial.jsx'
 import Trusty from '../Components/trusty.jsx'
 import Footer from '../Components/Footer.jsx'
+import ele1 from '../assets/ele1.png'
+import ele2 from '../assets/ele2.png'
+
 
 const Products = () => {
+
+  const Group1 = {
+    title:"Best Collections",
+    icon : ele1
+  }
+  const Group2 = {
+    title:"Recommended for you",
+    icon : ele1
+  }
+  const Group3 = {
+    title:"Watch and Shop",
+    icon : ele1
+  }
+
   return (
     <div>
       <div>
@@ -18,19 +35,19 @@ const Products = () => {
           <Categ1/>
       </div>
       <div className='md:mt-[56px] mt-[19px]'>
-        <Collections/>  
+        <Collections group={Group1}/>  
       </div>
       <div className='md:mt-[68px]'>
         <Wtrends/>
       </div>
       <div className='md:mt-[56px] mt-[19px]'>
-        <Collections/>  
+        <Collections group={Group2}/>  
       </div>
       <div>
         <Kalki/>
       </div>
       <div>
-      <Collections/>
+      <Collections group={Group3}/>
       </div>
       <div>
       <Testimonial/> 
@@ -41,7 +58,6 @@ const Products = () => {
       <div>
       <Footer/>
       </div>
-
     </div> 
   )
 }
