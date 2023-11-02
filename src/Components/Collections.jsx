@@ -6,29 +6,6 @@ import Card2 from '../assets/card2.png'
 import Card3 from '../assets/card3.png'
 
 const Collections = ({group}) => {
-  const  Product1 = {
-        image : Card1,
-        specific : "Daisy Grey Silk Fabricated Saree With Mirror Work ",
-        price : '$6500',
-        oldprice : '$8999'
-
-    }
-    const Product2 = {
-        image : Card2,
-        specific : "Daisy Purple Silk Fabricated Saree With Mirror Work",
-        price : '$6500',
-        oldprice : '$8066'
-
-    } 
-    const Product3 = {
-        image : Card3,
-        specific : "Daisy Green Silk Fabricated Saree With Mirror Work",
-        price : '$6500',
-        oldprice : '$7566'
-
-    }
-
-
   return (
     <div>
         <div>
@@ -40,13 +17,13 @@ const Collections = ({group}) => {
             </div>
             <div className='flex flex-row space-between md:gap-[32px] gap-[11px] justify-center'>
                 <div>
-                    <Cards Products={Product1}/>
+                    <Cards Products={group.Products[0]}/>
                 </div>
                 <div>
-                    <Cards Products={Product2}/>
+                    <Cards Products={group.Products[1]}/>
                 </div>
                 <div>
-                    <Cards Products={Product3}/>
+                    <Cards Products={group.Products[2]}/>
                 </div>
             </div>
         </div>

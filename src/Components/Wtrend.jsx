@@ -19,7 +19,7 @@ const Wtrend = () => {
                     
                 </div>
                 <div>
-                    <button className='bg-[#515233] md:px-[120px] md:h-[55px]'>
+                    <button className='bg-[#515233] text-white font-playfair text-[2vw] px-[7vw] py-[2vw]'>
                         SHOP NOW
                     </button>
 
