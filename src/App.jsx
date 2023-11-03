@@ -11,6 +11,8 @@ import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Test/Cart.jsx'
 import Contact from './Components/userphoto.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
+import Signup from './Pages/LoginAuth.jsx'
+
 
 
 const App = () => {
@@ -28,7 +30,7 @@ const App = () => {
       <Route path='/Wishlist' Component={Wishlist}/>
       <Route path='/Cart' Component={Cart}/>
       <Route path='/detail' Component={Detail}/>
-
+      <Route path='/Auth' Component={Signup}/>
 
       </Routes>
       </BrowserRouter> 
