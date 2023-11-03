@@ -34,8 +34,6 @@ const kalki = () => {
                          rounded-bl-[44.5px] md:rounded-bl-[134.50px]  md:h-[270px] h-[90px] md:w-[268px]' />
                     </div>
             </div>
-            
-            
             <div className='flex flex-col items-center justify-end text-white'>
                 <div className=''>
                     <div className='font-fashion md:text-[96px] text-[32px]'>
@@ -58,8 +56,6 @@ const kalki = () => {
                     </button>
 
                 </div>
-
-
             </div>
             
     

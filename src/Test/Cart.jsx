@@ -9,55 +9,6 @@ const Cartiu2 = () => {
     <div className="flex flex-col justify-between gap-32 ml-0 mr-1">
       <div className="flex flex-col gap-24">
         <div className="flex flex-col gap-6 items-center">
-          <div className="bg-[#032b2a] self-stretch flex flex-row justify-between h-20 shrink-0 items-center px-12">
-            <div className="flex flex-row justify-between w-1/2 items-center">
-              <div className="flex flex-row justify-between w-[412px] items-start">
-                <div className="font-['Poppins'] font-light text-white">
-                  Products
-                </div>
-                <div className="font-['Poppins'] font-light text-white">
-                  Saree
-                </div>
-                <div className="font-['Poppins'] font-light text-white">
-                  Kurtas
-                </div>
-                <div className="font-['Poppins'] font-light text-white">
-                  Dresses
-                </div>
-                <div className="font-['Poppins'] font-light text-white">
-                  Contact us
-                </div>
-              </div>
-              <img src="" id="ZinzraaLogo" className="self-start w-20 shrink-0" />
-            </div>
-            <div className="flex flex-row justify-between gap-4 items-center">
-              <div className="bg-[#d9d9d9] self-start flex flex-row gap-5 w-[211px] shrink-0 h-6 items-center pt-1 px-4 rounded-sm">
-                <img
-                  src="https://file.rendit.io/n/tZrP6IM2xA0chlw3ViBo.svg"
-                  id="Search"
-                  className="w-4 shrink-0"
-                />
-                <div className="text-xs font-['Poppins'] font-light text-[#848484] self-start mt-px">
-                  search your product
-                </div>
-              </div>
-              <img
-                src="https://file.rendit.io/n/NmBIX0CimGjFmqOxDcTU.svg"
-                id="Userfill"
-                className="w-6 shrink-0"
-              />
-              <img
-                src="https://file.rendit.io/n/gpXviW3UOy3UgII9h829.svg"
-                id="Favoritefill"
-                className="w-6 shrink-0"
-              />
-              <img
-                src="https://file.rendit.io/n/vCJWxqGSWwSRSfRyTFIF.svg"
-                id="Bagaltfill"
-                className="w-6 shrink-0"
-              />
-            </div>
-          </div>
           <div className="flex flex-row items-start">
             <img
               src="https://file.rendit.io/n/TI3YgI42J0r2T4rbSv4u.svg"

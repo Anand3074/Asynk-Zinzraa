@@ -57,7 +57,7 @@ const Products = () => {
       {
           image : c2,
           specific : "Daisy Purple Silk Fabricated Saree With Mirror Work",
-          price : '$6500',
+          price : '$7894',
           oldprice : '$8066'}, 
       {
           image : c3,
