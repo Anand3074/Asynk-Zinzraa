@@ -14,6 +14,7 @@ export default {
       'nunito': ['Nunito'],
       'inter': ['Inter'],
       'montserrat': ['Montserrat'],
+      'poppins': ['Poppins'],
 
 
     },
