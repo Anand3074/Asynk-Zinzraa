@@ -6,34 +6,31 @@ import Sz4 from '../assets/sz4.png'
 import C2 from '../assets/c2.png'
 import { FiHeart } from 'react-icons/fi'
 import {AiFillStar} from 'react-icons/ai'
-// import {BsSizeS}	from 'react-icons/bs'
-// import {BsSizeM}    from 'react-icons/bs'
-// import {BsSizeL}	from 'react-icons/bs'
-// import {BsSizeXL}	from 'react-icons/bs'
-// import {BsSize2XL}	from 'react-icons/bs'
-// import {BsSize3XL}	from 'react-icons/bs'
+import szi1 from '../assets/szi1.png'
+import szi2 from '../assets/szi2.png'
+import szi3 from '../assets/szi3.png'
 
 
 const Productsize = () => {
   return (
     <div>
-        <div className='h-[45vw]'>
+        <div className='h-[60vw]'>
             <div className='flex flex-row'>
                 <div>
                     <div className='flex flex-col mr-[1.2vw]'>
                         <div>
-                            <img src={Sz2} className='h-[13vw] w-[10vw] mb-[2vw] '/>
+                            <img src={Sz2} className='h-[17vw] w-[16vw] mb-[2vw] '/>
                         </div>
                         <div>
-                            <img src={Sz3} className='h-[13vw] w-[10vw] mb-[2vw]'/>
+                            <img src={Sz3} className='h-[17vw] w-[16vw] mb-[2vw]'/>
                         </div>
                         <div>
-                            <img src={Sz1} className='h-[13vw] w-[10vw] '/>
+                            <img src={Sz1} className='h-[17vw] w-[16vw] '/>
                         </div>
                     </div>
                 </div> 
-                <div className='h-[45vw] w-[30vw]'>
-                    <img src={C2} className='h-[43vw] w-[30vw]'/>
+                <div className='h-[55vw] w-[50vw]'>
+                    <img src={C2} className='h-[55vw] w-[50vw]'/>
                 </div>
 {/* Image above  */}
                 <div className='flex flex-col ml-[5vw] w-[45vw]'>
@@ -55,56 +52,132 @@ const Productsize = () => {
                     <div className='font-lora text-[#875A33] text-[2vw] font-bold '>
                          $ 1801
                     </div>
-                    <div className='text-[#00AA07] font-medium'>
+                    <div className='text-[#00AA07] font-medium text-[2vw]'>
                             47% off
                     </div>
                     </div>
-                    <div>
-                        <hr className='my-6 border-t border-gray-300 w-[40vw] mt-[3vw]' />
+                    <div className='flex flex-row items-center gap-[1vw]'>
+                    <div className='text-[1.65vw] text-[##7C7C7C]'>MRP ₹</div>
+                    <div className='text-[1.47vw] text-red-400 line-through'>3,398</div>
+                    <div className='text-[1.47vw] text-[##7C7C7C]'>Inclusive of all taxes</div>
+                  
                     </div>
-                    <div className='flex flex-row text-[1.2vw] gap-[28vw] space-between'>
-                        <div>
+                    <div>
+                        <hr className=' border-t border-gray-600 w-[40vw] h-[0.2vw] mt-[1vw]' />
+                    </div>
+                    <div className='flex flex-row text-[1.2vw] gap-[28vw] mt-[1vw]'>
+                        <div className='w-[6vw] h-[1.2vw]'>
                             Select Size
                         </div>
-                        <div>
+                        <div className='w-[6vw] h-[1.2vw]'>
                         Size Guide
                         </div> 
                     </div>
-                    <div className='flex flex-row'>
-                        {/* <div>
-                            <BsSizeS/>
+                    <div className='flex flex-row gap-[0.7vw] text-[1.5vw] w-[40vw] h-[8vw] mt-[0.5vw]'>
+                        <div className='flex flex-col justify-center'>
+                            <button className='w-[6vw] h-[2.5vw] rounded-[0.5vw] bg-transparent 
+                            border border-solid border-1px border-[#875A33]'>
+                                S
+                            </button><div className='h-[2.5vw] text-[0.7vw]'></div>
                         </div>
-                        <div>
-                            <BsSizeM/>
+                        <div className='flex flex-col justify-center'>
+                            <button className='w-[6vw] h-[2.5vw] rounded-[0.5vw] bg-transparent 
+                            border border-solid border-1px border-[#875A33]'>
+                                M
+                            </button><div className='h-[2.5vw] text-[1vw] justify-center flex'>sold out</div>
                         </div>
-                        <div>
-                            <BsSizeL/>
+                        <div className='flex flex-col justify-center'>
+                            <button className='w-[6vw] h-[2.5vw] rounded-[0.5vw] bg-transparent 
+                            border border-solid border-1px border-[#875A33]'>
+                                L
+                            </button><div className='h-[2.5vw] text-[1vw] justify-center flex text-red-400'>4 left</div>
                         </div>
-                        <div>
-                            <BsSizeXL/>
+                        <div className='flex flex-col justify-center'>
+                            <button className='w-[6vw] h-[2.5vw] rounded-[0.5vw] bg-transparent 
+                            border border-solid border-1px border-[#875A33]'>
+                                XL
+                            </button><div className='h-[2.5vw] text-[1vw] justify-center flex'></div>
                         </div>
-                        {/* <div>
-                            <BsSize2XL/>
-                        </div> */}
-                        {/* <div>
-                            <BsSize3XL/>
-                        </div> */}
+                        <div className='flex flex-col justify-center'>
+                            <button className='w-[6vw] h-[2.5vw] rounded-[0.5vw] bg-transparent 
+                            border border-solid border-1px border-[#875A33]'>
+                                2XL
+                            </button><div className='h-[2.5vw] text-[1vw] justify-center flex'></div>
+                        </div>
+                        <div className='flex flex-col justify-center'>
+                            <button className='w-[6vw] h-[2.5vw] rounded-[0.5vw] bg-transparent 
+                            border border-solid border-1px border-[#875A33]'>
+                                3XL
+                            </button><div className='h-[2.5vw] text-[1vw] justify-center flex'></div>
+                        </div>
                     </div>
-                    <div className='flex flex-row gap-[3vw]'>
+                    <div className='flex flex-row gap-[2vw] w-[30vw] h-[4vw] text-[1.47vw] mb-[1vw] mt-[2vw]'>
                         <div>
-                            <button className='flex flex-row'>
-                                <FiHeart className='text-red-400'/> Add to Wishlist
+                            <button className=' flex flex-row w-[18vw] px-[5px] justify-center items-center
+                                                border border-solid border-1px border-[#875A33] py-[1vw] rounded-[1.2vw]'>
+                                <FiHeart className='text-red-400 mr-[1.5vw]' /> Add to Wishlist
                             </button>
                         </div>
                         <div>
-                            <button>
-                                Add to Cart
+                            <button className=' w-[18vw] px-[10px] text-white jsutify-cenetr
+                                                bg-teal-dark  py-[1vw] rounded-[1.2vw]'>
+                                Add to Bag
                             </button>
                         </div>
-
                     </div>
-                    
-
+                    <div>
+                        <hr className='border-t border-gray-600 w-[40vw] mt-[1vw]' />
+                    </div>
+                    <div className='mt-[2vw] font-inter font-semibold text-[1.65vw]'>
+                        Select Delivery Location
+                    </div>
+                    <div className='text-[1.47vw] fotn-inter w-[32vw]'>
+                        <div>
+                            Enter the pincode of your area to check product
+                        </div> 
+                        <div>
+                        availability and delivery options
+                        </div>
+                    </div>
+                    <div className='flex bg-grey-ray w-[31.5vw] mt-[1.5vw] text-[1.1vw] h-[4vw] items-center px-[2vw]'>
+                            <input
+                            placeholder='Pincode'
+                            className="bg-transparent w-[27vw] border-none text-xs focus:outline-none"
+                            />
+                            <div>
+                                Apply
+                            </div>
+                     </div>
+                     <div className='flex flex-row h-[4vw] w-[25vw] text-[0.92vw] gap-[1.5vw] mt-[2vw] '>
+                        <div className='flex flex-col w-[7vw] justify-center '>
+                            <img src={szi1} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                            <div>
+                                COD Available
+                            </div>
+                        </div>
+                     <div className='flex flex-col w-[7vw] justify-center '>
+                            <img src={szi2} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                            <div>
+                                <div>
+                                    7 Days Return
+                                </div>
+                                <div>
+                                    and Exchange
+                                </div>
+                            </div>
+                        </div>
+                     <div className='flex flex-col w-[7vw] justify-center '>
+                            <img src={szi3} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                            <div>
+                                <div>
+                                    Usually ship in 
+                                </div>
+                                <div>
+                                    2 Days
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             

@@ -13,7 +13,7 @@ import Size from '../Components/Productsize.jsx'
 const Prodctdetail = () => {
 
     const Group1 = {
-        title:"Best Collections",
+        title:"Similar Products",
         icon : ele1,
         Products : [
           {
@@ -35,7 +35,7 @@ const Prodctdetail = () => {
           }]
       }
       const Group2 = {
-        title:"Recommended for you",
+        title :"Customers also Viewed" ,
         icon : ele1,
         Products : [
           {
