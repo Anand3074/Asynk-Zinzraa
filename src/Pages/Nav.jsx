@@ -23,7 +23,7 @@ const Nav2 = () => {
                 <Link to="/" >
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Products</li>
                 </Link>
-                <Link to="/Auth">
+                <Link to="/Dresses">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Saree</li>
                 </Link>
                 <Link to="/Dresses">
@@ -77,7 +77,7 @@ const Nav2 = () => {
                         />
                     </div>
                     <div className='flex space-x-[30px]  md:space-x-[16px] items-center mr-7  md:mr-0'>
-                    <Link to="/Login">
+                    <Link to="/Auth">
                         <FaUser className="text-white"/>
                     </Link>
                     <Link to="/Wishlist">
