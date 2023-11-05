@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../Components/Hero.jsx'
+import Hero2 from '../Components/Hero2.jsx'
 import Collections from '../Components/Collections.jsx'
 import Categ1 from '../Components/Categ1.jsx'
 import Wtrends from '../Components/Wtrend.jsx'
@@ -118,7 +118,7 @@ const Products = () => {
   return (
     <div>
       <div>
-          <Hero/>
+          <Hero2/>
       </div>
       <div className='md:mt-[54px]  mt-[18px]'>
           <Categ1/>

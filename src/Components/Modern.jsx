@@ -4,13 +4,13 @@ import Vec5 from '../assets/vec5.png'
 const Modern = () => {
   return (
     <div className='flex'>
-      <div id='main-container' className='bg-[#da9e6a42] flex flex-row  m-[3vw]   h-[30vw]'> 
+      <div id='main-container' className='bg-[#da9e6a42] flex flex-row  m-[3vw]   h-[25vw]'> 
         <div>
-          <img src={Vec5} alt=''  className='h-[30vw] w-[4vw]'/>
+          <img src={Vec5} alt=''  className='h-[25vw] w-[4vw]'/>
         </div>
-        <div id='center-container' className='flex flex-col justify-center w-[56vw] h-[30vw]'>
+        <div id='center-container' className='flex flex-col justify-center w-[56vw] h-[25vw]'>
           <div className='flex flex-col text-[#515233]' id='text'>
-            <div className='font-fashion text-[5vw] flex flex-col  '>
+            <div className='font-fashion text-[4.2vw] flex flex-col  '>
               <div className='flex justify-center '>
                 Embrace Tradition with 
               </div>
@@ -29,8 +29,8 @@ const Modern = () => {
           </div>
             
         </div>
-        <div className='w-[36vw] h-[27vw] m-[1.5vw]'>
-                <img src={modern} alt='' className='w-[34vw] h-[27vw] '/>
+        <div className='w-[36vw] h-[22vw] m-[1.5vw]'>
+                <img src={modern} alt='' className='w-[34vw] h-[22vw] '/>
         </div>  
       </div>
         

@@ -3,8 +3,8 @@ import Poster from '../Components/Modern.jsx'
 import elestar from '../assets/ele1.png'
 import Cards from '../Components/Cards.jsx'
 import c1 from '../assets/c1.png'
-import c2 from '../assets/c1.png'
-import c3 from '../assets/c1.png'
+import c2 from '../assets/c2.png'
+import c3 from '../assets/c3.png'
 
 const Dresses = () => {
 
@@ -158,15 +158,15 @@ let Products3 = {
                   <Cards Products={Products3}/>
                 </div>
                 <div>
-                  <Cards Products={Products2}/>
+                  <Cards Products={Products1}/>
                 </div>
             </div>
             <div className='flex flex-row justify-center gap-[5vw] mb-[2vw]'>
                 <div>
-                  <Cards Products={Products3}/>
+                  <Cards Products={Products2}/>
                 </div>
                 <div>
-                  <Cards Products={Products2}/>
+                  <Cards Products={Products3}/>
                 </div>
             </div>
             <div className='flex flex-row justify-center gap-[5vw] mb-[2vw]'>

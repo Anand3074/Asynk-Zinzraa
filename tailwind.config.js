@@ -15,6 +15,7 @@ export default {
       'inter': ['Inter'],
       'montserrat': ['Montserrat'],
       'poppins': ['Poppins'],
+      'italian': ['Italiana'],
 
 
     },

@@ -14,8 +14,8 @@ import Detail from './Pages/Prodctdetail.jsx'
 // import AddProduct from './Test/AddProduct.jsx'
 // import Dashboard from './Test/Dashboard.jsx'
 // import DashboardTab from './Test/DashboardTab.jsx'
-// import UpdateProduct from './Test/UpdateProduct.jsx'
- import Signup from './Pages/LoginAuth.jsx'
+import UpdateProduct from './Test/UpdateProduct.jsx'
+import Signup from './Pages/LoginAuth.jsx'
 import hamburger from './Components/hamburger.jsx'
 
 
@@ -37,9 +37,9 @@ const App = () => {
       <Route path='/Auth' Component={Signup}/>
       <Route path='/hamburger' Component={hamburger}/>
       {/* <Route path='/AddProduct' Component={AddProduct}/>
-      <Route path='/Dashboard' Component={Dashboard}/>
-      <Route path='/DashboardTab' Component={DashboardTab}/>
-      <Route path='/Login' Component={Login}/>
+      <Route path='/Dashboard' Component={Dashboard}/> */}
+      {/* <Route path='/DashboardTab' Component={DashboardTab}/> */}
+      {/* <Route path='/Login' Component={Login}/>
       <Route path='/UpdateProduct' Component={UpdateProduct}/> */}
       </Routes>
       </BrowserRouter> 
