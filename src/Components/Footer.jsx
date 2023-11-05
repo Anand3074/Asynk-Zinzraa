@@ -1,5 +1,6 @@
 import React from 'react'
 import logof from '../assets/logof.png'
+import {Link } from 'react-router-dom'
 
 const Footer = () => {
     const contact = {
@@ -42,7 +43,7 @@ const Footer = () => {
                     </div>
                     <div className='flex md:w-[217px] justify-center mb-[25px]' >
                         <ul className='justify-center items-center '>
-                            <li className='justify-center'>{ImpLink.field}</li>
+                            <li className='justify-center'>{ImpLink.title}</li>
                             <li className='justify-center'>{ImpLink.field1}</li>
                             <li className='justify-center'>{ImpLink.field2}</li>
                             <li className='justify-center'>{ImpLink.field3}</li>
@@ -53,8 +54,8 @@ const Footer = () => {
                     </div>
                     <div className='flex  justify-center mb-[25px]' >
                         <ul className='flex flex-col'>
-                            <li className='justify-center'>{ShopCategory.field}</li>
-                            <li className='justify-center'>{ShopCategory.field1}</li>
+                            <li className='justify-center'>{ShopCategory.title}</li>
+                            <Link to='/Dresses'> <li className='justify-center'>{ShopCategory.field1}</li></Link>
                             <li className='justify-center'>{ShopCategory.field2}</li>
                             <li className='justify-center'>{ShopCategory.field3}</li>
                             <li className='justify-center'>{ShopCategory.field4}</li>
