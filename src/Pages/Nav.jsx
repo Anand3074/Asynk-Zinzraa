@@ -11,11 +11,14 @@ import {Element, Events, animateScroll as scroll, scrollSpy, scroller } from 're
 
 
 
-const Nav2 = () => {
+const Nav2 = () => {    
     // for hamburger menu
+    // const [click, setClick] = useState(false);
+    // const handleClick = () => setClick(true);
+    
     const content =
     <>
-        <div className='lg:hidden block absolute top-16 w-full left-0 rigth-0 bg-teal-dark transition'>
+        <div className='sm:hidden block absolute top-16 z- w-full left-0 right-0 bg-teal-dark transition'>
             <ul className="text-center text-x1 p-20">
                 <Link to="/" >
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Products</li>
@@ -23,7 +26,7 @@ const Nav2 = () => {
                 <Link to="/Auth">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Saree</li>
                 </Link>
-                <Link to="/Kurtas">
+                <Link to="/Dresses">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Kurtas</li>
                 </Link>
                 <Link to="/Dresses">
@@ -34,6 +37,8 @@ const Nav2 = () => {
                 </Link>
 
             </ul>
+
+
         </div>
     </>
   return (
@@ -48,7 +53,7 @@ const Nav2 = () => {
                         <Link to="/Auth">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
                         </Link>
-                        <Link to="/Kurtas">
+                        <Link to="/Dresses">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
                         </Link>
                         <Link to="/Dresses">
@@ -84,13 +89,24 @@ const Nav2 = () => {
                     </div>
                 </div>
             </div>
-            <div className= 'flex justify-center'>
-            <div className='flex bg-grey-ray h-[28px] gap-[30px]  rounded-[20px] items-center md:hidden mb-[10px] self-end'>
+            <div className= 'flex sm:hidden justify-center'>
+                <div className='flex bg-grey-ray h-[28px] gap-[30px]  rounded-[20px] items-center  mb-[10px] self-end'>
                             <FaSearch className='text-[#848484] ml-[17px]' />
                             <input
                             placeholder='search your product'
                             className="bg-transparent border-none text-xs focus:outline-none"
                             />
+                </div>
+                {/* <div>
+                    {click && content}
+                </div> */}
+                <div className='ml-[3vw]'>
+                    <Link to='/hamburger'>
+                    <button className='transition'>
+                        {/* { click ? <FaTimes/> : <CiMenuFries/> } */}
+                        <CiMenuFries/>
+                    </button>
+                    </Link>
                 </div>
             </div>
                 

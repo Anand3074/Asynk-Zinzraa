@@ -11,8 +11,12 @@ import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Test/Cart.jsx'
 import Contact from './Components/userphoto.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
-import Signup from './Pages/LoginAuth.jsx'
-
+// import AddProduct from './Test/AddProduct.jsx'
+// import Dashboard from './Test/Dashboard.jsx'
+// import DashboardTab from './Test/DashboardTab.jsx'
+// import UpdateProduct from './Test/UpdateProduct.jsx'
+ import Signup from './Pages/LoginAuth.jsx'
+import hamburger from './Components/hamburger.jsx'
 
 
 const App = () => {
@@ -31,7 +35,12 @@ const App = () => {
       <Route path='/Cart' Component={Cart}/>
       <Route path='/detail' Component={Detail}/>
       <Route path='/Auth' Component={Signup}/>
-
+      <Route path='/hamburger' Component={hamburger}/>
+      {/* <Route path='/AddProduct' Component={AddProduct}/>
+      <Route path='/Dashboard' Component={Dashboard}/>
+      <Route path='/DashboardTab' Component={DashboardTab}/>
+      <Route path='/Login' Component={Login}/>
+      <Route path='/UpdateProduct' Component={UpdateProduct}/> */}
       </Routes>
       </BrowserRouter> 
       
@@ -40,3 +49,26 @@ const App = () => {
   )
 }
 export default App
+
+//user
+export const ProtectedRoutes = ({ children }) => {
+  if (localStorage.getItem('currentUser')) {
+    return children
+  }
+  else {
+    return <Navigate to='/login' />
+  }
+}
+
+
+//admin
+export const ProtectedRoutesForAdmin = ({children}) => {
+  const admin = JSON.parse(localStorage.getItem('user'))
+  console.log(admin.user.email)
+  if (admin.user.email === 'surveyash67@gmail.com') {
+    return children
+  }
+  else {
+    return <Navigate to='/login' />
+  }
+}

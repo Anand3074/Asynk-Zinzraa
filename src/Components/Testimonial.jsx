@@ -21,7 +21,7 @@ const Testimonial = () => {
             </div>
             <div className='justify-center w-full md:h-auto h-[250px] md:py-[38px] py-[12px]' style={{ backgroundImage: `url(${Vec4})`}}>
                 <div className='flex flex-row justify-center gap-[12px] md:gap-[37px]'>
-                <div className='border border-solid border-1px border-[#875A33] 
+                <div className=' border border-solid border-1px border-[#875A33]
                                         bg-white justify-center items-center
                                         md:h-[470px] md:w-[470px] h-[160px] w-[160px]'>
                        <div className='md:text-[32px] text-[10px]  font-noto md:mt-[54px] 
