@@ -14,7 +14,7 @@ import Detail from './Pages/Prodctdetail.jsx'
 // import AddProduct from './Test/AddProduct.jsx'
 // import Dashboard from './Test/Dashboard.jsx'
 // import DashboardTab from './Test/DashboardTab.jsx'
-import UpdateProduct from './Test/UpdateProduct.jsx'
+// import UpdateProduct from './Test/UpdateProduct.jsx'
 import Signup from './Pages/LoginAuth.jsx'
 import hamburger from './Components/hamburger.jsx'
 
