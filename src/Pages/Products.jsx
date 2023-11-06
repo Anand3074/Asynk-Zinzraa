@@ -1,5 +1,8 @@
 import React from 'react'
-import Hero2 from '../Components/Hero2.jsx'
+// import { useState, useEffect } from 'react'
+// import Hero from '../Components/Hero.jsx'
+// import Hero1 from '../Components/Hero1.jsx'
+// import Hero2 from '../Components/Hero2.jsx'
 import Collections from '../Components/Collections.jsx'
 import Categ1 from '../Components/Categ1.jsx'
 import Wtrends from '../Components/Wtrend.jsx'
@@ -7,6 +10,8 @@ import Kalki from '../Components/kalki.jsx'
 import Testimonial from '../Components/Testimonial.jsx'
 import Trusty from '../Components/trusty.jsx'
 import Footer from '../Components/Footer.jsx'
+import {BsThreeDots} from 'react-icons/bs'
+import Carousel from '../Components/Carousel.jsx'
 import ele1 from '../assets/ele1.png'
 import ele2 from '../assets/ele2.png'
 import Card1 from '../assets/card1.png'
@@ -114,14 +119,16 @@ const Products = () => {
       }]
 
   }
-  
   return (
     <div>
       <div>
-          <Hero2/>
+        <Carousel/>
       </div>
-      <div className='md:mt-[54px]  mt-[18px]'>
-          <Categ1/>
+      <div className='flex justify-center items-center'>
+        <BsThreeDots className='text-slate-600  w-[10vw] h-[3vw]'/>
+      </div>
+      <div className='mt-[1vw]'>
+        <Categ1/>
       </div>
       <div className='md:mt-[56px] mt-[19px]'>
         <Collections group={Group1}/>  

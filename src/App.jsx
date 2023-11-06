@@ -17,6 +17,8 @@ import Detail from './Pages/Prodctdetail.jsx'
 // import UpdateProduct from './Test/UpdateProduct.jsx'
 import Signup from './Pages/LoginAuth.jsx'
 import hamburger from './Components/hamburger.jsx'
+import Carousel from './Test/Carousel.jsx'
+
 
 
 const App = () => {
@@ -36,6 +38,7 @@ const App = () => {
       <Route path='/detail' Component={Detail}/>
       <Route path='/Auth' Component={Signup}/>
       <Route path='/hamburger' Component={hamburger}/>
+      <Route path='/Carousel' Component={Carousel}/>      
       {/* <Route path='/AddProduct' Component={AddProduct}/>
       <Route path='/Dashboard' Component={Dashboard}/> */}
       {/* <Route path='/DashboardTab' Component={DashboardTab}/> */}

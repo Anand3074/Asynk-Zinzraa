@@ -7,7 +7,7 @@ import {FaUser} from "react-icons/fa"
 import {AiFillHeart} from "react-icons/ai"
 import {HiShoppingBag} from "react-icons/hi"
 import { FaSearch } from "react-icons/fa"
-import {Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+
 
 
 
@@ -50,7 +50,7 @@ const Nav2 = () => {
                         <Link to="/">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Product</li>
                         </Link>
-                        <Link to="/Dresses">
+                        <Link to="/Carousel">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
                         </Link>
                         <Link to="/Dresses">
@@ -89,27 +89,28 @@ const Nav2 = () => {
                     </div>
                 </div>
             </div>
-            <div className= 'flex sm:hidden justify-center'>
-                <div className='flex bg-grey-ray h-[28px] gap-[30px]  rounded-[20px] items-center  mb-[10px] self-end'>
-                            <FaSearch className='text-[#848484] ml-[17px]' />
+            <div className='flex flex-row justify-center'>
+            <div className= 'flex sm:hidden justify-center ml-[12.5vw]'>
+                <div className='flex bg-grey-ray h-[9vw] w-[75vw] gap-[3vw] rounded-[20px] items-center  mb-[10px] '>
+                            <FaSearch className='text-[#848484] mx-[3vw]' />
                             <input
                             placeholder='search your product'
-                            className="bg-transparent border-none text-xs focus:outline-none"
+                            className="bg-transparent border-none text-xs focus:outline-none mx-[3vw]"
                             />
                 </div>
                 {/* <div>
                     {click && content}
                 </div> */}
-                <div className='ml-[3vw]'>
+            </div>
+                <div className='flex justify-center items-start ml-[5vw] pt-[1.2vw] mr-[2.5vw] sm:hidden'>
                     <Link to='/hamburger'>
                     <button className='transition'>
                         {/* { click ? <FaTimes/> : <CiMenuFries/> } */}
-                        <CiMenuFries/>
+                        <CiMenuFries className='text-white w-[5vw] h-[5vw]'/>
                     </button>
                     </Link>
                 </div>
             </div>
-                
     
         </div>
     </nav>
