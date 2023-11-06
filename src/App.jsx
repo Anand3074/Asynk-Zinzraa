@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>    
-      <Nav/>
+      <Nav className='touch-none'/>
       <Routes>
       <Route path='/' Component={Products}/>
       <Route path='/Saree' Component={Saree}/>
