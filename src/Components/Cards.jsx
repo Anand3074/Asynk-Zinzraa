@@ -2,22 +2,31 @@ import React from 'react'
 import {FiHeart} from 'react-icons/fi'
 import {IoEllipse} from 'react-icons/io5'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const Cards = ({Products}) => {
+
+    const[wishClick, setWishClick] = useState(0);
+
+    const changeWish = () => {
+        setWishClick((prevchangeWish) => !prevchangeWish);
+    }
   return (
-    <Link to='/Detail'>
+    
         <div className='w-[28vw] h-[45vw]' >
         <div className='' id='container'>
             <div className='flex relative'>
                 <div className='z-150'>
-                     <img src={Products.image} alt='' className='rounded-[2vw] w-[29vw] h-[30vw'/>
+                <Link to='/Detail'><img src={Products.image} alt=''
+                 className='rounded-[2vw] w-[29vw] h-[30vw'/></Link>
                 </div>
-                <div className=''>
+                <div className='' onClick={changeWish}>
                     <div className='absolute z-50 right-[2vw] top-[1vw]'>
-                        < IoEllipse className='w-[5vw] h-[5vw] fill-white'/>
+                        < IoEllipse className='w-[4.5vw] h-[4.5vw] fill-white'/>
                     </div>
-                    <div className='absolute z-100 right-[3.5vw] top-[2.5vw]'>
-                        <FiHeart className='w-[2vw] h-[2vw] text-red-500'/>
+                    <div className='absolute z-100 right-[3.4vw] top-[2.5vw]'>
+                        <FiHeart className='w-[1.7vw] h-[1.7vw] text-[#FF005C]'
+                         fill={wishClick ? 'red' : 'none'}/>
                     </div>
                 </div>
             </div>
@@ -42,7 +51,6 @@ const Cards = ({Products}) => {
             </div>
         </div>
     </div>
-</Link>
   )
 }
 

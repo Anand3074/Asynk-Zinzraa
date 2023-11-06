@@ -27,7 +27,7 @@ export default {
         'pink-fu': '#FF005C',
         'white-off':'#F9F8F8',
         'gold-pi': '#CC911D',
-        'gold-ha' : '#CC911D-800/10'
+        'heart-bit': '#FF005C'
       },
       zIndex: {
         '0': 0,
