@@ -14,30 +14,32 @@ import szi3 from '../assets/szi3.png'
 const Productsize = () => {
   return (
     <div>
-        <div className='h-[60vw]'>
-            <div className='flex flex-row'>
-                <div>
-                    <div className='flex flex-col mr-[1.2vw]'>
-                        <div>
-                            <img src={Sz2} className='h-[17vw] w-[16vw] mb-[2vw] '/>
+        <div className=''>
+            <div className='flex sm:flex-row flex-col '>
+                <div className='flex flex-row justify-center'>
+                    <div>
+                        <div className='flex flex-col mr-[1.2vw]'>
+                            <div>
+                                <img src={Sz2} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw] '/>
+                            </div>
+                            <div>
+                                <img src={Sz3} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw]'/>
+                            </div>
+                            <div>
+                                <img src={Sz1} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] '/>
+                            </div>
                         </div>
-                        <div>
-                            <img src={Sz3} className='h-[17vw] w-[16vw] mb-[2vw]'/>
-                        </div>
-                        <div>
-                            <img src={Sz1} className='h-[17vw] w-[16vw] '/>
-                        </div>
+                    </div> 
+                    <div className='h-[83vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'>
+                        <img src={C2} className='h-[81vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'/>
                     </div>
-                </div> 
-                <div className='h-[55vw] w-[50vw]'>
-                    <img src={C2} className='h-[55vw] w-[50vw]'/>
                 </div>
 {/* Image above  */}
-                <div className='flex flex-col ml-[5vw] w-[45vw]'>
-                    <div className='flex items-start font-lora text-[#875A33] text-[3.5vw] font-bold '>
+                <div className='flex flex-col justify-center sm:mx-[5vw] mx-[1.5vw] w-[91.5vw] sm:w-[45vw] sm:border-none border border-solid border-1px border-[#875A33]'>
+                    <div className='flex items-star font-lora text-[#875A33] sm:text-[3.5vw] text-[5.3vw] font-bold '>
                          Daisy cyan silk saree
                     </div>
-                    <div className='flex flex-row gap-[0.8vw] items-center text-[2vw] '>
+                    <div className='flex flex-row gap-[0.8vw] items-center sm:text-[2vw] text-[4vw]  '>
                         <div>
                             4.8
                         </div>
@@ -48,7 +50,7 @@ const Productsize = () => {
                             Based on 136 ratings
                         </div>
                     </div>
-                    <div className='flex flex-row items-start items-center gap-[1vw] font-inter '>
+                    <div className='flex flex-row items-start items-center gap-[1vw] font-inter'>
                     <div className='font-lora text-[#875A33] text-[2vw] font-bold '>
                          $ 1801
                     </div>

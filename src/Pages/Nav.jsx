@@ -42,7 +42,7 @@ const Nav2 = () => {
         </div>
     </>
   return (
-    <nav>
+    <nav className='touch-none'>
         <div className='h-auto md:h-[73px] w-full lg:h-auto align-center bg-teal-dark w-full text-base  md:py-[24px] md:px-[54px]'>
             <div id="parent-container" className='flex w-full justify-between items-center py-4 md:py-0 align-center'>
                 <div className='flex hidden md:flex lg:flex lg:'>

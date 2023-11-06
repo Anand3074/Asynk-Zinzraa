@@ -4,6 +4,7 @@ import K2 from '../assets/k2.png'
 import K3 from '../assets/k3.png'
 import Vec3 from '../assets/vec3.png'
 import elestar2 from '../assets/ele1.png'
+import { Link } from 'react-router-dom'
 
 const kalki = () => {
   return (
@@ -51,9 +52,9 @@ const kalki = () => {
                     
                 </div>
                 <div>
-                    <button className='bg-white text-slate-900 font- semibold font-playfair text-[2vw] px-[7vw] py-[2vw]'>
+                    <Link to='/Dresses'><button className='bg-white text-slate-900 font- semibold font-playfair text-[2vw] px-[7vw] py-[2vw]'>
                         SHOP NOW
-                    </button>
+                    </button></Link>
 
                 </div>
             </div>

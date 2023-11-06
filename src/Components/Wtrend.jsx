@@ -2,6 +2,7 @@ import React from 'react'
 import Wtren from '../assets/westrnd.png'
 import ele from '../assets/ele1.png'
 import { Button } from 'react-scroll'
+import { Link } from 'react-router-dom'
 
 const Wtrend = () => {
   return (
@@ -19,9 +20,9 @@ const Wtrend = () => {
                     
                 </div>
                 <div>
-                    <button className='bg-[#515233] text-white font-playfair text-[2vw] px-[7vw] py-[2vw]'>
+                    <Link to='/Dresses'>'<button className='bg-[#515233] text-white font-playfair text-[2vw] px-[7vw] py-[2vw]'>
                         SHOP NOW
-                    </button>
+                    </button></Link>
 
                 </div>
 
