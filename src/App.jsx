@@ -17,6 +17,7 @@ import Detail from './Pages/Prodctdetail.jsx'
 // import UpdateProduct from './Test/UpdateProduct.jsx'
 import Signup from './Pages/LoginAuth.jsx'
 import hamburger from './Components/hamburger.jsx'
+import Accounts from './Components/userphoto.jsx'
 
 
 
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>    
-      <Nav className='touch-none'/>
+      <Nav/>
       <Routes>
       <Route path='/' Component={Products}/>
       <Route path='/Saree' Component={Saree}/>
@@ -36,7 +37,11 @@ const App = () => {
       <Route path='/Cart' Component={Cart}/>
       <Route path='/detail' Component={Detail}/>
       <Route path='/Auth' Component={Signup}/>
-      <Route path='/hamburger' Component={hamburger}/>     
+      <Route path='/hamburger' Component={hamburger}/>
+      <Route path='/Accounts' Component={Accounts}/>
+      <Route path='/History' Component={Signup}/>
+      <Route path='/Payments' Component={Signup}/>
+    
       {/* <Route path='/AddProduct' Component={AddProduct}/>
       <Route path='/Dashboard' Component={Dashboard}/> */}
       {/* <Route path='/DashboardTab' Component={DashboardTab}/> */}

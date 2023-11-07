@@ -12,7 +12,8 @@ const Products = {
 }
 
   return (
-    <div className='flex flex-row m-[1.5vw]'>
+<div className='flex flex-col m-[1.5vw]'>
+    <div className='flex flex-row'>
         <div className='w-[13.5vw]'>
             <img src={K3} alt='' className='w-[11vw] h-[14vw] rounded-[1vw]'/>
         </div>
@@ -32,7 +33,7 @@ const Products = {
         </div>
         <div className='flex flex-row font-semibold justify-center items-center gap-[2vw] w-[15vw]'>
             <div className='text-[2vw]'>{Products.iniPrice}</div>
-            <div className='text-red-500 text-[1.2vw]'>{Products.oldPrice}</div>
+            <div className='text-red-500 text-[1.2vw] line-through'>{Products.oldPrice}</div>
         </div>
         <div className='w-[15vw] text-[#04C500] text-[1.3vw] font-semibold font-poppins flex
          justify-center items-center ml-[5vw]'>
@@ -46,6 +47,8 @@ const Products = {
             </button>
         </div>
     </div>
+    <hr className=' border-t border-gray-600 w-[100vw] h-[0.2vw] mt-[1vw]' />
+</div>
   )
 }
 

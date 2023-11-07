@@ -31,6 +31,15 @@ let  itemsInWishlist = 0
             <div>
                 <WishItem/>
             </div>
+            <div>
+                <WishItem/>
+            </div>
+            <div>
+                <WishItem/>
+            </div>
+            <div>
+                <WishItem/>
+            </div>
         </div>
     </div>
   )

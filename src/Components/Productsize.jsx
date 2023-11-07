@@ -12,6 +12,7 @@ import szi3 from '../assets/szi3.png'
 
 
 const Productsize = () => {
+    
   return (
     <div>
         <div className=''>
