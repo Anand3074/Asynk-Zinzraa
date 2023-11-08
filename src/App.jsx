@@ -10,14 +10,18 @@ import Login from './Pages/Login.jsx'
 import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Pages/Cart.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
-// import AddProduct from './Test/AddProduct.jsx'
-// import Dashboard from './Test/Dashboard.jsx'
-// import DashboardTab from './Test/DashboardTab.jsx'
-// import UpdateProduct from './Test/UpdateProduct.jsx'
+import AddProduct from './Test/AddProduct.jsx'
+import Dashboard from './Test/Dashboard.jsx'
+import DashboardTab from './Test/DashboardTab.jsx'
+import UpdateProduct from './Test/UpdateProduct.jsx'
 import Signup from './Pages/LoginAuth.jsx'
-import hamburger from './Components/hamburger.jsx'
+import Hamburger from './Components/hamburger.jsx'
 import UserProfile from './Components/userphoto.jsx'
 import AddDetail from './Components/AddDetail.jsx'
+import Navbar from './Test/Navbar.jsx'
+import Login1 from './Test/login.jsx'
+import myContext from './myContext.jsx';
+
 
 const App = () => {
   return (
@@ -25,24 +29,26 @@ const App = () => {
       <BrowserRouter>    
       <Nav/>
       <Routes>
-      <Route path='/' Component={Products}/>
-      <Route path='/Saree' Component={Saree}/>
-      <Route path='/Kurtas' Component={Kurtas}/>
-      <Route path='/Dresses' Component={Dresses}/>
-      {/* <Route path='/Contact' Component={Contact}/> */}
-      <Route path='/Login' Component={Login}/>
-      <Route path='/Wishlist' Component={Wishlist}/>
-      <Route path='/Cart' Component={Cart}/>
-      <Route path='/detail' Component={Detail}/>
-      <Route path='/Auth' Component={Signup}/>
-      <Route path='/hamburger' Component={hamburger}/>
-      <Route path='/UserProfile' Component={UserProfile}/>
-      <Route path='/AddDetail' Component={AddDetail}/>
-      {/* <Route path='/AddProduct' Component={AddProduct}/>
-      <Route path='/Dashboard' Component={Dashboard}/> */}
-      {/* <Route path='/DashboardTab' Component={DashboardTab}/> */}
-      {/* <Route path='/Login' Component={Login}/>
-      <Route path='/UpdateProduct' Component={UpdateProduct}/> */}
+      <Route exact path='/' element={<Products/>}/>
+      <Route exact path='/Saree' element={<Saree/>}/>
+      <Route exact path='/Kurtas' element={<Kurtas/>}/>
+      <Route exact path='/Dresses' element={<Dresses/>}/>
+      {/* <Route exact path='/Contact' element={<Contact/>}/> */}
+      <Route exact path='/Login' element={<Login/>}/>
+      <Route exact path='/Wishlist' element={<Wishlist/>}/>
+      <Route exact path='/Cart' element={<Cart/>}/>
+      <Route exact path='/detail' element={<Detail/>}/>
+      <Route exact path='/Auth' element={<Signup/>}/>
+      <Route exact path='/hamburger' element={<Hamburger/>}/>
+      <Route exact path='/UserProfile' element={<UserProfile/>}/>
+      <Route exact path='/AddDetail' element={<AddDetail/>}/>
+      <Route exact path='/AddProduct' element={<AddProduct/>}/>
+      <Route exact path='/Dashboard' element={<Dashboard/>}/> 
+      <Route exact path='/DashboardTab' element={<DashboardTab/>}/>
+      <Route exact path='/Login' element={<Login/>}/>
+      <Route exact path='/UpdateProduct' element={<UpdateProduct/>}/>
+      <Route exact path='/Navbar' element={<Navbar/>}/>
+      <Route exact path='/Login1' element={<Login1/>}/>
       </Routes>
       </BrowserRouter> 
     </div>

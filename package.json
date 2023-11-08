@@ -10,14 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@reduxjs/toolkit": "^1.9.7",
     "aos": "^3.0.0-beta.6",
+    "context": "^3.0.14",
     "firebase": "^10.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.17.0",
     "react-scroll": "^1.9.0",
-    "react-toastify": "^9.1.3"
+    "react-tabs": "^6.0.2",
+    "react-toastify": "^9.1.3",
+    "redux": "^4.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
