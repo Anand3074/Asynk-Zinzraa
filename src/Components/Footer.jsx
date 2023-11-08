@@ -64,14 +64,14 @@ const Footer = () => {
               </ul>
            </div>
         </div>
-        <div className='sm:h-[10vw] sm:text-[1.6vw] text-[3vw] mt-[3vw]'>
+        <div className='sm:h-[10vw] sm:text-[1.2vw] text-[3vw] mt-[5vw]'>
         <div className='flex justify-center items-center '>
              We accept all major credit cards / debit cards and Netbanking
         </div>
         <div className="">
-          <hr className="border-t border-gray-500"/>   
+          <hr className="border-t border-gray-500 mt-[1vw]"/>   
         </div>
-        <div className='flex justify-center items-center mt-[3vw] sm:text-[1.6vw] text-[3vw] '>
+        <div className='flex justify-center items-center sm:mt-[1.2vw] mt-[3vw] sm:text-[1.2vw] text-[3vw] '>
           © 2023 Zinzraa Fashion Pvt. Ltd. All Rights Reserved
         </div>
         </div>

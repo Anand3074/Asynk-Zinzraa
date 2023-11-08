@@ -17,6 +17,7 @@ import Detail from './Pages/Prodctdetail.jsx'
 import Signup from './Pages/LoginAuth.jsx'
 import hamburger from './Components/hamburger.jsx'
 import UserProfile from './Components/userphoto.jsx'
+import AddDetail from './Components/AddDetail.jsx'
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
       <Route path='/Auth' Component={Signup}/>
       <Route path='/hamburger' Component={hamburger}/>
       <Route path='/UserProfile' Component={UserProfile}/>
+      <Route path='/AddDetail' Component={AddDetail}/>
       {/* <Route path='/AddProduct' Component={AddProduct}/>
       <Route path='/Dashboard' Component={Dashboard}/> */}
       {/* <Route path='/DashboardTab' Component={DashboardTab}/> */}

@@ -1,6 +1,7 @@
 import React from 'react'
 import bagicon from '../assets/bagicon.png'
 import CartItem from '../Components/CartItem.jsx'
+import {Link} from 'react-router-dom'
 
 const Cart = () => {
     let bigPrice='$3782'
@@ -73,10 +74,10 @@ const Cart = () => {
                 </div>
             </div>
             <div className='h-[3vw] w-[27vw]'>
-                <button className='bg-teal-dark text-white font-semibold
+                <Link to='/AddDetail'><button className='bg-teal-dark text-white font-semibold
                          text-[1.2vw] rounded-[2vw] px-[12vw] py-[1vw] mt-[1vw]'>
                     Checkout
-                </button>
+                </button></Link>
             </div>
             </div>
         </div>
