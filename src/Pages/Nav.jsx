@@ -32,7 +32,7 @@ const Nav2 = () => {
                 <Link to="/Dresses">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Dresses</li>
                 </Link>
-                <Link to="/Contact">
+                <Link to="/UserProfile">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Contact us</li>
                 </Link>
 
@@ -59,7 +59,7 @@ const Nav2 = () => {
                         <Link to="/Dresses">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
                         </Link>
-                        <Link to="Contact">
+                        <Link to="/UserProfile">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Contact Us</li>
                         </Link>
                     </ul>

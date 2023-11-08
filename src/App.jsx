@@ -9,7 +9,6 @@ import Dresses from './Pages/Dresses.jsx'
 import Login from './Pages/Login.jsx'
 import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Test/Cart.jsx'
-import Contact from './Components/userphoto.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
 // import AddProduct from './Test/AddProduct.jsx'
 // import Dashboard from './Test/Dashboard.jsx'
@@ -17,9 +16,7 @@ import Detail from './Pages/Prodctdetail.jsx'
 // import UpdateProduct from './Test/UpdateProduct.jsx'
 import Signup from './Pages/LoginAuth.jsx'
 import hamburger from './Components/hamburger.jsx'
-import Accounts from './Components/userphoto.jsx'
-
-
+import UserProfile from './Components/userphoto.jsx'
 
 const App = () => {
   return (
@@ -31,17 +28,14 @@ const App = () => {
       <Route path='/Saree' Component={Saree}/>
       <Route path='/Kurtas' Component={Kurtas}/>
       <Route path='/Dresses' Component={Dresses}/>
-      <Route path='/Contact' Component={Contact}/>
+      {/* <Route path='/Contact' Component={Contact}/> */}
       <Route path='/Login' Component={Login}/>
       <Route path='/Wishlist' Component={Wishlist}/>
       <Route path='/Cart' Component={Cart}/>
       <Route path='/detail' Component={Detail}/>
       <Route path='/Auth' Component={Signup}/>
       <Route path='/hamburger' Component={hamburger}/>
-      <Route path='/Accounts' Component={Accounts}/>
-      <Route path='/History' Component={Signup}/>
-      <Route path='/Payments' Component={Signup}/>
-    
+      <Route path='/UserProfile' Component={UserProfile}/>
       {/* <Route path='/AddProduct' Component={AddProduct}/>
       <Route path='/Dashboard' Component={Dashboard}/> */}
       {/* <Route path='/DashboardTab' Component={DashboardTab}/> */}
@@ -49,8 +43,6 @@ const App = () => {
       <Route path='/UpdateProduct' Component={UpdateProduct}/> */}
       </Routes>
       </BrowserRouter> 
-      
-      
     </div>
   )
 }

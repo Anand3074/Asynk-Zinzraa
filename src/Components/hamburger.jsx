@@ -18,7 +18,7 @@ const hamburger = () => {
                 <Link to="/Dresses">
                     <li className='my-4 py-4  hover:rounded'>Dresses</li>
                 </Link>
-                <Link to="/Contact">
+                <Link to="/UserProfile">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Contact us</li>
                 </Link>
 

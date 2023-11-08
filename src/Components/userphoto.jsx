@@ -5,34 +5,7 @@ import {Link} from 'react-router-dom'
 import {FaPen} from 'react-icons/fa'
 import {BsFillCloudUploadFill} from 'react-icons/bs'
 import Accounts from '../Components/Accounts.jsx'
-
 const User = () => {
-    // const Acc1 = [
-    //     {
-    //     DataName: 'Name',
-    //     data: 'John Doe'
-    //     },
-    //     {
-    //     DataName: 'Email',
-    //     data: 'johndev@gmail.com'
-    //     },
-    //     {DataName: 'Password',
-    //     data: '********'
-
-    //     },
-    //     {DataName: 'Phone Number',
-    //     data: '+91 9493833749'
-
-    //     },
-    //     {DataName: 'Addres',
-    //     data: 'Kenilworth Road, Rolling Stones, Amsterdam'
-
-    //     },
-    //     {DataName: 'Date of Birth',
-    //     data: '23-12-1988'
-
-    //     }
-    // ]
   return (
     <div>
     <div className='mt-[1.5vw] mx-[3.8vw] z-50'>
@@ -69,13 +42,13 @@ const User = () => {
                 </Link>
             </div>
             <div className='w-[30vw] flex justify-center items-center  '>
-            <Link to='/Accounts'><button className=''>
+            <Link to='/History'><button className=''>
                     History
                 </button>
                 </Link>
             </div>
             <div className='w-[30vw] flex justify-center items-center '>
-            <Link to='/Accounts'><button className=''>
+            <Link to='/Payments'><button className=''>
                     Payment Method/Address
                 </button>
                 </Link>
