@@ -1,13 +1,24 @@
 import React from 'react'
-import addicon from '../../assets/addicon.png'
+import CartStatus from '../Cart/CartStatus'
+import re3 from '../../assets/re3.png'
+import re2 from '../../assets/re2.png'
+import Trusty from '../../Components/HomePage/Trusty'
+import Footer from '../Footer'
+import {Link} from 'react-router-dom'
+
 
 const AddDetail = () => {
+  const Addicon = {
+    img1: re3,
+    img2: re2,
+    clr1: 'teal-dark',
+    clr2: 'grey'
+  }
   return (
-    <div className='mx-[5vw] my-[2vw]'>
-        <div>
-            <div className='flex justify-center items-center'>
-                <img src={addicon} alt='' className='w-[80vw] 
-                sm:w-auto sm:h-auto w-[60vw] h-[6vw]' />
+    <div>
+        <div className='mx-[5vw] my-[2vw]'>
+            <div>
+              <CartStatus icon={Addicon}/>
             </div>
             <div className='text-[5vw] sm:text-[3vw] font-bold mt-[4vw] sm:mt-[0.2vw] 
             text-[#875A33] font-playfair'>Add Detail</div>
@@ -100,9 +111,17 @@ const AddDetail = () => {
               </div>
             </div>
           <div className='mt-[3vw]'>
-            <button className='bg-teal-dark py-[1vw] px-[8vw] text-white text-[3vw] sm:text-[1.2vw] rounded-[1.5vw]'>REVIEW AND PAY</button>
+            <Link to='/Payment'>
+              <button className='bg-teal-dark py-[1vw] px-[8vw]
+               text-white text-[3vw] sm:text-[1.2vw] rounded-[1.5vw]'>REVIEW AND PAY
+               </button></Link>
           </div>
         </div>
+        <div className='m-[1.5vw]'>
+          <Trusty/>
+        </div>
+        <Footer/>
+        
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
    
     const CartList = () => {
 
-    let Product = [
+    let CartProduct = [
         {
             oldPrice:'$7382',
             ProductPrice : '$6665',
@@ -45,7 +45,7 @@ import { Link } from 'react-router-dom'
                         (
                           <div className='flex items-center justify-center  flex-col ' >
                             <h3 className='text-[5vw]' >No Items in the Cart</h3>
-                            <Link to="/shopAll" >
+                            <Link to="/Dresses" >
                             <button className='px-[3vw] m-[4vw] rounded-[2vw] py-[1vw] 
                             bg-teal-dark text-white' >Shop Now</button>
                             </Link>

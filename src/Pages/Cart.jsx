@@ -9,7 +9,9 @@ import CartPrice from '../Components/Cart/CartSummary'
 import { useNavigate } from 'react-router-dom'
 import CartItem from '../Components/Cart/CartItem'
 import CartHead from '../Components/Cart/CartHead'
+import Trusty from '../Components/HomePage/Trusty'
 const Cart = () => {
+  
 //     const {cartItems,shippingInfo} = useSelector(
 //         (state) => state.cart
 //     )
@@ -38,29 +40,23 @@ const Cart = () => {
     // console.log(totalItemPrice,totalRealItemPrice)
   return (
     <div style={{fontStyle:"DM Sans"}} className=''>
-        {/* <Navbar /> */}
-            <div className='h-' >
-                {/* <CartList setTotalRealItemPrice={setTotalRealItemPrice} totalItemPrice={totalItemPrice} setTotalItemPrice={setTotalItemPrice} cartItems={cartItems} />
+            <div className='' >
+                {/* <CartList setTotalRealItemPrice={setTotalRealItemPrice} 
+                totalItemPrice={totalItemPrice} setTotalItemPrice={setTotalItemPrice} cartItems={cartItems} />
                 <CartPrice totalRealItemPrice={totalRealItemPrice}
                  totalItemPrice={totalItemPrice} cartItems={cartItems} />*/}
-                 <CartHead/>
+                <CartHead/>
                  <div className='flex flex-col sm:flex-row '>
-                    <div className='flex relative justify-center items-center'>
+                    <div className='flex justify-center items-center'>
                         <CartList className=''/>
                     </div>
-                    <div className='flex mt-[10vw]'>
+                    <div className='flex mt-[10vw] sm:mt-[0vw]'>
                     <CartSummary className=''/>
                     </div>
-                 
-
                  </div>
-                 <div className=' mt-[30vw]'>
-                 <Footer />
-                 </div>
-                 
-                 
+                 <Trusty/>
+                <Footer />
             </div> 
-            
     </div>
   )
 }

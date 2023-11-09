@@ -18,6 +18,8 @@ import Signup from './Pages/LoginAuth.jsx'
 import Hamburger from './Components/HomePage/hamburger.jsx'
 import UserProfile from './Components/UserInfo/userphoto.jsx'
 import AddDetail from './Components/Checkout/AddDetail.jsx'
+import Payment from './Components/Checkout/Payment.jsx'
+import OrderSuccess from './Components/Checkout/OrderSuccess.jsx'
 // import Navbar from './Test/Navbar.jsx'
 // import Login1 from './Test/login.jsx'
 // import myContext from './myContext.jsx';
@@ -42,6 +44,8 @@ const App = () => {
       <Route exact path='/hamburger' element={<Hamburger/>}/>
       <Route exact path='/UserProfile' element={<UserProfile/>}/>
       <Route exact path='/AddDetail' element={<AddDetail/>}/>
+      <Route exact path='/Payment' element={<Payment/>}/>
+      <Route exact path='/Order' element={<OrderSuccess/>}/>      
       {/* <Route exact path='/AddProduct' element={<AddProduct/>}/> */}
       {/* <Route exact path='/Dashboard' element={<Dashboard/>}/> 
       <Route exact path='/DashboardTab' element={<DashboardTab/>}/>

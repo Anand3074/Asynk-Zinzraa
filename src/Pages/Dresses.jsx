@@ -34,7 +34,7 @@ let Products3 = {
       <div>
           <Poster/>
       </div>
-      <div className='mt-[3vw]'>
+      <div className='mt-[0vw]'>
         <div className='flex justify-center '>
                 <img src={elestar} alt='' className='w-[2vw] h-[2vw]'/>
             </div>
@@ -42,7 +42,7 @@ let Products3 = {
                 <span>Our Products</span>
             </div>
         </div>
-        <div id='navbar' className='flex justify-center mx-[17vw] mt-[3vw] text-[2.2vw]'>
+        <div id='navbar' className='flex justify-center mx-[17vw] mt-[2vw] text-[2.2vw]'>
           <nav>
               <ul className='flex flex-row font-poppins text-[#454545] gap-[3vw]'>
                 <li className='flex justify-center w-[13vw] h-[7vw]'>WESTERN</li>

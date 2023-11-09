@@ -202,3 +202,31 @@ const Cartiu2 = () => {
 }
 
 export default Cartiu2
+
+// /// import React from 'react'
+// import bagicon from '../assets/bagicon.png'
+// import CartItem from '../Components/Cart/CartItem.jsx'
+// import CartHead from '../Components/Cart/CartHead.jsx'
+// import CartSummary from '../Components/Cart/CartSummary.jsx'
+
+// const Cart = () => {
+//     let bigPrice='$3782'
+//     let CartItems = 0
+//   return (
+//     <div>
+//         <div><CartHead/></div>
+//         <div className='flex sm:flex-row flex-col gap-[5vw]'>
+//             <div id='detail-tem' className='sm:w-[47vw] mt-[2vw]'>
+//                 <CartItem/>
+//             </div>
+//             <div>
+//                 <CartSummary/>
+//             </div>
+//         </div>
+        
+
+//     </div>
+//   )
+// }
+
+// export default Cart
