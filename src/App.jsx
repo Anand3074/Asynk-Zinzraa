@@ -18,9 +18,9 @@ import Signup from './Pages/LoginAuth.jsx'
 import Hamburger from './Components/HomePage/hamburger.jsx'
 import UserProfile from './Components/UserInfo/userphoto.jsx'
 import AddDetail from './Components/Checkout/AddDetail.jsx'
-import Navbar from './Test/Navbar.jsx'
-import Login1 from './Test/login.jsx'
-import myContext from './myContext.jsx';
+// import Navbar from './Test/Navbar.jsx'
+// import Login1 from './Test/login.jsx'
+// import myContext from './myContext.jsx';
 
 
 const App = () => {
