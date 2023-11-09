@@ -1,46 +1,42 @@
 import React from 'react'
-import WishItem from '../Components/WishItem'
+import WishProduct from '../Components/Wishlist/WishProducts'
+import WishHead from '../Components/Wishlist/WishHead'
+import {useState, useEffect} from 'react'
+import Footer from '../Components/Footer'
 
 const Wishlist = () => {
-let  itemsInWishlist = 0
+//     const {WishProduct,shippingInfo} = useSelector(
+//         (state) => state.cart
+//     )
+//     const { error, loading, isAuthenticated, user, userProfile } = useSelector(
+//     (state) => state.users
+//   );
+//     const [totalItemPrice, setTotalItemPrice] = useState(0)
+//     const [totalRealItemPrice, setTotalRealItemPrice] = useState(0)
+//     const navigate = useNavigate()
+//      const dispatch = useDispatch();
 
+  let WishArray = []   
+     useEffect(() => {
+     if(WishArray!==[]){
+        WishArray.map((item)=>{
+            // setTotalItemPrice((prev)=>(prev+Number(item.price)))
+            // setTotalRealItemPrice((prev)=>(prev+Number(item.realPrice)))
+        })
+        
+     }
+    //  if(!isAuthenticated){
+    //     navigate("/login")
+    //  }
+     
+     }, [])
+    // console.log(totalItemPrice,totalRealItemPrice)
   return (
-    <div className='m-[2vw]'>
-        <div className='text-[#875A33]'>
-            <div className='flex justify-center text-[3.8vw] font-semibold font-[fashion]'>
-                My Wishlist
+    <div style={{fontStyle:"DM Sans"}} className=' '>
+            <div className='' >
+              <WishProduct/>
             </div>
-            <div className='text-[1.8vw] flex justify-center mb-[3vw]'>
-                Total {itemsInWishlist} items
-            </div>
-        </div>
-        <div>
-            <div className='flex flex-row text-[1.8vw] font-semibold my-[1.2vw] mx-[2vw]'>
-                <div className='w-[35vw] '>
-                    Product Name
-                </div>
-                <div className='w-[20vw] '>
-                    Unit Price
-                </div>
-                <div className='w-[25vw] '>
-                    Stock Status
-                </div>
-            </div>
-            <hr className=' border-t border-gray-600 w-[100vw] h-[0.2vw]' />
-
-            <div>
-                <WishItem/>
-            </div>
-            <div>
-                <WishItem/>
-            </div>
-            <div>
-                <WishItem/>
-            </div>
-            <div>
-                <WishItem/>
-            </div>
-        </div>
+            <Footer />
     </div>
   )
 }

@@ -1,31 +1,3 @@
-// import React from 'react'
-// import bagicon from '../assets/bagicon.png'
-// import CartItem from '../Components/Cart/CartItem.jsx'
-// import CartHead from '../Components/Cart/CartHead.jsx'
-// import CartSummary from '../Components/Cart/CartSummary.jsx'
-
-// const Cart = () => {
-//     let bigPrice='$3782'
-//     let CartItems = 0
-//   return (
-//     <div>
-//         <div><CartHead/></div>
-//         <div className='flex sm:flex-row flex-col gap-[5vw]'>
-//             <div id='detail-tem' className='sm:w-[47vw] mt-[2vw]'>
-//                 <CartItem/>
-//             </div>
-//             <div>
-//                 <CartSummary/>
-//             </div>
-//         </div>
-        
-
-//     </div>
-//   )
-// }
-
-// export default Cart
-
 import React,{useState,useEffect} from 'react'
 // import Navbar from '../components/Layout/Navbar'
 // import { useSelector,useDispatch } from 'react-redux'
@@ -67,20 +39,28 @@ const Cart = () => {
   return (
     <div style={{fontStyle:"DM Sans"}} className=''>
         {/* <Navbar /> */}
-            <div className='' >
+            <div className='h-' >
                 {/* <CartList setTotalRealItemPrice={setTotalRealItemPrice} totalItemPrice={totalItemPrice} setTotalItemPrice={setTotalItemPrice} cartItems={cartItems} />
                 <CartPrice totalRealItemPrice={totalRealItemPrice}
                  totalItemPrice={totalItemPrice} cartItems={cartItems} />*/}
                  <CartHead/>
-                 <div className='flex flex-col sm:flex-row justify-center items-cenet'>
-                 <CartList/>
-                 <CartSummary/>
+                 <div className='flex flex-col sm:flex-row '>
+                    <div className='flex relative justify-center items-center'>
+                        <CartList className=''/>
+                    </div>
+                    <div className='flex mt-[10vw]'>
+                    <CartSummary className=''/>
+                    </div>
+                 
 
+                 </div>
+                 <div className=' mt-[30vw]'>
+                 <Footer />
                  </div>
                  
                  
             </div> 
-            <Footer />
+            
     </div>
   )
 }

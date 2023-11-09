@@ -12,7 +12,7 @@ const CartItem = ({product,totalItemPrice,setTotalItemPrice,setTotalRealItemPric
        setTotalRealItemPrice((prev=>(prev-Number(product.realPrice))))
    }
   return (
-    <div className='flex justify-center items-center sm:w-[50vw]'>
+    <div className='flex justify-center items-center sm:w-[50vw] m-[2vw]'>
         <div className='flex flex-row gap-[10vw] sm:gap-[1vw] '>
             <div>
                 <img src={product} alt='' className='w-[18vw] sm:w-[8vw] sm:h-[10vw] h-[22vw]'/>

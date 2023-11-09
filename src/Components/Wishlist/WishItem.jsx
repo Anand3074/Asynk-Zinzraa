@@ -1,21 +1,35 @@
 import React from 'react'
-import K3 from '../assets/k3.png'
+import K3 from '../../assets/k3.png'
 import {ImBin2} from 'react-icons/im'
+import { useSelector,useDispatch } from 'react-redux'
+import {removeItemFromWishlist} from '../../actions/wishlistActions'
+
+
+    // const dispatch = useDispatch();
+   
 const WishItem = () => {
-const Products = {
-    name:'Product Name',
-    qty:'2',
-    size: 'M',
-    iniPrice: '$5849',
-    oldPrice: '$8956',
-    orderDay: 'Dec 5, 2022'
+    const Products = {
+        image : K3,
+        name:'Product Name',
+        qty:'2',
+        size: 'M',
+        realPrice: '$5849',
+        price: '$8956',
+        orderDay: 'Dec 5, 2022'
 }
+
+    // const removeItemFromWishlist = () =>{
+    //     dispatch(removeItemsFromWishlist(Products.product))
+    //     setTotalItemPrice((prev)=>(prev-Number(Products.price)))
+    //     setTotalRealItemPrice((prev=>(prev-Number(Products.realPrice))))
+    // }
+    
 
   return (
 <div className='flex flex-col m-[1.5vw]'>
     <div className='flex flex-row'>
         <div className='w-[13.5vw]'>
-            <img src={K3} alt='' className='w-[11vw] h-[14vw] rounded-[1vw]'/>
+            <img src={Products.image} alt='' className='w-[11vw] h-[14vw] rounded-[1vw]'/>
         </div>
         <div className='flex flex-col items-start font-poppins w-[20vw] justify-center' id='product-detail'>
             <div className='mb-[0.3vw] text-[1.84vw]'>
@@ -28,7 +42,9 @@ const Products = {
                 Size: {Products.size}
             </div>
             <div className='flex pl-[8.5vw] justify-center '>
-                <ImBin2 className='w-[2vw] h-[2vw] text-red-700'/>
+                <button onClick={removeItemFromWishlist}>
+                        <ImBin2 className='w-[2vw] h-[2vw] text-red-700'/>
+                </button>
             </div>
         </div>
         <div className='flex flex-row font-semibold justify-center items-center gap-[2vw] w-[15vw]'>
