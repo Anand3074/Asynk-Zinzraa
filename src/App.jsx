@@ -10,10 +10,10 @@ import Login from './Pages/Login.jsx'
 import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Pages/Cart.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
-import AddProduct from './Test/AddProduct.jsx'
-import Dashboard from './Test/Dashboard.jsx'
-import DashboardTab from './Test/DashboardTab.jsx'
-import UpdateProduct from './Test/UpdateProduct.jsx'
+// import AddProduct from './Test/AddProduct.jsx'
+// import Dashboard from './Test/Dashboard.jsx'
+// import DashboardTab from './Test/DashboardTab.jsx'
+// import UpdateProduct from './Test/UpdateProduct.jsx'
 import Signup from './Pages/LoginAuth.jsx'
 import Hamburger from './Components/HomePage/hamburger.jsx'
 import UserProfile from './Components/UserInfo/userphoto.jsx'
@@ -42,13 +42,13 @@ const App = () => {
       <Route exact path='/hamburger' element={<Hamburger/>}/>
       <Route exact path='/UserProfile' element={<UserProfile/>}/>
       <Route exact path='/AddDetail' element={<AddDetail/>}/>
-      <Route exact path='/AddProduct' element={<AddProduct/>}/>
-      <Route exact path='/Dashboard' element={<Dashboard/>}/> 
+      {/* <Route exact path='/AddProduct' element={<AddProduct/>}/> */}
+      {/* <Route exact path='/Dashboard' element={<Dashboard/>}/> 
       <Route exact path='/DashboardTab' element={<DashboardTab/>}/>
       <Route exact path='/Login' element={<Login/>}/>
       <Route exact path='/UpdateProduct' element={<UpdateProduct/>}/>
       <Route exact path='/Navbar' element={<Navbar/>}/>
-      <Route exact path='/Login1' element={<Login1/>}/>
+      <Route exact path='/Login1' element={<Login1/>}/> */}
       </Routes>
       </BrowserRouter> 
     </div>

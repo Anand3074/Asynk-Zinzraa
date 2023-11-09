@@ -5,6 +5,7 @@ import Cards from '../Components/ProductDisplay/Cards.jsx'
 import c1 from '../assets/c1.png'
 import c2 from '../assets/c2.png'
 import c3 from '../assets/c3.png'
+// import Filter from '../Components/ProductDisplay/Filter.jsx'
 
 const Dresses = () => {
 
@@ -109,6 +110,7 @@ let Products3 = {
                 <div>${initialPrice}</div>
                 <div>-</div>
                 <div>${finalPrice}</div>
+                {/* <div><Filter/></div> */}
 
               </div>
             </div>

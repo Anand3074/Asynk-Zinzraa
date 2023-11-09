@@ -1,87 +1,86 @@
-import React from 'react'
-import bagicon from '../assets/bagicon.png'
-import CartItem from '../Components/Checkout/CartItem.jsx'
-import {Link} from 'react-router-dom'
+// import React from 'react'
+// import bagicon from '../assets/bagicon.png'
+// import CartItem from '../Components/Cart/CartItem.jsx'
+// import CartHead from '../Components/Cart/CartHead.jsx'
+// import CartSummary from '../Components/Cart/CartSummary.jsx'
 
+// const Cart = () => {
+//     let bigPrice='$3782'
+//     let CartItems = 0
+//   return (
+//     <div>
+//         <div><CartHead/></div>
+//         <div className='flex sm:flex-row flex-col gap-[5vw]'>
+//             <div id='detail-tem' className='sm:w-[47vw] mt-[2vw]'>
+//                 <CartItem/>
+//             </div>
+//             <div>
+//                 <CartSummary/>
+//             </div>
+//         </div>
+        
+
+//     </div>
+//   )
+// }
+
+// export default Cart
+
+import React,{useState,useEffect} from 'react'
+// import Navbar from '../components/Layout/Navbar'
+// import { useSelector,useDispatch } from 'react-redux'
+import CartList from '../Components/Cart/CartList'
+import Footer from '../Components/Footer'
+import CartSummary from '../Components/Cart/CartSummary'
+// import { removeItemsFromCart } from '../actions/cartActions'
+import CartPrice from '../Components/Cart/CartSummary'
+import { useNavigate } from 'react-router-dom'
+import CartItem from '../Components/Cart/CartItem'
+import CartHead from '../Components/Cart/CartHead'
 const Cart = () => {
-    let bigPrice='$3782'
+//     const {cartItems,shippingInfo} = useSelector(
+//         (state) => state.cart
+//     )
+//     const { error, loading, isAuthenticated, user, userProfile } = useSelector(
+//     (state) => state.users
+//   );
+    // const [totalItemPrice, setTotalItemPrice] = useState(0)
+    // const [totalRealItemPrice, setTotalRealItemPrice] = useState(0)
+    // const navigate = useNavigate()
+    //  const dispatch = useDispatch();
+    const CartProduct=[]
+     
+     useEffect(() => {
+     if(CartProduct!==[]){
+        CartProduct.map((item)=>{
+            // setTotalItemPrice((prev)=>(prev+Number(item.price)))
+            // setTotalRealItemPrice((prev)=>(prev+Number(item.realPrice)))
+        })
+        
+     }
+    //  if(!isAuthenticated){
+    //     navigate("/login")
+    //  }
+     
+     }, [])
+    // console.log(totalItemPrice,totalRealItemPrice)
   return (
-    <div className=' m-[2vw]'>
-        <div className='flex justify-center items-center'>
-            <img src={bagicon} alt='' className='w-[80vw] sm:w-auto sm:h-auto w-[60vw] h-[6vw]' />
-        </div>
-        <div className=''>
-            <div className='sm:text-[3.5vw] text-[5vw]  sm:mt-[0vw] mt-[vw]
-               font-playfair text-[#875A33]
-               flex flex-col items-center sm:items-start justify-center sm:justify-start'>My Bag</div>
-            <div className='text-[#875A33] text-[3vw] sm:text-[1.5vw]'>Total 1 item</div>
-        </div>
-        <div className='flex sm:flex-row flex-col gap-[5vw]'>
-            <div id='detail-tem' className='sm:w-[47vw] mt-[2vw]'>
-                <CartItem/>
-            </div>
-            <div className='flex flex-col justify-center items-start ml-[10vw]'>
-            <div id='cart-detail' className='w-[37vw] h-[18vw] border border-solid border-1px
-             border-text-slate-400 rounded-[3vw] p-[1.5vw]'>
-                <div className='text-[2.5vw]'>Order Summary</div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
-                    <div className="w-[24vw]">
-                        Big Total
-                    </div>
-                    <div className="w-[10vw]">
-                        {bigPrice}
-                    </div>
-                </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
-                    <div className='font-semibold w-[24vw]'>
-                        Discount on MRP 
-                    </div>
-                    <div className="w-[10vw]">
-                        {bigPrice}
-                    </div>
-                </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
-                    <div className="w-[24vw]">
-                        Sub Total
-                    </div>
-                    <div className="w-[10vw]">
-                        {bigPrice}
-                    </div>
-                </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
-                    <div className="w-[24vw]">
-                        Convenience Charges
-                    </div>
-                    <div className="w-[10vw]">
-                        {bigPrice}
-                    </div>
-                </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
-                    <div className="w-[24vw]">
-                        Your Pay
-                    </div>
-                    <div className="w-[10vw]">
-                        {bigPrice}
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div className='py-[0.5vw] px-[1.5vw] w-[32vw] sm:h-[3vw] h-[4vw] 
-                mt-[1vw] border border-solid border-1px
-             border-text-slate-400 rounded-[3vw] text-[1.5vw]'>
-                    <input value={''} 
-                    placeholder='Apply Coupon Code'/>
-                </div>
-            </div>
-            <div className='h-[3vw] w-[27vw]'>
-                <Link to='/AddDetail'><button className='bg-teal-dark text-white font-semibold
-                         text-[1.2vw] rounded-[2vw] px-[12vw] py-[1vw] mt-[1vw]'>
-                    Checkout
-                </button></Link>
-            </div>
-            </div>
-        </div>
+    <div style={{fontStyle:"DM Sans"}} className=''>
+        {/* <Navbar /> */}
+            <div className='' >
+                {/* <CartList setTotalRealItemPrice={setTotalRealItemPrice} totalItemPrice={totalItemPrice} setTotalItemPrice={setTotalItemPrice} cartItems={cartItems} />
+                <CartPrice totalRealItemPrice={totalRealItemPrice}
+                 totalItemPrice={totalItemPrice} cartItems={cartItems} />*/}
+                 <CartHead/>
+                 <div className='flex flex-col sm:flex-row justify-center items-cenet'>
+                 <CartList/>
+                 <CartSummary/>
 
+                 </div>
+                 
+                 
+            </div> 
+            <Footer />
     </div>
   )
 }

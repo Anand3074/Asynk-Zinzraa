@@ -83,7 +83,7 @@ const Nav2 = () => {
                     <Link to="/Wishlist">
                         <AiFillHeart className="text-white"/>
                     </Link>
-                    <Link to="/Dashboard">
+                    <Link to="/Cart">
                         <HiShoppingBag className="text-white"/>
                     </Link>
                     </div>
