@@ -26,7 +26,7 @@ const Nav2 = () => {
                 <Link to="/Dresses">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Saree</li>
                 </Link>
-                <Link to="/Dresses">
+                <Link to="/Kurtas">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Kurtas</li>
                 </Link>
                 <Link to="/Dresses">
@@ -50,10 +50,10 @@ const Nav2 = () => {
                         <Link to="/">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Product</li>
                         </Link>
-                        <Link to="/Carousel">
+                        <Link to="/Dresses">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
                         </Link>
-                        <Link to="/Dresses">
+                        <Link to="/Kurtas">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
                         </Link>
                         <Link to="/Dresses">

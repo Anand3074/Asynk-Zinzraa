@@ -1,7 +1,7 @@
 import React from 'react'
-import Vec4 from '../assets/vec4.png'
-import elestar from '../assets/ele1.png'
-import grpstr from '../assets/grpstr.png'
+import Vec4 from '../../assets/vec4.png'
+import elestar from '../../assets/ele1.png'
+import grpstr from '../../assets/grpstr.png'
 
 const Testimonial = () => {
     let review1='"So delighted to find Zinzraa. Beautiful outfits with nice options & customer service."'
@@ -13,53 +13,49 @@ const Testimonial = () => {
         <div>
             <div>
                 <div className='flex justify-center'>
-                    <img src={elestar} alt='' className='w-[10px] md:w-auto '/>
+                    <img src={elestar} alt='' className=''/>
                 </div>
-                <div className='flex font-lora justify-center text-[#875A33] md:text-[38px] md:mb-[24px] mb-[8px]' >
+                <div className='flex font-lora justify-center text-[#875A33] text-[5vw]' >
                     <span>Customer Stories</span>
                 </div>
             </div>
-            <div className='justify-center w-full md:h-auto h-[250px] md:py-[38px] py-[12px]' style={{ backgroundImage: `url(${Vec4})`}}>
-                <div className='flex flex-row justify-center gap-[12px] md:gap-[37px]'>
-                <div className=' border border-solid border-1px border-[#875A33]
-                                        bg-white justify-center items-center
-                                        md:h-[470px] md:w-[470px] h-[160px] w-[160px]'>
-                       <div className='md:text-[32px] text-[10px]  font-noto md:mt-[54px] 
-                                    mt-[18px] md:mx-[38px] mx:[13px] justify-center 
-                                    '>
+        <div className='h-[40vw] flex px-[10vw] py-[3vw] font-playfair' 
+        style={{ backgroundImage: `url(${Vec4})`}}>
+                <div className='flex flex-row gap-[5vw]  px-[6.5vw] justify-center items-center' >
+                    <div className=' flex border border-solid border-2px border-[#875A33]
+                     w-[32vw] bg-white text-[2.4vw] h-[31vw] p-[3vw]
+                    flex flex-col flex justify-center items-center'>
+                       <div className=' flex justify-center items-center p-[0.4]'>
                             {review1}
                         </div>    
-                        <div className='flex flex-col justify-center'>
-                            <div className='md:mt-[110px] mt-[37px] justify-center'>
+                        <div className=' mt-[2vw] mt-[2vw] flex flex-col justify-center items-center'>
+                            <div className=''>
                                 {person1}
                             </div>
-                            <div className='justify-center'>
-                                <img src={grpstr} alt=''/>
+                            <div className=''>
+                                <img src={grpstr} alt='' className='w-[8vw] h-[1.5vw]'/>
+                            </div>  
+                        </div>
+                    </div>
+                    <div className=' flex border border-solid border-2px border-[#875A33]
+                     w-[32vw] bg-white text-[2.4vw] h-[31vw] p-[3vw]
+                    flex flex-col flex justify-center items-center'>
+                       <div className=' flex justify-center items-center p-[0.4]'>
+                            {review1}
+                        </div>    
+                        <div className=' mt-[2vw] flex flex-col justify-center items-center'>
+                            <div className=''>
+                                {person1}
+                            </div>
+                            <div className=''>
+                                <img src={grpstr} alt='' className='w-[8vw] h-[1.5vw]'/>
                             </div>  
                         </div>
                                    
                     </div>
-                    <div className='border border-solid border-1px border-[#875A33] 
-                                        bg-white justify-center items-center
-                                        md:h-[470px] md:w-[470px] h-[160px] w-[160px]'>
-                       <div className='md:text-[32px] text-[10px]  font-noto md:mt-[54px] 
-                                    mt-[18px] md:mx-[38px] mx:[13px] justify-center 
-                                    '>
-                            {review1}
-                        </div>    
-                        <div className='flex flex-col justify-center'>
-                            <div className='md:mt-[110px] mt-[37px] justify-center'>
-                                {person1}
-                            </div>
-                            <div className='justify-center'>
-                                <img src={grpstr} alt=''/>
-                            </div>  
-                        </div>
-                                   
-                    </div>   
+                    </div>
             </div>
         </div>
-    </div>
     </div>
   )
 }

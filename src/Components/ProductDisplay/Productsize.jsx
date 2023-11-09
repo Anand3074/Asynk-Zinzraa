@@ -1,14 +1,14 @@
 import React from 'react'
-import Sz1 from '../assets/sz1.png'
-import Sz2 from '../assets/sz2.png'
-import Sz3 from '../assets/sz3.png'
-import Sz4 from '../assets/sz4.png'
-import C2 from '../assets/c2.png'
+import Sz1 from '../../assets/sz1.png'
+import Sz2 from '../../assets/sz2.png'
+import Sz3 from '../../assets/sz3.png'
+import Sz4 from '../../assets/sz4.png'
+import C2 from '../../assets/c2.png'
 import { FiHeart } from 'react-icons/fi'
 import {AiFillStar} from 'react-icons/ai'
-import szi1 from '../assets/szi1.png'
-import szi2 from '../assets/szi2.png'
-import szi3 from '../assets/szi3.png'
+import szi1 from '../../assets/szi1.png'
+import szi2 from '../../assets/szi2.png'
+import szi3 from '../../assets/szi3.png'
 
 
 const Productsize = () => {

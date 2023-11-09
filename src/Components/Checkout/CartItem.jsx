@@ -1,5 +1,5 @@
 import React from 'react'
-import C1 from '../assets/c1.png'
+import C1 from '../../assets/c1.png'
 
 const CartItem = () => {
 

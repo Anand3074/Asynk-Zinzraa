@@ -1,7 +1,6 @@
 import React from 'react'
-import Wtren from '../assets/westrnd.png'
-import ele from '../assets/ele1.png'
-import { Button } from 'react-scroll'
+import Wtren from '../../assets/westrnd.png'
+import ele from '../../assets/ele1.png'
 import { Link } from 'react-router-dom'
 
 const Wtrend = () => {

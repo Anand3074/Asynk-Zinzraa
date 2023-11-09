@@ -1,9 +1,9 @@
 import React from 'react'
-import ele from '../assets/ele2.png'
-import K2 from '../assets/k2.png'
-import K3 from '../assets/k3.png'
-import Vec3 from '../assets/vec3.png'
-import elestar2 from '../assets/ele1.png'
+import ele from '../../assets/ele2.png'
+import K2 from '../../assets/k2.png'
+import K3 from '../../assets/k3.png'
+import Vec3 from '../../assets/vec3.png'
+import elestar2 from '../../assets/ele1.png'
 import { Link } from 'react-router-dom'
 
 const kalki = () => {

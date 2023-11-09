@@ -12,7 +12,7 @@ const hamburger = () => {
                 <Link to="/Auth">
                     <li className='my-4 py-4  hover:rounded'>Saree</li>
                 </Link>
-                <Link to="/Dresses">
+                <Link to="/Kurtas">
                     <li className='my-4 py-4  hover:rounded'>Kurtas</li>
                 </Link>
                 <Link to="/Dresses">

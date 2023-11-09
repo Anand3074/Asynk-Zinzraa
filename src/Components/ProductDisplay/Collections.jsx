@@ -1,5 +1,5 @@
 import React from 'react'
-import elestar from '../assets/ele1.png'
+import elestar from '../../assets/ele1.png'
 import Cards from './Cards'
 
 

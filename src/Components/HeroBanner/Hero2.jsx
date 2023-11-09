@@ -1,6 +1,6 @@
 import React from 'react'
-import hero4 from '../assets/hero4.png'
-import vec6 from '../assets/vec6.png'
+import hero4 from '../../assets/hero4.png'
+import vec6 from '../../assets/vec6.png'
 
 const Hero2 = () => {
   return (

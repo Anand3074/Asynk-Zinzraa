@@ -1,6 +1,6 @@
 import React from 'react'
 import bagicon from '../assets/bagicon.png'
-import CartItem from '../Components/CartItem.jsx'
+import CartItem from '../Components/Checkout/CartItem.jsx'
 import {Link} from 'react-router-dom'
 
 const Cart = () => {

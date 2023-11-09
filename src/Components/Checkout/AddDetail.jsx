@@ -1,5 +1,5 @@
 import React from 'react'
-import addicon from '../assets/addicon.png'
+import addicon from '../../assets/addicon.png'
 
 const AddDetail = () => {
   return (

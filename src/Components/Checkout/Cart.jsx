@@ -1,5 +1,5 @@
 import React from 'react'
-import bagicon from '../assets/bagicon.png'
+import bagicon from '../../assets/bagicon.png'
 import CartItem from './CartItem.jsx'
 
 const Cart = () => {

@@ -1,9 +1,9 @@
 import React from 'react'
-import Vec2 from '../assets/vec2.png'
-import C1 from '../assets/c1.png'
-import C2 from '../assets/c2.png'
-import C3 from '../assets/c3.png'
-import Vec3 from '../assets/vec3.png'
+import Vec2 from '../../assets/vec2.png'
+import C1 from '../../assets/c1.png'
+import C2 from '../../assets/c2.png'
+import C3 from '../../assets/c3.png'
+import Vec3 from '../../assets/vec3.png'
 
 const Categ1 = () => {
   let Category1='KURTA SET'

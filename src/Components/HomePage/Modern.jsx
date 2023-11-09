@@ -1,6 +1,6 @@
 import React from 'react'
-import modern from '../assets/modern.png'
-import Vec5 from '../assets/vec5.png'
+import modern from '../../assets/modern.png'
+import Vec5 from '../../assets/vec5.png'
 const Modern = () => {
   return (
     <div className='flex'>
