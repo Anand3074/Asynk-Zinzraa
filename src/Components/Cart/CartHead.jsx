@@ -1,6 +1,4 @@
 import React from 'react'
-import del1 from '../../assets/delivery1.png'
-import pay1 from '../../assets/pay1.png'
 import CartStatus from './CartStatus'
 import re1 from '../../assets/re1.png'
 import re2 from '../../assets/re2.png'
