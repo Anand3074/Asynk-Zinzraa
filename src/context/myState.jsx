@@ -3,7 +3,7 @@ import MyContext from './myContext'
 import { Timestamp, addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, setDoc } from 
 'firebase/firestore';
 import { toast } from 'react-toastify';
-import { fireDB } from '../../firebase/firebase.jsx';
+import { fireDB } from '../firebase/firebase.jsx';
 
 function myState(props) {
     const [mode, setMode] = useState('light');
