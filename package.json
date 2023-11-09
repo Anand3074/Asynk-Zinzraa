@@ -14,6 +14,7 @@
     "@reduxjs/toolkit": "^1.9.7",
     "aos": "^3.0.0-beta.6",
     "context": "^3.0.14",
+    "create-react-context": "^0.3.0",
     "firebase": "^10.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
