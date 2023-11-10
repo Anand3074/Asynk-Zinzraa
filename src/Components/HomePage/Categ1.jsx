@@ -4,6 +4,7 @@ import C1 from '../../assets/c1.png'
 import C2 from '../../assets/c2.png'
 import C3 from '../../assets/c3.png'
 import Vec3 from '../../assets/vec3.png'
+import { Link } from 'react-router-dom'
 
 const Categ1 = () => {
   let Category1='KURTA SET'
@@ -31,19 +32,19 @@ const Categ1 = () => {
         </div>
         <div className='flex flex-row text-[#C99359] md:h-[96px] h-[32px] items-center md:text-[48px] md:px-[54px] md:gap-[25px] text-[16px] font-playfair w-full gap-[3px]'>
           <div className='w-1/3 flex justify-center'>
-              <span className='' >
+              <Link to='/Kurtas'><span className='text-[4vw]' >
                 {Category1}
-              </span>
+              </span></Link>
           </div>
           <div className='w-1/3 flex justify-center'>
-              <span className=''>
+          <Link to='/Sarees'><span className='text-[4vw]' >
                 {Category2}
-                </span>
+              </span></Link>
           </div>
           <div className='w-1/3 flex justify-center'>
-            <span className=''>
-              {Category3}
-            </span>
+          <Link to='/Dresses'><span className='text-[4vw]' >
+                {Category3}
+              </span></Link>
           </div>
         </div>
         <div className='w-full md:h-[60px] h-[20px]'>

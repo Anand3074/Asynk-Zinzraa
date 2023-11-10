@@ -14,6 +14,8 @@ import {
         product: id,
         coverImage: product.coverImage,
         realPrice: product.realPrice,
+        size:product.size,
+        fabric:product.fabric
       },
     });
   
