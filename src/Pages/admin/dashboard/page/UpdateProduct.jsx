@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import myContext from '../../../../context/myContext';
-import Navbar from './page/NavbarAdmin';
+// import Navbar from './page/NavbarAdmin';
 import Footer from '../../../Components/Footer';
 
 function UpdateProduct() {
@@ -8,7 +8,7 @@ function UpdateProduct() {
     const { products, setProducts, updateProduct } = context;
     return (
         <div>
-            <Navbar/>
+            {/* <Navbar/> */}
             <div className=' flex justify-center items-center h-screen'>
                 <div className=' bg-gray-800 px-10 py-10 rounded-xl '>
                     <div className="">
