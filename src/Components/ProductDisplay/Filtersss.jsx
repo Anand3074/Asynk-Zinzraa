@@ -46,7 +46,7 @@ const Filtersss = ({setMax, setmin, min, max, fetchProduct, sizeList, FabricList
             className='text-red-600' >Clear Filter</p>
     </div>
      <div className='mt-[4vw] ' >
-        <div className='text-[1.8vw] mb-[1.2vw] font-bold'>Size</div>
+        <div className='font-bold sm:text-[2vw] text-[4vw] sm:my-[1vw] mt-[7vw]'>Size</div>
         <div className=" flex flex-col f">
 
     <div className='font-poppins mb-[0.6vw]'>
@@ -82,14 +82,15 @@ const Filtersss = ({setMax, setmin, min, max, fetchProduct, sizeList, FabricList
 </div>
 
 <div className=''>
-              <div className='font-bold text-[2vw] my-[1.5vw]'>
+              <div className='font-bold sm:text-[2vw] text-[4vw] sm:my-[1.5vw] mt-[7vw]'>
                 Price
               </div>
               <div className='flex flex-col'>
-                <input type='range' className='w-[18vw] h-[0.8vw] accent-color'
+                <input type='range' className='sm:w-[18vw] w-[20vw] sm:h-[0.8vw] h-[1.2vw] 
+                my-[1vw] accent-color'
                 defaultValue={0}
                 min={0} max={10000} onChange={(e)=>setMaxPrice(e.target.value)}/>
-                <div className='flex flex-row gap-[9vw] text-[1.8vw]'>
+                <div className='flex flex-row gap-[10vw] text-[2vw] sm:text-[1.5vw] mt-[1.5vw] font-semibold sm:mt-[0.2vw]'>
                   <div>
                     $ 0
                   </div>
@@ -103,7 +104,7 @@ const Filtersss = ({setMax, setmin, min, max, fetchProduct, sizeList, FabricList
 {/* Fabric */}
 
 <div className='mt-[4vw]' >
-    <div className='text-[1.8vw] font-bold mb-[1.2vw]'>Fabric</div>
+    <div className='font-bold sm:text-[2vw] text-[4vw] sm:my-[1.5vw] mt-[7vw]'>Fabric</div>
         <div className='font-poppins mb-[0.6vw]' >
             <Checkbox label="Silk" onChange={() => handleFabricChange("Silk")} 
             className="" defaultChecked={FabricName.includes("Silk") ? true : false} />

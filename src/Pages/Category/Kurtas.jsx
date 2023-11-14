@@ -1,10 +1,9 @@
 import React from 'react'
-import WesternPost from '../Components/westernPost'
 
 const Kurtas = () => {
   return (
     <div>
-      <WesternPost/>
+        Kurtas made from finest hand-Stitched Artisans.
     </div>
   )
 }
