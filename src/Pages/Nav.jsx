@@ -23,13 +23,13 @@ const Nav2 = () => {
                 <Link to="/" >
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Products</li>
                 </Link>
-                <Link to="/Dresses">
+                <Link to="/Category/*">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Saree</li>
                 </Link>
-                <Link to="/Kurtas">
+                <Link to="/Category/*">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Kurtas</li>
                 </Link>
-                <Link to="/Dresses">
+                <Link to="/Category/*">
                     <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Dresses</li>
                 </Link>
                 <Link to="/UserProfile">
@@ -50,16 +50,16 @@ const Nav2 = () => {
                         <Link to="/">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Product</li>
                         </Link>
-                        <Link to="/Dresses">
+                        <Link to="/Saree/*">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
                         </Link>
-                        <Link to="/Kurtas">
+                        <Link to="/Kurtas/*">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
                         </Link>
-                        <Link to="/Dresses">
+                        <Link to="/Dresses/*">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
                         </Link>
-                        <Link to="/UserProfile">
+                        <Link to="/Dashboard">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Contact Us</li>
                         </Link>
                     </ul>
@@ -77,7 +77,7 @@ const Nav2 = () => {
                         />
                     </div>
                     <div className='flex space-x-[30px]  md:space-x-[16px] items-center mr-7  md:mr-0'>
-                    <Link to="/Auth">
+                    <Link to="/Signup">
                         <FaUser className="text-white"/>
                     </Link>
                     <Link to="/Wishlist">

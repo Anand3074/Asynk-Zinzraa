@@ -132,22 +132,22 @@ const Products = () => {
         <Categ1/>
       </div>
       <div className='md:mt-[56px] mt-[19px]'>
-        <Collections group={Group1}/>  
+        {/* <Collections group={Group1}/>   */}
       </div>
       <div className='md:mt-[68px]'>
         <Wtrends/>
       </div>
       <div className='md:mt-[56px] mt-[19px]'>
-        <Collections group={Group2}/>  
+        {/* <Collections group={Group2}/>   */}
       </div>
       <div>
         <Kalki/>
       </div>
       <div>
-      <Collections group={Group3}/>
+      {/* <Collections group={Group3}/> */}
       </div>
       <div>
-      <Collections group={Group4}/>
+      {/* <Collections group={Group4}/> */}
       </div>
       <div>
       <Testimonial/> 
