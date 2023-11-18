@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import myContext from '../myContext.jsx'
+import myContext from '../context/myContext'
 
 function AddProduct() {
     const context = useContext(myContext);    
-    const {products:[],setProducts:[],addProduct} = context
+    const {products,setProducts,addProduct} = myContext
     return (
         <div>
             <div className=' flex justify-center items-center h-screen'>
@@ -14,7 +14,7 @@ function AddProduct() {
                     <div>
                         <input type="text"
                        onChange={(e) => setProducts({ ...products, title: e.target.value })} value={products.title}
-                            name='title'
+                            name='Zinzraa'
                             className=' bg-gray-600 mb-4 px-2 py-2 w-full lg:w-[20em] rounded-lg text-white placeholder:text-gray-200 outline-none'
                             placeholder='Product title'
                         />

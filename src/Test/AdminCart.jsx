@@ -1,12 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import myContext from '../../context/data/myContext';
-import Layout from '../../components/layout/Layout';
-import Modal from '../../components/modal/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromCart } from '../../redux/cartSlice';
 import { toast } from 'react-toastify';
-
-
 function Cart() {
 
   const context = useContext(myContext)

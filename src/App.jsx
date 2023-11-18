@@ -3,8 +3,8 @@ import React from 'react'
 import Nav from './Pages/Nav.jsx'
 import Products from './Pages/Products.jsx'
 import Login from './Pages/Registrations/Login.jsx'
-import Wishlist from './Pages/Wishlist.jsx'
-import Cart from './Pages/Cart.jsx'
+// import Wishlist from './Pages/Wishlist.jsx'
+// import Cart from './Pages/Cart.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
 import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'
 import Dashboard from './Pages/admin/dashboard/Dashboard.jsx'
@@ -27,7 +27,6 @@ import Category from './Pages/Category/Category.jsx'
 // import Western from './Pages/Western'
 
 const App = () => {
-  let setActiveTab=0
   return (
     <div>
       <MyState>
@@ -35,8 +34,8 @@ const App = () => {
       <Nav/>
       <Routes>
       <Route exact path='/' element={<Products/>}/>
-      <Route exact path='/Wishlist' element={<Wishlist/>}/>
-      <Route exact path='/Cart' element={<Cart/>}/>
+      {/* <Route exact path='/Wishlist' element={<Wishlist/>}/> */}
+      {/* <Route exact path='/Cart' element={<Cart/>}/> */}
       <Route exact path='/detail' element={<Detail/>}/>
       <Route exact path='/hamburger' element={<Hamburger/>}/>
       <Route exact path='/UserProfile' element={<UserProfile/>}/>
@@ -56,12 +55,12 @@ const App = () => {
       <Route exact path='/MobileLogin/OtpVerify' element={<OtpVerify/>}/>
 
               {/* Category */}
-      <Route exact path='/Category/*' element={<Category setActiveTab={setActiveTab=0}/>}/> 
+      <Route exact path='/Category/*' element={<Category/>}/> 
       {/* <Route exact path='/Western/*' element={<Category/>}/> */}
-      <Route exact path='/Saree/*' element={<Category setActiveTab={setActiveTab===2}/>}/>
-      <Route exact path='/Kurtas/*' element={<Category setActiveTab={setActiveTab===3}/>}/>
+      <Route exact path='/Saree/*' element={<Category/>}/>
+      <Route exact path='/Kurtas/*' element={<Category/>}/>
       {/* <Route exact path='/Ethnic/*' element={<Ethnic/>}/> */}
-      <Route exact path='/Dresses/*' element={<Category setActiveTab={setActiveTab===1}/>}/>
+      <Route exact path='/Dresses/*' element={<Category/>}/>
       </Routes>
      
       </MyState>

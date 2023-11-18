@@ -2,7 +2,6 @@ import {useState} from 'react'
 import Poster from '../../Components/HomePage/Modern.jsx'
 import elestar from '../../assets/ele1.png'
 import Filtersss from '../../Components/ProductDisplay/Filtersss.jsx'
-import CategoryNav from '../../Components/ShopByCategory/CategoryNav.jsx'
 import Western from './Western'
 import Saree from './Saree'
 import Kurtas from './Kurtas'
@@ -11,7 +10,7 @@ import Ethnic from './Ethnic'
 
 // import ProductList from '../Components/ProductDisplay/ProductList.jsx'
 
-const Category = () => {
+const Category = ({}) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleClick = (index) => {
@@ -70,13 +69,13 @@ const Category = () => {
       </div>
     </div>
         <div id='products-container-parent' className='flex flex-row'>
-          <div className=''>
+          <div className='w-[25vw] ' id='left'>
             <Filtersss/>
           </div>
           <div id='right' className='w-[75vw] flex flex-col'>
-            <div className='flex flex-row justify-center gap-[5vw] mb-[2vw]'>
+            <div className='flex flex-row justify-start items-start gap-[5vw] px-[6vw] my-[3vw]'>
               {activeTab !== null && tabComponents[activeTab]}
-           </div>
+            </div>
           </div>
         </div>
     </div>

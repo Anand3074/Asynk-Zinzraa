@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import MyContext from './myContext'
-import { Timestamp, addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, setDoc } from 
+import { Timestamp, addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, 
+    orderBy, query, setDoc } from 
 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { fireDB } from '../firebase/firebase.jsx';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { fetchProducts } from '../Redux/productsSlice.js';
 
 function myState(props) {
     const [mode, setMode] = useState('light');
@@ -120,6 +123,17 @@ function myState(props) {
             setLoading(false)
         }
     }
+
+
+    // fetchProduct
+
+//     const dispatch = useDispatch();
+//     const Product = useSelector((state) => state.Product.products);
+
+//   useEffect(() => {
+//     // Fetch products when the component mounts
+//     dispatch(fetchProducts());
+//   }, [dispatch]);
 
     // delete product
 
