@@ -11,7 +11,7 @@ const ProductList = () => {
 
   const dispatch = useDispatch()
   const handleAddToCart = (item) => {
-      console.log(item)
+      // console.log(item)
       dispatch(addItemsToCart(item))
   }
   

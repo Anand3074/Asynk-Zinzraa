@@ -1,12 +1,7 @@
 import React from 'react'
-import { removeItemsFromCart } from '../../Redux/cartActions'
-import { useSelector,useDispatch } from 'react-redux'
-const CartItem = ({products,title, price, imageUrl, category, description, date}) => {
-     const dispatch = useDispatch();
-    const removeItemFromCart = () =>{
-        // dispatch(removeItemsFromCart(items.id))
-    }
-   
+
+const CartItem = ({products,title, price, imageUrl, category, description, date, removeItemFromCart}) => {
+
   return (
     <div className='flex justify-center items-center sm:w-[50vw] m-[2vw]'>
         <div className='flex flex-row gap-[10vw] sm:gap-[1vw] '>
@@ -22,7 +17,7 @@ const CartItem = ({products,title, price, imageUrl, category, description, date}
                     Rs. {price}
                     </div>
                     <div className='text-red-400 sm:text-[1vw] text-[1.6vw] line-through'>
-                        {price}
+                    Rs.{Math.floor(price * (1 + 43 / 100))}
                     </div>
                 </div>
                 <p className=''>Delivered on </p>

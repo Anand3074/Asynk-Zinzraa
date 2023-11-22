@@ -26,15 +26,16 @@ import {
     localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
   };
   
-  export const removeItemsFromCart = (productId) => async (dispatch, getState) => {
+  export const removeItemsFromCart = (id) => async (dispatch, getState) => {
+    // const { title, price, imageUrl, category, description, id } = item;
     dispatch({
       type: REMOVE_CART_ITEM,
-      payload: productId,
+      payload: id,
     });
   
-   
-  };
-  
+    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+  }
+
   export const removeCart = () => async (dispatch,getState)=>{
     dispatch({
       type:REMOVE_CART

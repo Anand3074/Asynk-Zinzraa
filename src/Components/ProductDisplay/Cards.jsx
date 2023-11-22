@@ -15,11 +15,6 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart}) =
         setWishClick((prevchangeWish) => !prevchangeWish);
             };
     
-
-    
-    
-
-
   return (
     
         <div className='w-[25vw] h-[38vw] mr-[5vw]' >
@@ -51,7 +46,7 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart}) =
             </div>
                 <div className='flex text-red-400 font-lora items-center 
                 mr-[12vw] line-through text-[1.4vw]  md:text-[1vw]'>
-                    ${price}
+                    ${Math.floor(price * (1 + 43 / 100))}
                 </div>
             </div>
                 <div className='absolute md:right-[1vw] right-[1.5vw]  md:top-[3.3vw] top-[1vw] items-start'>

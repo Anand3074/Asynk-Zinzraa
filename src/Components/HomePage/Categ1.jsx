@@ -32,17 +32,17 @@ const Categ1 = () => {
         </div>
         <div className='flex flex-row text-[#C99359] md:h-[96px] h-[32px] items-center md:text-[48px] md:px-[54px] md:gap-[25px] text-[16px] font-playfair w-full gap-[3px]'>
           <div className='w-1/3 flex justify-center'>
-              <Link to='/Kurtas'><span className='text-[4vw]' >
+              <Link to='/Category'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category1}
               </span></Link>
           </div>
           <div className='w-1/3 flex justify-center'>
-          <Link to='/Sarees'><span className='text-[4vw]' >
+          <Link to='/Category'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category2}
               </span></Link>
           </div>
           <div className='w-1/3 flex justify-center'>
-          <Link to='/Dresses'><span className='text-[4vw]' >
+          <Link to='/Category'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category3}
               </span></Link>
           </div>

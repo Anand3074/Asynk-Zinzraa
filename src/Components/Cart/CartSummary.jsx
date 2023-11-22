@@ -3,8 +3,8 @@ import bagicon from '../../assets/bagicon.png'
 import CartItem from './CartItem.jsx'
 import {Link} from 'react-router-dom'
 
-const Cart = () => {
-    let bigPrice='3874'
+const Cart = ({price}) => {
+    // let bigPrice='3874'
   return (
     <div>
         <div className='flex flex-col justify-start items-start ml-[10vw]'>
@@ -16,7 +16,7 @@ const Cart = () => {
                         Big Total
                     </div>
                     <div className="w-[10vw]">
-                        ${bigPrice}
+                        ${price}
                     </div>
                 </div>
                 <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
@@ -24,7 +24,7 @@ const Cart = () => {
                         Discount on MRP 
                     </div>
                     <div className="w-[10vw]">
-                        ${bigPrice}
+                        ${price}
                     </div>
                 </div>
                 <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
@@ -32,7 +32,7 @@ const Cart = () => {
                         Sub Total
                     </div>
                     <div className="w-[10vw]">
-                        ${bigPrice}
+                        ${price}
                     </div>
                 </div>
                 <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
@@ -40,7 +40,7 @@ const Cart = () => {
                         Convenience Charges
                     </div>
                     <div className="w-[10vw]">
-                        ${bigPrice}
+                        ${price}
                     </div>
                 </div>
                 <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
@@ -48,7 +48,7 @@ const Cart = () => {
                         Your Pay
                     </div>
                     <div className="w-[10vw]">
-                        ${bigPrice}
+                        ${price}
                     </div>
                 </div>
             </div>

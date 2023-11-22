@@ -1,20 +1,24 @@
 import React from 'react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { removeItemsFromCart } from '../../Redux/cartActions'
+import { useSelector,useDispatch } from 'react-redux'
 
 
 const CartList = () => {
   // Assuming the cart items are stored in the Redux store under the key 'cart'
   const cartItems = useSelector((state) => state.cart.cartItems);
-  console.log(cartItems)
+  const dispatch = useDispatch();
+
+  const removeItemFromCart = (itemId) =>{
+      dispatch(removeItemsFromCart(itemId))
+      // console.log('delete')
+      // console.log(itemId) 
+  }
+  // console.log(cartItems)
 
   return (
     <div>
-      {/* Map through the cart items and render the CartItem component 
-      {cartItems.map((item, index) => (
-        <CartItem key={index} item={item} />
-      ))} */}
       {cartItems.map((item, index) => {          
             const { title, price, imageUrl, category, description, id } = item;
             return (        
@@ -25,6 +29,7 @@ const CartList = () => {
                 imageUrl={imageUrl}
                 category={category}
                 description={description}
+                removeItemFromCart={ () => removeItemFromCart(id)}
                 // date={date}
 
               />

@@ -5,8 +5,6 @@ import { Timestamp, addDoc, collection, deleteDoc, doc, getDocs, onSnapshot,
 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { fireDB } from '../firebase/firebase.jsx';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchProducts } from '../Redux/productsSlice.js';
 
 function myState(props) {
     const [mode, setMode] = useState('light');
@@ -50,7 +48,9 @@ function myState(props) {
 
         try {
             const productRef = collection(fireDB, 'products');
-            await addDoc(productRef, products)
+            const docRef = await addDoc(productRef, products);
+            const productId = docRef.id;
+            await setDoc(doc(fireDB, 'products', productId), {...products, id: productId});
             toast.success("Add product successfully");
             setTimeout(() => {
                 window.location.href = '/dashboard'
@@ -85,6 +85,7 @@ function myState(props) {
                 });
                 setProduct(productArray);
                 setLoading(false)
+                console.log("Product Data:", productArray);
             });
 
             return () => data;
