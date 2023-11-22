@@ -16,31 +16,31 @@ const Nav2 = () => {
     // const [click, setClick] = useState(false);
     // const handleClick = () => setClick(true);
     
-    const content =
-    <>
-        <div className='sm:hidden block absolute top-16 z- w-full left-0 right-0 bg-teal-dark transition'>
-            <ul className="text-center text-x1 p-20">
-                <Link to="/" >
-                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Products</li>
-                </Link>
-                <Link to="/Category/*">
-                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Saree</li>
-                </Link>
-                <Link to="/Category/*">
-                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Kurtas</li>
-                </Link>
-                <Link to="/Category/*">
-                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Dresses</li>
-                </Link>
-                <Link to="/UserProfile">
-                    <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Contact us</li>
-                </Link>
+    // const content =
+    // <>
+    //     <div className='sm:hidden block absolute top-16 z- w-full left-0 right-0 bg-teal-dark transition'>
+    //         <ul className="text-center text-x1 p-20">
+    //             <Link to="/" >
+    //                 <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Products</li>
+    //             </Link>
+    //             <Link to="/Category/*">
+    //                 <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Saree</li>
+    //             </Link>
+    //             <Link to="/Category/*">
+    //                 <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Kurtas</li>
+    //             </Link>
+    //             <Link to="/Category/*">
+    //                 <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Dresses</li>
+    //             </Link>
+    //             <Link to="/UserProfile">
+    //                 <li className='my-4 py-4 border-b border-teal-dark hover:rounded'>Contact us</li>
+    //             </Link>
 
-            </ul>
+    //         </ul>
 
 
-        </div>
-    </>
+    //     </div>
+    // </>
   return (
     <nav className='touch-none'>
         <div className='h-auto md:h-[73px] w-full lg:h-auto align-center bg-teal-dark w-full text-base  md:py-[24px] md:px-[54px]'>
@@ -50,16 +50,16 @@ const Nav2 = () => {
                         <Link to="/">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Product</li>
                         </Link>
-                        <Link to="/Saree/*">
+                        <Link to="/Saree">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
                         </Link>
-                        <Link to="/Kurtas/*">
+                        <Link to="/Kurtas">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
                         </Link>
-                        <Link to="/Dresses/*">
+                        <Link to="/Dresses">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
                         </Link>
-                        <Link to="/Dashboard">
+                        <Link to="/UserProfile">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Contact Us</li>
                         </Link>
                     </ul>
@@ -80,7 +80,8 @@ const Nav2 = () => {
                     <Link to="/Signup">
                         <FaUser className="text-white"/>
                     </Link>
-                    <Link to="/Wishlist">
+                    {/* <Link to="/Wishlist"> */}
+                    <Link to="">
                         <AiFillHeart className="text-white"/>
                     </Link>
                     <Link to="/Cart">

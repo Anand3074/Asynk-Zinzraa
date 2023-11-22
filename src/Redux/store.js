@@ -1,7 +1,6 @@
 // store.js
-
-import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './cartSlice';
+import { configureStore, combineReducers, applyMiddleware } from '@reduxjs/toolkit';
+import cartReducer from './CartSlice.js';
 // import wishlistReducer from './wishlistSlice';
 
 const store = configureStore({

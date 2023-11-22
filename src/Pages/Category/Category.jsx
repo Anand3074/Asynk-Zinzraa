@@ -45,7 +45,6 @@ const Category = ({}) => {
             </div>
         </div>
     <div className='my-[1vw]' id='NavforProducts'> 
-         {/* <CategoryNav/> */}
          <div id='navbar' className='flex justify-center mx-[17vw] mt-[0.5vw] text-[2.2vw]'>
         <nav>
           <ul className='flex flex-row font-poppins text-[#454545] gap-[3vw]'>

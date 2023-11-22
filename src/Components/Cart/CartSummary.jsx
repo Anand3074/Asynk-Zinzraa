@@ -56,7 +56,7 @@ const Cart = () => {
                 <div className='py-[0.5vw] px-[1.5vw] w-[32vw] sm:h-[3vw] h-[4vw] 
                 mt-[1vw] border border-solid border-1px
              border-text-slate-400 rounded-[3vw] text-[1.5vw]'>
-                    <input value={''} 
+                    <input  
                     placeholder='Apply Coupon Code'/>
                 </div>
             </div>

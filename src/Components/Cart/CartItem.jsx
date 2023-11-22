@@ -1,35 +1,31 @@
 import React from 'react'
-import C1 from '../../assets/c1.png'
+import { removeItemsFromCart } from '../../Redux/cartActions'
 import { useSelector,useDispatch } from 'react-redux'
-import {removeItemsFromCart} from '../../actions/cartActions'
-
-
-const CartItem = ({product,totalItemPrice,setTotalItemPrice,setTotalRealItemPrice}) => {
-    // const dispatch = useDispatch();
-   const removeItemFromCart = () =>{
-       dispatch(removeItemsFromCart(product.product))
-       setTotalItemPrice((prev)=>(prev-Number(product.price)))
-       setTotalRealItemPrice((prev=>(prev-Number(product.realPrice))))
-   }
+const CartItem = ({products,title, price, imageUrl, category, description, date}) => {
+     const dispatch = useDispatch();
+    const removeItemFromCart = () =>{
+        // dispatch(removeItemsFromCart(items.id))
+    }
+   
   return (
     <div className='flex justify-center items-center sm:w-[50vw] m-[2vw]'>
         <div className='flex flex-row gap-[10vw] sm:gap-[1vw] '>
             <div>
-                <img src={product} alt='' className='w-[18vw] sm:w-[8vw] sm:h-[10vw] h-[22vw]'/>
+                <img src={imageUrl} alt='' className='w-[18vw] sm:w-[8vw] sm:h-[10vw] h-[22vw]'/>
             </div>
 
             <div className='flex flex-col sm:text-[1.2vw] text-[2.2vw]'>
-                <div className=''>{product}</div>
-                <div className=''>Size: {product}</div>
-                <div className='flex flex-row'>
+                <div className=''>{description}</div>
+                <div className=''>Size: </div>
+                <div className='flex flex-col'>
                    <div>
-                    Rs. {product}
+                    Rs. {price}
                     </div>
-                    <div>
-                        {product}
+                    <div className='text-red-400 sm:text-[1vw] text-[1.6vw] line-through'>
+                        {price}
                     </div>
                 </div>
-                <p className=''>Delivered on {Date}</p>
+                <p className=''>Delivered on </p>
                 <div className='flex flex-row'>
                     <div className='w-[2vw] h-[5vw] mr-[15vw]'>Qty: <input type='number'
                       /></div>
@@ -39,7 +35,7 @@ const CartItem = ({product,totalItemPrice,setTotalItemPrice,setTotalRealItemPric
                         </button>
                     </div>
                     <div>
-                        <button className='text-blue-600  ' onClick={removeItemFromCart}>
+                        <button className='text-blue-600  '>
                             Move to Wishlist
                         </button>
                     </div>
@@ -55,3 +51,14 @@ const CartItem = ({product,totalItemPrice,setTotalItemPrice,setTotalRealItemPric
 }
 
 export default CartItem
+// import React from "react"
+// import { useDispatch } from 'react-redux';
+// import { deleteFromCart } from '../../Redux/CartSlice';
+
+// const CartItem = ({title, price, imageUrl, category, description,products}) => {
+//     const dispatch = useDispatch();
+
+//     const handleDelete = () => {
+//       // Dispatch the deleteFromCart action with the item's id
+//       dispatch(deleteFromCart(products.id));
+//     };

@@ -148,7 +148,8 @@ const ProductChart = () => {
                     <div className='mt-[1vw] font-inter font-semibold text-[1.65vw]'>
                         Select Delivery Location
                     </div>
-                    <div className='text-[1.47vw] font-inter sm:w-[32vw] gap-[0.5vw] sm:gap-[0vw] flex flex-row  sm:flex-none'>
+                    <div className='text-[1.47vw] font-inter sm:w-[32vw] gap-[0.5vw]
+                     sm:gap-[0vw] flex flex-row  sm:flex-col'>
                         <div>
                             Enter the pincode of your area to check product
                         </div> 
@@ -160,7 +161,8 @@ const ProductChart = () => {
                     sm:h-[4vw] h-[3vw] items-center px-[2vw]'>
                             <input
                             placeholder='Pincode'
-                            className="bg-transparent w-[24vw] text-[2.2vw] border-none 
+                            maxLength={6}
+                            className="bg-transparent w-[24vw] sm:text-[1.6vw] text-[2.2vw] border-none 
                              focus:outline-none"
                             />
                             <div>

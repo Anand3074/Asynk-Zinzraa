@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import myContext from '../../../../context/myContext';
 // import Navbar from './page/NavbarAdmin';
-import Footer from '../../../Components/Footer';
+import Footer from '../../../../Components/Footer';
 
 function UpdateProduct() {
     const context = useContext(myContext);
