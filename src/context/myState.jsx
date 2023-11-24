@@ -19,6 +19,12 @@ function myState(props) {
             document.body.style.backgroundColor = "white"
         }
     }
+//     const [color, setColor] = useState('#FF1493'); 
+//     const toggleColor = () => {
+//     // Toggle color to a heart color when clicked
+//     const newColor = color === '#FF1493' ? '#FF6347' : '#FF1493';
+//     setColor(newColor);
+//   }
 
     const [loading, setLoading] = useState(false);
 
@@ -207,7 +213,7 @@ function myState(props) {
             products, setProducts, addProduct, product,
             edithandle, updateProduct, deleteProduct, order,
             user, searchkey, setSearchkey,filterType,setFilterType,
-            filterPrice,setFilterPrice
+            filterPrice,setFilterPrice 
         }}>
             {props.children}
         </MyContext.Provider>
@@ -215,3 +221,4 @@ function myState(props) {
 }
 
 export default myState
+// toggleColor, color,

@@ -1,9 +1,9 @@
-import { BrowserRouter as  Router, Routes , Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as  Router, Routes , Route, BrowserRouter, Navigate } from 'react-router-dom'
 import React from 'react'
 import Nav from './Pages/Nav.jsx'
 import Products from './Pages/Products.jsx'
 import Login from './Pages/Registrations/Login.jsx'
-// import Wishlist from './Pages/Wishlist.jsx'
+import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Pages/Cart.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
 import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'
@@ -35,7 +35,7 @@ const App = () => {
       <Nav/>
       <Routes>
       <Route exact path='/' element={<Products/>}/>
-      {/* <Route exact path='/Wishlist' element={<Wishlist/>}/> */}
+      <Route exact path='/Wishlist' element={<Wishlist/>}/>
       <Route exact path='/Cart' element={<Cart/>}/>
       <Route exact path='/detail' element={<Detail/>}/>
       <Route exact path='/hamburger' element={<Hamburger/>}/>
@@ -45,8 +45,12 @@ const App = () => {
       <Route exact path='/Order' element={<OrderSuccess/>}/> 
 
               {/* Admin CMS Link */}
+
       <Route exact path='/AddProduct' element={<AddProduct/>}/> 
-      <Route exact path='/Dashboard/*' element={<Dashboard/>}/>
+      <Route exact path='/Dashboard' element={
+      <ProtectedRoutesForAdmin>
+              <Dashboard />
+      </ProtectedRoutesForAdmin>}/>
       <Route exact path='/DashboardTab' element={<DashboardTab/>}/>
       <Route exact path='/UpdateProduct' element={<UpdateProduct/>}/> 
 
@@ -75,7 +79,7 @@ export const ProtectedRoutes = ({ children }) => {
     return children
   }
   else {
-    return <Navigate to='/login' />
+    return <Link to='/Dashboard' />
   }
 }
 
@@ -84,10 +88,10 @@ export const ProtectedRoutes = ({ children }) => {
 export const ProtectedRoutesForAdmin = ({children}) => {
   const admin = JSON.parse(localStorage.getItem('user'))
   console.log(admin.user.email)
-  if (admin.user.email === 'surveyash67@gmail.com') {
+  if (admin.user.email === 'anandsaeiou@gmail.com') {
     return children
   }
   else {
-    return <Navigate to='/login' />
+    return <Navigate to='/Dashboard' />
   }
 }

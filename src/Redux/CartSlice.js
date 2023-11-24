@@ -13,12 +13,24 @@ const initialState = {
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-      case ADD_TO_CART:
-          return {
-              ...state,
-              cartItems: [...state.cartItems, action.payload],
-          };
+    case ADD_TO_CART:
+  const newItem = action.payload;
+  const itemExistsIndex = state.cartItems.findIndex(item => item.id === newItem.id);
 
+  if (itemExistsIndex !== -1) {
+    const updatedCartItems = [...state.cartItems];
+    updatedCartItems[itemExistsIndex] = newItem;
+
+    return {
+      ...state,
+      cartItems: updatedCartItems,
+    };
+  } else {
+    return {
+      ...state,
+      cartItems: [...state.cartItems, newItem],
+    };
+  }
       case REMOVE_CART_ITEM :
           return {
               ...state,
@@ -106,3 +118,37 @@ export default cartReducer;
 // export const { addToCart, deleteFromCart } = cartSlice.actions
 
 // export default cartSlice.reducer;
+
+// case ADD_TO_CART:
+      //     const newItem = action.payload;
+      //     const itemExists = state.cartItems.some(item => item.id === newItem.id);
+        
+      //     if (itemExists) {
+      //       return state;
+      //     }
+        
+      //     return {
+      //       ...state,
+      //       cartItems: [...state.cartItems, newItem],
+      //     };
+
+      //     case ADD_TO_CART:
+      // const item = action.payload;
+
+      // const isItemExist = state.cartItems.find(
+      //   (i) => i.product === item.product
+      // );
+
+      // if (isItemExist) {
+      //   return {
+      //     ...state,
+      //     cartItems: state.cartItems.map((i) =>
+      //       i.product === isItemExist.product ? item : i
+      //     ),
+      //   };
+      // } else {
+      //   return {
+      //     ...state,
+      //     cartItems: [...state.cartItems, item],
+      //   };
+      // }

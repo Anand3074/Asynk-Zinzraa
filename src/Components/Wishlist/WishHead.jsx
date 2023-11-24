@@ -1,7 +1,7 @@
 import React from 'react'
 
-const WishHead = () => {
-    const itemsInWishlist = 3
+const WishHead = ({Wishes}) => {
+    // const itemsInWishlist = 3
   return (
     <div>
         <div className='text-[#875A33]'>
@@ -9,7 +9,7 @@ const WishHead = () => {
                 My Wishlist
             </div>
             <div className='text-[1.8vw] flex justify-center mb-[3vw]'>
-                Total {itemsInWishlist} items
+                Total {Wishes} items
             </div>
         </div>
 
@@ -25,7 +25,7 @@ const WishHead = () => {
                     Stock Status
                 </div>
             </div>
-                <hr className=' border-t border-gray-600 w-[100vw] h-[0.2vw]' />
+                <hr className=' border-t border-gray-600 w-[96vw] mx-[1vw] h-[0.2vw]' />
             </div>
     </div>
   )

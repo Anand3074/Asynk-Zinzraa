@@ -2,19 +2,17 @@ import React from 'react'
 import {FiHeart} from 'react-icons/fi'
 import {IoEllipse} from 'react-icons/io5'
 import { Link } from 'react-router-dom'
-import { useState, useContext } from 'react'
+import { useState, useContext  } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import myContext from '../../context/myContext';
 // import { ADD_TO_CART } from '../../Redux/CartSlice'
 
 
-const Cards = ({title, price, imageUrl, category, description, date, addCart}) => {
-    const[wishClick, setWishClick] = useState(0);
+const Cards = ({title, price, imageUrl, category, description, date, addCart, addWish, wishClick}) => {
     const context = useContext(myContext);
     const { product } = context;
-    const changeWish = () => {
-        setWishClick((prevchangeWish) => !prevchangeWish);
-            };
-    
+    const color = useSelector((state) => state.wishlist.color);
+
   return (
     
         <div className='w-[25vw] h-[38vw] mr-[5vw]' >
@@ -25,14 +23,16 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart}) =
                 <Link to='/Detail'><img src={imageUrl} alt=''
                 className='rounded-[2vw] w-[25vw] h-[28vw]'/></Link>
                 </div>
-                <div className='' onClick={changeWish}>
+                {/* <div className='' onClick={handleAddToWishlist}> */}
+                <div className='' onClick={addWish}>
                     <div className='absolute z-50 right-[2vw] top-[1vw]'>
+                    {/* <div  className='absolute z-50 right-[2vw] top-[1vw]'> */}
                         < IoEllipse className='w-[4.5vw] h-[4.5vw] fill-white'/>
                     </div>
                     <div className='absolute z-100 right-[3.4vw] top-[2.5vw]'>
-                        <FiHeart className='w-[1.7vw] h-[1.7vw] text-[#FF005C]'
-                         fill={wishClick ? 'red' : 'none'}/>
-                    </div>
+                        <FiHeart className='w-[1.7vw] h-[1.7vw] text-[#FF005C]  '
+                        fill='none'/>
+                        </div>
                 </div>
             </div>
             <div className='relative'>
@@ -62,3 +62,5 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart}) =
 }
 
 export default Cards
+                        //  fill={wishClick ? 'red' : 'none'}/>
+                        

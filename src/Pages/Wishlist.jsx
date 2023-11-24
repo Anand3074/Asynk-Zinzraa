@@ -2,41 +2,36 @@ import React from 'react'
 import WishProduct from '../Components/Wishlist/WishProducts'
 import WishHead from '../Components/Wishlist/WishHead'
 import {useState, useEffect} from 'react'
+import { useSelector } from 'react-redux'
 import Footer from '../Components/Footer'
+import EmptyWish from '../Components/Wishlist/EmptyWish'
 
 const Wishlist = () => {
-//     const {WishProduct,shippingInfo} = useSelector(
-//         (state) => state.cart
-//     )
-//     const { error, loading, isAuthenticated, user, userProfile } = useSelector(
-//     (state) => state.users
-//   );
-//     const [totalItemPrice, setTotalItemPrice] = useState(0)
-//     const [totalRealItemPrice, setTotalRealItemPrice] = useState(0)
-//     const navigate = useNavigate()
-//      const dispatch = useDispatch();
+  const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
 
-  let WishArray = []   
-     useEffect(() => {
-     if(WishArray!==[]){
-        WishArray.map((item)=>{
-            // setTotalItemPrice((prev)=>(prev+Number(item.price)))
-            // setTotalRealItemPrice((prev)=>(prev+Number(item.realPrice)))
-        })
-        
-     }
-    //  if(!isAuthenticated){
-    //     navigate("/login")
-    //  }
-     
-     }, [])
-    // console.log(totalItemPrice,totalRealItemPrice)
   return (
-    <div style={{fontStyle:"DM Sans"}} className=' '>
-            <div className='' >
-              <WishProduct/>
-            </div>
-            <Footer />
+
+    <div>
+      { Wishlist.length!==0 ? (
+        <div style={{fontStyle:"DM Sans"}} className=''>
+
+        <div className='mt-[1vw]' >
+            <WishHead Wishes={Wishlist.length}/>
+             <div className='flex flex-col sm:flex-row '>
+                <div className='flex justify-center items-center'>
+                    <WishProduct className=''/>
+                </div>
+             </div>
+             <div className='mt-[20vw]'>
+             <Footer />
+
+             </div>
+        </div> 
+        </div>):
+      (<div>
+                <EmptyWish/>
+      </div>
+      )}
     </div>
   )
 }

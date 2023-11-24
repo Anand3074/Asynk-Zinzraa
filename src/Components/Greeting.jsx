@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Greetings = ({wish}) => {
   return (
         <div className='flex flex-col justify-center items-center my-[25vw] mx-[5vw]
-         sm:my-[5vw] mx-[5vw]'>
+         sm:my-[7vw] mx-[5vw]'>
             <div className=''>
                     <img src={wish.img} alt="wishlist-none" className='w-[25vw] h-[25vw] sm:w-[10vw] sm:h-[10vw]'/>
             </div>

@@ -80,8 +80,8 @@ const Nav2 = () => {
                     <Link to="/Signup">
                         <FaUser className="text-white"/>
                     </Link>
-                    {/* <Link to="/Wishlist"> */}
-                    <Link to="">
+                    {/* <Link to=""> */}
+                    <Link to="/Wishlist">
                         <AiFillHeart className="text-white"/>
                     </Link>
                     <Link to="/Cart">
