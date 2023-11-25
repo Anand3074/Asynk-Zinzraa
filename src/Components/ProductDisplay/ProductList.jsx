@@ -6,7 +6,7 @@ import { addToWishlist } from '../../Redux/Wishlist/wishActions';
 import { useDispatch , useSelector } from 'react-redux';
 
 
-const ProductList = () => {
+const ProductList = ({categoryToRender}) => {
   const context = useContext(myContext);
   const { product } = context;
   // const[wishClick, setWishClick] = useState(0);
@@ -54,7 +54,7 @@ const ProductList = () => {
             // const cardKey = `card_${item.id}`;
             // console.log(`Item ${index + 1} Properties:`);
             // console.log('id:', item.id);
-
+            if (category === categoryToRender || !categoryToRender) {
             return (        
               <Cards 
                 key={index}
@@ -71,7 +71,9 @@ const ProductList = () => {
 
               // wishClick={wishClick} 
             );
-          })}
+          }
+          return null;
+        })}
         </div>
 
       </div>

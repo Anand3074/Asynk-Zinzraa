@@ -125,9 +125,9 @@ const Products = () => {
       <div>
         <Carousel/>
       </div>
-      <div className='flex justify-center items-center'>
+      {/* <div className='flex justify-center items-center'>
         <BsThreeDots className='text-slate-600  w-[10vw] h-[3vw]'/>
-      </div>
+      </div> */}
       <div className='mt-[1vw]'>
         <Categ1/>
       </div>

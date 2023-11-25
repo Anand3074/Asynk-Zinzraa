@@ -2,7 +2,7 @@ import React from 'react'
 import Category from '../Pages/Category/Category'
 
 const Saree = () => {
-  const index = 2;
+  const index = 1;
   return (
     <div>
       <Category defaultTab={index}/>

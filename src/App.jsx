@@ -21,9 +21,9 @@ import OtpVerify from './Pages/Login/OtpVerify.jsx'
 import MyState from './context/myState.jsx'
 import Category from './Pages/Category/Category.jsx'
 
-// import Kurtas from './Pages/Category/Kurtas.jsx'
-// import Dresses from './Pages/Category/Dresses.jsx'
-// import Saree from './Pages/Category/Saree.jsx'
+import Kurtas from './Pages/Kurtas.jsx'
+import Dresses from './Pages/Dresses.jsx'
+import Saree from './Pages/Saree.jsx'
 // import Ethnic from './Pages/Ethnic'
 // import Western from './Pages/Western'
 
@@ -62,9 +62,9 @@ const App = () => {
 
               {/* Category */}
       <Route exact path='/Category' element={<Category/>}/> 
-      <Route exact path='/Saree' element={<Category/>}/>
-      <Route exact path='/Kurtas' element={<Category/>}/>
-      <Route exact path='/Dresses' element={<Category/>}/>
+      <Route exact path='/Saree' element={<Saree/>}/>
+      <Route exact path='/Kurtas' element={<Kurtas/>}/>
+      <Route exact path='/Dresses' element={<Dresses/>}/>
       </Routes>
      
       </MyState>

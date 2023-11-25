@@ -17,23 +17,28 @@ const kalki = () => {
             </div>
         <div className='bg-[#3D3F31] w-full '>
         <div className='grid grid-cols-2 md:px-[54px] px-[18px] md:py-[54px] py-[18px] md:gap-[231px]'>
-            <div className='grid grid-cols-2  grid-rows-2 items-center md:gap-[17.94px] gap-[5.4px]'>
-                    <div className='md:w-[268px]'>
-                        <img src={K2} alt='' className='rounded-tr-[44.5px] md:rounded-tr-[134.50px] 
-                         rounded-bl-[44.5px] md:rounded-bl-[134.50px]  md:h-[270px] h-[90px] md:w-[268px]' />
-                    </div>
-                    <div className=' md:w-[268px]'>
-                        <img src={K3} alt='' className='rounded-tl-[44.5px] md:rounded-tl-[134.50px] 
-                         rounded-br-[44.5px] md:rounded-br-[134.50px]  md:h-[270px] h-[90px] md:w-[268px]' />
-                    </div>
-                    <div className='md:w-[268px]'>
-                        <img src={K2} alt='' className='rounded-tl-[44.5px] md:rounded-tl-[134.50px] 
-                         rounded-br-[44.5px] md:rounded-br-[134.50px]  md:h-[270px] h-[90px] md:w-[268px]' />
-                    </div>
-                    <div className='md:w-[268px]'>
-                        <img src={K3} alt='' className='rounded-tr-[44.5px] md:rounded-tr-[134.50px] 
-                         rounded-bl-[44.5px] md:rounded-bl-[134.50px]  md:h-[270px] h-[90px] md:w-[268px]' />
-                    </div>
+        {/* <div className='grid grid-cols-2  grid-rows-2 items-center md:gap-[17.94px] gap-[5.4px]'> */}
+        <div className='flex flex-col'>
+            <div className='flex flex-rows gap-[1vw]'>
+                <div className='md:w-[268px]'>
+                    <img src={K2} alt='' className='rounded-tr-[12vw] md:rounded-tr-[134.50px] 
+                    rounded-bl-[12vw] md:rounded-bl-[134.50px]  md:h-[270px] h-[90px] md:w-[268px] sm:m-[1vw] m-[1vw]' />
+                </div>
+                <div className=' md:w-[268px]'>
+                    <img src={K3} alt='' className='rounded-tl-[12vw] md:rounded-tl-[134.50px] 
+                rounded-br-[12vw] md:rounded-br-[134.50px]  md:h-[270px] h-[90px] md:w-[268px] sm:m-[1vw] m-[1vw]' />
+                </div>
+            </div>
+            <div className='flex flex-rows gap-[1vw]'>
+                <div className='md:w-[268px]'>
+                <img src={K2} alt='' className='rounded-tl-[12vw] md:rounded-tl-[134.50px] 
+                 rounded-br-[12vw] md:rounded-br-[134.50px]  md:h-[270px] h-[90px] md:w-[268px] sm:m-[1vw] m-[1vw]' />
+                 </div>
+                <div className='md:w-[268px]'>
+                <img src={K3} alt='' className='rounded-tr-[12vw] md:rounded-tr-[134.50px] 
+                 rounded-bl-[12vw] md:rounded-bl-[134.50px]  md:h-[270px] h-[90px] md:w-[268px] sm:m-[1vw] m-[1vw]' />
+            </div>
+            </div>
             </div>
             <div className='flex flex-col items-center justify-end text-white'>
                 <div className=''>
@@ -67,7 +72,7 @@ const kalki = () => {
         </div>
     </div>
     
-  )
-}
+  );
+};
 
 export default kalki

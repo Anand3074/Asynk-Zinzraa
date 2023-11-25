@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Poster from '../../Components/HomePage/Modern.jsx'
 import elestar from '../../assets/ele1.png'
 import Filtersss from '../../Components/ProductDisplay/Filtersss.jsx'
@@ -10,8 +10,8 @@ import Ethnic from './Ethnic'
 
 // import ProductList from '../Components/ProductDisplay/ProductList.jsx'
 
-const Category = ({}) => {
-  const [activeTab, setActiveTab] = useState(0);
+const Category = ({ defaultTab }) => {
+  const [activeTab, setActiveTab] = useState(defaultTab || 0);
 
   const handleClick = (index) => {
     setActiveTab(index === activeTab ? null : index);
@@ -22,6 +22,11 @@ const Category = ({}) => {
       index === activeTab ? 'underline text-[#875A33]' : 'hover:text-[#875A33]'
     } flex justify-center items-center w-[13vw] h-[4vw] font-[poppins]`;
   };
+
+  // Update activeTab when the defaultTab prop changes
+  useEffect(() => {
+    setActiveTab(defaultTab || 0);
+  }, [defaultTab]);
 
   const tabComponents = {
     0: <Western />,
@@ -72,7 +77,7 @@ const Category = ({}) => {
             <Filtersss/>
           </div>
           <div id='right' className='w-[75vw] flex flex-col'>
-            <div className='flex flex-row justify-start items-start gap-[5vw] px-[6vw] my-[3vw]'>
+            <div className='flex flex-row justify-start items-start gap-[5vw]  my-[3vw]'>
               {activeTab !== null && tabComponents[activeTab]}
             </div>
           </div>

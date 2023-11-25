@@ -1,7 +1,6 @@
 import React from 'react'
-import Category from './Category'
-import WesternPost from '../../Components/westernPost'
-import Filtersss from '../../Components/ProductDisplay/Filtersss'
+import ProductList from '../../Components/ProductDisplay/ProductList'
+
 
 const Ethnic = () => {
   return (
@@ -9,7 +8,8 @@ const Ethnic = () => {
           <div id='right' className='w-[75vw] flex flex-col'>
             <div className='flex flex-row justify-center gap-[5vw] mb-[2vw]'>
               <div className=''>
-                {/* <ProductList/> */} Drown in the  traditional ethnic wears of Gujarat. 
+              <ProductList categoryToRender='Ethnic'/>
+                 {/* Drown in the  traditional ethnic wears of Gujarat.  */}
               </div>
            </div>
           </div>
