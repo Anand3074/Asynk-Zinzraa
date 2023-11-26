@@ -1,12 +1,34 @@
 import React from 'react'
-import Sz1 from '../../assets/sz1.png'
 import ProductChart from './ProductChart'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { addItemsToCart } from '../../Redux/cartActions'
+import { addToWishlist } from '../../Redux/Wishlist/wishActions';
+import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions'
 
-const Productsize = ({}) => {
-    const Products = {
-        DisplayItems : Sz1
-    }
-    
+
+const Productsize = () => {    
+    const selectedProduct = useSelector((state) => state.product.selectedProduct)
+        console.log(selectedProduct)
+
+        const dispatch = useDispatch()
+        const handleAddToCart = (item) => {
+            // console.log(item)
+            dispatch(addItemsToCart(item))
+        }
+
+        
+        const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
+        const handleAddToWishlist = (item) => {
+            const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
+            // console.log(isItemInWishlist)
+            if (isItemInWishlist) {
+              dispatch(removeItemFromWishlist(item.id));
+            } else {
+              dispatch(addToWishlist(item));
+            }
+          };
+
   return (
     <div>
         <div className=''>
@@ -15,22 +37,23 @@ const Productsize = ({}) => {
                     <div>
                         <div className='flex flex-col mr-[1.2vw]'>
                             <div>
-                                <img src={Products.DisplayItems} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw] '/>
+                                <img src={selectedProduct.imageUrl} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw] '/>
                             </div>
                             <div>
-                                <img src={Products.DisplayItems} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw]'/>
+                                <img src={selectedProduct.imageUrl} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw]'/>
                             </div>
                             <div>
-                                <img src={Products.DisplayItems} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] '/>
+                                <img src={selectedProduct.imageUrl} className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] '/>
                             </div>
                         </div>
                     </div> 
                     <div className='h-[83vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'>
-                        <img src={Products.DisplayItems} className='h-[81vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'/>
+                        <img src={selectedProduct.imageUrl} className='h-[81vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'/>
                     </div>
                 </div>
 {/* Image above  */}
-            <div><ProductChart/></div>
+            <div><ProductChart price={selectedProduct.price} Description={selectedProduct.description}
+             addCart={ () => handleAddToCart(selectedProduct)} addWish={() => handleAddToWishlist(selectedProduct)}/></div>
             </div>
         </div>
     </div>

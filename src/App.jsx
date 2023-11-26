@@ -12,7 +12,7 @@ import DashboardTab from './Pages/admin/dashboard/DashboardTab.jsx'
 import UpdateProduct from './Pages/admin/dashboard/page/UpdateProduct.jsx'
 import Signup from './Pages/Registrations/Signup.jsx'
 import Hamburger from './Components/HomePage/hamburger.jsx'
-import UserProfile from './Components/UserInfo/userphoto.jsx'
+import User from './Pages/User.jsx'
 import AddDetail from './Components/Checkout/AddDetail.jsx'
 import Payment from './Components/Checkout/Payment.jsx'
 import OrderSuccess from './Components/Checkout/OrderSuccess.jsx'
@@ -39,7 +39,7 @@ const App = () => {
       <Route exact path='/Cart' element={<Cart/>}/>
       <Route exact path='/detail' element={<Detail/>}/>
       <Route exact path='/hamburger' element={<Hamburger/>}/>
-      <Route exact path='/UserProfile' element={<UserProfile/>}/>
+      <Route exact path='/User' element={<User/>}/>
       <Route exact path='/AddDetail' element={<AddDetail/>}/>
       <Route exact path='/Payment' element={<Payment/>}/>
       <Route exact path='/Order' element={<OrderSuccess/>}/> 

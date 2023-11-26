@@ -2,11 +2,13 @@
 import { configureStore, combineReducers, applyMiddleware } from '@reduxjs/toolkit';
 import cartReducer from './CartSlice.js';
 import wishlistReducer from './Wishlist/WIshSlice.js';
+import productSlice from './Product/ProductSlice.js'
 
 const store = configureStore({
   reducer: {
     cart: cartReducer,
     wishlist: wishlistReducer,
+    product: productSlice 
   },
 });
 

@@ -1,15 +1,17 @@
 import React from 'react'
-import Sz2 from '../../assets/sz2.png'
-import Sz3 from '../../assets/sz3.png'
-import Sz4 from '../../assets/sz4.png'
-import C2 from '../../assets/c2.png'
+// import Sz2 from '../../assets/sz2.png'
+// import Sz3 from '../../assets/sz3.png'
+// import Sz4 from '../../assets/sz4.png'
+// import C2 from '../../assets/c2.png'
 import { FiHeart } from 'react-icons/fi'
 import {AiFillStar} from 'react-icons/ai'
 import szi1 from '../../assets/szi1.png'
 import szi2 from '../../assets/szi2.png'
 import szi3 from '../../assets/szi3.png'
 
-const ProductChart = () => {
+
+
+const ProductChart = ({price, Description, addCart, addWish}) => {
     const Products = {
         Rating : '4.8',
         RatingNo : '143',
@@ -41,8 +43,7 @@ const ProductChart = () => {
                     <div className='flex sm:items-start items-center justify-center
                      font-[lora] text-[#875A33] 
                     sm:text-[3.5vw] text-[5vw] font-bold wrap '>
-                         Daisy cyan silk saree from Mirror work.
-
+                        {Description}
                     </div>
                     <div className='flex flex-row sm:flex-col gap-[1.5vw] sm:gap-[1vw]  '>
                     <div className='flex flex-row gap-[0.6vw]
@@ -59,16 +60,16 @@ const ProductChart = () => {
                     </div>
                     <div className=' font-inter flex sm:flex-row items-center justify-center gap-[1.4vw]'>
                     <div className='font-lora text-[#875A33] sm:text-[2vw] text-[2.65vw]  font-bold '>
-                         $ {Products.ProductPrice}
+                         $ {price}
                     </div>
                     <div className='text-[#00AA07] font-medium sm:text-[2vw] text-[2.65vw]'>
-                            {Products.Discount} off
+                            47% off
                     </div>
                     </div>
 
                     <div className='flex flex-row items-center gap-[1vw]'>
                     <div className='text-[2.65vw] sm:text-[1.65vw] text-[##7C7C7C]'>MRP ₹</div>
-                    <div className='text-[1.47vw] text-red-400 line-through'>{Products.oldPrice}</div>
+                    <div className='text-[1.47vw] text-red-400 line-through'>{Math.floor(price * (1 + 43 / 100))}</div>
                     <div className='text-[1.47vw] text-[##7C7C7C]'>Inclusive of all taxes</div>
                     </div>
                     </div>
@@ -130,13 +131,13 @@ const ProductChart = () => {
                     </div>
                     <div className='flex flex-row gap-[2vw] sm:w-[30vw] h-[4vw] text-[1.47vw] mb-[1vw] sm:mt-[2vw] mt-[1vw]'>
                         <div>
-                            <button className=' flex flex-row sm:w-[18vw] w-[30vw] h-[5vw] sm:h-auto  px-[5px] justify-center items-center
+                            <button onClick={addWish} className=' flex flex-row sm:w-[18vw] w-[30vw] h-[5vw] sm:h-auto  px-[5px] justify-center items-center
                                                 border border-solid border-1px border-[#875A33] py-[1vw] rounded-[1.2vw]'>
                                 <FiHeart className='text-red-400 mr-[1.5vw]' /> Add to Wishlist
                             </button>
                         </div>
                         <div>
-                            <button className=' sm:w-[18vw] w-[30vw] h-[5vw] sm:h-auto px-[10px] text-white jsutify-cenetr
+                            <button onClick={addCart} className=' sm:w-[18vw] w-[30vw] h-[5vw] sm:h-auto px-[10px] text-white jsutify-cenetr
                                                 bg-teal-dark  py-[1vw] rounded-[1.2vw]'>
                                 Add to Bag
                             </button>

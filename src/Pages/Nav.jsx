@@ -77,7 +77,7 @@ const Nav2 = () => {
                         />
                     </div>
                     <div className='flex space-x-[30px]  md:space-x-[16px] items-center mr-7  md:mr-0'>
-                    <Link to="/Signup">
+                    <Link to="/User">
                         <FaUser className="text-white"/>
                     </Link>
                     {/* <Link to=""> */}

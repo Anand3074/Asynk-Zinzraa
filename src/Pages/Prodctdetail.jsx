@@ -9,6 +9,7 @@ import c1 from '../assets/c1.png'
 import c2 from '../assets/c2.png'
 import c3 from '../assets/c3.png'
 import Size from '../Components/ProductDisplay/SingleProduct.jsx'
+import Ethnic from '../Pages/Category/Ethnic.jsx'
 
 const Prodctdetail = () => {
 
@@ -69,6 +70,9 @@ const Prodctdetail = () => {
         </div>
         <div>
             <Collections group={Group2}/>
+        </div>
+        <div>
+            <Ethnic/>
         </div>
     </div>
     

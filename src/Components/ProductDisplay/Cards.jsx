@@ -8,11 +8,9 @@ import myContext from '../../context/myContext';
 // import { ADD_TO_CART } from '../../Redux/CartSlice'
 
 
-const Cards = ({title, price, imageUrl, category, description, date, addCart, addWish, wishClick}) => {
+const Cards = ({title, price, imageUrl, category, description, date, addCart, addWish, isWishlisted, Detail}) => {
     const context = useContext(myContext);
     const { product } = context;
-    const color = useSelector((state) => state.wishlist.color);
-
   return (
     
         <div className='w-[25vw] h-[38vw] mr-[5vw]' >
@@ -20,7 +18,7 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
             <div className='flex relative'>
                 <div className='z-150'>
                 {/* <Link to='/Detail'><img src="" alt='' */}
-                <Link to='/Detail'><img src={imageUrl} alt=''
+                <Link to='/Detail'><img src={imageUrl} onClick={Detail} alt=''
                 className='rounded-[2vw] w-[25vw] h-[28vw]'/></Link>
                 </div>
                 {/* <div className='' onClick={handleAddToWishlist}> */}
@@ -30,8 +28,9 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
                         < IoEllipse className='w-[4.5vw] h-[4.5vw] fill-white'/>
                     </div>
                     <div className='absolute z-100 right-[3.4vw] top-[2.5vw]'>
-                        <FiHeart className='w-[1.7vw] h-[1.7vw] text-[#FF005C]  '
-                        fill='none'/>
+                        <FiHeart className='w-[1.7vw] h-[1.7vw] text-[#FF005C]'
+                        // fill='none'/>
+                         fill={isWishlisted ? 'red' : 'none'}/> 
                         </div>
                 </div>
             </div>
