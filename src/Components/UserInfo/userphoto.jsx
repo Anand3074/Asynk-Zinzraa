@@ -19,10 +19,12 @@ const User = () => {
   
     const tabStyles = (index) => {
       return `cursor-pointer ${
-        index === activeTab ? 'underline text-[#875A33]' : 'hover:text-[#875A33]'
-      } flex justify-center items-center w-[13vw] h-[4vw] font-[poppins]`;
+        index === activeTab
+          ? 'border-b-[0.2vw] border-b-blue-600  text-[#875A33]'
+          : 'hover:text-[#875A33]'
+      } flex justify-center items-center w-[30vw]  h-[4vw]  font-[poppins]`;
     };
-  
+    
     // // Update activeTab when the defaultTab prop changes
     // useEffect(() => {
     //   setActiveTab();
@@ -36,17 +38,17 @@ const User = () => {
   
   return (
     <div>
-    <div className='mt-[1.5vw] mx-[3.8vw] z-50'>
+    <div className='mt-[1.5vw] mx-[3vw] z-50'>
         <div className='flex flex-col relative'>
             <div className='flex justify-center '>
-                <img src={userbg} alt=''/>
+                <img src={userbg} alt='' className='md:h-[20vw] md:w-[94vw]'/>
             </div>
-            <div className='flex justify-center  z-10 absolute right-[38.5vw] top-[20vw] '>
-            <img src={userpng} alt='user' className='rounded-full w-[15vw]'/>
+            <div className='flex justify-center  z-10 absolute right-[38.5vw] top-[20vw] md:top-[15vw] '>
+            <img src={userpng} alt='user' className='rounded-full w-[15vw] md:w-[13vw]'/>
             </div>
-            <div className='absolute right-[2.85vw] top-[21vw] text-[1.5vw]'>
+            <div className='absolute right-[2.85vw] top-[21vw] text-[1.5vw] md:top-[15.5vw] md:right-[1vw]'>
                 <button className='flex flex-row items-center rounded-[4px]
-                                    py-[0.7vw] px-[0.5vw] bg-[#C99359] text-white'>
+                                    py-[0.7vw] px-[0.5vw] bg-[#C99359] text-white '>
                     <div>
                         <BsFillCloudUploadFill 
                         // onClick={handleCoverChange}
@@ -57,7 +59,7 @@ const User = () => {
                     </div>
                 </button>
             </div>
-            <div className='absolute right-[41.3vw] top-[29vw] z-100'>
+            <div className='absolute right-[41.3vw] top-[29vw] md:right-[41.6vw] md:top-[23vw] z-100'>
                 <button className='flex rounded-full items-center justify-center w-[2.5vw] h-[2.5vw] bg-[#C99359]'>
                     <FaPen className='text-white  justify-center w-[1.2w] h-[1.2w]'
                      
@@ -65,16 +67,26 @@ const User = () => {
                      />
                 </button>
             </div>
+            <div className='flex flex-col md:mt-[7vw] mt-[6vw] text-[1.3vw] sm:text-auto'>
+              <div className='flex justify-center font-bold items-center '>
+                  {'  ..... ' + 'John Doe' }
+              </div>
+              <div className='flex justify-center text-slate-400 items-center'>
+                .....johndoe@gmail.com
+
+              </div>
+            </div>
         </div>
         <div className='my-[1vw]' id='NavforProducts'> 
-         <div id='navbar' className='flex justify-center  mx-[17vw] mt-[10vw] text-[2.2vw]'>
+         <div id='navbar' className='flex justify-center  mx-[17vw] mt-[1vw] text-[2.2vw]'>
         <nav>
-          <ul className='flex flex-row font-poppins text-[#454545] gap-[20vw]'>
+          <ul className='flex flex-row font-poppins text-[#454545]'>
             <li onClick={() => handleClick(0)} className={tabStyles(0)}>
               ACCOUNTS
             </li>
-            <li onClick={() => handleClick(1)} className={tabStyles(1)}>
-              HISTORY
+            
+            <li onClick={() => handleClick(1)}  className={tabStyles(1)}> 
+              <div className='w-[30vw] flex justify-center items-center border-r-[0.2vw] border-l-[0.2vw] px-[3vw]'> HISTORY</div>
             </li>
             <li onClick={() => handleClick(2)} className={tabStyles(2)}>
               PAYMENTS
@@ -83,31 +95,6 @@ const User = () => {
         </nav>
       </div>
     </div>
-    {/* <div className='flex flex-row justify-center items-center text-[2.2vw]'>
-        <div className='grid grid-cols-3 gap-[3vw]  mt-[8vw] justify-center'>
-            <div className='w-[30vw] flex justify-center '>
-                <button onClick={() => handleLinkClick('/Account')}
-                 className=' flex justify-center items-center'>
-                    Accounts
-                </button>
-                
-            </div>
-            <div  onClick={() => handleLinkClick('/History')}
-             className='w-[30vw] flex justify-center items-center  '>
-            <button className=''>
-                    History
-                </button>
-                
-            </div>
-            <div onClick={() => handleLinkClick('/Payments')}
-             className='w-[30vw] flex justify-center items-center '>
-            <button className=''>
-                    Payment Method/Address
-                </button>
-    
-            </div>
-        </div>
-    </div>             */}
 </div>
 <div className='mt-[vw]'>
 <div className='flex flex-row justify-start items-start gap-[5vw]  my-[3vw]'>
@@ -183,3 +170,29 @@ export default User
   //     console.error('Error updating user data:', error);
   //   }
   // };
+
+   {/* <div className='flex flex-row justify-center items-center text-[2.2vw]'>
+        <div className='grid grid-cols-3 gap-[3vw]  mt-[8vw] justify-center'>
+            <div className='w-[30vw] flex justify-center '>
+                <button onClick={() => handleLinkClick('/Account')}
+                 className=' flex justify-center items-center'>
+                    Accounts
+                </button>
+                
+            </div>
+            <div  onClick={() => handleLinkClick('/History')}
+             className='w-[30vw] flex justify-center items-center  '>
+            <button className=''>
+                    History
+                </button>
+                
+            </div>
+            <div onClick={() => handleLinkClick('/Payments')}
+             className='w-[30vw] flex justify-center items-center '>
+            <button className=''>
+                    Payment Method/Address
+                </button>
+    
+            </div>
+        </div>
+    </div>             */}

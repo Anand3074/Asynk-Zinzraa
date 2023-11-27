@@ -1,5 +1,4 @@
 import React from 'react';
-import AccDetail from './AccDetail.jsx';
 import SetAcc from './setAcc.jsx'
 
 const Accounts = () => {

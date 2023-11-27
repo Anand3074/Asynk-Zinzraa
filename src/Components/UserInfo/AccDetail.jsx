@@ -32,7 +32,7 @@ const AccDetail = ({name, email, password, address, phoneNumber}) => {
                   className='border solid border-2px'
                 />
               ) : (
-                <div className='text-green-400'>{name}</div>
+                <div className='font-bold '>{name}</div>
               )}
             </div>
           </div>
@@ -60,7 +60,7 @@ const AccDetail = ({name, email, password, address, phoneNumber}) => {
                   className='border solid border-2px'
                 />
               ) : (
-                <div className='text-green-400'>{email}</div>
+                <div className='font-bold '>{email}</div>
               )}
             </div>
           </div>
@@ -88,7 +88,7 @@ const AccDetail = ({name, email, password, address, phoneNumber}) => {
                   className='border solid border-2px'
                 />
               ) : (
-                <div className='text-green-400'>{password}</div>
+                <div className='font-bold '>{password}</div>
               )}
             </div>
           </div>
@@ -116,7 +116,7 @@ const AccDetail = ({name, email, password, address, phoneNumber}) => {
                   className='border solid border-2px'
                 />
               ) : (
-                <div className='text-green-400'>{phoneNumber}</div>
+                <div className='font-bold '>{phoneNumber}</div>
               )}
             </div>
           </div>
@@ -144,7 +144,7 @@ const AccDetail = ({name, email, password, address, phoneNumber}) => {
                   className='border solid border-2px'
                 />
               ) : (
-                <div className='text-green-400'>{address}</div>
+                <div className='font-bold '>{address}</div>
               )}
             </div>
           </div>
@@ -172,7 +172,7 @@ const AccDetail = ({name, email, password, address, phoneNumber}) => {
                   className='border solid border-2px'
                 />
               ) : (
-                <div className='text-green-400'>{name}</div>
+                <div className='font-bold '>{name}</div>
               )}
             </div>
           </div>
@@ -237,7 +237,7 @@ export default AccDetail;
 //                   className='border solid border-2px'
 //                 />
 //               ) : (
-//                 <div className='text-green-400'>{editedValue}</div>)}
+//                 <div className='font-bold '>{editedValue}</div>)}
                 
               
 //             </div>
