@@ -6,10 +6,13 @@ import Login from './Pages/Registrations/Login.jsx'
 import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Pages/Cart.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
+
 import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'
 import Dashboard from './Pages/admin/dashboard/Dashboard.jsx'
 import DashboardTab from './Pages/admin/dashboard/DashboardTab.jsx'
 import UpdateProduct from './Pages/admin/dashboard/page/UpdateProduct.jsx'
+import AdminNav from './Pages/admin/dashboard/page/AdminNav.jsx'
+
 import Signup from './Pages/Registrations/Signup.jsx'
 import Hamburger from './Components/HomePage/hamburger.jsx'
 import User from './Pages/User.jsx'
@@ -20,7 +23,6 @@ import MobileLogin from './Pages/Login/Login.jsx'
 import OtpVerify from './Pages/Login/OtpVerify.jsx'
 import MyState from './context/myState.jsx'
 import Category from './Pages/Category/Category.jsx'
-
 import Kurtas from './Pages/Kurtas.jsx'
 import Dresses from './Pages/Dresses.jsx'
 import Saree from './Pages/Saree.jsx'
@@ -46,13 +48,32 @@ const App = () => {
 
               {/* Admin CMS Link */}
 
-      <Route exact path='/AddProduct' element={<AddProduct/>}/> 
+      <Route exact path='/AddProduct' element={
+
+      <ProtectedRouteForAdmin>
+          <AddProduct/>
+      </ProtectedRouteForAdmin>
+      }/> 
+
       <Route exact path='/Dashboard' element={
-      <ProtectedRoutesForAdmin>
+
+      <ProtectedRouteForAdmin>
               <Dashboard />
-      </ProtectedRoutesForAdmin>}/>
-      <Route exact path='/DashboardTab' element={<DashboardTab/>}/>
-      <Route exact path='/UpdateProduct' element={<UpdateProduct/>}/> 
+      </ProtectedRouteForAdmin>}/>
+
+      <Route exact path='/DashboardTab' element={
+        <ProtectedRouteForAdmin>
+          <DashboardTab/>
+        </ProtectedRouteForAdmin>
+      }/>
+      <Route exact path='/UpdateProduct' element={
+      
+      <ProtectedRouteForAdmin>
+        <UpdateProduct/>
+      </ProtectedRouteForAdmin>}/> 
+      
+      <Route exact path='/AdminNav' element={<AdminNav/>}/> 
+
 
               {/* Logins */}
       <Route exact path='/Signup' element={<Signup/>}/>
@@ -73,25 +94,26 @@ const App = () => {
 }
 export default App
 
-//user
-export const ProtectedRoutes = ({ children }) => {
-  if (localStorage.getItem('currentUser')) {
+
+export const ProtectedRoute = ({children}) => {
+  const user = localStorage.getItem('user')
+  if(user){
     return children
-  }
-  else {
-    return <Link to='/Dashboard' />
+  }else{
+    return <Navigate to={'/login'}/>
   }
 }
 
+// admin 
 
-//admin
-export const ProtectedRoutesForAdmin = ({children}) => {
+const ProtectedRouteForAdmin = ({children})=> {
   const admin = JSON.parse(localStorage.getItem('user'))
-  console.log(admin.user.email)
-  if (admin.user.email === 'anandsaeiou@gmail.com') {
+  
+  if(admin.user.email === 'anandsaeiou@gmail.com'){
     return children
   }
-  else {
-    return <Navigate to='/Dashboard' />
+  else{
+    return <Navigate to={'/login'}/>
   }
+
 }

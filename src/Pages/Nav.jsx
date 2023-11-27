@@ -59,7 +59,7 @@ const Nav2 = () => {
                         <Link to="/Dresses">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
                         </Link>
-                        <Link to="/UserProfile">
+                        <Link to="/User">
                             <li className='hover:text-[#CC911D] transition cursor-pointer'>Contact Us</li>
                         </Link>
                     </ul>
@@ -77,7 +77,7 @@ const Nav2 = () => {
                         />
                     </div>
                     <div className='flex space-x-[30px]  md:space-x-[16px] items-center mr-7  md:mr-0'>
-                    <Link to="/User">
+                    <Link to="/Signup">
                         <FaUser className="text-white"/>
                     </Link>
                     {/* <Link to=""> */}

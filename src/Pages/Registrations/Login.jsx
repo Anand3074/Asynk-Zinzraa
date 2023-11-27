@@ -14,6 +14,8 @@ function Login() {
     const [password, setPassword] = useState('');
 
     const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem('user'))
+
 
     const login = async () => {
         setLoading(true)
@@ -30,7 +32,8 @@ function Login() {
                 theme: "colored",
               })
             localStorage.setItem('user', JSON.stringify(result))
-            navigate('/')
+            {user?.user?.email === 'anandsaeiou@gmail.com' ? navigate('/Dashboard') : navigate('/')}
+            
             setLoading(false)
             
         } catch (error) {

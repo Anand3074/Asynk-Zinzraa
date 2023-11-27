@@ -3,12 +3,17 @@ import {FaUserTie } from 'react-icons/fa';
 import myContext from '../../../context/myContext';
 import DashboardTab from './DashboardTab';
 import Footer from '../../../Components/Footer';
+import AdminNav from './page/AdminNav'
 
 function Dashboard() {
     const context = useContext(myContext)
+    const {product }= context;
    const { mode } = context ?? { mode: 'light' };
 return (
     <div>
+        <div>
+            <AdminNav/>
+        </div>
         <section className="text-gray-600 body-font mt-10 mb-10">
             <div className="container px-5 mx-auto mb-10">
                 <div className="flex flex-wrap -m-4 text-center">
@@ -20,6 +25,7 @@ return (
                             <h2 className="title-font font-medium text-3xl text-black fonts1"
                              style={{ color: mode === 'dark' ? 'white' : ''}}></h2>
                             <p className=" text-purple-500  font-bold" style={{ color: mode === 'dark' ? 'white' : ''}}>Total Products</p>
+                            <p className=" text-purple-500  font-bold" style={{ color: mode === 'dark' ? 'white' : ''}}>{product.length}</p>
                         </div>
                     </div>
                     <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
@@ -48,7 +54,7 @@ return (
                                 <FaUserTie size={50} />
                             </div>
                             <h2 className="title-font font-medium text-3xl text-black fonts1" style={{ color: mode === 'dark' ? 'white' : ''}}></h2>
-                            <p className=" text-purple-500  font-bold" style={{ color: mode === 'dark' ? 'white' : ''}}>Total Products</p>
+                            <p className=" text-purple-500  font-bold" style={{ color: mode === 'dark' ? 'white' : ''}}>xxxxxx</p>
                         </div>
                     </div>
                 </div>
