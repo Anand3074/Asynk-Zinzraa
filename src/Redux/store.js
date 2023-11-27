@@ -1,18 +1,35 @@
-// store.js
 import { configureStore, combineReducers, applyMiddleware } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import cartReducer from './CartSlice.js';
 import wishlistReducer from './Wishlist/WIshSlice.js';
 import productSlice from './Product/ProductSlice.js'
 
-const store = configureStore({
-  reducer: {
-    cart: cartReducer,
-    wishlist: wishlistReducer,
-    product: productSlice 
-  },
+const rootReducer = combineReducers({
+  cart: cartReducer,
+  wishlist: wishlistReducer,
+  product: productSlice,
 });
 
-export default store;
+const persistConfig = {
+  key: 'Zinzraa',
+  storage,
+  // You can add more options here, such as blacklist or whitelist
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = configureStore({
+  reducer: persistedReducer,
+});
+
+const persistor = persistStore(store);
+persistor.subscribe(() => {
+  console.log('State persisted:', store.getState());
+});
+
+export { store, persistor };
+
 
 
 // import { configureStore } from "@reduxjs/toolkit";
@@ -47,3 +64,20 @@ export default store;
 // const store = createStore(rootReducer, applyMiddleware(...middleware));
 
 // export default store;
+
+// // store.js
+// import { configureStore, combineReducers, applyMiddleware } from '@reduxjs/toolkit';
+// import cartReducer from './CartSlice.js';
+// import wishlistReducer from './Wishlist/WIshSlice.js';
+// import productSlice from './Product/ProductSlice.js'
+
+// const store = configureStore({
+//   reducer: {
+//     cart: cartReducer,
+//     wishlist: wishlistReducer,
+//     product: productSlice 
+//   },
+// });
+
+// export default store;
+// store.js
