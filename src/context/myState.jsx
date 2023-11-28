@@ -5,6 +5,7 @@ import { Timestamp, addDoc, collection, deleteDoc, doc, getDocs, onSnapshot,
 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { fireDB } from '../firebase/firebase.jsx';
+import { useNavigate } from 'react-router-dom';
 
 function myState(props) {
     const [mode, setMode] = useState('light');
@@ -34,19 +35,26 @@ function myState(props) {
         imageUrl: null,
         category: null,
         description: null,
-        time: Timestamp.now(),
-        date: new Date().toLocaleString(
-            "en-US",
-            {
-                month: "short",
-                day: "2-digit",
-                year: "numeric",
-            }
-        )
+        size:null,
+        fabric:null,
+        quantity:null,
+        // time: Timestamp.now(),
+        time: Timestamp.now().toMillis(),
+        date: new Date().getTime(), // Store as a timestamp
+        // date: new Date().toLocaleString(
+        //     // "en-US",
+        //     // {
+        //     //     month: "short",
+        //     //     day: "2-digit",
+        //     //     year: "numeric",
+        //     // }
+        // )
     });
 
     const addProduct = async () => {
-        if (products.title == null || products.price == null || products.imageUrl == null || products.category == null || products.description == null) {
+        if (products.title == null || products.price == null || products.imageUrl == null ||
+             products.category == null || products.quantity == null ||
+             products.fabric == null || products.size == null || products.description == null ) {
             return toast.error("all fields are required")
         }
 
@@ -112,6 +120,7 @@ function myState(props) {
     const edithandle = (item) => {
         setProducts(item)
     }
+    const navigate= useNavigate()
 
     const updateProduct = async () => {
         setLoading(true)
@@ -119,11 +128,12 @@ function myState(props) {
 
             await setDoc(doc(fireDB, 'products', products.id), products)
             toast.success("Product Updated successfully")
-            setTimeout(() => {
-                window.location.href = '/dashboard'
-            }, 800);
+            // setTimeout(() => {
+            //     window.location.href = '/Dashboard'
+            // }, 800);
             getProductData();
             setLoading(false)
+            navigate('/Dashboard')
 
         } catch (error) {
             console.log(error)

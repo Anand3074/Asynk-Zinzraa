@@ -46,7 +46,7 @@ const Footer = () => {
                <ul className='mx-[15vw] sm:mx-[0vw] '>
                 <li className='flex justify-center flex-center
                  sm:text-[2.2vw] text-[4vw] font-semibold'>{ImpLink.title}</li>
-                <li className='flex justify-center flex-center'>{ImpLink.field1}</li>
+                <Link to='/User'><li className='flex justify-center flex-center'>{ImpLink.field1}</li></Link>
                 <li className='flex justify-center flex-center'>{ImpLink.field2}</li>
                 <li className='flex justify-center flex-center'>{ImpLink.field3}</li>
                 <li className='flex justify-center flex-center'>{ImpLink.field4}</li>
@@ -57,10 +57,10 @@ const Footer = () => {
               <ul className='mx-[15vw] sm:mx-[0vw] '>
                 <li className='sm:text-[2.2vw] text-[4vw] font-semibold'>{ShopCategory.title}</li>
                 <Link to='/Dresses'> <li className='flex justify-center'>{ShopCategory.field1}</li></Link>
-                <li className='flex justify-center'>{ShopCategory.field2}</li>
-                <li className='flex justify-center'>{ShopCategory.field3}</li>
-                <li className='flex justify-center'>{ShopCategory.field4}</li>
-                <li className='flex justify-center'>{ShopCategory.field5}</li>
+                <Link to='/Dresses'><li className='flex justify-center'>{ShopCategory.field2}</li></Link>
+                <Link to='/Sarees'><li className='flex justify-center'>{ShopCategory.field3}</li></Link>
+                <Link to='/Kurtas'><li className='flex justify-center'>{ShopCategory.field4}</li></Link>
+                <Link to='/Dresses'><li className='flex justify-center'>{ShopCategory.field5}</li></Link>
               </ul>
            </div>
         </div>
