@@ -19,7 +19,7 @@ const Carousel = () => {
     const { deltaX } = ui;
   
     // Adjust this value based on your sensitivity preference
-    const sensitivity = -
+    const sensitivity = -0.05
     
     
     
@@ -32,7 +32,7 @@ const Carousel = () => {
     // If dragged more than the sensitivity value, change the activeIndex
     if (deltaX > sensitivity) {
       setActiveIndex((prevIndex) => (prevIndex + 1) % components.length);
-    } else if (deltaX < -sensitivity) {
+    } else if (deltaX < sensitivity) {
       setActiveIndex((prevIndex) => (prevIndex - 1 + components.length) % components.length);
     }
   }
