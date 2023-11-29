@@ -13,13 +13,13 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
     const { product } = context;
   return (
     
-        <div className='w-[25vw] h-[38vw] mr-[5vw]' >
+        <div className='w-[28vw] h-[42vw] mr-[5vw]' >
         <div className='' id='container'>
             <div className='flex relative'>
                 <div className='z-150'>
                 {/* <Link to='/Detail'><img src="" alt='' */}
                 <Link to='/Detail'><img src={imageUrl} onClick={Detail} alt=''
-                className='rounded-[2vw] w-[25vw] h-[28vw]'/></Link>
+                className='rounded-[2vw] w-[28vw] h-[33vw]'/></Link>
                 </div>
                 {/* <div className='' onClick={handleAddToWishlist}> */}
                 <div className='' onClick={addWish}>
@@ -35,12 +35,12 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
                 </div>
             </div>
             <div className='relative'>
-            <div className='text-slate-900 font-lora text-[1.6vw]'>
+            <div className='flex text-slate-900 font-lora mt-[0.2vw] wrap text-[1.6vw] md:text-[1.55vw] h-[3vw] mb-[0.2vw]'>
                 {description} 
             </div>
             <div className='flex flex-row'>
-            <div className='font-semibold mr-[1vw] items-start font-lora text-[2.2vw]
-             md:text-[1.4vw]'>
+            <div className='font-bold mr-[1vw] items-start font-lora text-[2.2vw]
+             md:text-[1.7vw]'>
                     ${price}     
             </div>
                 <div className='flex text-red-400 font-lora items-center 

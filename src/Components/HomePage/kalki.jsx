@@ -57,7 +57,7 @@ const kalki = () => {
                     
                 </div>
                 <div>
-                    <Link to='/Dresses'><button className='bg-white text-slate-900 font- semibold font-playfair text-[2vw] px-[7vw] py-[2vw]'>
+                    <Link to='/Kalki'><button className='bg-white text-slate-900 font- semibold font-playfair text-[2vw] px-[7vw] py-[2vw]'>
                         SHOP NOW
                     </button></Link>
 

@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import hero1 from '../../assets/hero1.png'
 import vec1 from '../../assets/vec1.png'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
     return (
       <div className='flex relative w-full  space-between'>
             <div className=' '>
-            <div className='z-1000 '>
+            <div className='z-2 '>
                     <img src={hero1} alt='hero' className='w-[65vw]'/>
             </div>
 
@@ -19,14 +20,16 @@ const Hero = () => {
                     </div> 
                 </div>
                 <div className='z-4 absolute lg:right-[19.9vw] right-[19.8vw] xl:left-[50vw]
-                md:right-[18.5vw] top-[22.4vw] w-[30vw] sm:right-[17.8vw] z-40'>
+                md:right-[18.5vw] top-[22.4vw] w-[30vw] sm:right-[17.8vw] z-3'>
                     <img src={vec1} className='' alt='vector'/>
                 </div>
-                <div className='justify-center z-10'>
-                    <button className='bg-[#cc911dcc] font-playfair md:text-[32px] text-[11px] mx-[1.8vw] mt-[12vw] py-[1vw]  w-[30vw] text-white '>
+                <div className='justify-center z-1'>
+                    <Link to='/Dresses'><button className='bg-[#cc911dcc]
+                     font-playfair md:text-[32px] text-[11px] mx-[1.8vw] 
+                     mt-[12vw] py-[1vw]  w-[30vw] text-white '>
                         {/* md:px-[116px] md:py-[16.5px] */}
                         SHOP NOW
-                    </button>
+                    </button></Link>
                 </div>
             </div> 
          </div>

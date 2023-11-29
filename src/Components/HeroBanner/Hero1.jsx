@@ -1,6 +1,7 @@
 import React from 'react'
 import hero2 from '../../assets/hero2.png'
 import hero3 from '../../assets/hero3.png'
+import { Link } from 'react-router-dom'
 
 const Hero1 = () => {
   return (
@@ -15,9 +16,10 @@ const Hero1 = () => {
             <div className='flex justify-center'>India.</div> 
             </div>
             <div className='flex justify-center'>
-            <button className='bg-white font-playfair text-nunito text-[1.8vw] text-slate-900 px-[8vw] py-[1vw]'>
+            <Link to='/Kurtas'><button className='bg-white font-playfair text-nunito text-[1.8vw] text-slate-900 px-[8vw] py-[1vw]'>
               Shop Now
             </button>
+            </Link>
             </div>
         </div>
         <div>

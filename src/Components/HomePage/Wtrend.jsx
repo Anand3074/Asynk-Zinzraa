@@ -19,7 +19,7 @@ const Wtrend = () => {
                     
                 </div>
                 <div>
-                    <Link to='/Dresses'>'<button className='bg-[#515233] text-white font-playfair text-[2vw] px-[7vw] py-[2vw]'>
+                    <Link to='/Westrend'>'<button className='bg-[#515233] text-white font-playfair text-[2vw] px-[7vw] py-[2vw]'>
                         SHOP NOW
                     </button></Link>
 

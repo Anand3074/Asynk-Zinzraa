@@ -29,11 +29,10 @@ const Filtersss = () => {
         // console.log(selectedFabrics)
       };
   return (
-    <div className='flex flex-col my-[3vw] border-r-[2px] solid border-slate-600'>
-       <div className='flex flex-col w-[5vw] mx-[4vw]' >
+    <div className='flex flex-col mb-[3vw] h-[75vw] text-[2vw] md:text-[1.6vw] md:h-[50vw] border-r-[2px] solid border-slate-600'>
+       <div className='flex flex-col md:w-[5vw] w-[25vw] mx-[4vw]' >
         <p className='font-semibold text-[1.6vw]  md:text-[2.2vw] my-[1vw] '>Size</p>
-      {sizes.map((size) => (
-        <div>
+      {sizes.map((size, index) => (
         <label key={size}>
           <input
             type="checkbox"
@@ -43,18 +42,17 @@ const Filtersss = () => {
           />
           {size}
         </label>
-        </div>
       ))}
     </div>
-      <div className='flex flex-col w-[8vw] mx-[4vw] my-[4vw]'>
-      <p className='font-semibold text-[1.6vw]  md:text-[2.2vw] my-[1vw] '>Fabric</p>
-      {fabrics.map((fabric) => (
+      <div className='flex flex-col md:w-[8vw] text-[2vw] md:text-[1.6vw] w-[25vw] mx-[4vw] my-[4vw]'>
+      <p className='font-semibold text-[2vw]  md:text-[2.2vw] my-[1vw] '>Fabric</p>
+      {fabrics.map((fabric, index) => (
         <label key={fabric}>
           <input
             type="checkbox"
             checked={selectedFabrics.includes(fabric)}
             onChange={() => handleFabricToggle(fabric)}
-            className='mr-[0.9vw] my-[0.4vw]' 
+            className='mr-[0.9vw]  my-[0.4vw]' 
 
           />
           {fabric}

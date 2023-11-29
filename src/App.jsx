@@ -26,6 +26,8 @@ import Category from './Pages/Category/Category.jsx'
 import Kurtas from './Pages/Kurtas.jsx'
 import Dresses from './Pages/Dresses.jsx'
 import Saree from './Pages/Saree.jsx'
+import Westrend from './Pages/Western1.jsx'
+import KalkiCollection from './Pages/KalkiCollection.jsx'
 // import Ethnic from './Pages/Ethnic'
 // import Western from './Pages/Western'
 
@@ -86,6 +88,10 @@ const App = () => {
       <Route exact path='/Saree' element={<Saree/>}/>
       <Route exact path='/Kurtas' element={<Kurtas/>}/>
       <Route exact path='/Dresses' element={<Dresses/>}/>
+      <Route exact path='/Westrend' element={<Westrend/>}/>
+      <Route exact path='/Kalki' element={<KalkiCollection/>}/>
+      
+
       </Routes>
      
       </MyState>

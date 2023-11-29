@@ -15,13 +15,13 @@ const Collections = ({group}) => {
             </div>
             <div className='flex flex-row space-between md:gap-[32px] gap-[11px] justify-center'>
                 <div>
-                    <Cards Products={group.Products[0]}/>
+                    <Cards/>
                 </div>
                 <div>
-                    <Cards Products={group.Products[1]}/>
+                    <Cards/>
                 </div>
                 <div>
-                    <Cards Products={group.Products[2]}/>
+                    <Cards/>
                 </div>
             </div>
         </div>

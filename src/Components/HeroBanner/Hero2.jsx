@@ -1,6 +1,7 @@
 import React from 'react'
 import hero4 from '../../assets/hero4.png'
 import vec6 from '../../assets/vec6.png'
+import { Link } from 'react-router-dom'
 
 const Hero2 = () => {
   return (
@@ -17,9 +18,9 @@ const Hero2 = () => {
                     <img src={vec6} className='' alt='vector'/>
             </div>
             <div className='flex justify-center'>
-            <button className='bg-[#883D6A] font-playfair text-white  text-[2.2vw] text-slate-900 px-[8vw] py-[1vw]'>
+            <Link to='Category'>  <button className='bg-[#883D6A] font-playfair text-white  text-[2.2vw] text-slate-900 px-[8vw] py-[1vw]'>
               SHOP NOW
-            </button>
+            </button></Link>
             </div>
         </div>
             <div className='z-100'>
