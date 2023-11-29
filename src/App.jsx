@@ -90,8 +90,8 @@ const App = () => {
       <Route exact path='/Dresses' element={<Dresses/>}/>
       <Route exact path='/Westrend' element={<Westrend/>}/>
       <Route exact path='/Kalki' element={<KalkiCollection/>}/>
-      
 
+            
       </Routes>
      
       </MyState>

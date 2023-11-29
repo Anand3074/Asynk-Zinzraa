@@ -7,6 +7,10 @@ const filtersSlice = createSlice({
     fabrics: ['Silk', 'Cotton',  'Linen', 'Rayon'],
     selectedSizes: ['S'],
     selectedFabrics: ['Silk', 'Cotton',  'Linen', 'Rayon'],
+    priceRange: {
+      min: 0,
+      max: 10000, // Set an initial max price as needed
+    },
   },
   reducers: {
     toggleSize: (state, action) => {
@@ -21,8 +25,10 @@ const filtersSlice = createSlice({
         ? (state.selectedFabrics = state.selectedFabrics.filter((f) => f !== fabric))
         : state.selectedFabrics.push(fabric);
     },
+    setPriceRange: (state=initialState, action) => {
+      state.priceRange = action.payload || { min: 0, max: 10000 };    },
   },
 });
 
-export const { toggleSize, toggleFabric } = filtersSlice.actions;
+export const { toggleSize, toggleFabric, setPriceRange } = filtersSlice.actions;
 export default filtersSlice.reducer;

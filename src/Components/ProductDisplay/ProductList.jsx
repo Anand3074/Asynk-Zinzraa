@@ -16,7 +16,6 @@ const ProductList = ({categoryToRender, size, fabric}) => {
   // console.log(isItemInWishlist)
 
 
-
   const dispatch = useDispatch()
   const handleAddToCart = (item) => {
       // console.log(item)
@@ -46,14 +45,20 @@ const ProductList = ({categoryToRender, size, fabric}) => {
   };
   const selectedSizes = useSelector((state) => state.filters.selectedSizes);
     const selectedFabrics = useSelector((state) => state.filters.selectedFabrics);
+    const priceRange = useSelector((state) => state.filters.priceRange) || { min: 0, max: 9999 };
+
+    // const priceRange = useSelector((state) => state.filters.priceRange);
+
   const filteredProducts = product.filter((item) => {
   //   // const { title, price, imageUrl, category, description, id, fabric, size  } = item;
 
     const isSizeMatch = selectedSizes.length === 0 || selectedSizes.some((size) => item.size == size);
     const isFabricMatch = selectedFabrics.length === 0 || selectedFabrics.includes(item.fabric);
+    const isPriceMatch = item.price >= priceRange.min && item.price <= priceRange.max;
+
     // console.log('item' + item.fabric)
 
-    return isSizeMatch && isFabricMatch && (item.category === categoryToRender || !categoryToRender);
+    return isSizeMatch && isFabricMatch && isPriceMatch  &&  (item.category === categoryToRender || !categoryToRender);
     // return isFabricMatch && (item.category === categoryToRender || !categoryToRender);
 
   });

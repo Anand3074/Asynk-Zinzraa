@@ -1,7 +1,7 @@
 import React from 'react'
-import { useEffect } from 'react';
+import { useEffect, useState   } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleSize, toggleFabric } from '../../Redux/Product/filter';
+import { toggleSize, toggleFabric, setPriceRange } from '../../Redux/Product/filter';
 
 
 const Filtersss = () => {
@@ -10,6 +10,14 @@ const Filtersss = () => {
     const fabrics = useSelector((state) => state.filters.fabrics);
     const selectedSizes = useSelector((state) => state.filters.selectedSizes);
     const selectedFabrics = useSelector((state) => state.filters.selectedFabrics);
+       
+    const priceRange = useSelector((state) => state.filters.priceRange);
+    const initialMaxPrice = 10000;
+
+
+    const handlePriceChange = (min, max) => {
+       dispatch(setPriceRange({ min, max }));
+    };
     // console.log(size)
     useEffect(() => {
       // Dispatch action to set all fabrics initially
@@ -19,8 +27,8 @@ const Filtersss = () => {
     const handleSizeToggle = (size) => {
       dispatch(toggleSize(size));
       // console.log('clicked')
-      console.log(size)
-      console.log(selectedSizes)
+      // console.log(size)
+      // console.log(selectedSizes)
     };
     
       const handleFabricToggle = (fabric) => {
@@ -44,6 +52,38 @@ const Filtersss = () => {
         </label>
       ))}
     </div>
+
+    {/* Price */}
+
+
+
+    <div className='my-[4vw] px-[2vw]'>
+       <div className='font-bold sm:text-[2vw] text-[4vw] sm:my-[1.5vw] mt-[7vw]'>
+         Price
+     </div>
+     <div className='flex flex-col'>
+         <input type='range' className='sm:w-[18vw] w-[20vw] sm:h-[0.8vw] h-[1.2vw] 
+       my-[1vw] accent-color'
+                defaultValue={0}
+                min={0}
+                 max={10000} 
+                onChange={(e) => handlePriceChange(0, e.target.value)}
+                />
+                <div className='flex flex-row gap-[10vw] text-[2vw] sm:text-[1.5vw] mt-[1.5vw] font-semibold sm:mt-[0.2vw]'>
+                  <div>
+                    $0
+                  </div>
+                  <div>
+                  {priceRange ? (
+            <div>${priceRange.max}</div>
+          ) : (
+            <div>${initialMaxPrice}</div>
+          )}                  </div>
+                </div>
+              </div>
+            </div>
+
+ {/* Fabric */}
       <div className='flex flex-col md:w-[8vw] text-[2vw] md:text-[1.6vw] w-[25vw] mx-[4vw] my-[4vw]'>
       <p className='font-semibold text-[2vw]  md:text-[2.2vw] my-[1vw] '>Fabric</p>
       {fabrics.map((fabric, index) => (
