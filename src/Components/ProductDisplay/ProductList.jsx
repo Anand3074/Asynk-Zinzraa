@@ -8,7 +8,7 @@ import { setSelectedProduct } from '../../Redux/Product/productActions';
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
 
 
-const ProductList = ({categoryToRender}) => {
+const ProductList = ({categoryToRender, size, fabric}) => {
   const context = useContext(myContext);
   const { product } = context;
   const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
@@ -44,20 +44,32 @@ const ProductList = ({categoryToRender}) => {
     dispatch(setSelectedProduct(cardDetails));
     // history.push('/');
   };
+  const selectedSizes = useSelector((state) => state.filters.selectedSizes);
+    const selectedFabrics = useSelector((state) => state.filters.selectedFabrics);
+  const filteredProducts = product.filter((item) => {
+  //   // const { title, price, imageUrl, category, description, id, fabric, size  } = item;
+
+    const isSizeMatch = selectedSizes.length === 0 || selectedSizes.some((size) => item.size == size);
+    const isFabricMatch = selectedFabrics.length === 0 || selectedFabrics.includes(item.fabric);
+    // console.log('item' + item.fabric)
+
+    return isSizeMatch && isFabricMatch && (item.category === categoryToRender || !categoryToRender);
+    // return isFabricMatch && (item.category === categoryToRender || !categoryToRender);
+
+  });
 
 
-
-    
 // 
   return (
     <div>
       <div className='flex justify-start items-start flex-grow-1'>
         <div className='grid grid-cols-2 m-[1vw] gap-[5vw]px-[3vw] justify-center items-center'>
          
-          {product.map((item, index) => {          
+          {filteredProducts.map((item, index) => {          
             const { title, price, imageUrl, category, description, id } = item;
             const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === id);
-            if (category === categoryToRender || !categoryToRender) {
+            // if (isFabricMatch && (category === categoryToRender || !categoryToRender))
+             {
             return (        
               <Cards 
                 key={index}

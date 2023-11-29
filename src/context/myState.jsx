@@ -38,9 +38,10 @@ function myState(props) {
         size:null,
         fabric:null,
         quantity:null,
-        // time: Timestamp.now(),
         time: Timestamp.now().toMillis(),
-        date: new Date().getTime(), // Store as a timestamp
+        date: new Date().getTime(), 
+        // time: Timestamp.now(),
+        // Store as a timestamp
         // date: new Date().toLocaleString(
         //     // "en-US",
         //     // {
