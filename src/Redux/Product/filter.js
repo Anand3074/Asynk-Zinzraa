@@ -11,6 +11,7 @@ const filtersSlice = createSlice({
       min: 0,
       max: 10000, // Set an initial max price as needed
     },
+    searchTerm: '',
   },
   reducers: {
     toggleSize: (state, action) => {
@@ -27,8 +28,12 @@ const filtersSlice = createSlice({
     },
     setPriceRange: (state=initialState, action) => {
       state.priceRange = action.payload || { min: 0, max: 10000 };    },
+      setSearchTerm: (state, action) => {
+        state.searchTerm = action.payload;
+      },
   },
+  
 });
 
-export const { toggleSize, toggleFabric, setPriceRange } = filtersSlice.actions;
+export const { toggleSize, toggleFabric, setPriceRange, setSearchTerm } = filtersSlice.actions;
 export default filtersSlice.reducer;

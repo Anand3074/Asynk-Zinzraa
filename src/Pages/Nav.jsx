@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { CiMenuFries } from 'react-icons/ci';
 import { FaSearch, FaTimes } from 'react-icons/fa';
@@ -7,12 +7,25 @@ import { FaUser } from 'react-icons/fa';
 import { AiFillHeart } from 'react-icons/ai';
 import { HiShoppingBag } from 'react-icons/hi';
 import Hamburger from '../Components/HomePage/hamburger';
+import { setSearchTerm } from '../Redux/Product/filter';
+import { useDispatch , useSelector} from 'react-redux';
 
-const Nav2 = () => {
+const Nav = () => {
   // for hamburger menu
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMenu = () => setClick(false);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const handleSearchTermChange = (value) => {
+    dispatch(setSearchTerm(value));
+    console.log(value);
+  };
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+        navigate('/Search')
+    }
+  };
   return (
     <nav className='touch-none'>
       <div className='h-auto md:h-[73px] w-full lg:h-[73px] align-center bg-teal-dark w-full text-base md:py-[24px] md:px-[54px]'>
@@ -66,11 +79,13 @@ const Nav2 = () => {
         <div className='flex flex-row justify-center items-center sm:hidden mt-[3.5vw]'>
     <div className='flex  sm:hidden'>
         <div className='flex bg-grey-ray h-[9vw] w-[75vw] gap-[3vw] rounded-[20px] items-center mb-[10px] '>
-        <FaSearch className='text-[#848484] mx-[3vw]' />
+        <Link to='/Search'><FaSearch className='text-[#848484] mx-[3vw]' /></Link>
         <input
             placeholder='search your product'
             className='bg-transparent border-none text-xs focus:outline-none mx-[3vw]'
-        />
+            onChange={(e) => handleSearchTermChange(e.target.value)}
+            onKeyDown={(e) => handleKeyPress(e)}
+          />
         </div>
     </div>
 <div className='sm:hidden  justify-start items-end pl-[5.5vw]'>
@@ -87,7 +102,7 @@ const Nav2 = () => {
   );
 };
 
-export default Nav2;
+export default Nav;
 
 // import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
@@ -102,7 +117,7 @@ export default Nav2;
 
 
 
-// const Nav2 = () => {    
+// const Nav = () => {    
 //     // for hamburger menu
 //     const [click, setClick] = useState(false);
 //     const handleClick = () => setClick(true);
@@ -209,4 +224,4 @@ export default Nav2;
 //   )
 // }
 
-// export default Nav2
+// export default Nav
