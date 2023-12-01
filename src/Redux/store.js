@@ -5,12 +5,14 @@ import cartReducer from './CartSlice.js';
 import wishlistReducer from './Wishlist/WIshSlice.js';
 import productSlice from './Product/ProductSlice.js'
 import filtersReducer from './Product/filter.js'
+import { userReducer } from './User/userReducer.js';
 
 const rootReducer = combineReducers({
   cart: cartReducer,
   wishlist: wishlistReducer,
   product: productSlice,
   filters: filtersReducer,
+  users:userReducer,
 });
 
 const persistConfig = {

@@ -1,10 +1,12 @@
 import React from 'react'
-import bagicon from '../../assets/bagicon.png'
-import CartItem from './CartItem.jsx'
 import {Link} from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
 
 const Cart = ({price}) => {
     // let bigPrice='3874'
+    const { error, loading, isAuthenticated,users } = useSelector((state) => state.users);
+
   return (
     <div>
         <div className='flex flex-col justify-start items-start ml-[10vw]'>
@@ -61,7 +63,7 @@ const Cart = ({price}) => {
                 </div>
             </div>
             <div className='h-[3vw] w-[27vw]'>
-                <Link to='/AddDetail'><button className='bg-teal-dark text-white font-semibold
+                <Link to={`${isAuthenticated? '/AddDetail' : '/Login'}`}><button className='bg-teal-dark text-white font-semibold
                          text-[1.2vw] rounded-[2vw] px-[12vw] py-[1vw] mt-[1vw]'>
                     Checkout
                 </button></Link>

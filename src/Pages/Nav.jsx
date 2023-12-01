@@ -9,6 +9,9 @@ import { HiShoppingBag } from 'react-icons/hi';
 import Hamburger from '../Components/HomePage/hamburger';
 import { setSearchTerm } from '../Redux/Product/filter';
 import { useDispatch , useSelector} from 'react-redux';
+import { logout } from '../Redux/User/userAction';
+import Loader from '../Components/loader/Loader';
+
 
 const Nav = () => {
   // for hamburger menu
@@ -17,13 +20,21 @@ const Nav = () => {
   const closeMenu = () => setClick(false);
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const { error, loading, isAuthenticated,user } = useSelector((state) => state.users);
+// console.log(user?.email)
   const handleSearchTermChange = (value) => {
     dispatch(setSearchTerm(value));
     console.log(value);
   };
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-        navigate('/Search')
+      navigate('/Search');
+      dispatch(setSearchTerm('')); // Clear the search term
     }
   };
   return (
@@ -44,7 +55,7 @@ const Nav = () => {
               <Link to='/Dresses'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
               </Link>
-              <Link to='/User'>
+              <Link onClick={handleLogout}>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Contact Us</li>
               </Link>
             </ul>
@@ -66,7 +77,8 @@ const Nav = () => {
               />
             </div>
             <div className='flex space-x-[30px] md:space-x-[16px] items-center  mr-7 md:mr-0'>
-              <Link to='/Signup'>
+            <Link to={`${isAuthenticated? '/User' : '/Signup'}`}>
+            {/* <Link to='/Signup'> */}
                 <FaUser className='text-white'  />
               </Link>
               <Link to='/Wishlist'>
