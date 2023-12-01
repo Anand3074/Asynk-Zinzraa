@@ -8,16 +8,25 @@ import {AiFillStar} from 'react-icons/ai'
 import szi1 from '../../assets/szi1.png'
 import szi2 from '../../assets/szi2.png'
 import szi3 from '../../assets/szi3.png'
+import { useState,  } from 'react'
+import { useSelector } from 'react-redux'
 
 
 
-const ProductChart = ({price, Description, addCart, addWish}) => {
+const ProductChart = ({price, Description, addCart, addWish, isWishlisted}) => {
+
+
     const Products = {
         Rating : '4.8',
         RatingNo : '143',
         ProductPrice: '2732',
         Discount: '47%',
         oldPrice:'6638'}
+        // console.log(isWishlisted)
+        // const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
+
+        // const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
+
 
         // SizeItem = ['S', 'L', 'M','XL','2XL', '3Xl']
 
@@ -32,6 +41,22 @@ const ProductChart = ({price, Description, addCart, addWish}) => {
         
         // </>
         // }
+        const [selectedSize, setSelectedSize] = useState(null);
+        // console.log(isWishlisted)
+        const wishlist = false
+
+  const sizeOptions = [
+    { size: 'S', availability: true },
+    { size: 'M', availability: false, message: 'Sold out' },
+    { size: 'L', availability: true, message: '4 left' },
+    { size: 'XL', availability: true, message: '4 left' },
+    { size: '2XL', availability: true, message: '4 left' },
+    { size: '3XL', availability: true, message: '4 left' },
+  ];
+
+  const handleSizeClick = (index) => {
+    setSelectedSize(index);
+  };
                         
 
     
@@ -84,7 +109,112 @@ const ProductChart = ({price, Description, addCart, addWish}) => {
                         Size Guide
                         </div> 
                     </div>
-                    <div className='flex flex-row sm:gap-[0.7vw] gap-[4vw] text-[1.5vw] sm:w-[40vw] 
+                    
+                    <div className='flex flex-row sm:gap-[0.7vw] gap-[4vw] text-[1.5vw] sm:w-[40vw] h-[8vw] mt-[0.5vw]'>
+      {sizeOptions.map((option, index) => (
+        <div key={index} className='flex flex-col justify-center'>
+          <button
+            className=
+            {`${
+                option.availability ?   'border' : 'bg-slate-200' 
+              }
+            ${selectedSize === index ? 'bg-pink-600 text-white font-semibold' : 'bg-transparent'
+            } sm:w-[6vw] sm:h-[2.5vw] w-[9vw] h-[4vw] rounded-[0.5vw] border border-solid
+             border-1px border-[#875A33]`}
+            onClick={() => handleSizeClick(index)}
+            disabled={!option.availability}
+          >
+            {option.size}
+          </button>
+          <div className={`h-[2.5vw] text-[1vw] justify-center flex 
+          ${option.availability ? 'text-green-400' : 'text-red-400'}`}>
+            {option.availability ? ''
+            // 'Available' 
+            : option.message}
+          </div>
+        </div>
+      ))}
+    </div>
+                    <div className='flex flex-row gap-[2vw] sm:w-[30vw] h-[4vw] text-[1.47vw] mb-[1vw] sm:mt-[2vw] mt-[1vw]'>
+                        <div>
+                            <button onClick={addWish}
+                             className={`flex flex-row sm:w-[18vw]  w-[30vw] h-[5vw] sm:h-auto 
+                             px-[5px] justify-center items-center border border-solid border-1px
+                              border-[#875A33] py-[1vw] rounded-[1.2vw] ${isWishlisted? 'bg-red-400 text-white font-semibold' : 'bg-white'}`}>
+                                <FiHeart className={` ${isWishlisted? 'fill-white text-white md:w-[5vw]' : 'bg-white'} text-red-400 md:w-[2vw] mr-[1.5vw]`} /> Add to Wishlist
+                            </button>
+                        </div>
+                        <div>
+                            <button onClick={addCart} className=' sm:w-[18vw] w-[30vw] h-[5vw] sm:h-auto px-[10px] text-white jsutify-cenetr
+                                                bg-teal-dark  py-[1vw] rounded-[1.2vw]'>
+                                Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <hr className='border-t border-gray-600 sm:w-[40vw] w-[80vw] sm:mt-[1vw] mt-[3vw]' />
+                    </div>
+                    <div className='mt-[1vw] font-inter font-semibold text-[1.65vw]'>
+                        Select Delivery Location
+                    </div>
+                    <div className='text-[1.47vw] font-inter sm:w-[32vw] gap-[0.5vw]
+                     sm:gap-[0vw] flex flex-row  sm:flex-col'>
+                        <div>
+                            Enter the pincode of your area to check product
+                        </div> 
+                        <div>
+                        availability and delivery options
+                        </div>
+                    </div>
+                    <div className='flex bg-grey-ray w-[31.5vw] mt-[1.5vw]  sm:text-[1.1vw] text-[1.2vw] 
+                    sm:h-[4vw] h-[3vw] items-center px-[2vw]'>
+                            <input
+                            placeholder='Pincode'
+                            maxLength={6}
+                            className="bg-transparent w-[24vw] sm:text-[1.6vw] text-[2.2vw] border-none 
+                             focus:outline-none"
+                            />
+                            <div>
+                                Apply
+                            </div>
+                     </div>
+                     <div className='flex flex-row h-[4vw] w-[25vw] text-[0.92vw] gap-[1.5vw] mt-[4vw] md:mt-[2vw]'>
+                        <div className='flex flex-col w-[7vw] justify-center mb-[3vw] sm:mb-[0vw] '>
+                            <img src={szi1} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                            <div>
+                                COD Available
+                            </div>
+                        </div>
+                     <div className='flex flex-col w-[7vw] justify-center mb-[3vw] sm:mb-[0vw]'>
+                            <img src={szi2} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                            <div>
+                                <div>
+                                    7 Days Return
+                                </div>
+                                <div>
+                                    and Exchange
+                                </div>
+                            </div>
+                        </div>
+                     <div className='flex flex-col w-[7vw] justify-center mb-[3vw] sm:mb-[0vw]'>
+                            <img src={szi3} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                            <div>
+                                <div>
+                                    Usually ship in 
+                                </div>
+                                <div>
+                                    2 Days
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+  )
+}
+
+export default ProductChart
+{/* <div className='flex flex-row sm:gap-[0.7vw] gap-[4vw] text-[1.5vw] sm:w-[40vw] 
                     h-[8vw] mt-[0.5vw]'>
                         <div className='flex flex-col justify-center'>
                             <button className='sm:w-[6vw] sm:h-[2.5vw] w-[9vw] h-[4vw] rounded-[0.5vw] 
@@ -127,82 +257,5 @@ const ProductChart = ({price, Description, addCart, addWish}) => {
                             border border-solid border-1px border-[#875A33]'>
                                 3XL
                             </button><div className='h-[2.5vw] text-[1vw] justify-center flex'></div>
-                        </div>
-                    </div>
-                    <div className='flex flex-row gap-[2vw] sm:w-[30vw] h-[4vw] text-[1.47vw] mb-[1vw] sm:mt-[2vw] mt-[1vw]'>
-                        <div>
-                            <button onClick={addWish} className=' flex flex-row sm:w-[18vw] w-[30vw] h-[5vw] sm:h-auto  px-[5px] justify-center items-center
-                                                border border-solid border-1px border-[#875A33] py-[1vw] rounded-[1.2vw]'>
-                                <FiHeart className='text-red-400 mr-[1.5vw]' /> Add to Wishlist
-                            </button>
-                        </div>
-                        <div>
-                            <button onClick={addCart} className=' sm:w-[18vw] w-[30vw] h-[5vw] sm:h-auto px-[10px] text-white jsutify-cenetr
-                                                bg-teal-dark  py-[1vw] rounded-[1.2vw]'>
-                                Add to Bag
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <hr className='border-t border-gray-600 sm:w-[40vw] w-[80vw] sm:mt-[1vw] mt-[3vw]' />
-                    </div>
-                    <div className='mt-[1vw] font-inter font-semibold text-[1.65vw]'>
-                        Select Delivery Location
-                    </div>
-                    <div className='text-[1.47vw] font-inter sm:w-[32vw] gap-[0.5vw]
-                     sm:gap-[0vw] flex flex-row  sm:flex-col'>
-                        <div>
-                            Enter the pincode of your area to check product
-                        </div> 
-                        <div>
-                        availability and delivery options
-                        </div>
-                    </div>
-                    <div className='flex bg-grey-ray w-[31.5vw] mt-[1.5vw]  sm:text-[1.1vw] text-[1.2vw] 
-                    sm:h-[4vw] h-[3vw] items-center px-[2vw]'>
-                            <input
-                            placeholder='Pincode'
-                            maxLength={6}
-                            className="bg-transparent w-[24vw] sm:text-[1.6vw] text-[2.2vw] border-none 
-                             focus:outline-none"
-                            />
-                            <div>
-                                Apply
-                            </div>
-                     </div>
-                     <div className='flex flex-row h-[4vw] w-[25vw] text-[0.92vw] gap-[1.5vw] mt-[2vw] '>
-                        <div className='flex flex-col w-[7vw] justify-center mb-[3vw] sm:mb-[0vw] '>
-                            <img src={szi1} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
-                            <div>
-                                COD Available
-                            </div>
-                        </div>
-                     <div className='flex flex-col w-[7vw] justify-center mb-[3vw] sm:mb-[0vw]'>
-                            <img src={szi2} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
-                            <div>
-                                <div>
-                                    7 Days Return
-                                </div>
-                                <div>
-                                    and Exchange
-                                </div>
-                            </div>
-                        </div>
-                     <div className='flex flex-col w-[7vw] justify-center mb-[3vw] sm:mb-[0vw]'>
-                            <img src={szi3} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
-                            <div>
-                                <div>
-                                    Usually ship in 
-                                </div>
-                                <div>
-                                    2 Days
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    </div>
-  )
-}
-
-export default ProductChart
+                        </div> */}
+                    {/* </div> */}

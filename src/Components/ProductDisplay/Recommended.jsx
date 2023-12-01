@@ -88,11 +88,11 @@ return (
             <div className='flex justify-center items-center'>
                 <img src={group.icon} alt='' className='w-[10px] md:w-auto '/>
             </div>
-            <div className='flex justify-center items-centertext-[#875A33] md:text-[38px] md:mb-[24px] mb-[8px]' >
+            <div className='flex justify-center items-center text-[#875A33] md:text-[38px] md:mb-[24px] mb-[8px]' >
                 <span>{group.title}</span>
             </div>
             <div className=' '>
-            <div className="flex flex-row mx-[2vw] md:gap-[2vw] gap-[1vw] justify-center items-center">
+            <div className="flex flex-row mx-[1vw] md:gap-[2vw] gap-[1vw] justify-center items-center">
                 {renderRandomCards()}
             </div>
             </div>

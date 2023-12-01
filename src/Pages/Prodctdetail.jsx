@@ -10,52 +10,53 @@ import c2 from '../assets/c2.png'
 import c3 from '../assets/c3.png'
 import Size from '../Components/ProductDisplay/SingleProduct.jsx'
 import Ethnic from '../Pages/Category/Ethnic.jsx'
+import Recommended from '../Components/ProductDisplay/Recommended.jsx'
 
 const Prodctdetail = () => {
 
     const Group1 = {
         title:"Similar Products",
         icon : ele1,
-        Products : [
-          {
-              image : Card1,
-              specific : "Daisy Grey Silk Fabricated Saree With Mirror Work ",
-              price : '$6500',
-              oldprice : '$8999'},
-          {
-              image : Card2,
-              specific : "Daisy Purple Silk Fabricated Saree With Mirror Work",
-              price : '$6500',
-              oldprice : '$8066'}, 
-          {
-              image : Card3,
-              specific : "Daisy Green Silk Fabricated Saree With Mirror Work",
-              price : '$6500',
-              oldprice : '$7566'
+        // Products : [
+        //   {
+        //       image : Card1,
+        //       specific : "Daisy Grey Silk Fabricated Saree With Mirror Work ",
+        //       price : '$6500',
+        //       oldprice : '$8999'},
+        //   {
+        //       image : Card2,
+        //       specific : "Daisy Purple Silk Fabricated Saree With Mirror Work",
+        //       price : '$6500',
+        //       oldprice : '$8066'}, 
+        //   {
+        //       image : Card3,
+        //       specific : "Daisy Green Silk Fabricated Saree With Mirror Work",
+        //       price : '$6500',
+        //       oldprice : '$7566'
       
-          }]
+        //   }]
       }
       const Group2 = {
         title :"Customers also Viewed" ,
         icon : ele1,
-        Products : [
-          {
-              image : c1,
-              specific : "Daisy Grey Silk Fabricated Saree With Mirror Work ",
-              price : '$6500',
-              oldprice : '$8999'},
-          {
-              image : c2,
-              specific : "Daisy Purple Silk Fabricated Saree With Mirror Work",
-              price : '$6500',
-              oldprice : '$8066'}, 
-          {
-              image : c3,
-              specific : "Daisy Green Silk Fabricated Saree With Mirror Work",
-              price : '$6500',
-              oldprice : '$7566'
-            }
-        ]
+        // Products : [
+        //   {
+        //       image : c1,
+        //       specific : "Daisy Grey Silk Fabricated Saree With Mirror Work ",
+        //       price : '$6500',
+        //       oldprice : '$8999'},
+        //   {
+        //       image : c2,
+        //       specific : "Daisy Purple Silk Fabricated Saree With Mirror Work",
+        //       price : '$6500',
+        //       oldprice : '$8066'}, 
+        //   {
+        //       image : c3,
+        //       specific : "Daisy Green Silk Fabricated Saree With Mirror Work",
+        //       price : '$6500',
+        //       oldprice : '$7566'
+        //     }
+        // ]
         }
   return (
     <div>
@@ -63,16 +64,13 @@ const Prodctdetail = () => {
             <Size/>
         </div>
         <div>
-            <Collections group={Group1}/>
+            <Recommended group={Group1}/>
         </div>
         <div>
             <Modern/>
         </div>
         <div>
-            <Collections group={Group2}/>
-        </div>
-        <div>
-            <Ethnic/>
+            <Recommended group={Group2}/>
         </div>
     </div>
     

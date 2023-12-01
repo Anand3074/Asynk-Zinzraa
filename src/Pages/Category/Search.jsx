@@ -16,8 +16,13 @@ import { useNavigate } from 'react-router-dom';
 const Category = ({ defaultTab }) => {
   const [activeTab, setActiveTab] = useState(5);
   const navigate = useNavigate()
+  const dispatch =useDispatch()
+
 
   const handleClick = (index) => {
+dispatch(setSearchTerm(""));
+// console.log(searchTerm)
+
 navigate('/Category')  };
 
   const tabStyles = (index) => {

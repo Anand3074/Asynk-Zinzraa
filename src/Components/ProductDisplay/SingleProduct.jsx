@@ -5,28 +5,35 @@ import { useDispatch } from 'react-redux'
 import { addItemsToCart } from '../../Redux/cartActions'
 import { addToWishlist } from '../../Redux/Wishlist/wishActions';
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions'
+import { useState } from 'react'
 
 
-const Productsize = () => {    
+
+const Productsize = () => {   
     const selectedProduct = useSelector((state) => state.product.selectedProduct)
-        console.log(selectedProduct)
+        // console.log(selectedProduct)
+        const [isWishlistClicked, setIsWishlistClicked] = useState(false);
+        console.log(isWishlistClicked)
+
 
         const dispatch = useDispatch()
         const handleAddToCart = (item) => {
             // console.log(item)
             dispatch(addItemsToCart(item))
         }
-
         
         const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
         const handleAddToWishlist = (item) => {
             const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
-            // console.log(isItemInWishlist)
+            
+            //  console.log(isItemInWishlist)
+            
             if (isItemInWishlist) {
               dispatch(removeItemFromWishlist(item.id));
             } else {
               dispatch(addToWishlist(item));
             }
+            setIsWishlistClicked(!isItemInWishlist);
           };
 
   return (
@@ -51,8 +58,10 @@ const Productsize = () => {
                         <img src={selectedProduct.imageUrl} className='h-[81vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'/>
                     </div>
                 </div>
-{/* Image above  */}
-            <div><ProductChart price={selectedProduct.price} Description={selectedProduct.description}
+{/* Image above1  */}
+            <div><ProductChart         
+            isWishlisted={isWishlistClicked}
+             price={selectedProduct.price} Description={selectedProduct.description}
              addCart={ () => handleAddToCart(selectedProduct)} addWish={() => handleAddToWishlist(selectedProduct)}/></div>
             </div>
         </div>

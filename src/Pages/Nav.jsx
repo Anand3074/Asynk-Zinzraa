@@ -57,10 +57,12 @@ const Nav = () => {
 
           <div className='flex gap-[16px] '>
             <div className='flex md:flex bg-grey-ray md:w-[211px] h-[28px] md:gap-[22px] rounded-[2px] items-center hidden'>
-              <FaSearch className='text-[#848484] ml-[17px]' />
+              <Link to='/Search'><FaSearch className='text-[#848484] ml-[17px]' /></Link>
               <input
                 placeholder='search your product'
                 className='bg-transparent border-none text-xs focus:outline-none'
+                onChange={(e) => handleSearchTermChange(e.target.value)}
+                onKeyDown={(e) => handleKeyPress(e)}
               />
             </div>
             <div className='flex space-x-[30px] md:space-x-[16px] items-center  mr-7 md:mr-0'>

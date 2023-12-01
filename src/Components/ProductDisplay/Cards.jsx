@@ -35,11 +35,11 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
                 </div>
             </div>
             <div className='relative'>
-            <div className='flex text-slate-900 font-lora mt-[0.2vw] wrap text-[1.6vw] md:text-[1.55vw] h-[3vw] mb-[0.2vw]'>
+            <div className='flex text-slate-900 font-lora mt-[0.4vw] mx-[0.6vw] wrap leading-[1.8vw] md:leading-[1.7vw] text-[1.6vw] md:text-[1.55vw] h-[3vw] mb-[0.2vw]'>
                 {description} 
             </div>
             <div className='flex flex-row'>
-            <div className='font-bold mr-[1vw] items-start font-lora text-[2.2vw]
+            <div className='font-bold mr-[1vw] items-start font-lora mt-[0.5vw] text-[2vw]
              md:text-[1.7vw]'>
                     ${price}     
             </div>
