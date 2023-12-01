@@ -7,8 +7,8 @@ import {FaPen} from 'react-icons/fa'
 import {BsFillCloudUploadFill} from 'react-icons/bs'
 import {fireDB} from '../../firebase/firebase.jsx';
 import Accounts from './Accounts.jsx'
-// import History from './History.jsx'
-// import Payments from './Payments.jsx'
+import History from './History.jsx'
+import Payments from './Payments.jsx'
 
 const User = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -22,7 +22,7 @@ const User = () => {
         index === activeTab
           ? 'border-b-[0.2vw] border-b-blue-600  text-[#875A33]'
           : 'hover:text-[#875A33]'
-      } flex justify-center items-center w-[30vw]  h-[4vw]  font-[poppins]`;
+      } flex justify-center items-center w-[30vw]  h-[4vw]  text-[1.8vw] font-[poppins]`;
     };
     
     // // Update activeTab when the defaultTab prop changes
@@ -32,8 +32,8 @@ const User = () => {
   
     const tabComponents = {
       0: <Accounts />,
-      // 1: <History />,
-      // 2: <Payments />,
+      1: <History />,
+      2: <Payments />,
     };
   
   return (
@@ -89,7 +89,7 @@ const User = () => {
               <div className='w-[30vw] flex justify-center items-center border-r-[0.2vw] border-l-[0.2vw] px-[3vw]'> HISTORY</div>
             </li>
             <li onClick={() => handleClick(2)} className={tabStyles(2)}>
-              PAYMENTS
+              PAYMENT METHODS/ ADDRESS
             </li>
           </ul>
         </nav>

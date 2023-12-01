@@ -19,7 +19,7 @@ const hamburger = ({closeMenu}) => {
                 <Link to="/Dresses">
                     <li className='my-[3vw] py-[3vw]  hover:text-white text-[#CC911D]' onClick={closeMenu}>Dresses</li>
                 </Link>
-                <Link to="/Dashboard">
+                <Link to="/User">
                     <li className='my-[3vw] 
                     py-[3vw] border-b border-teal-dark hover:text-white text-[#CC911D]'onClick={closeMenu}>Contact us</li>
                 </Link>
