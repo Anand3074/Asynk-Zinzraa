@@ -146,10 +146,10 @@ const Products = () => {
         <Kalki/>
       </div>
       <div>
-      <Collections group={Group3}/>
+      <Recommended group={Group3}/>
       </div>
       <div>
-      <Collections group={Group4}/>
+      <Recommended group={Group4}/>
       </div>
       <div>
       <Testimonial/> 
