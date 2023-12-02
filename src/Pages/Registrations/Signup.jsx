@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, fireDB } from '../../firebase/firebase.jsx';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import Google from './Google.jsx';
 
 const  Signup = () => {
   const [name, setName] = useState("");
@@ -70,7 +71,7 @@ const  Signup = () => {
     <div className='flex justify-center items-center h-screen'>
       <div className='bg-teal-dark px-10 py-10 rounded-xl'>
         <div>
-          <h1 className='text-center text-white text-xl mb-4 font-bold'>Signup</h1>
+          <h1 className='text-center text-white text-xl mb-4 font-bold'>Signup With Firebase</h1>
         </div>
         <div>
         {errorMessage && (
@@ -116,12 +117,15 @@ const  Signup = () => {
             Signup
           </button>
         </div>
+        <div className='w-[20vw] px-[2vw]'><Google/></div>
         <div>
           <h2 className='text-white'>
             Already Registered? <Link className='ml-[1vw] text-red-500 font-bold' to={'/login'}>Login</Link>
           </h2>
         </div>
+
       </div>
+
     </div>
   );
 }
