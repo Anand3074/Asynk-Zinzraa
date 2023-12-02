@@ -25,7 +25,7 @@ const Categ1 = () => {
          className='rounded-t-full md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
           </div>
         <div>     
-        <Link to='/Sarees'><img src={Category2img} alt='' 
+        <Link to='/Saree'><img src={Category2img} alt='' 
         className='rounded-t-full md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
           </div>
           <div>     
@@ -35,17 +35,17 @@ const Categ1 = () => {
         </div>
         <div className='flex flex-row text-[#C99359] md:h-[96px] h-[32px] items-center md:text-[48px] md:px-[54px] md:gap-[25px] text-[16px] font-playfair w-full gap-[3px]'>
           <div className='w-1/3 flex justify-center'>
-              <Link to='/Category'><span className='text-[4vw] sm:text-[2.5vw]' >
+              <Link to='/Kurtas'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category1}
               </span></Link>
           </div>
           <div className='w-1/3 flex justify-center'>
-          <Link to='/Category'><span className='text-[4vw] sm:text-[2.5vw]' >
+          <Link to='/Saree'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category2}
               </span></Link>
           </div>
           <div className='w-1/3 flex justify-center'>
-          <Link to='/Category'><span className='text-[4vw] sm:text-[2.5vw]' >
+          <Link to='/Dresses'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category3}
               </span></Link>
           </div>

@@ -3,54 +3,64 @@ import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 
-const Cart = ({price}) => {
+const Cart = () => {
     // let bigPrice='3874'
     const { error, loading, isAuthenticated,users } = useSelector((state) => state.users);
+    const cartItems = useSelector((state) => state.cart.cartItems);
+        const calculateTotalPrice = () => {
+            return cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+          };
+          const discountedPrice = (calculateTotalPrice() * 0.73); // Assuming a 27% discount
+          const convenienceprice = (discountedPrice * 0.6)
+
+
+
 
   return (
     <div>
-        <div className='flex flex-col justify-start items-start ml-[10vw]'>
-            <div id='cart-detail' className='w-[37vw] h-[18vw] border border-solid border-1px
+        <div className='flex flex-col justify-start items-start ml-[10vw] '>
+            <div id='cart-detail' className='w-[40vw] h-[22vw] md:h-[20vw] md:w-[33vw] border border-solid border-1px
              border-text-slate-400 rounded-[3vw] p-[1.5vw]'>
                 <div className='text-[2.5vw]'>Order Summary</div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
+                <div className='text-[1.4vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
                     <div className="w-[24vw]">
                         Big Total
                     </div>
                     <div className="w-[10vw]">
-                        ${price}
+                        ${(calculateTotalPrice().toFixed(2))}
                     </div>
                 </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
-                    <div className='font-semibold w-[24vw]'>
+                <div className='text-[1.4vw] my-[0.5vw] md:my-[0.3vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
+                    <div className='font-semibold w-[24vw] '>
                         Discount on MRP 
                     </div>
-                    <div className="w-[10vw]">
-                        ${price}
+                    <div className="w-[10vw] text-red-500">
+                    ${(calculateTotalPrice() - discountedPrice).toFixed(2)}
+  
                     </div>
                 </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
-                    <div className="w-[24vw]">
+                <div className='text-[1.4vw] my-[0.5vw] md:my-[0.3vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
+                    <div className="font-semibold w-[24vw]">
                         Sub Total
                     </div>
                     <div className="w-[10vw]">
-                        ${price}
+                        ${(discountedPrice).toFixed(2)}
                     </div>
                 </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
+                <div className='text-[1.4vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
                     <div className="w-[24vw]">
                         Convenience Charges
                     </div>
                     <div className="w-[10vw]">
-                        ${price}
+                        ${(convenienceprice).toFixed(2)}
                     </div>
                 </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] '>
+                <div className='text-[1.6vw] md:text-[1.4vw]  my-[0.5vw] md:my-[0.3vw] md:mr-[0.5vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
                     <div className="w-[24vw]">
                         Your Pay
                     </div>
-                    <div className="w-[10vw]">
-                        ${price}
+                    <div className="w-[10vw] font-bold text-green-500 ">
+                        ${(discountedPrice + convenienceprice).toFixed(2)}
                     </div>
                 </div>
             </div>

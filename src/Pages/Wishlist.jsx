@@ -15,9 +15,9 @@ const Wishlist = () => {
       { Wishlist.length!==0 ? (
         <div style={{fontStyle:"DM Sans"}} className=''>
 
-        <div className='mt-[1vw]' >
+        <div className='mt-[1vw] ' >
             <WishHead Wishes={Wishlist.length}/>
-             <div className='flex flex-col sm:flex-row '>
+             <div className='flex flex-col sm:flex-row mb-[20vw] '>
                 <div className='flex justify-center items-center'>
                     <WishProduct className=''/>
                 </div>

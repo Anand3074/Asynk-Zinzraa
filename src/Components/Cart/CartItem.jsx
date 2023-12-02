@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const CartItem = ({products,title, price, imageUrl, category, description, date, removeItemFromCart}) => {
+const CartItem = ({products,title, price, imageUrl, category, description, date, removeItemFromCart, moveToWishlist}) => {
 
   return (
     <div className='flex justify-center items-center sm:w-[50vw] m-[2vw]'>
@@ -30,12 +31,12 @@ const CartItem = ({products,title, price, imageUrl, category, description, date,
                         </button>
                     </div>
                     <div>
-                        <button className='text-blue-600  '>
+                        <button  onClick={moveToWishlist}className='text-blue-600  '>
                             Move to Wishlist
                         </button>
                     </div>
                 </div>
-                <div className='flex text-blue-700 justify-end items-end'>+Add From Wishlist</div>
+                <Link to='/Wishlist'><div className='flex text-blue-700 justify-end items-end'>+Add From Wishlist</div></Link>
             </div>
         </div>
         {/* <div className='mt-[12vw] sm:mt-[0vw]'>

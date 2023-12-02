@@ -37,7 +37,8 @@ const Filtersss = () => {
         // console.log(selectedFabrics)
       };
   return (
-    <div className='flex flex-col mb-[3vw] h-[75vw] text-[2vw] md:text-[1.6vw] md:h-[50vw] border-r-[2px] solid border-slate-600'>
+    <div className='flex flex-col mb-[3vw] h-[75vw] text-[2vw] md:text-[1.6vw] md:h-[80vw] border-r-[2px] solid
+     border-slate-600'>
        <div className='flex flex-col md:w-[5vw] w-[25vw] mx-[4vw]' >
         <p className='font-semibold text-[1.6vw]  md:text-[2.2vw] my-[1vw] '>Size</p>
       {sizes.map((size, index) => (
@@ -63,7 +64,7 @@ const Filtersss = () => {
      </div>
      <div className='flex flex-col'>
          <input type='range' className='sm:w-[18vw] w-[20vw] sm:h-[0.8vw] h-[1.2vw] 
-       my-[1vw] accent-color'
+       my-[1vw] bg-[#875A33]'
                 defaultValue={0}
                 min={0}
                  max={10000} 

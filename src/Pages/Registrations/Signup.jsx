@@ -68,7 +68,7 @@ const  Signup = () => {
 
 
   return (
-    <div className='flex justify-center items-center h-screen'>
+    <div className='flex justify-center items-center mt-[15vw]'>
       <div className='bg-teal-dark px-10 py-10 rounded-xl'>
         <div>
           <h1 className='text-center text-white text-xl mb-4 font-bold'>Signup With Firebase</h1>
@@ -117,7 +117,12 @@ const  Signup = () => {
             Signup
           </button>
         </div>
-        <div className='w-[20vw] px-[2vw]'><Google/></div>
+        <div>
+        <div className='w-full px-[2vw] flex justify-center items-center'><Google/></div>
+
+              {/* <div><GooglePRofile/></div>  <button className='w-full bg-white rounded-[0.3vw]' onClick={() => login()}>Sign in with Google 🚀 </button> */}
+        </div>
+
         <div>
           <h2 className='text-white'>
             Already Registered? <Link className='ml-[1vw] text-red-500 font-bold' to={'/login'}>Login</Link>

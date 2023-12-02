@@ -3,7 +3,7 @@ import React from 'react'
 import CartStatus from '../Cart/CartStatus'
 import re3 from '../../assets/re3.png'
 import re2 from '../../assets/re2.png'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useState } from 'react'
 import {fireDB} from '../../firebase/firebase.jsx'
 import { addDoc, collection } from 'firebase/firestore'
@@ -11,18 +11,28 @@ import { addDoc, collection } from 'firebase/firestore'
 
   const AddDetail = () => {
     
+    
     const Addicon = {
       img1: re3,
       img2: re2,
       clr1: 'teal-dark',
       clr2: 'grey'
     }
+    const navigate = useNavigate()
 
       const [email, setEmail] = useState('');
       const [firstName, setFirstName] = useState('');
       const [lastName, setLastName] = useState('');
       const [address, setAddress] = useState('');
       const [phoneNumber, setPhoneNumber] = useState('');
+      const [CashonDelivery, setCashonDelivery] = useState(false);
+      const [errorMessage, seterrorMessage] = useState('');
+
+
+      const delivery = () =>{
+        setCashonDelivery(!CashonDelivery)
+      }
+
       // const [billingSameAsDelivery, setBillingSameAsDelivery] = useState(false);
       // const [is13YearsOld, setIs13YearsOld] = useState(false);
       // const [receiveProductUpdates, setReceiveProductUpdates] = useState(false);
@@ -35,6 +45,12 @@ import { addDoc, collection } from 'firebase/firestore'
     
     
       const handleSubmit = async () => {
+        if (!email || !firstName || !lastName || !address || !phoneNumber) {
+          // Display an error message or perform some action indicating that all fields are required
+          seterrorMessage('All fields are required');
+          return;
+        }
+        
         try {
           const docRef = await addDataToFirestore({
             email,
@@ -42,11 +58,12 @@ import { addDoc, collection } from 'firebase/firestore'
             lastName,
             address,
             phoneNumber,
+            CashonDelivery
             // billingSameAsDelivery,
             // is13YearsOld,
             // receiveProductUpdates,
           });
-    
+          CashonDelivery ? navigate('/Order') : 
           console.log('Document written with ID: ', docRef.id);
         } catch (error) {
           console.error('Error adding document: ', error);
@@ -116,10 +133,13 @@ import { addDoc, collection } from 'firebase/firestore'
                 <div className='font-semibold text-[4vw] sm:text-[2.2vw]'>Standard Delivery</div>
                 <div className='text-[2vw] sm:text-[1.2vw]'>Enter your address to see when you'll get your order</div>
               </div>
-              <div className='border border-solid border-1px
-             border-text-black-900 rounded-[1.5vw] p-[1vw] my-[2.5vw]  w-[65vw]'>
+              <div className={`${CashonDelivery ? 'bg-green-300' : 'bg-transparent'} border border-solid border-1px
+             border-text-black-900 rounded-[1.5vw] p-[1vw] my-[2.5vw]  w-[65vw]`}>
+                <div className='flex flex-row  gap-[35vw] md:gap-[40vw]'>
                 <div className='font-semibold text-[3vw] sm:text-[2.2vw]'>
                     Cash on Delivery
+                </div>
+                <div className='flex items-center justify-center'><input onClick={() => delivery()} type='checkbox' className='w-[4vw] h-[3vw]'/></div>
                 </div>
                 <div className='text-[2vw] sm:text-[1.2vw]'>
                     Pay now, Collect in store
@@ -161,6 +181,9 @@ import { addDoc, collection } from 'firebase/firestore'
           SUBMIT
         </button>
       </div>
+      <div>{errorMessage && (
+            <div className='text-[1.6vw] md:text-[1.2vw]text-red-500 my-[1vw]'>*{errorMessage}</div>
+          )}</div>
 
       <div className='mt-[3vw]'>
         <Link to='/Payment'>

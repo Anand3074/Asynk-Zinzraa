@@ -1,7 +1,6 @@
 import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 
-
 const Google = () => {
     const responseMessage = (response) => {
         console.log(response);
@@ -11,8 +10,8 @@ const Google = () => {
         console.log(error);
     };
     return (
-        <div className='w-[20vw] my-[1.5vw] flex justify-center  items-center font-bold  py-2'>
-            <GoogleLogin onSuccess={responseMessage} onError={errorMessage} className='w-full font-bold  py-2'/>
+        <div className='my-[1.5vw] flex justify-center  items-center font-bold  py-2'>
+            <GoogleLogin onSuccess={responseMessage} onError={errorMessage} className=' font-bold  py-2'/>
         </div>
     )
 
