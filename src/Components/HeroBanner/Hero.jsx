@@ -26,7 +26,7 @@ const Hero = () => {
                 <div className='justify-center z-550'>
                     <Link to='/Dresses'><button className='bg-[#cc911dcc]
                      font-playfair md:text-[32px] text-[11px] mx-[1.8vw] 
-                     mt-[12vw] py-[1vw]  w-[30vw] text-white '>
+                     mt-[12vw] py-[1vw] rounded-[0.5vw]  w-[30vw] text-white '>
                         {/* md:px-[116px] md:py-[16.5px] */}
                         SHOP NOW
                     </button></Link>

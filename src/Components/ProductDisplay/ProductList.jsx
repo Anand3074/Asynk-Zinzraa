@@ -6,6 +6,8 @@ import { addToWishlist } from '../../Redux/Wishlist/wishActions';
 import { useDispatch , useSelector } from 'react-redux';
 import { setSelectedProduct } from '../../Redux/Product/productActions';
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const ProductList = ({categoryToRender, size, fabric}) => {
@@ -18,6 +20,7 @@ const ProductList = ({categoryToRender, size, fabric}) => {
 
   const dispatch = useDispatch()
   const handleAddToCart = (item) => {
+    toast("Product Added to Cart")
       // console.log(item)
       dispatch(addItemsToCart(item))
   }
@@ -73,6 +76,7 @@ const ProductList = ({categoryToRender, size, fabric}) => {
   return (
     <div>
       <div className='flex justify-start items-start flex-grow-1'>
+        <div className=''><ToastContainer/></div>
         <div className='grid grid-cols-2 m-[1vw] gap-[5vw]px-[3vw] justify-center items-center'>
          
           {filteredProducts.map((item, index) => {          

@@ -92,7 +92,7 @@ return (
                 <span>{group.title}</span>
             </div>
             <div className=' '>
-            <div className="flex flex-row mx-[1vw] md:gap-[2vw] gap-[1vw] justify-center items-center">
+            <div className="flex flex-row  md:gap-[1vw] gap-[1vw] justify-center items-center">
                 {renderRandomCards()}
             </div>
             </div>

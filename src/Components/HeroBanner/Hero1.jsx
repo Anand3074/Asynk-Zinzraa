@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Hero1 = () => {
   return (
-    <div className='flex flex-row bg-[#EDAF7C] h-[36vw] overflow-hidden flex-grow-1'>
+    <div className='flex w-[100vw] flex-row bg-[#EDAF7C] h-[36vw] overflow-hidden flex-grow-1'>
         <div>
             <img src={hero2} alt='' className='w-[30vw]' />
         </div>
@@ -16,7 +16,7 @@ const Hero1 = () => {
             <div className='flex justify-center'>India.</div> 
             </div>
             <div className='flex justify-center'>
-            <Link to='/Kurtas'><button className='bg-white font-playfair text-nunito text-[1.8vw] text-slate-900 px-[8vw] py-[1vw]'>
+            <Link to='/Kurtas'><button className='bg-white font-playfair rounded-[0.5vw] text-nunito text-[1.8vw] text-slate-900 px-[8vw] py-[1vw]'>
               Shop Now
             </button>
             </Link>

@@ -38,30 +38,30 @@ const Carousel = () => {
   }
 
   return (
-    <div className="container md:w-[98.9vw]  ">
+    <div className="container sm:w-[98.9vw]  ">
       <Draggable
         axis="x" // Allow only horizontal dragging
         bounds="parent" // Restrict dragging to the parent element
         onDrag={handleDrag}
       >
-      <div className="flex flex-col">
+      <div className="flex relative">
         {components.map((Component, index) => (
           <div
             key={index}
             className={`${
               index === activeIndex ? 'block' : 'hidden'
-            } transition-opacity md:w-[98.9vw] duration-500 ease-in-out opacity-0 ${
+            } transition-opacity sm:w-[98.9vw] duration-500 ease-in-out opacity-0 ${
               index === activeIndex ? 'opacity-100' : ''
             }`}
           >
             <Component />
           </div>
         ))}
-        <div className="flex justify-center items-center my-[0.8vw]">
+        <div className="flex justify-center items-center absolute left-[48vw] bottom-[1vw]  ">
           {components.map((_, index) => (
             <div
               key={index}
-              className={`flex w-[1vw]  ] h-[1vw]  rounded-full mx-[0.3vw] bg-gray-400 ${
+              className={`flex w-[1vw]  h-[1vw]  rounded-full mx-[0.3vw] bg-gray-400 ${
                 index === activeIndex ? 'bg-slate-900' : ''
               }`}
               onClick={() => setActiveIndex(index)}

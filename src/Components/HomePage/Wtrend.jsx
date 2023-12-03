@@ -14,12 +14,13 @@ const Wtrend = () => {
                 <div className='md:text-[28px] text-[9px] font-inria text-[#875A33]'>
                     <span>Shop the latest collection</span>
                 </div>
-                <div className='md:py-[72px] py-[24px]'>
-                    <img src={ele} alt=''/>
+                <div className='my-[7vw] w-[3vw]'>
+                    <img src={ele} alt='sm:w-[3vw] w-[1vw] sm:h-[3vw] h-[1vw]'/>
                     
                 </div>
                 <div>
-                    <Link to='/Westrend'>'<button className='bg-[#515233] text-white font-playfair text-[2vw] px-[7vw] py-[2vw]'>
+                    <Link to='/Westrend'><button className='bg-[#515233] text-white 
+                    font-playfair rounded-[0.5vw] text-[2vw] px-[7vw] py-[2vw]'>
                         SHOP NOW
                     </button></Link>
 

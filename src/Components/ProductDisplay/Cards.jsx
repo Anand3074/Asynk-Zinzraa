@@ -13,7 +13,7 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
     const { product } = context;
   return (
     
-        <div className='w-[28vw] h-[42vw] mr-[5vw]' >
+        <div className='w-[28vw] h-[42vw] mr-[2.5vw]' >
         <div className='' id='container'>
             <div className='flex relative'>
                 <div className='z-150'>

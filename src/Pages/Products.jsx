@@ -129,17 +129,17 @@ const Products = () => {
       {/* <div className='flex justify-center items-center'>
         <BsThreeDots className='text-slate-600  w-[10vw] h-[3vw]'/>
       </div> */}
-      <div className='mt-[1vw]'>
+      <div className=''>
         <Categ1/>
       </div>
-      <div className='md:mt-[56px] mt-[19px]'>
+      <div className='mt-[3vw] md:mt-[1.5vw]'>
       <Recommended group={Group1}/>
 
       </div>
-      <div className='md:mt-[68px]'>
+      <div className='mt-[3vw] md:mt-[1.5vw]'>
         <Wtrends/>
       </div>
-      <div className='md:mt-[56px] mt-[19px]'>
+      <div className='mt-[3vw] md:mt-[1.5vw]'>
         <Recommended group={Group2}/>
       </div>
       <div>

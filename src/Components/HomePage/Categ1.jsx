@@ -19,7 +19,7 @@ const Categ1 = () => {
 
   return (
     <div>
-        <div className='flex w-full md:h-40vw justify-center md:px-[54px] mt:[18px] md:gap-[25px] gap-[3px]' style={{ backgroundImage: `url(${Vec2})` }}>
+        <div className='flex w-full md:h-40vw justify-center md:px-[54px]  md:gap-[25px] gap-[3px]' style={{ backgroundImage: `url(${Vec2})` }}>
         <div className=''>     
         <Link to='/Kurtas'><img src={Category1img} alt=''
          className='rounded-t-full md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
@@ -50,8 +50,8 @@ const Categ1 = () => {
               </span></Link>
           </div>
         </div>
-        <div className='w-full md:h-[60px] h-[20px]'>
-          <img src={Vec3}/>
+        <div className='w-full  md:h-[60px] h-[20px]'>
+          <img src={Vec3} className='w-full'/>
         </div>
         
 
