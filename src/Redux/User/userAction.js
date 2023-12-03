@@ -6,7 +6,11 @@ import {
     LOGOUT_FAIL,
     LOAD_USER_REQUEST,
     LOAD_USER_FAIL,
-    LOAD_USER_SUCCESS
+    LOAD_USER_SUCCESS,
+    GOOGLE_REQUEST,
+    GOOGLE_SUCCESS,
+    GOOGLE_FAIL
+
 }
 from "./userConstants"
 import {auth,fireDB,googleProvider} from "../../firebase/firebase"
@@ -70,5 +74,37 @@ export const logout = () => async (dispatch) => {
   } catch (error) {
     dispatch({ type: LOGOUT_FAIL, payload: error.message });
    
+  }
+}
+
+export const signUpUsingGoogle = () => async (dispatch) => {
+  try{
+  dispatch({ type: GOOGLE_REQUEST });
+  signInWithPopup(auth, googleProvider)
+  .then(async (result) => {
+     const user = result.user;
+ console.log(user)
+     const userRef = collection(fireDB, "user");
+ const q = query(userRef, where("email", "==", user.email));
+ const getUserInfo = await getDocs(q);
+ if (getUserInfo.docs.length === 0){
+      await setDoc(doc(fireDB, "user",user.uid ), {
+         name: user.displayName,
+         email: user.email,
+         phone: '',
+         uid:user.uid,
+         role:"user",
+         address:[]
+       });   
+ }
+ 
+  dispatch({ type: GOOGLE_SUCCESS, payload: user.uid });
+}).catch((error) => {
+ // Handle Errors here.
+ console.log(error.message)
+ // ...
+});
+  } catch (error){
+     dispatch({ type: GOOGLE_FAIL, payload: error.message });
   }
 }

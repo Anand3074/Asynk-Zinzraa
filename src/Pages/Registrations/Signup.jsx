@@ -1,9 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { 
+  // signUpUsingEmail,
+  loginUsingEmail,
+  // signInUsingGoogle,
+  signUpUsingGoogle,  } from '../../Redux/User/userAction.js';
 import { auth, fireDB } from '../../firebase/firebase.jsx';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import Google from './Google.jsx';
+import GoogleIcon from '../../assets/search.png'
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Input,
+  Checkbox,
+  
+  Button,
+} from "@material-tailwind/react";
 
 const  Signup = () => {
   const [name, setName] = useState("");
@@ -13,6 +31,21 @@ const  Signup = () => {
   const [successMessage, setSuccessMessage] = useState('');
   
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const { error, loading, isAuthenticated,users } = useSelector(
+    (state) => state.users
+  );
+
+  const handleGoogleLogin = async () =>{
+    
+    dispatch(signUpUsingGoogle())
+  }
+
+  useEffect(() => {
+    if(isAuthenticated){
+      navigate(-1)
+    }
+  }, [isAuthenticated])
 
   const signup = async () => {
   
@@ -118,8 +151,19 @@ const  Signup = () => {
           </button>
         </div>
         <div>
-        <div className='w-full px-[2vw] flex justify-center items-center'><Google/></div>
-
+        {/* <div className='w-full px-[2vw] flex justify-center items-center'><Google/></div> */}
+        <div>
+        <Button
+        size="lg"
+        variant="outlined"
+        onClick={handleGoogleLogin}
+        color="blue-gray"
+        className="flex w-[260px] my-2  items-center justify-center gap-6"
+      >
+        <img src={GoogleIcon} alt="google" className="h-4 w-4" />
+      <p className='text-[0.7rem]' > Continue with Google</p>  
+      </Button>
+        </div>
               {/* <div><GooglePRofile/></div>  <button className='w-full bg-white rounded-[0.3vw]' onClick={() => login()}>Sign in with Google 🚀 </button> */}
         </div>
 
