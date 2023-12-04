@@ -30,16 +30,15 @@ const User = () => {
   const { error, loading, isAuthenticated,user,userProfile, uid } = useSelector(
     (state) => state.users
   );
-  console.log(user)
-  console.log(userProfile)
-  console.log(uid)
+  // console.log(user)
+  // console.log(userProfile)
+  // console.log(uid)
 
     const dispatch = useDispatch();
 
   const [name, setName] = useState(userProfile?.name ? userProfile.name : "")
   const [email, setEmail] = useState(userProfile?.email ? userProfile?.email : "")
   const [emailChange, setEmailChange] = useState(false)
-
   const [emailError, setEmailError] = useState(false)
   const [emailErrorMessage, setEmailErrorMessage] = useState("")
   let [isOpen, setIsOpen] = useState(false);
@@ -64,16 +63,6 @@ const User = () => {
        alert("Enter Valid Email")
       setEmailError(true)
       setEmailErrorMessage("Enter a Valid Email")
-    }
-    if(phone!=="" && phoneChange && getMobileInfo.docs.length!==0 ){
-       alert("Phone Number Already Present")
-      setPhoneError(true)
-      setPhoneErrorMessage("Phone Number is Already Present")
-    }
-      if(phone!==""  && phoneRegex.test(phone)!==true){
-      alert("Enter Valid Phone Number")
-      setPhoneError(true)
-      setPhoneErrorMessage("Enter a Valid Phone Number")
     }
     else{
        updateEmail(auth.currentUser, email).then(() => {
