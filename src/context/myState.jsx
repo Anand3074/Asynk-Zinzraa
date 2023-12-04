@@ -100,7 +100,7 @@ function myState(props) {
                 });
                 setProduct(productArray);
                 setLoading(false)
-                console.log("Product Data:", productArray);
+                // console.log("Product Data:", productArray);
             });
 
             return () => data;
@@ -181,7 +181,7 @@ function myState(props) {
                 setLoading(false)
             });
             setOrder(ordersArray);
-            console.log(ordersArray)
+            // console.log(ordersArray)
             setLoading(false);
         } catch (error) {
             console.log(error)
@@ -201,7 +201,7 @@ function myState(props) {
                 setLoading(false)
             });
             setUser(usersArray);
-            console.log(usersArray)
+            // console.log(usersArray)
             setLoading(false);
         } catch (error) {
             console.log(error)
