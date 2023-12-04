@@ -6,9 +6,10 @@ import { useState , useEffect} from 'react'
 import {FaPen} from 'react-icons/fa'
 import {BsFillCloudUploadFill} from 'react-icons/bs'
 import {fireDB} from '../../firebase/firebase.jsx';
-import Accounts from './Accounts.jsx'
-import History from './History.jsx'
-import Payments from './Payments.jsx'
+import Accounts from '../../Components/UserInfo/Accounts.jsx'
+import History from '../../Components/UserInfo/History.jsx'
+import Payments from '../../Components/UserInfo/Payments.jsx'
+import ProfileNav  from '../../Components/UserInfo/testprofileNAv.jsx'
 
 const User = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -73,11 +74,11 @@ const User = () => {
               </div>
               <div className='flex justify-center text-slate-400 items-center'>
                 .....johndoe@gmail.com
-
+{/*  */}
               </div>
             </div>
         </div>
-        <div className='my-[1vw]' id='NavforProducts'> 
+        {/* <div className='my-[1vw]' id='NavforProducts'> 
          <div id='navbar' className='flex justify-center  mx-[17vw] mt-[1vw] text-[2.2vw]'>
         <nav>
           <ul className='flex flex-row font-poppins text-[#454545]'>
@@ -94,13 +95,14 @@ const User = () => {
           </ul>
         </nav>
       </div>
-    </div>
+    </div> */}
+    {/*  */}
 </div>
-<div className='mt-[vw]'>
+{/* <div className='mt-[vw]'>
 <div className='flex flex-row justify-start items-start gap-[5vw]  my-[3vw]'>
               {activeTab !== null && tabComponents[activeTab]}
 </div>
-    </div>
+    </div> */}
 </div>
   )
 }
