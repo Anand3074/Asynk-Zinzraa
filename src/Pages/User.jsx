@@ -2,7 +2,7 @@ import React from 'react'
 import Userjpg from '../Components/UserInfo/userphoto'
 import { useState,useEffect} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 import ProfileDetails from '../Components/UserInfo/ProfileDeetails.jsx'
 // import History from '../Components/UserInfo/History'
 // import Payments from '../Components/UserInfo/Payments'
@@ -111,7 +111,7 @@ const User = () => {
                     } */}
             </div>
         </div>
-          <div><Footer/></div>
+          {/* <div><Footer/></div> */}
     </div>
   )
 }
