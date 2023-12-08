@@ -84,15 +84,16 @@ const renderRandomCards = () => {
 
 return (
     
-        <div className='ml-[8vw]'>
-            <div className='flex justify-center items-center'>
-                <img src={group.icon} alt='' className='w-[10px] md:w-auto '/>
+        <div className='mx-[1.5vw]'>
+            <div className='flex justify-center items-center h-[2vw]'>
+                <img src={group.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
             </div>
-            <div className='flex justify-center items-center text-[#875A33] md:text-[38px] md:mb-[24px] mb-[8px]' >
+            <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
+             md:mb-[24px] mb-[8px]' >
                 <span>{group.title}</span>
             </div>
             <div className=' '>
-            <div className="flex flex-row  md:gap-[1vw] gap-[1vw] justify-center items-center">
+            <div className="flex flex-row gap-[1.5vw] justify-center items-center">
                 {renderRandomCards()}
             </div>
             </div>

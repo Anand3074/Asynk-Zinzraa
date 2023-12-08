@@ -77,7 +77,7 @@ const ProductList = ({categoryToRender, size, fabric}) => {
     <div>
       <div className='flex justify-start items-start flex-grow-1'>
         <div className=''><ToastContainer/></div>
-        <div className='grid grid-cols-2 m-[1vw] gap-[5vw]px-[3vw] justify-center items-center'>
+        <div className='grid grid-cols-2 m-[0.5vw] gap-[5vw] justify-center items-center'>
          
           {filteredProducts.map((item, index) => {          
             const { title, price, imageUrl, category, description, id } = item;

@@ -47,7 +47,7 @@ export const signUpUsingEmail = (email,password,name,phone) => async (dispatch) 
 
 
 
-       await setDoc(doc(db, "user",user.uid ), {
+       await setDoc(doc(fireDB, "user",user.uid ), {
          name: name,
          email: email,
          uid:user.uid,
@@ -87,6 +87,7 @@ export const loginUsingEmail = (email, password) => async (dispatch) => {
     const userData = await getDoc(doc(fireDB, "user", user.uid));
 
     dispatch({ type: LOGIN_SUCCESS, payload: { uid: user.uid, email: user.email, ...userData.data() } });
+    
   } catch (err) {
     dispatch({
       type: LOGIN_FAIL,

@@ -12,15 +12,21 @@ const Testimonial = () => {
     <div>
         <div>
             <div>
-                <div className='flex justify-center'>
-                    <img src={elestar} alt='' className=''/>
+                <div className='flex justify-center  h-[2vw]'>
+                    <img src={elestar} alt='' className='w-[2vw] h-[2vw]'/>
                 </div>
                 <div className='flex font-lora justify-center text-[#875A33] text-[5vw]' >
                     <span>Customer Stories</span>
                 </div>
             </div>
         <div className='h-[40vw] flex px-[10vw] py-[3vw] font-playfair' 
-        style={{ backgroundImage: `url(${Vec4})`}}>
+ style={{
+    backgroundImage: `url(${Vec4})`,
+    backgroundSize: 'cover',  // You can use 'contain', 'auto', '100%', etc.
+    backgroundRepeat: 'no-repeat',  // 'repeat', 'repeat-x', 'repeat-y', 'no-repeat'
+    backgroundPosition: 'center center',  // 'left top', 'right bottom', '50% 50%', etc.
+    width: '100%',  // Set width as needed
+  }}>
                 <div className='flex flex-row gap-[5vw]  px-[6.5vw] justify-center items-center' >
                     <div className=' flex border border-solid border-2px border-[#875A33]
                      w-[32vw] bg-white text-[2.4vw] h-[31vw] p-[3vw]

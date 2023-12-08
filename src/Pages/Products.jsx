@@ -11,20 +11,8 @@ import Kalki from '../Components/HomePage/kalki.jsx'
 import Testimonial from '../Components/HomePage/Testimonial.jsx'
 import Trusty from '../Components/HomePage/Trusty.jsx'
 import Footer from '../Components/Footer.jsx'
-import {BsThreeDots} from 'react-icons/bs'
 import Carousel from '../Components/HomePage/Carousel.jsx'
-// import Carousel from '../Test/Carousel.jsx'
 import ele1 from '../assets/ele1.png'
-import ele2 from '../assets/ele2.png'
-import Card1 from '../assets/card1.png'
-import Card2 from '../assets/card2.png'
-import Card3 from '../assets/card3.png'
-import colr1 from '../assets/colr1.png'
-import colr2 from '../assets/colr2.png'
-import colr3 from '../assets/colr3.png'
-import c1 from '../assets/c1.png'
-import c2 from '../assets/c2.png'
-import c3 from '../assets/c3.png'
 
 
 const Products = () => {
@@ -126,9 +114,6 @@ const Products = () => {
       <div>
         <Carousel/>
       </div>
-      {/* <div className='flex justify-center items-center'>
-        <BsThreeDots className='text-slate-600  w-[10vw] h-[3vw]'/>
-      </div> */}
       <div className=''>
         <Categ1/>
       </div>

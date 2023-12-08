@@ -38,12 +38,15 @@ const Nav = () => {
     }
   };
   return (
-    <nav className='touch-none'>
-      <div className='h-auto md:h-[73px] w-full lg:h-[73px] align-center bg-teal-dark w-full text-base md:py-[24px] md:px-[54px]'>
-        <div id='parent-container' className='flex w-full justify-between items-center pt-[0.8vw] md:py-0 align-center'>
-          <div className='flex hidden md:flex lg:flex lg:'>
-            <ul className='flex text-white space-x-[24px] font-[Poppins] text-[16px]'>
-              <Link to='/'>
+    <nav className='w-full'>
+      <div className='h-[27.5vw] sm:h-[17vw]  w-full md:h-[8.5vw] lg:h-[7vw] align-center 
+      bg-teal-dark w-full text-xl '>
+      {/* md:py-[24px] */}
+        <div id='parent-container' className='flex w-full justify-between
+         items-center pt-[0.8vw] md:pt-0 md:pt-0 align-center'>
+          <div className='flex md:my-[2.6vw] hidden md:flex lg:flex md:ml-[3vw]'>
+            <ul className='flex text-white gap-[1.45vw] font-[Poppins] text-[1.5vw]'>
+              <Link to='/All'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Product</li>
               </Link>
               <Link to='/Saree'>
@@ -55,20 +58,25 @@ const Nav = () => {
               <Link to='/Dresses'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
               </Link>
+              <Link to='/Dashboard'>
+                <li className='hover:text-[#CC911D] transition cursor-pointer'>Orders</li>
+              </Link>
               <Link onClick={handleLogout}>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>Contact Us</li>
+                <li className='hover:text-[#CC911D] text-red transition cursor-pointer'>Logout</li>
               </Link>
             </ul>
           </div>
-          <div className='flex ml-7 md:ml-0 justify-self-start align-center md:max-lg:justify-center'>
+          <div className='flex ml-7 md:ml-0 justify-self-start  align-center '>
+          {/* md:max-lg:justify-center */}
             <Link to='/'>
-              <img src={logo} alt='logo' />
+              <img src={logo} alt='logo' className='  md:w-[10vw] md:mb-[1vw] w-[25vw] sm:w-[15vw]'/>
             </Link>
           </div>
 
-          <div className='flex gap-[16px] '>
-            <div className='flex md:flex bg-grey-ray md:w-[211px] h-[28px] md:gap-[22px] rounded-[2px] items-center hidden'>
-              <Link to='/Search'><FaSearch className='text-[#848484] ml-[17px]' /></Link>
+          <div className='flex gap-[16px] ml-[1vw] '>
+            <div className='flex md:flex bg-grey-ray w-[20vw]  h-[28px] md:gap-[1.5vw]
+             rounded-[2px] py-[1.35vw] items-center hidden'>
+              <Link to='/Search'><FaSearch className='text-[#848484] ml-[1.5vw]' /></Link>
               <input
                 placeholder='search your product'
                 className='bg-transparent border-none text-xs focus:outline-none'
@@ -76,12 +84,13 @@ const Nav = () => {
                 onKeyDown={(e) => handleKeyPress(e)}
               />
             </div>
-            <div className='flex space-x-[30px] md:space-x-[16px] items-center  mr-7 md:mr-0'>
+            <div className='flex gap-[10vw] mr-[3vw] md:gap-[0.5vw] md:space-x-[16px] 
+            items-center ml-[1.5vw] '>
             <Link to={`${isAuthenticated? '/User' : '/Signup'}`}>
             {/* <Link to='/Signup'> */}
                 <FaUser className='text-white'  />
               </Link>
-              <Link to='/Wishlist'>
+              <Link to='/addProduct'>
                 <AiFillHeart className='text-white'  />
               </Link>
               <Link to='/Cart'>
@@ -90,19 +99,20 @@ const Nav = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-row justify-center items-center sm:hidden mt-[3.5vw]'>
-    <div className='flex  sm:hidden'>
-        <div className='flex bg-grey-ray h-[9vw] w-[75vw] gap-[3vw] rounded-[20px] items-center mb-[10px] '>
-        <Link to='/Search'><FaSearch className='text-[#848484] mx-[3vw]' /></Link>
+        <div className='flex flex-row justify-center items-center md:hidden mt-[3.5vw] sm:mt-[0.5vw]'>
+    <div className='flex md:hidden'>
+        <div className='flex bg-grey-ray h-[9vw] sm:h-[5vw] w-[75vw] sm:w-[70vw] gap-[3vw] 
+        rounded-[20px] items-center mb-[10px] '>
+        <Link to='/Search'><FaSearch className='text-[#848484] w-[3.5vw] mx-[5vw] sm:mx-[3vw]' /></Link>
         <input
             placeholder='search your product'
-            className='bg-transparent border-none text-xs focus:outline-none mx-[3vw]'
+            className='bg-transparent border-none text-[3vw] sm:text-[2vw]  focus:outline-none mx-[3vw]'
             onChange={(e) => handleSearchTermChange(e.target.value)}
             onKeyDown={(e) => handleKeyPress(e)}
           />
         </div>
     </div>
-<div className='sm:hidden  justify-start items-end pl-[5.5vw]'>
+<div className='md:hidden  justify-start items-end pl-[5.5vw]'>
   <button className='transition'  onClick={handleClick}>
     {click ? <FaTimes className='w-[4vw] h-[9vw]' fill='white'/> : <CiMenuFries className='w-[6vw] h-[9vw]' fill='white' />}
   </button>

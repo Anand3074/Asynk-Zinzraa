@@ -38,7 +38,7 @@ const Login = () => {
     const [passwordError, setPasswordError] = useState(false)
     const [passwordErrorMessage, setPasswordErrorMessage] = useState("")
     const [showPassword, setShowPassword] = useState(false)
-    const [active, setActive] = useState("phone")
+    const [active, setActive] = useState("email")
     const { error, loading, isAuthenticated,users } = useSelector(
     (state) => state.users
   );
@@ -160,7 +160,7 @@ const Login = () => {
         </Button>
         <Typography variant="small" className="mt-6 flex justify-center">
         Do not have a account?
-        <Link to="/register">
+        <Link to="/Signup">
           <Typography
             
             variant="small"

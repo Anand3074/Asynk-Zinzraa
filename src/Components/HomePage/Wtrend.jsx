@@ -5,30 +5,31 @@ import { Link } from 'react-router-dom'
 
 const Wtrend = () => {
   return (
-    <div>
-        <div className='grid grid-cols-2 md:mx-[54px] mx-[18px] bg-[#EFE5D8]'>
-            <div className='flex flex-col items-center justify-center'>
+    <div className='w-full h-[44vw] '>
+        <div className='grid grid-cols-2 md:mx-[3vw] mx-[5vw] bg-[#EFE5D8]'>
+            <div className='flex flex-col items-center justify-center '>
                 <div className='text-[#515233] font-fashion md:text-[48px] text-[16px]'>
                     <span>The Western Trend</span>
                 </div>
                 <div className='md:text-[28px] text-[9px] font-inria text-[#875A33]'>
                     <span>Shop the latest collection</span>
                 </div>
-                <div className='my-[7vw] w-[3vw]'>
-                    <img src={ele} alt='sm:w-[3vw] w-[1vw] sm:h-[3vw] h-[1vw]'/>
+                <div className='w-[2vw] h-[2vw] my-[5vw]'>
+                    <img src={ele} alt='w-[2vw] h-[2vw] '/>
                     
                 </div>
                 <div>
                     <Link to='/Westrend'><button className='bg-[#515233] text-white 
-                    font-playfair rounded-[0.5vw] text-[2vw] px-[7vw] py-[2vw]'>
+                    font-playfair rounded-[0.5vw] text-[2vw] md:text-[1.6vw] px-[7vw] py-[1.5vw]'>
                         SHOP NOW
                     </button></Link>
 
                 </div>
 
             </div>
-            
-                <img src={Wtren} alt='' className=' md:h-[648px] h-30vw w-full'/>
+                <div className='w-[40vw] h-[44vw]'>
+                    <img src={Wtren} alt='' className=' ml-[8vw] w-[40vw] h-[44vw]'/>
+                </div>
 
         </div>
     </div>

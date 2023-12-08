@@ -1,8 +1,8 @@
 import React from 'react'
 import Vec2 from '../../assets/vec2.png'
-import C1 from '../../assets/c1.png'
-import C2 from '../../assets/c2.png'
-import C3 from '../../assets/c3.png'
+import cat1 from '../../assets/cat1.png'
+import cat2 from '../../assets/cat2.png'
+import cat3 from '../../assets/cat3.png'
 import Vec3 from '../../assets/vec3.png'
 import { Link } from 'react-router-dom'
 
@@ -10,52 +10,59 @@ const Categ1 = () => {
   let Category1='KURTA SET'
   let Category2='SAREES'
   let Category3='DRESSES'
-  let Category1img=C1
-  let Category2img=C2
-  let Category3img=C3
+  let Category1img=cat1
+  let Category2img=cat2
+  let Category3img=cat3
 
 
 
 
   return (
-    <div>
-        <div className='flex w-full md:h-40vw justify-center md:px-[54px]
-          md:gap-[0.7vw] gap-[1.5vw]' style={{ backgroundImage: `url(${Vec2})` }}>
+    <div className=''>
+        <div className='flex w-full gap-[2vw] md:h-[40vw] justify-center' style={{
+            backgroundImage: `url(${Vec2})`,
+            backgroundSize: 'cover',  // You can use 'contain', 'auto', '100%', etc.
+            backgroundRepeat: 'no-repeat',  // 'repeat', 'repeat-x', 'repeat-y', 'no-repeat'
+            backgroundPosition: 'center center',  // 'left top', 'right bottom', '50% 50%', etc.
+            width: '100%',  // Set width as needed
+          }}>
         <div className=''>     
         <Link to='/Kurtas'><img src={Category1img} alt=''
          className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
-         p-[0.5vw] md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
+         p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>
           </div>
         <div>     
         <Link to='/Saree'><img src={Category2img} alt='' 
         className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
-        p-[0.5vw] md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
+        p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>
           </div>
           <div>     
           <Link to='/Dresses'> <img src={Category3img} alt='' 
           className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
-          p-[0.5vw] md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
+          p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>
           </div>
         </div>
-        <div className='flex flex-row text-[#C99359] md:h-[96px] h-[32px] items-center md:text-[48px] md:px-[54px] md:gap-[25px] text-[16px] font-playfair w-full gap-[3px]'>
-          <div className='w-1/3 flex justify-center'>
+        
+        <div className='flex flex-row text-[#C99359] md:h-[3vw] h-[7vw] items-center 
+        md:text-[4vw]  md:gap-[10vw] md:px-[9vw] text-[16px] font-playfair w-full gap-[3vw]'>
+          <div className='md:w-[20vw] w-[30vw] flex justify-center'>
               <Link to='/Kurtas'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category1}
               </span></Link>
           </div>
-          <div className='w-1/3 flex justify-center'>
+          <div className='md:w-[20vw] w-[30vw] flex justify-center'>
           <Link to='/Saree'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category2}
               </span></Link>
           </div>
-          <div className='w-1/3 flex justify-center'>
+          <div className='md:w-[20vw] w-[30vw] flex justify-center'>
           <Link to='/Dresses'><span className='text-[4vw] sm:text-[2.5vw]' >
                 {Category3}
               </span></Link>
           </div>
         </div>
-        <div className='w-full  md:h-[60px] h-[20px]'>
-          <img src={Vec3} className='w-full'/>
+        <div className='w-full my-[2vw]  md:h-[3vw] h-[4vw]'>
+          <img src={Vec3} className='w-full  md:h-[4vw] h-[4vw]'/>
         </div>
         
 

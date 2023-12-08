@@ -13,7 +13,7 @@ const Productsize = () => {
     const selectedProduct = useSelector((state) => state.product.selectedProduct)
         // console.log(selectedProduct)
         const [isWishlistClicked, setIsWishlistClicked] = useState(false);
-        console.log(isWishlistClicked)
+        // console.log(isWishlistClicked)
 
 
         const dispatch = useDispatch()

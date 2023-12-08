@@ -18,7 +18,7 @@ import {
 from "./userConstants.js"
 
 
-export const userReducer = (state = { users: {},userProfile:{} }, action) => {
+export const userReducer = (state = { users: {}, userProfile:{} }, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
     case REGISTER_USER_REQUEST:
@@ -96,4 +96,41 @@ export const userReducer = (state = { users: {},userProfile:{} }, action) => {
     default:
       return state;
   }
+  
 };
+export const userProfileReducer = (state = {  userProfile :{} }, action) => {
+  switch (action.type) {
+    case LOAD_USER_REQUEST:
+      return {
+        loading: true,
+      };
+   case LOAD_USER_SUCCESS:
+     
+      return {
+        ...state,
+        loading: false,
+        userProfile: action.payload
+      };
+
+    case LOAD_USER_FAIL:
+      return {
+        loading: false,
+        userProfile: null,
+        error: action.payload,
+      };
+       case LOGOUT_SUCCESS:
+      return {
+        loading: false,
+         userProfile: null,
+
+      };
+       case LOGOUT_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+}
