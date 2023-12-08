@@ -40,7 +40,7 @@ import KalkiCollection from './Pages/KalkiCollection.jsx'
 import Search from './Pages/Category/Search.jsx'
 // import SidebarNav from './Pages/CMS/Component/Layout/sidebar.jsx'
 // import Users from './Pages/CMS/Pages/Users.jsx'
-// import ProductsAll from './Components/ProductDisplay/ProductsAll.jsx'
+import ProductsAll from './Components/ProductDisplay/ProductsAll.jsx'
 // import Ethnic from './Pages/Ethnic'
 // import Western from './Pages/Western'
 
