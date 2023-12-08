@@ -11,7 +11,7 @@ import Cart from './Pages/Cart.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
 // import Orders from './Components/Orders/Orders.jsx'
 // import ViewOrder from './Components/Orders/ViewOrder.jsx'
-// import { loadUser } from './Redux/User/userAction.js';
+import { loadUser } from './Redux/User/userAction.js';
 
 
 
