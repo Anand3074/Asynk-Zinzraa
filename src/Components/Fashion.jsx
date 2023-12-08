@@ -3,8 +3,9 @@ import fashion from '../assets/f1.png'
 import Vec5 from '../assets/vec5.png'
 const Modern = () => {
   return (
-    <div className='flex'>
-      <div id='main-container' className='bg-[#C973634D] flex flex-row  m-[3vw] rounded-tr-[94px]  h-[25vw] '> 
+    <div className='flex  m-[2vw]'>
+      <div id='main-container' className='bg-[#C973634D] w-full flex flex-row  
+       rounded-tr-[94px]  h-[25vw] '> 
         <div>
           <img src={Vec5} alt=''  className='h-[25vw] w-[4vw]'/>
         </div>
@@ -29,7 +30,8 @@ const Modern = () => {
           </div>
             
         </div>
-        <div className='w-[36vw] h-[22vw] mt-[3vw] flex justify-end items-end rounded-tr-[94px] rounded-bl-[94px]'>
+        <div className='w-[40vw] h-[22vw] mt-[3vw] flex justify-end items-end rounded-tr-[94px]
+         rounded-bl-[94px]'>
                 <img src={fashion} alt='' className='w-[34vw] h-[25vw] '/>
         </div>  
       </div>

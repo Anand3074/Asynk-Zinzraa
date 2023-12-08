@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
     return (
-      <div className='flex relative  w-[98vw] space-between'>
+      <div className='flex relative  md:w-[98.9vw] w-[100vw]bg-[#F9F8F8] space-between'>
             <div className=' '>
             <div className='z-300 '>
                     <img src={hero1} alt='hero' className='w-[65vw]'/>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Hero1 = () => {
   return (
-    <div className='flex w-[100vw] flex-row bg-[#EDAF7C] h-[36vw] overflow-hidden flex-grow-1'>
+    <div className='flex md:w-[98.9vw] w-[100vw] flex-row bg-[#EDAF7C] h-[36vw] overflow-hidden flex-grow-1'>
         <div>
             <img src={hero2} alt='' className='w-[30vw]' />
         </div>

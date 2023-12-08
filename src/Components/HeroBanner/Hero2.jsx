@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Hero2 = () => {
   return (
-    <div className='flex  w-[100vw] relative bg-[#bd9d6ecc] h-[36vw]'>
+    <div className='flex  md:w-[98.9vw] w-[100vw] relative bg-[#bd9d6ecc] h-[36vw]'>
         <div className='flex flex-col w-[44vw] font-fashion font-light 
         text-[4.3vw]  justify-center text-white'>
             <div className='mb-[2vw]'>

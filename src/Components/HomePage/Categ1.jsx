@@ -19,18 +19,22 @@ const Categ1 = () => {
 
   return (
     <div>
-        <div className='flex w-full md:h-40vw justify-center md:px-[54px]  md:gap-[25px] gap-[3px]' style={{ backgroundImage: `url(${Vec2})` }}>
+        <div className='flex w-full md:h-40vw justify-center md:px-[54px]
+          md:gap-[0.7vw] gap-[1.5vw]' style={{ backgroundImage: `url(${Vec2})` }}>
         <div className=''>     
         <Link to='/Kurtas'><img src={Category1img} alt=''
-         className='rounded-t-full md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
+         className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
+         p-[0.5vw] md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
           </div>
         <div>     
         <Link to='/Saree'><img src={Category2img} alt='' 
-        className='rounded-t-full md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
+        className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
+        p-[0.5vw] md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
           </div>
           <div>     
           <Link to='/Dresses'> <img src={Category3img} alt='' 
-          className='rounded-t-full md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
+          className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
+          p-[0.5vw] md:h-[35vw] md:mt-[38px] mt-[12px]'></img></Link>
           </div>
         </div>
         <div className='flex flex-row text-[#C99359] md:h-[96px] h-[32px] items-center md:text-[48px] md:px-[54px] md:gap-[25px] text-[16px] font-playfair w-full gap-[3px]'>
