@@ -16,6 +16,7 @@ export default {
       'montserrat': ['Montserrat'],
       'poppins': ['Poppins'],
       'italian': ['Italiana'],
+      'Fraunces': ['Fraunces']
 
 
     },
