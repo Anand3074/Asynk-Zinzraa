@@ -6,8 +6,8 @@ import wishlistReducer from './Wishlist/WIshSlice.js';
 import productSlice from './Product/ProductSlice.js'
 import filtersReducer from './Product/filter.js'
 import { userReducer,userProfileReducer } from "./User/userReducer";
-import { modalsDescriptionReducer, modalsReducer } from "./AdminP/mobileReducer";
-import {orderReducer} from './Orders/orderReducers.js'
+// import { modalsDescriptionReducer, modalsReducer } from "./AdminP/mobileReducer";
+// import {orderReducer} from './Orders/orderReducers.js'
 
 const rootReducer = combineReducers({
   users :userReducer,
@@ -16,9 +16,9 @@ const rootReducer = combineReducers({
   wishlist: wishlistReducer,
   product: productSlice,
   filters: filtersReducer,
-  modals:modalsReducer,
-  modalDescription:modalsDescriptionReducer,
-  order: orderReducer
+  // modals:modalsReducer,
+  // modalDescription:modalsDescriptionReducer,
+  // order: orderReducer
 });
 
 const persistConfig = {
