@@ -5,6 +5,8 @@ import Component3 from '../HeroBanner/Hero2.jsx';
 import Slider from 'react-slick'; 
 import { IoIosArrowDropright   } from "react-icons/io";
 import { IoIosArrowDropleft } from "react-icons/io";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const Carousel = () => {
   const components = [
     Component1,
@@ -66,9 +68,6 @@ const Carousel = () => {
     ),
 
   };
-  
-
- 
   return (      
       <Slider {...sliderSettings}>
       {components.map((Component, index) => (
