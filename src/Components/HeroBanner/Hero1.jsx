@@ -5,24 +5,28 @@ import { Link } from 'react-router-dom'
 
 const Hero1 = () => {
   return (
-    <div className='flex md:w-[98.9vw] w-[100vw] flex-row bg-[#EDAF7C] h-[36vw] overflow-hidden flex-grow-1'>
-        <div>
-            <img src={hero2} alt='' className='w-[30vw]' />
+    <div className='flex w-full flex-row bg-[#EDAF7C] h-[36vw] overflow-hidden'>
+        <div className='w-[30vw]'>
+            <img src={hero2} alt='' className='w-[30vw] h-[36vw]' />
         </div>
-        <div className='flex flex-col w-[40vw] font-fashion font-light text-[4.7vw] justify-center text-[#1E1E1E]'>
+        <div className='flex flex-col w-[40vw] font-fashion  font-light text-[4.7vw]
+         justify-center text-[#1E1E1E]'>
             <div className='mb-[2vw]'>
             <div className='flex justify-center'>Drape Yourself</div> 
             <div className='flex justify-center'>in the Colors of </div>
             <div className='flex justify-center'>India.</div> 
             </div>
             <div className='flex justify-center'>
-            <Link to='/Kurtas'><button className='bg-white font-playfair rounded-[0.5vw] text-nunito text-[1.8vw] text-slate-900 px-[8vw] py-[1vw]'>
-              Shop Now
+            <Link to='/Kurtas'><button className='bg-white opacity-100
+                   font-playfair md:text-[32px] text-[11px] mx-[4.5vw] 
+                   mt-[1.5vw] py-[1vw] rounded-[0.5vw]  w-[25vw] text-black 
+                   relative z-10'>
+              SHOP NOW
             </button>
             </Link>
             </div>
         </div>
-        <div>
+        <div className='w-[30vw]'>
             <img src={hero3} alt='' className='w-[30vw] h-[36vw]' />
         </div>
     </div>

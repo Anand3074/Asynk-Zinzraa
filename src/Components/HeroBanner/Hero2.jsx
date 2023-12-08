@@ -5,27 +5,31 @@ import { Link } from 'react-router-dom'
 
 const Hero2 = () => {
   return (
-    <div className='flex  md:w-[98.9vw] w-[100vw] relative bg-[#bd9d6ecc] h-[36vw]'>
-        <div className='flex flex-col w-[44vw] font-fashion font-light 
-        text-[4.3vw]  justify-center text-white'>
+    <div className='flex  w-full relative bg-[#bd9d6ecc] h-[36vw]'>
+        <div className='flex flex-col w-[45vw] font-fashion font-light 
+        text-[4vw]  justify-center text-white flex-grow-1'>
             <div className='mb-[2vw]'>
             <div className='flex justify-center'>Discover</div> 
             <div className='flex justify-center'>Timeless</div>
             <div className='flex justify-center'>Elegance in</div> 
             <div className='flex justify-center'>Every Stitch</div>
             </div>
-            <div className='z-500 absolute lg:left-[28.5vw] left-[28.5vw] xl:left-[28.5vw]
-                md:left-[28.5vw] top-[0] w-[30vw]'>
+            <div className='z-500 absolute lg:left-[29vw] left-[29vw] xl:left-[29vw]
+                md:left-[29vw] top-[0] w-[30vw] '>
                     <img src={vec6} className='' alt='vector'/>
             </div>
             <div className='flex justify-center'>
-            <Link to='Category'>  <button className='bg-[#883D6A] font-playfair text-white rounded-[0.5vw] text-[2.2vw] text-slate-900 px-[8vw] py-[1vw]'>
+            <Link to='Category'>  <button className='bg-[#883D6A] font-playfair 
+            opacity-100
+            font-playfair md:text-[32px] text-[11px] mx-[4.5vw] 
+            mb-[3.5vw] py-[1vw] rounded-[0.5vw]  w-[25vw] text-white 
+            relative z-10'>
               SHOP NOW
             </button></Link>
             </div>
         </div>
-            <div className='z-600'>
-                    <img src={hero4} alt='hero' className='w-[56vw] h-[36vw]'/>
+            <div className='w-[55vw]'>
+                    <img src={hero4} alt='hero' className='w-[55vw] h-[36vw] '/>
             </div>
          </div>
   )
