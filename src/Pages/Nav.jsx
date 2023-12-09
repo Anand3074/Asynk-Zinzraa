@@ -90,7 +90,7 @@ const Nav = () => {
             {/* <Link to='/Signup'> */}
                 <FaUser className='text-white'  />
               </Link>
-              <Link to='/addProduct'>
+              <Link to='/Wishlist'>
                 <AiFillHeart className='text-white'  />
               </Link>
               <Link to='/Cart'>

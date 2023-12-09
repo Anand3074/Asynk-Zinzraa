@@ -13,6 +13,7 @@ import Trusty from '../Components/HomePage/Trusty.jsx'
 import Footer from '../Components/Footer.jsx'
 import Carousel from '../Components/HomePage/Carousel.jsx'
 import ele1 from '../assets/ele1.png'
+import SliderCa from '../Components/HomePage/Slider.jsx'
 
 
 const Products = () => {
@@ -117,9 +118,9 @@ const Products = () => {
       <div className=''>
         <Categ1/>
       </div>
-      <div className='mt-[3vw] md:mt-[1.5vw]'>
-      <Recommended group={Group1}/>
-
+      <div className='mt-[3vw] md:mt-[3vw]'>
+      <SliderCa/>
+      {/* <Recommended group={Group1}/> */}
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
         <Wtrends/>
@@ -136,7 +137,7 @@ const Products = () => {
       <div>
       <Recommended group={Group4}/>
       </div>
-      <div>
+      <div className='mt-[1.5vw]'>
       <Testimonial/> 
       </div>
       <div>

@@ -13,45 +13,48 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
     const { product } = context;
   return (
     
-        <div className='w-[30vw] h-[45vw] ' >
+        <div className='w-[30vw] h-[45vw] md:w-[25vw] md:h-[37vw] ' >
         <div className='' id='container'>
             <div className='flex relative'>
                 <div className=''>
                 {/* <Link to='/Detail'><img src="" alt='' */}
                 <Link to='/Detail'><img src={imageUrl} onClick={Detail} alt=''
-                className='rounded-[2vw] w-[30vw] h-[35vw]'/></Link>
+                className='rounded-[2vw] w-[30vw] h-[35vw] md:w-[24vw] md:h-[28vw]'/></Link>
                 </div>
                 {/* <div className='' onClick={handleAddToWishlist}> */}
                 <div className='' onClick={addWish}>
                     <div className='absolute z-50 right-[2vw] top-[1vw]'>
                     {/* <div  className='absolute z-50 right-[2vw] top-[1vw]'> */}
-                        < IoEllipse className='w-[4.5vw] h-[4.5vw] fill-white'/>
+                        < IoEllipse className='w-[4.5vw] h-[4.5vw] '
+                    fill={isWishlisted ? '#fce4ec' : 'white'}/> 
                     </div>
                     <div className='absolute z-100 right-[3.4vw] top-[2.5vw]'>
-                        <FiHeart className='w-[1.7vw] h-[1.7vw] text-[#FF005C]'
+                        <FiHeart  className='w-[1.7vw] h-[1.7vw] text-[#e91e63]'
                         // fill='none'/>
-                         fill={isWishlisted ? 'red' : 'none'}/> 
+                         fill={isWishlisted ? '#e91e63' : 'none'}/> 
                         </div>
                 </div>
             </div>
             <div className='relative'>
-            <div className='flex text-slate-900 font-lora mt-[0.4vw] mx-[1vw] font-medium wrap 
-            leading-[1.8vw]
-             md:leading-[1.65vw] text-[1.6vw] md:text-[1.65vw] h-[3vw] mb-[0.1vw]'>
+            <div className='flex text-slate-900 font-lora mt-[0.4vw] mx-[1vw] font-[500] wrap 
+            leading-[1.8vw] jsutify-center
+             md:leading-[1.35vw]  text-[1.6vw] md:text-[1.5vw] h-[3vw] md:h-[1.8vw] mb-[0.1vw]'>
                 {description} 
             </div>
-            <div className='flex flex-row'>
-            <div className='font-bold mx-[1vw] font-lora mt-[0.3vw] md:mt-[0.2vw] text-[2vw]
-             md:text-[1.9vw]'>
-                    ${price}     
+            <div className='flex flex-row md:justify-center items-center md:mx-[4vw]'>
+            <div className='font-bold mx-[1vw] md:mx-[1vw] font-lora mt-[0.3vw] md:mt-[0.6vw] text-[2vw]
+            md:text-[1.55vw]'>
+                    ₹{price}     
             </div>
                 <div className='flex text-red-400 font-lora justify-center items-center
                 mr-[12vw] line-through text-[1.6vw]  md:text-[1.3vw]'>
-                    ${Math.floor(price * (1 + 43 / 100))}
+                    ₹{Math.floor(price * (1 + 43 / 100))}
                 </div>
             </div>
-                <div className='absolute md:right-[1vw] right-[1.5vw]  md:top-[3.3vw] top-[1vw] items-start'>
-                    <button onClick={addCart} className=' bg-teal-dark font-semibold font-poppins text-white  w-[15vw]  h-[3vw]
+                <div className='absolute md:right-[1vw] right-[1.5vw]  md:top-[5.3vw] 
+                top-[1vw] items-start'>
+                    <button onClick={addCart} className=' bg-teal-dark font-semibold 
+                    font-poppins text-white  w-[15vw] md:w-[24vw]  h-[3vw]
                      text-[1.2vw]   rounded-[0.4vw] '>
                         Add to Cart
                     </button>
