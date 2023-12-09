@@ -62,13 +62,13 @@ const ProductList = ({categoryToRender, size, fabric}) => {
     const isSearchMatch =
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase());
-  
+
 
     // console.log('item' + item.fabric)
 
     return isSizeMatch && isFabricMatch && isPriceMatch  &&  isSearchMatch && (item.category === categoryToRender || !categoryToRender);
     // return isFabricMatch && (item.category === categoryToRender || !categoryToRender);
-
+    
   });
 
 

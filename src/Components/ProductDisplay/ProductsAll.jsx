@@ -9,17 +9,33 @@ import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import Fashion from '../../Components/Fashion';
-import Filtersss from './Filtersss';
+import Filter2 from './filter2.jsx';
 import elestar from '../../assets/ele1.png'
+import { set } from 'lodash';
+import { Checkbox } from '@material-tailwind/react';
 
 
-const ProductsAll = ({categoryToRender, size, fabric}) => {
+const ProductsAll = () => {
+  const [maxPrice, setMaxPrice] = useState(10000);
+  const initialSizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  const initialFabric = ['Silk', 'Cotton',  'Linen', 'Rayon'];
+  const [fabric, setFabric] = useState(initialFabric)
+  const [selectedFabric, setSelectedFabric] = useState(null);
+  // const [open, setOpen] = React.useState(true);
+  const [sizef, setSizef] = useState(initialSizes);
+  const [selectedSize, setSelectedSize] = useState(null);
   const context = useContext(myContext);
   const { product } = context;
   const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
   // const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
   // console.log(isItemInWishlist)
-
+  const clearFilter = () => {
+    setSizef(initialSizes)
+    setFabric(initialFabric)
+    setMaxPrice(9999)
+    
+    console.log(sizef)
+  }
 
   const dispatch = useDispatch()
   const handleAddToCart = (item) => {
@@ -44,12 +60,22 @@ const ProductsAll = ({categoryToRender, size, fabric}) => {
   
 
   const handleCardDetail = (item) => {
-    const { title, price, imageUrl, category, description, id } = item;
+    const { title, price, imageUrl, category, description, id , size } = item;
     const cardDetails = { title, price, imageUrl, category, description, id };
     dispatch(setSelectedProduct(cardDetails));
     // history.push('/');
   };
- 
+  const filteredProducts = product.filter((item) => {
+    const isSizeMatch = sizef.length === 0 || sizef.some((size) => item.size === size);
+    const isFabricMatch = fabric.length === 0 || fabric.some((fabric) => item.fabric === fabric);
+    // const isPriceMatch = item.price <= maxPrice;
+    // console.log('Item:', item);
+    // console.log('isSizeMatch:', isSizeMatch);
+    // console.log('isPriceMatch:', isPriceMatch);
+    return isSizeMatch && isFabricMatch && (item);
+
+
+  });
 
 
 
@@ -61,23 +87,35 @@ const ProductsAll = ({categoryToRender, size, fabric}) => {
         <div>
         <Fashion/>
         </div>
-      <div className='flex flex-row gap-[5vw] justify-start items-start'>
-        <div><Filtersss/></div>
+      <div className='flex flex-row gap-[10vw] ml-[1.5vw] justify-start items-start'>
+        <div className='w-[25vw] mt-[10vw] pl-[3vw]'>
+        <Filter2 size={sizef} setSize={setSizef} clearFilter={clearFilter} 
+        maxPrice={maxPrice} setMaxPrice={setMaxPrice} fabric={fabric} 
+        setFabric={setFabric}/>
+        </div>
         <div className='flex flex-col'>
-        <div className='flex flex-col justify-center items-center'>
-                <img src={elestar} alt='' className='w-[10px] md:w-auto '/>
+        <div className='flex flex-col justify-center items-center mt-[7vw] h-[2vw] ' >
+                <img src={elestar} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
             
-            <div className='flex justify-center items-center text-[#875A33] md:text-[38px] md:mb-[24px] mb-[8px]' >
+            <div className='flex justify-center items-center font-lora text-[#875A33] md:text-[3.5vw] 
+            md:mb-[7vw] mb-[3vw]' >
+              <Checkbox className='h-[2vw] w-[2vw]'/>
                 <span>Our Products</span>
             </div> 
             </div>
-        <div className='grid grid-cols-2 m-[1vw] gap-[5vw]px-[3vw] justify-center items-center'>
+        <div className='grid grid-cols-2 m-[1vw] gap-[2.5vw] px-[1.5vw] w-[60vw] justify-center items-center'>
        
-                     {product.map((item, index) => {          
-            const { title, price, imageUrl, category, description, id } = item;
+            {filteredProducts
+            .filter(item => 0 <= item.price && item.price <= parseFloat(maxPrice))
+            .map((item, index) => {    
+            // const [selectedSize, setSelectedSize] = useState(null);  
+            console.log(maxPrice)    
+            const { title, price, imageUrl, category, description, id , size} = item;
+
+            // const isSizeMatch = selectedSize ? size.includes(selectedSize) : true;
+            console.log(size)
             const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === id);
-            // if (isFabricMatch && (category === categoryToRender || !categoryToRender))
-             {
+           {
             return (        
               <Cards 
                 key={index}
@@ -94,7 +132,6 @@ const ProductsAll = ({categoryToRender, size, fabric}) => {
                 Detail={() => handleCardDetail(item)}
                 // root={id}
               />
-
               // wishClick={wishClick} 
             );
           }
