@@ -126,16 +126,17 @@ const Products = () => {
         <Wtrends/>
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
-        <Recommended group={Group2}/>
+        {/* <Recommended group={Group2}/> */}<SliderCa/>
       </div>
-      <div>
+      <div className='mt-[3vw] md:mt-[1.5vw]'>
         <Kalki/>
       </div>
       <div>
-      <Recommended group={Group3}/>
+      {/* <Recommended group={Group3}/>*/}
+      <SliderCa/> 
       </div>
       <div>
-      <Recommended group={Group4}/>
+      {/* <Recommended group={Group4}/> */}<SliderCa/>
       </div>
       <div className='mt-[1.5vw]'>
       <Testimonial/> 

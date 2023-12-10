@@ -84,26 +84,27 @@ const ProductsAll = () => {
 
     <div>
         <div className=''><ToastContainer/></div>
-        <div>
+        <div className='md:mb-[5vw]'>
         <Fashion/>
         </div>
-      <div className='flex flex-row gap-[10vw] ml-[1.5vw] justify-start items-start'>
-        <div className='w-[25vw] mt-[10vw] pl-[3vw]'>
+        <div className='flex flex-col justify-center items-center mt-[9vw] h-[2vw] ' >
+                <img src={elestar} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
+            
+            <div className='flex justify-center items-center font-lora text-[#875A33] 
+            md:text-[3.5vw] 
+            md:mb-[7vw] mb-[3vw]' >
+                <span>Our Products</span>
+            </div> 
+            </div>
+      <div className='flex flex-row gap-[7.5vw] ml-[2.5vw] justify-start items-start'>
+        <div className='w-[25vw] mt-[3vw] pl-[3vw]'>
         <Filter2 size={sizef} setSize={setSizef} clearFilter={clearFilter} 
         maxPrice={maxPrice} setMaxPrice={setMaxPrice} fabric={fabric} 
         setFabric={setFabric}/>
         </div>
         <div className='flex flex-col'>
-        <div className='flex flex-col justify-center items-center mt-[7vw] h-[2vw] ' >
-                <img src={elestar} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
-            
-            <div className='flex justify-center items-center font-lora text-[#875A33] md:text-[3.5vw] 
-            md:mb-[7vw] mb-[3vw]' >
-              <Checkbox className='h-[2vw] w-[2vw]'/>
-                <span>Our Products</span>
-            </div> 
-            </div>
-        <div className='grid grid-cols-2 m-[1vw] gap-[2.5vw] px-[1.5vw] w-[60vw] justify-center items-center'>
+        <div className='grid grid-cols-2 mx-[1vw] my-[3vw] gap-[1.5vw]
+         px-[1.5vw] w-[60vw] justify-center items-center'>
        
             {filteredProducts
             .filter(item => 0 <= item.price && item.price <= parseFloat(maxPrice))

@@ -24,7 +24,10 @@ const Modern = () => {
             </div>
           </div>
           <div className='flex justify-center mt-[2vw]'>
-            <button className='bg-[#1A1614] text-nunito text-[1.5vw] text-white px-[6vw] py-[1vw]'>
+            <button className='bg-[#1A1614] text-nunito text-[1.5vw] 
+            text-white px-[6vw] py-[1vw]
+            font-playfair md:text-[1.8vw] font-[400] mx-[4.5vw] 
+           py-[1vw] rounded-[0.5vw]  w-[23vw]  relative'>
               Shop Now
             </button>
           </div>

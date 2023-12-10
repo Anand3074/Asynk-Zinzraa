@@ -91,7 +91,7 @@ const SliderCa = ({ group }) => {
       className="absolute top-[14vw] left-[-5.5vw] transform rounded-full
       w-[4vw] h-[4vw] -translate-y-1/2 cursor-pointer"
       onClick={onClick}
-      style={{ zIndex: 1 }}
+      style={{ zIndex: 2 }}
     >
       <IoIosArrowDropleft  className="w-full h-full text-gray-600" fill='' />
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { CiMenuFries } from 'react-icons/ci';
@@ -36,7 +36,59 @@ const Nav = () => {
       navigate('/Search');
       dispatch(setSearchTerm('')); // Clear the search term
     }
+
   };
+
+  useEffect(() => {
+    if (click) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [click]);
+
+  const content =
+    <>
+    <div className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
+     relative top-[0.6vw]  sm:top-[1.2vw]
+         font-bold text-[5vw]  right-0 bg-grey-ray transition'  
+              style={{ zIndex: 9999}}
+         >
+            <ul className="flex flex-col justify-center py-[8vw]
+             items-center text-center text-x1 px-[3vw] h-[100vw]">
+                <Link to="/" >
+                    <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
+                    font-nunito  justify-start my-[3vw] pt-[3vw]  hover:text-black text-[#004d40]' 
+                    onClick={closeMenu}>Products</li>
+                </Link>
+                <Link to="/Saree">
+                    <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
+                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black text-[#004d40] ' 
+                    onClick={closeMenu}> Saree</li>
+                </Link>
+                <Link to="/Kurtas">
+                    <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
+                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black text-[#004d40]' 
+                    onClick={closeMenu}>Kurtas</li>
+                </Link>
+                <Link to="/Dresses">
+                    <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
+                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black text-[#004d40]' 
+                    onClick={closeMenu}>Dresses</li>
+                </Link>
+                <Link to="/User">
+                    <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
+                    font-nunito  justify-start my-[3vw] 
+                    py-[3vw]  border-teal-dark hover:text-black text-[#004d40]'
+                    onClick={closeMenu}>Contact us</li>
+                </Link>
+            </ul>
+        </div>
+      </>
   return (
     <nav className='w-full'>
       <div className='h-[27.5vw] sm:h-[17vw]  w-full md:h-[8.5vw] lg:h-[7vw] align-center 
@@ -74,7 +126,9 @@ const Nav = () => {
           </div>
 
           <div className='flex gap-[16px] ml-[1vw] '>
-            <div className='flex md:flex bg-grey-ray w-[20vw]  h-[28px] md:gap-[1.5vw]
+          {/* <div className='flex md:flex bg-grey-ray w-[20vw]  h-[28px] md:gap-[1.5vw] */}
+            <div className='flex md:flex bg-[#fffde7] w-[20vw]  h-[28px] md:gap-[1.5vw]
+            
              rounded-[2px] py-[1.35vw] items-center hidden'>
               <Link to='/Search'><FaSearch className='text-[#848484] ml-[1.5vw]' /></Link>
               <input
@@ -101,9 +155,11 @@ const Nav = () => {
         </div>
         <div className='flex flex-row justify-center items-center md:hidden mt-[3.5vw] sm:mt-[0.5vw]'>
     <div className='flex md:hidden'>
-        <div className='flex bg-grey-ray h-[9vw] sm:h-[5vw] w-[75vw] sm:w-[70vw] gap-[3vw] 
+        <div className='flex bg-[#fffde7] h-[9vw] sm:h-[5vw] w-[75vw] sm:w-[70vw] gap-[3vw] 
         rounded-[20px] items-center mb-[10px] '>
-        <Link to='/Search'><FaSearch className='text-[#848484] w-[3.5vw] mx-[5vw] sm:mx-[3vw]' /></Link>
+        <Link to='/Search'><FaSearch className='text-[#848484] w-[3.5vw] mx-[5vw] sm:mx-[3vw]' 
+        fill='black' /></Link>
+        
         <input
             placeholder='search your product'
             className='bg-transparent border-none text-[3vw] sm:text-[2vw]  focus:outline-none mx-[3vw]'
@@ -118,8 +174,10 @@ const Nav = () => {
   </button>
 </div>
   </div>
-  <div>
-    {click && <Hamburger closeMenu={closeMenu} />}
+  <div className='h-[760px]'>
+     {click && content}
+   {/* closeMenu={closeMenu} />} */}
+  {/* {click && <Hamburger closeMenu={closeMenu} />} */}
   </div>
 </div>
     </nav>

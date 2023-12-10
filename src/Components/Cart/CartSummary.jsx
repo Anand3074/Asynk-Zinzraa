@@ -1,12 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 
 const Cart = () => {
     // let bigPrice='3874'
     const { error, loading, isAuthenticated,users } = useSelector((state) => state.users);
     const cartItems = useSelector((state) => state.cart.cartItems);
+    const dispatch = useDispatch();
+  
+    const clearCart = () => {
+      if (cartItems.length !== 0) {
+        dispatch(removeCart());
+      }
+    };
         const calculateTotalPrice = () => {
             return cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
           };
@@ -27,7 +34,7 @@ const Cart = () => {
                         Big Total
                     </div>
                     <div className="w-[10vw]">
-                        ₹ {(calculateTotalPrice().toFixed(2))}
+                        ₹{(calculateTotalPrice().toFixed(2))}
                     </div>
                 </div>
                 <div className='text-[1.4vw] my-[0.5vw] md:my-[0.3vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
@@ -35,7 +42,7 @@ const Cart = () => {
                         Discount on MRP 
                     </div>
                     <div className="w-[10vw] text-red-500">
-                    ₹ {(calculateTotalPrice() - discountedPrice).toFixed(2)}
+                    ₹{(calculateTotalPrice() - discountedPrice).toFixed(2)}
   
                     </div>
                 </div>
@@ -44,7 +51,7 @@ const Cart = () => {
                         Sub Total
                     </div>
                     <div className="w-[10vw]">
-                        ₹ {(discountedPrice).toFixed(2)}
+                        ₹{(discountedPrice).toFixed(2)}
                     </div>
                 </div>
                 <div className='text-[1.4vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
@@ -52,7 +59,7 @@ const Cart = () => {
                         Convenience Charges
                     </div>
                     <div className="w-[10vw]">
-                        ₹ {(convenienceprice).toFixed(2)}
+                        ₹{(convenienceprice).toFixed(2)}
                     </div>
                 </div>
                 <div className='text-[1.6vw] md:text-[1.4vw]  my-[0.5vw] md:my-[0.3vw] md:mr-[0.5vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
@@ -60,7 +67,7 @@ const Cart = () => {
                         Your Pay
                     </div>
                     <div className="w-[10vw] font-bold text-green-500 ">
-                        ₹ {(discountedPrice + convenienceprice).toFixed(2)}
+                        ₹{(discountedPrice + convenienceprice).toFixed(2)}
                     </div>
                 </div>
             </div>
@@ -73,7 +80,8 @@ const Cart = () => {
                 </div>
             </div>
             <div className='h-[3vw] w-[27vw]'>
-                <Link to={`₹ {isAuthenticated? '/AddDetail' : '/Login'}`}><button className='bg-teal-dark text-white font-semibold
+                <Link to={`${isAuthenticated? '/AddDetail' : '/Login'}`} ><button
+                 className='bg-teal-dark text-white font-semibold
                          text-[1.2vw] rounded-[2vw] px-[12vw] py-[1vw] mt-[1vw]'>
                     Checkout
                 </button></Link>

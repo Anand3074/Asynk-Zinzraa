@@ -1,29 +1,29 @@
 import React from 'react'
 
 const ProfileDetails = ({userProfile, user, uid}) => {
-    console.log(userProfile)
-    console.log(user)
-    console.log(uid)
-
+    // console.log(userProfile?.name)
+    // console.log(userProfile?.email)
+    // console.log(userProfile?.phone)
   return (
-    <div className='xl:px-72 px-4 py-6' >
-        <h4 className='text-[1.6rem]' >Profile Details</h4>
-        <div className='border-[1px] w-[120px] mt-3 mb-8 boder-gray-300' ></div>
-        <div className='flex items-center my-6 justify-between' >
-            <p className='lg:text-[1.2rem] text-[0.9rem]' >Name</p>
-            <p className='lg:text-[1.2rem] text-[0.9rem]'>{userProfile?.name}</p>
+    <div className='w-[50vw] md:w-[70vw] mt-[2.5vw] mb-8 px-[5vw]' >
+        <h4 className='text-[2rem] mt-[2vw] font-semibold border-b border-gray-800  '>Profile Details</h4>
+        <div className='' >
+        <div className='flex flex-row gap-[5vw] items-center my-6 ' >
+            <p className='lg:text-[1.25rem]  text-[0.9rem]' >Name:</p>
+            <p className='lg:text-[1.35rem]  text-[0.9rem] font-medium text-[#875A33]'>{userProfile?.name}</p>
         </div>
-        <div className='flex items-center my-6 justify-between' >
-            <p className='lg:text-[1.2rem] text-[0.9rem]' >Email</p>
-            <p className='lg:text-[1.2rem] text-[0.9rem]'>{userProfile?.email}</p>
+        <div className='flex flex-row gap-[5vw] items-center my-6 ' >
+            <p className='lg:text-[1.25rem]  text-[0.9rem]' >Email:</p>
+            <p className='lg:text-[1.35rem]  text-[0.9rem] font-medium text-[#875A33]'>{userProfile?.email}</p>
         </div>
-         <div className='flex items-center my-6 justify-between' >
-            <p className='lg:text-[1.2rem] text-[0.9rem]' >Phone</p>
-            <p className='lg:text-[1.2rem] text-[0.9rem]'>{userProfile?.phone}</p>
+         <div className='flex flex-row gap-[5vw] items-center my-6 ' >
+            <p className='lg:text-[1.25rem]  text-[0.9rem]' >Phone:</p>
+            <p className='lg:text-[1.35rem]  text-[0.9rem] font-medium text-[#875A33]'>{userProfile?.name}</p>
         </div>
-         <div className='flex items-center my-6 justify-between' >
-            <p className='lg:text-[1.2rem] text-[0.9rem]' >Alternate Number</p>
-            <p className='lg:text-[1.2rem] text-[0.9rem]'>{userProfile?.alternateNumber ? userProfile.alternateNumber : "Not Added" }</p>
+         <div className='flex flex-row gap-[5vw] items-center my-6 ' >
+            <p className='lg:text-[1.25rem]  text-[0.9rem]' >Alternate Number:</p>
+            <p className='lg:text-[1.25rem]  text-[0.9rem]'>{userProfile?.alternateNumber ? userProfile.alternateNumber : "Not Added" }</p>
+        </div>
         </div>
     </div>
   )
