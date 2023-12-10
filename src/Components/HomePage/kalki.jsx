@@ -11,37 +11,39 @@ import { Link } from 'react-router-dom'
 const kalki = () => {
   return (
     <div className=' w-full  '>
-        <div className='mx-[2.5vw]'>
+        <div className='mx-[2.5vw] my-[2.5vw]'>
             <div className='flex justify-center h-[2vw] '>
                 <img src={elestar2} alt='' className='w-[2vw] h-[2vw]' />
             </div>
-            <div className='flex justify-center text-[#875A33] font-lora md:text-[38px] md:mb-[24px] mb-[8px]' >
+            <div className='flex justify-center text-[#875A33] font-lora 
+            md:text-[38px] md:mb-[24px] mb-[8px]' >
                 <span>Top Picks Of Kalki koechlin</span>
             </div>
-        <div className='bg-[#3D3F31]  '>
-        <div className='grid grid-cols-2 p-[2.5vw] gap-[10vw]'>
+        <div className='bg-[#3D3F31] h-[52.5vw]  md:h-[42.5vw] '>
+        <div className='grid grid-cols-2 px-[5vw] py-[2.5vw] gap-[10vw] '>
         {/* <div className='grid grid-cols-2  grid-rows-2 items-center md:gap-[17.94px] gap-[5.4px]'> */}
-        <div className='flex flex-col md:ml-[8vw]'>
+        <div className='flex flex-col md:ml-[5vw]'>
             <div className='flex flex-rows gap-[1vw]'>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
-                    <img src={K1} alt='' className=' h-[21vw] rounded-tr-[10vw] sm:rounded-tr-[10vw] 
+                    <img src={K1} alt='' className=' h-[20.85vw] rounded-tr-[10vw] sm:rounded-tr-[10vw] 
                     rounded-bl-[10vw] sm:rounded-bl-[10vw]  sm:h-[16vw] h-[90px] sm:w-[15vw]  
                     sm:m-[1vw] m-[1vw]' />
                 </div>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
-                    <img src={K2} alt='' className=' h-[21vw] rounded-tl-[10vw] sm:rounded-tl-[10vw] 
+                    <img src={K2} alt='' className=' h-[20.85vw] rounded-tl-[10vw] sm:rounded-tl-[10vw] 
                 rounded-br-[10vw] sm:rounded-br-[10vw]  sm:h-[16vw] h-[90px] sm:w-[15vw]  
                 sm:m-[1vw] m-[1vw]' />
                 </div>
             </div>
+
             <div className=' flex flex-rows gap-[1vw]'>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
-                <img src={K3} alt='' className=' h-[21vw] rounded-tl-[10vw] sm:rounded-tl-[10vw] 
+                <img src={K3} alt='' className=' h-[20.85vw] rounded-tl-[10vw] sm:rounded-tl-[10vw] 
                  rounded-br-[10vw] sm:rounded-br-[10vw]  sm:h-[16vw] h-[90px] sm:w-[15vw]  
                  sm:m-[1vw] m-[1vw]' />
                  </div>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
-                <img src={K4} alt='' className=' h-[21vw] rounded-tr-[10vw] sm:rounded-tr-[10vw] 
+                <img src={K4} alt='' className=' h-[20.85vw] rounded-tr-[10vw] sm:rounded-tr-[10vw] 
                  rounded-bl-[10vw] sm:rounded-bl-[10vw]  sm:h-[16vw] h-[90px] 
                  sm:w-[15vw]  sm:m-[1vw] m-[1vw]' />
             </div>
