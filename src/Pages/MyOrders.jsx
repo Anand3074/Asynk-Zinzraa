@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 // import Navbar from '../components/Layout/Navbar'
-import OrderList from '../components/Orders/OrderList.jsx'
+import OrderList from '../Components/Orders/OrderList.jsx'
 import { useSelector,useDispatch } from 'react-redux'
 import { ref, onValue, get,remove} from "firebase/database";
 import {database,fireDB} from "../firebase/firebase"
