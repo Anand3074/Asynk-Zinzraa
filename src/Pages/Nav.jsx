@@ -99,11 +99,13 @@ const Nav = () => {
           <div className='flex md:my-[2.6vw] hidden md:flex lg:flex md:ml-[3vw]'>
             <ul className='flex text-white gap-[1.45vw] font-[Poppins] text-[1.5vw]'>
               <Link to='/All'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>Product</li>
+                <li className='hover:text-[#CC911D] transition cursor-pointer'>Products</li>
               </Link>
+              {/* <Link to='/Saree'> */}
               <Link to='/Saree'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
               </Link>
+              {/* <Link to='/Kurtas'> */}
               <Link to='/Kurtas'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
               </Link>

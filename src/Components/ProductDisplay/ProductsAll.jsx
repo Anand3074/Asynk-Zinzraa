@@ -13,29 +13,32 @@ import Filter2 from './filter2.jsx';
 import elestar from '../../assets/ele1.png'
 import { set } from 'lodash';
 import { Checkbox } from '@material-tailwind/react';
+import ProductList from './ProductList.jsx';
+import { Link } from 'react-router-dom';
 
 
-const ProductsAll = () => {
+const ProductsAll = ({categoryToRender}) => {
   const [maxPrice, setMaxPrice] = useState(10000);
-  const initialSizes = ['S', 'M', 'L', 'XL', 'XXL'];
-  const initialFabric = ['Silk', 'Cotton',  'Linen', 'Rayon'];
+  const initialSizes = ["S", "M", "L", "XL", "XXL"];
+  const initialFabric = ["Silk", "Cotton",  "Linen", "Rayon"];
   const [fabric, setFabric] = useState(initialFabric)
   const [selectedFabric, setSelectedFabric] = useState(null);
   // const [open, setOpen] = React.useState(true);
   const [sizef, setSizef] = useState(initialSizes);
   const [selectedSize, setSelectedSize] = useState(null);
-  const context = useContext(myContext);
-  const { product } = context;
-  const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
+  
   // const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
   // console.log(isItemInWishlist)
   const clearFilter = () => {
     setSizef(initialSizes)
     setFabric(initialFabric)
     setMaxPrice(9999)
-    
+  
     console.log(sizef)
   }
+  const context = useContext(myContext);
+  const { product } = context;
+  const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
 
   const dispatch = useDispatch()
   const handleAddToCart = (item) => {
@@ -57,6 +60,8 @@ const ProductsAll = () => {
   // const handleAddToWishlist = (item) => {
   //   dispatch(addToWishlist(item));
   // };
+      const searchTerm = useSelector((state) => state.filters.searchTerm);
+
   
 
   const handleCardDetail = (item) => {
@@ -68,11 +73,20 @@ const ProductsAll = () => {
   const filteredProducts = product.filter((item) => {
     const isSizeMatch = sizef.length === 0 || sizef.some((size) => item.size === size);
     const isFabricMatch = fabric.length === 0 || fabric.some((fabric) => item.fabric === fabric);
+    const isSearchMatch =
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+
+  // console.log('item' + item.fabric)
+
+  return isSizeMatch && isFabricMatch   &&  
+  isSearchMatch && (item.category === categoryToRender || !categoryToRender);
     // const isPriceMatch = item.price <= maxPrice;
     // console.log('Item:', item);
     // console.log('isSizeMatch:', isSizeMatch);
     // console.log('isPriceMatch:', isPriceMatch);
-    return isSizeMatch && isFabricMatch && (item);
+    // return isSizeMatch && isFabricMatch && (item);
 
 
   });
@@ -83,7 +97,9 @@ const ProductsAll = () => {
   return (
 
     <div>
+        <Link to="/Cart">
         <div className=''><ToastContainer/></div>
+        </Link>
         <div className='md:mb-[5vw]'>
         <Fashion/>
         </div>
@@ -96,13 +112,15 @@ const ProductsAll = () => {
                 <span>Our Products</span>
             </div> 
             </div>
-      <div className='flex flex-row gap-[7.5vw] ml-[2.5vw] justify-start items-start'>
+      <div className='flex flex-row gap-[2.5vw] justify-start items-start'>
+        {/* <div className='w-[25vw] mt-[3vw] pl-[3vw]'> */}
         <div className='w-[25vw] mt-[3vw] pl-[3vw]'>
         <Filter2 size={sizef} setSize={setSizef} clearFilter={clearFilter} 
         maxPrice={maxPrice} setMaxPrice={setMaxPrice} fabric={fabric} 
-        setFabric={setFabric}/>
+        setFabric={setFabric} selectedFabric={selectedFabric} setSelectedFabric={setSelectedFabric}
+         selectedSize={selectedSize} setSelectedSize={setSelectedSize}/>
         </div>
-        <div className='flex flex-col'>
+        {/* <div className='flex flex-col'>
         <div className='grid grid-cols-2 mx-[1vw] my-[3vw] gap-[1.5vw]
          px-[1.5vw] w-[60vw] justify-center items-center'>
        
@@ -139,6 +157,10 @@ const ProductsAll = () => {
           return null;
         })}
         </div>
+        </div> */}
+        <div className='mt-[2.5vw]'>
+        <ProductList sizef={sizef} fabric={fabric} maxPrice={maxPrice}/>
+
         </div>
 
       </div>

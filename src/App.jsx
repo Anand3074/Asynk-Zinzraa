@@ -9,20 +9,20 @@ import Login from './Pages/Registrations/Log.jsx'
 import Wishlist from './Pages/Wishlist.jsx'
 import Cart from './Pages/Cart.jsx'
 import Detail from './Pages/Prodctdetail.jsx'
-// import Orders from './Components/Orders/Orders.jsx'
-// import ViewOrder from './Components/Orders/ViewOrder.jsx'
+import Orders from './Pages/CMS/Pages/Orders.jsx'
+import ViewOrder from './Components/Orders/ViewOrder.jsx'
 import { loadUser } from './Redux/User/userAction.js';
 
 
 
-// import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'
+//import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'
 // import Dashboard from './Pages/CMS/Pages/DashPanel.jsx'
 import DashboardTab from './Pages/admin/dashboard/DashboardTab.jsx'
 import UpdateProduct from './Pages/admin/dashboard/page/UpdateProduct.jsx'
 import AdminNav from './Pages/admin/dashboard/page/AdminNav.jsx'
-// import AddProduct from './Pages/CMS/Pages/AddProduct.jsx'
-// import AllProduct from './Pages/CMS/Pages/AllProducts.jsx'
-// import Register from './Pages/Registrations/Register.jsx'
+import AddProduct from './Pages/CMS/Pages/AddProduct.jsx'
+import AllProduct from './Pages/CMS/Pages/AllProducts.jsx'
+import Register from './Pages/Registrations/Register.jsx'
 import Hamburger from './Components/HomePage/hamburger.jsx'
 import User from './Pages/User.jsx'
 import AddDetail from './Components/Checkout/AddDetail.jsx'
@@ -38,9 +38,11 @@ import Saree from './Pages/Saree.jsx'
 import Westrend from './Pages/Western1.jsx'
 import KalkiCollection from './Pages/KalkiCollection.jsx'
 import Search from './Pages/Category/Search.jsx'
+import MyOrders from './Pages/MyOrders.jsx'
 // import SidebarNav from './Pages/CMS/Component/Layout/sidebar.jsx'
-// import Users from './Pages/CMS/Pages/Users.jsx'
+import Users from './Pages/CMS/Pages/Users.jsx'
 import ProductsAll from './Components/ProductDisplay/ProductsAll.jsx'
+import EditOrder from './Pages/CMS/Pages/EditOrder.jsx'
 // import Ethnic from './Pages/Ethnic'
 // import Western from './Pages/Western'
 
@@ -78,32 +80,37 @@ const App = ({}) => {
       <Route exact path='/User' element={<User/>}/>
       <Route exact path='/AddDetail' element={<AddDetail/>}/>
       <Route exact path='/Payment' element={<Payment/>}/>
-      {/* <Route exact path='/OrderSuccess' element={<OrderSuccess/>}/>  */}
+      <Route exact path='/OrderSuccess' element={<OrderSuccess/>}/> 
+      <Route exact path='/MyOrders' element={<MyOrders/>}/> 
       {/* <Route exact path='/Orders' element={<Orders/>}/>  */}
       {/* <Route exact path='/Dashboard' element={<Dashboard/>}/>  */}
 
       {/* <Route exact path={`/orderDetails/${id}`} element={<OrderDetails/>}/>  */}
-      {/* y <Route exact path="/orderDetails/:id" element={<ViewOrder/>}/>  */}
-      {/* {isAuthenticated && */}
-      {/* // && user.email === 'anandsaeiou@gmail.com' && */}
-       
-      {/* <Route exact path='/Dashboard' element={<Dashboard />} />)} */}
-      {/* {isAuthenticated  */}
-      {/* //  && userProfile?.role=== "admin"  */}
-      {/* && (<Route exact path='/addProduct' element={<AddProduct />} />) } */}
+      <Route exact path="/orderDetails/:id" element={<ViewOrder/>}/> 
+      {isAuthenticated &&
+      // && user.email === 'anandsaeiou@gmail.com' &&
+       (
+      <Route exact path='/Dashboard' element={<Dashboard />} />)}
+       {isAuthenticated &&
+      // && user.email === 'anandsaeiou@gmail.com' &&
+       (
+      <Route exact path='/Adminorder/:id' element={<EditOrder />} />)}
+      {isAuthenticated 
+      //  && userProfile?.role=== "admin" 
+      && (<Route exact path='/addProduct' element={<AddProduct />} />) }
 
-      {/* {isAuthenticated 
+      {isAuthenticated 
       // && userProfile?.role === "admin" 
       &&   
       (<Route exact path='/products' element={<AllProduct />} />) }
 
         {isAuthenticated 
     // && userProfile?.role === "admin" 
-    && <Route exact path='/orders' element={<Orders />} /> } */}
+    && <Route exact path='/orders' element={<Orders />} /> }
 
-      {/* {isAuthenticated 
+      {isAuthenticated 
       // && userProfile?.role === "admin"
-       &&  <Route exact path='/users' element={<Users />} /> } */}
+       &&  <Route exact path='/users' element={<Users />} /> }
 
       {/* Admin CMS Link */}
 
@@ -131,11 +138,11 @@ const App = ({}) => {
         <UpdateProduct/>
       </ProtectedRouteForAdmin>}/>  */}
       
-      {/* <Route exact path='/AdminNav' element={<AdminNav/>}/>  */}
+      <Route exact path='/AdminNav' element={<AdminNav/>}/> 
 
 
               {/* Logins */}
-      {/* <Route exact path='/Signup' element={<Register/>}/> */}
+      <Route exact path='/Signup' element={<Register/>}/>
       <Route exact path='/Login' element={<Login/>}/>
       <Route exact path='/MobileLogin' element={<MobileLogin/>}/>
       <Route exact path='/MobileLogin/OtpVerify' element={<OtpVerify/>}/>

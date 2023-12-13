@@ -13,49 +13,53 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
     const { product } = context;
   return (
     
-        <div className='w-[30vw] h-[45vw] md:w-[25vw] md:h-[37vw] ' >
+        <div className='w-[30vw] h-[45vw] md:w-[20vw] bg-[#fafafa] md:h-[34vw] rounded-[2px]
+         shadow-xl dark:shadow-2xl' >
         <div className='' id='container'>
             <div className='flex relative'>
-                <div className=''>
+                <div className='mb-[0.25vww]'>
                 {/* <Link to='/Detail'><img src="" alt='' */}
-                <Link to='/Detail'><img src={imageUrl} onClick={Detail} alt=''
-                className='rounded-[2vw] w-[30vw] h-[35vw] md:w-[24vw] md:h-[28vw]'/></Link>
+                <Link to='/Detail'>
+                    <img src={imageUrl} onClick={Detail} alt=''
+                className='object-cover md:w-[20vw]  w-[30vw] object-top h-[37vw] md:h-[25vw] rounded-[1vw] overflow-hidden'/></Link>
                 </div>
                 {/* <div className='' onClick={handleAddToWishlist}> */}
                 <div className='' onClick={addWish}>
-                    <div className='absolute z-50 right-[2vw] top-[1vw]'>
+                    <div className='absolute z-50 right-[2vw] md:right-[1vw] top-[1vw]'>
                     {/* <div  className='absolute z-50 right-[2vw] top-[1vw]'> */}
-                        < IoEllipse className='w-[4.5vw] h-[4.5vw] '
+                        < IoEllipse className='w-[3.5vw] h-[3.5vw] '
                     fill={isWishlisted ? '#fce4ec' : 'white'}/> 
                     </div>
-                    <div className='absolute z-100 right-[3.4vw] top-[2.5vw]'>
-                        <FiHeart  className='w-[1.7vw] h-[1.7vw] text-[#e91e63]'
+                    <div className='absolute z-100 right-[2.5vw] md:right-[2.01vw] top-[2vw]'>
+                        <FiHeart  className='w-[1.7vw] h-[1.7vw] md:w-[1.45vw] md:h-[1.45vw] text-[#e91e63]'
                         // fill='none'/>
                          fill={isWishlisted ? '#e91e63' : 'none'}/> 
                         </div>
                 </div>
             </div>
-            <div className='relative'>
-            <div className='flex text-slate-900 font-lora mt-[0.4vw] mx-[1vw] font-[500] wrap 
-            leading-[1.8vw] jsutify-center
-             md:leading-[1.35vw]  text-[1.6vw] md:text-[1.5vw] h-[3vw] md:h-[1.8vw] mb-[0.1vw]'>
+            <div className='relative  rounded-[0.3vw]'>
+                <div className='px-[0.5vw] leading-[1.8vw] font-metro md:leading-[1.35vw]'>
+            <div className='flex text-black  wrap 
+            justify-start
+            text-[1.6vw] md:text-[1.2vw] md:h-[1.8vw] mt-[0.5vw]'>
                 {description} 
             </div>
-            <div className='flex flex-row md:justify-center items-center md:mx-[4vw]'>
-            <div className='font-bold mx-[1vw] md:mx-[1vw] font-lora mt-[0.3vw] md:mt-[0.6vw] text-[2vw]
-            md:text-[1.55vw]'>
-                    ₹{price}     
-            </div>
-                <div className='flex text-red-400 font-lora justify-center items-center
-                mr-[12vw] line-through text-[1.6vw]  md:text-[1.3vw]'>
-                    ₹{Math.floor(price * (1 + 43 / 100))}
+            <div className='flex flex-row md:justify-start items-center mt-[1.5vw] pb-[0.5vw] '>
+                <div className='font-bold mr-[2vw] font-lora text-[2vw]
+                md:text-[1.55vw]'>
+                        ₹{price}     
+                </div>
+                <div className='flex text-red-400 font-bold font-lora justify-center items-center
+                    line-through text-[1.6vw]  md:text-[1.55vw]'>
+                        ₹{Math.floor(price * (1 + 43 / 100))}
                 </div>
             </div>
-                <div className='absolute md:right-[1vw] right-[1.5vw]  md:top-[5.3vw] 
+            </div>
+                <div className='absolute md:right-[0.5vw]  right-[1.5vw]  md:top-[5.3vw] 
                 top-[1vw] items-start'>
                     <button onClick={addCart} className=' bg-teal-dark font-semibold 
-                    font-poppins text-white  w-[15vw] md:w-[24vw]  h-[3vw]
-                     text-[1.2vw]   rounded-[0.4vw] '>
+                    font-poppins text-white  w-[15vw] md:w-[19vw]  h-[3vw]
+                     text-[1.2vw]  rounded-[0.4vw] pt-[0.5vw] '>
                         Add to Cart
                     </button>
                 </div>

@@ -11,6 +11,9 @@ import c3 from '../assets/c3.png'
 import Size from '../Components/ProductDisplay/SingleProduct.jsx'
 import Ethnic from '../Pages/Category/Ethnic.jsx'
 import Recommended from '../Components/ProductDisplay/Recommended.jsx'
+// import AddReviewModal from '../Components/ProductDisplay/AddReviewModal.jsx'
+// import Review from '../Components/ProductDisplay/Review.jsx'
+import { ToastContainer } from 'react-toastify'
 
 const Prodctdetail = () => {
 
@@ -63,6 +66,13 @@ const Prodctdetail = () => {
         <div className='m-[3vw]'>
             <Size/>
         </div>
+        {/* <div className='m-[3vw]'> */}
+            {/* <Review/> */}
+        {/* </div> */}
+        {/* <div className='m-[3vw]'>
+            <AddReviewModal/>
+        </div>
+        */}
         <div>
             <Recommended group={Group1}/>
         </div>

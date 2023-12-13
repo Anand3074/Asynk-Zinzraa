@@ -14,14 +14,14 @@ const WishHead = ({Wishes}) => {
         </div>
 
         <div>
-            <div className='flex flex-row text-[1.8vw] font-semibold my-[1.2vw] mx-[2vw]'>
-                <div className='w-[35vw] '>
+            <div className='flex flex-row text-[1.8vw]  font-semibold my-[1.2vw] mx-[2vw]'>
+                <div className='w-[40vw] '>
                     Product Name
                 </div>
-                <div className='w-[20vw] '>
+                <div className=' flex pl-[2.5vw] w-[20vw]  '>
                     Unit Price
                 </div>
-                <div className='w-[25vw] '>
+                <div className='w-[17.5vw] '>
                     Stock Status
                 </div>
             </div>

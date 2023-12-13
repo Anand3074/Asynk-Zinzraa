@@ -3,15 +3,19 @@ import React from 'react';
 import { useState, useContext } from 'react';
 import {Checkbox} from "@material-tailwind/react";
 <script async src="node_modules/@material-tailwind/html@latest/scripts/ripple.js"></script>
-const Filter = ({ size, setSize, selectedSize, selectedFabric, initialSizes ,
+const Filter = ({ size, setSize, 
+    selectedSize, selectedFabric,
+     initialSizes , initialFabric,
      clearFilter , maxPrice, setMaxPrice,
     fabric, setFabric}) => {    
+        // console.log(size)
     const handleSizeChange = (selectedSize, item) => {
+        // console.log(selectedSize)
+
             if (size.includes(selectedSize)) {
                 console.log(size)
                 // Size is already in the array, remove it
                 setSize((prevState) => prevState.filter((prevSize) => prevSize !== selectedSize));
-                console.log(selectedSize)
 
             } else {
                 // Size is not in the array, add it
@@ -36,8 +40,8 @@ const Filter = ({ size, setSize, selectedSize, selectedFabric, initialSizes ,
 
     return (
         <>
-            <div className=' border-[1px] h-[75vw] w-[25vw] solid 
-            border-slate-100 px-[1.5vw] xl:px-6 py-[3vw]'>
+            <div className=' border-[1px] h-[75vw] w-[27.5vw] md:w-[24vw] solid 
+            border-slate-100 px-[1.5vw] md:px-[1.5vw] py-[3vw]'>
                 <div className='flex items-center justify-between'>
                     <div>
                         <h4 className='xl:text-[1.5rem] lg:text-[1.1rem] text-teal-dark font-[600]'>
@@ -50,7 +54,7 @@ const Filter = ({ size, setSize, selectedSize, selectedFabric, initialSizes ,
                     </div>
                 </div>
                 <div className='mt-3'>
-    <div className='font-500 rounded-lg xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex 
+    <div className='font-500 rounded-lg xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex 
     items-center justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleSizeChange("S")}
@@ -66,7 +70,7 @@ const Filter = ({ size, setSize, selectedSize, selectedFabric, initialSizes ,
 
     </div>
     <div className='font-500 rounded-lg 
-     xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex items-center 
+     xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex items-center 
      justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleSizeChange("M")}
@@ -78,7 +82,7 @@ const Filter = ({ size, setSize, selectedSize, selectedFabric, initialSizes ,
         <label class=" text-[1.4vw] md:text-[1.4vw] relative flex font-[500] items-center p-3 rounded-full
          cursor-pointer" htmlFor="checkbox">M</label>
     </div>
-    <div className='font-500 rounded-lg xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex items-center justify-start cursor-pointer'>
+    <div className='font-500 rounded-lg xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex items-center justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleSizeChange("L")}
             className="checked:bg-[#875A33] h-[2vw] w-[2vw]"
@@ -91,7 +95,7 @@ const Filter = ({ size, setSize, selectedSize, selectedFabric, initialSizes ,
     htmlFor="checkbox">L</label>
 
     </div>
-    <div className='font-500 rounded-lg xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex items-center 
+    <div className='font-500 rounded-lg xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex items-center 
     justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleSizeChange("XL")}
@@ -104,7 +108,7 @@ const Filter = ({ size, setSize, selectedSize, selectedFabric, initialSizes ,
     htmlFor="checkbox">XL</label>
 
     </div>
-    <div className='font-500 rounded-lg xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex items-center 
+    <div className='font-500 rounded-lg xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex items-center 
     justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleSizeChange("XXL")}
@@ -142,7 +146,7 @@ onChange={(e)=>setMaxPrice(e.target.value)} value={maxPrice}
                     </div>
 </div>
                 <div className='mt-3'>
-    <div className='font-500 rounded-lg xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex items-center justify-start cursor-pointer'>
+    <div className='font-500 rounded-lg xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex items-center justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleFabricChange("Silk")}
             className="checked:bg-[#875A33] h-[2vw] w-[2vw]"
@@ -155,7 +159,7 @@ onChange={(e)=>setMaxPrice(e.target.value)} value={maxPrice}
 
     </div>
     <div className='font-500 rounded-lg 
-     xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex items-center 
+     xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex items-center 
      justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleFabricChange("Cotton")}
@@ -167,7 +171,7 @@ onChange={(e)=>setMaxPrice(e.target.value)} value={maxPrice}
         <label class=" text-[1.4vw] md:text-[1.4vw] relative flex font-[500] items-center p-3 rounded-full
          cursor-pointer" htmlFor="checkbox">Cotton</label>
     </div>
-    <div className='font-500 rounded-lg xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex items-center justify-start cursor-pointer'>
+    <div className='font-500 rounded-lg xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex items-center justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleFabricChange("Linen")}
             className="checked:bg-[#875A33] h-[2vw] w-[2vw]"
@@ -180,7 +184,7 @@ onChange={(e)=>setMaxPrice(e.target.value)} value={maxPrice}
     htmlFor="checkbox">Linen</label>
 
     </div>
-    <div className='font-500 rounded-lg xl:px-2 xl:py-1 lg:px-0 lg:py-0 flex items-center 
+    <div className='font-500 rounded-lg xl:px-2 xl:py-[0vw] lg:px-0 lg:py-0 flex items-center 
     justify-start cursor-pointer'>
         <Checkbox
             onChange={() => handleFabricChange("Rayon")}

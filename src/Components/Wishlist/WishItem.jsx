@@ -1,6 +1,7 @@
 import React from 'react'
 // import K3 from '../../assets/k3.png'
 import {ImBin2} from 'react-icons/im'
+import { Link } from 'react-router-dom'
 // import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions'
 // import { useSelector,useDispatch } from 'react-redux'
 // import {removeItemFromWishlist} from '../../actions/wishlistActions'
@@ -13,11 +14,16 @@ return (
 <div className='flex flex-col m-[1.5vw]'>
     <div className='flex flex-row'>
         <div className='w-[13.5vw]'>
+            <Link to='/Detail'>
             <img src={imageUrl} alt='' className='w-[11vw] h-[14vw] rounded-[1vw]'/>
+
+            </Link>
         </div>
-        <div className='flex flex-col items-start font-poppins w-[20vw] justify-center' id='product-detail'>
+        <div className='flex flex-col items-start font-poppins w-[25vw] justify-center' id='product-detail'>
             <div className='mb-[0.3vw] text-[1.84vw]'>
+            <Link to='/Detail'>
                 {description}
+            </Link>
             </div>
             <div className='mb-[0.3vw] text-[#454545] text-[1.3vw]'>
                 Qty:1
@@ -32,12 +38,12 @@ return (
                 </button>
             </div>
         </div>
-        <div className='flex flex-row font-semibold justify-center items-center gap-[2vw] w-[15vw]'>
-            <div className='text-[2vw]'>Rs.{price}</div>
-            <div className='text-red-500 text-[1.2vw] line-through'>Rs.{Math.floor(price * (1 + 43 / 100))}</div>
+        <div className='flex flex-row font-[600] justify-center items-center gap-[2vw] w-[15vw] pl-[2vw]'>
+            <div className='text-[2vw] md:text-[1.6vw]'>Rs.{price}</div>
+            <div className='text-red-500 text-[1.2vw] md:text-[1.2vw] line-through'>Rs.{Math.floor(price * (1 + 43 / 100))}</div>
         </div>
         <div className='w-[15vw] text-[#04C500] text-[1.3vw] font-semibold font-poppins flex
-         justify-center items-center ml-[5vw]'>
+         justify-center items-center ml-[3vw]'>
             In Stock
         </div>
         <div className='flex flex-col justify-center items-center ml-[6vw]'>

@@ -35,7 +35,6 @@ const kalki = () => {
                 sm:m-[1vw] m-[1vw]' />
                 </div>
             </div>
-
             <div className=' flex flex-rows gap-[1vw]'>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
                 <img src={K3} alt='' className=' h-[20.85vw] rounded-tl-[10vw] sm:rounded-tl-[10vw] 

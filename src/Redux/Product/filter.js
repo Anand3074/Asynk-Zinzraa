@@ -5,11 +5,11 @@ const filtersSlice = createSlice({
   initialState: {
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     fabrics: ['Silk', 'Cotton',  'Linen', 'Rayon'],
-    selectedSizes: ['S'],
+    selectedSizes: ['S', 'M', 'L', 'XL', 'XXL' ],
     selectedFabrics: ['Silk', 'Cotton',  'Linen', 'Rayon'],
     priceRange: {
       min: 0,
-      max: 10000, // Set an initial max price as needed
+      max: 9999, // Set an initial max price as needed
     },
     searchTerm: '',
   },
@@ -27,7 +27,7 @@ const filtersSlice = createSlice({
         : state.selectedFabrics.push(fabric);
     },
     setPriceRange: (state=initialState, action) => {
-      state.priceRange = action.payload || { min: 0, max: 10000 };    },
+      state.priceRange = action.payload || { min: 0, max: 9999 };    },
       setSearchTerm: (state, action) => {
         state.searchTerm = action.payload;
       },

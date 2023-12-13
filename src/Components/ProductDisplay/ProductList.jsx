@@ -8,9 +8,11 @@ import { setSelectedProduct } from '../../Redux/Product/productActions';
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import { Link } from 'react-router-dom'; 
 
 
-const ProductList = ({categoryToRender, size, fabric}) => {
+const ProductList = ({categoryToRender, sizef, fabric, maxPrice}) => {
+
   const context = useContext(myContext);
   const { product } = context;
   const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
@@ -46,29 +48,41 @@ const ProductList = ({categoryToRender, size, fabric}) => {
     dispatch(setSelectedProduct(cardDetails));
     // history.push('/');
   };
-  const selectedSizes = useSelector((state) => state.filters.selectedSizes);
-    const selectedFabrics = useSelector((state) => state.filters.selectedFabrics);
-    const priceRange = useSelector((state) => state.filters.priceRange) || { min: 0, max: 9999 };
-    const searchTerm = useSelector((state) => state.filters.searchTerm);
+  // const selectedSizes = useSelector((state) => state.filters.selectedSizes);
+  //   const selectedFabrics = useSelector((state) => state.filters.selectedFabrics);
+  //   const priceRange = useSelector((state) => state.filters.priceRange) || { min: 0, max: 9999 };
+  //   const searchTerm = useSelector((state) => state.filters.searchTerm);
+
 
     // const priceRange = useSelector((state) => state.filters.priceRange);
 
-  const filteredProducts = product.filter((item) => {
-  //   // const { title, price, imageUrl, category, description, id, fabric, size  } = item;
+  // const filteredProducts = product.filter((item) => {
+  // //   // const { title, price, imageUrl, category, description, id, fabric, size  } = item;
 
-    const isSizeMatch = selectedSizes.length === 0 || selectedSizes.some((size) => item.size == size);
-    const isFabricMatch = selectedFabrics.length === 0 || selectedFabrics.includes(item.fabric);
-    const isPriceMatch = item.price >= priceRange.min && item.price <= priceRange.max;
-    const isSearchMatch =
-      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.description.toLowerCase().includes(searchTerm.toLowerCase());
+  //   const isSizeMatch = selectedSizes.length === 0 || selectedSizes.some((size) => item.size == size);
+  //   const isFabricMatch = selectedFabrics.length === 0 || selectedFabrics.includes(item.fabric);
+  //   const isPriceMatch = item.price >= priceRange.min && item.price <= priceRange.max;
+  //   const isSearchMatch =
+  //     item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //     item.description.toLowerCase().includes(searchTerm.toLowerCase());
 
 
-    // console.log('item' + item.fabric)
+  //   // console.log('item' + item.fabric)
 
-    return isSizeMatch && isFabricMatch && isPriceMatch  &&  isSearchMatch && (item.category === categoryToRender || !categoryToRender);
-    // return isFabricMatch && (item.category === categoryToRender || !categoryToRender);
+  //   return isSizeMatch && isFabricMatch && isPriceMatch  &&  isSearchMatch && (item.category === categoryToRender || !categoryToRender);
+  //   // return isFabricMatch && (item.category === categoryToRender || !categoryToRender);
     
+  // });
+  const filteredProducts = product.filter((item) => {
+    const isSizeMatch = sizef.length === 0 || sizef.some((size) => item.size === size);
+    const isFabricMatch = fabric.length === 0 || fabric.some((fabric) => item.fabric === fabric);
+    // const isPriceMatch = item.price <= maxPrice;
+    // console.log('Item:', item);
+    // console.log('isSizeMatch:', isSizeMatch);
+    // console.log('isPriceMatch:', isPriceMatch);
+    // return isSizeMatch && isFabricMatch && (item);
+    return isSizeMatch && isFabricMatch && (item.category === categoryToRender || !categoryToRender);
+
   });
 
 
@@ -76,10 +90,14 @@ const ProductList = ({categoryToRender, size, fabric}) => {
   return (
     <div>
       <div className='flex justify-start items-start flex-grow-1'>
+      <Link to="/Cart">
         <div className=''><ToastContainer/></div>
-        <div className='grid grid-cols-2 m-[0.5vw] gap-[5vw] justify-center items-center'>
+      </Link>
+      <div className='grid grid-cols-3 ml-[3vw] mb-[0.5vw] gap-[2.5vw] justify-center items-center'>
          
-          {filteredProducts.map((item, index) => {          
+          {filteredProducts
+          .filter(item => 0 <= item.price && item.price <= parseFloat(maxPrice))
+          .map((item, index) => {          
             const { title, price, imageUrl, category, description, id } = item;
             const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === id);
             // if (isFabricMatch && (category === categoryToRender || !categoryToRender))

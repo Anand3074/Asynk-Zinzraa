@@ -9,7 +9,7 @@ import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
 import { setSearchTerm } from '../../Redux/Product/filter';
 import Poster from '../../Components/HomePage/Modern.jsx'
 import elestar from '../../assets/ele1.png'
-import Filtersss from '../../Components/ProductDisplay/Filtersss.jsx'
+import Filter2 from '../../Components/ProductDisplay/filter2.jsx'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -17,6 +17,26 @@ const Category = ({ defaultTab }) => {
   const [activeTab, setActiveTab] = useState(5);
   const navigate = useNavigate()
   const dispatch =useDispatch()
+  const [maxPrice, setMaxPrice] = useState(10000);
+  const initialSizes = ['S', 'M', 'L', 'XL', 'XXL'];
+  const initialFabric = ['Silk', 'Cotton',  'Linen', 'Rayon'];
+  const [fabric, setFabric] = useState(initialFabric)
+  const [selectedFabric, setSelectedFabric] = useState(null);
+  // const [open, setOpen] = React.useState(true);
+  const [sizef, setSizef] = useState(initialSizes);
+  const [selectedSize, setSelectedSize] = useState(null);
+  // const [searchTerm, setSearchTerm] = useState(null);
+  
+  
+  // const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
+  // console.log(isItemInWishlist)
+  const clearFilter = () => {
+    setSizef(initialSizes)
+    setFabric(initialFabric)
+    setMaxPrice(9999)
+  
+    console.log(sizef)
+  }
 
 
   const handleClick = (index) => {
@@ -58,20 +78,33 @@ navigate('/Category')  };
       const cardDetails = { title, price, imageUrl, category, description, id };
       dispatch(setSelectedProduct(cardDetails));
     };
-    const selectedSizes = useSelector((state) => state.filters.selectedSizes);
-      const selectedFabrics = useSelector((state) => state.filters.selectedFabrics);
-      const priceRange = useSelector((state) => state.filters.priceRange) || { min: 0, max: 9999 };
+    // const selectedSizes = useSelector((state) => state.filters.selectedSizes);
+    //   const selectedFabrics = useSelector((state) => state.filters.selectedFabrics);
+    //   const priceRange = useSelector((state) => state.filters.priceRange) || { min: 0, max: 9999 };
       const searchTerm = useSelector((state) => state.filters.searchTerm);
-    
+      
     const filteredProducts = product.filter((item) => {
-      const isSizeMatch = selectedSizes.length === 0 || selectedSizes.some((size) => item.size == size);
-      const isFabricMatch = selectedFabrics.length === 0 || selectedFabrics.includes(item.fabric);
-      const isPriceMatch = item.price >= priceRange.min && item.price <= priceRange.max;
+      // const isSizeMatch = selectedSizes.length === 0 || selectedSizes.some((size) => item.size == size);
+      // const isFabricMatch = selectedFabrics.length === 0 || selectedFabrics.includes(item.fabric);
+      // const isPriceMatch = item.price >= priceRange.min && item.price <= priceRange.max;
+      // const isSearchMatch =
+      // item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      // item.description.toLowerCase().includes(searchTerm.toLowerCase());
+      //   return isSizeMatch && isFabricMatch && isPriceMatch  && isSearchMatch &&  (item.category === categoryToRender || !categoryToRender);
+      console.log('Saerch word', searchTerm , 'hello')
+      const isSizeMatch = sizef.length === 0 || sizef.some((size) => item.size === size);
+      const isFabricMatch = fabric.length === 0 || fabric.some((fabric) => item.fabric === fabric);
       const isSearchMatch =
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase());
-        return isSizeMatch && isFabricMatch && isPriceMatch  && isSearchMatch &&  (item.category === categoryToRender || !categoryToRender);
-      });
+      console.log('Search:',  isSearchMatch)
+  
+  
+    // console.log('item' + item.fabric)
+  
+    return isSizeMatch && isFabricMatch  && isSearchMatch && (item.category === categoryToRender || !categoryToRender);
+    })
+    console.log(filteredProducts);
       
   
   
@@ -81,7 +114,9 @@ navigate('/Category')  };
         <div className='flex justify-start items-start flex-grow-1 mx-[7vw]'>
           <div className='grid grid-cols-2 m-[1vw] gap-[5vw]px-[3vw] justify-center items-center'>
            
-            {filteredProducts.map((item, index) => {          
+            {filteredProducts
+            .filter(item => 0 <= item.price && item.price <= parseFloat(maxPrice))
+            .map((item, index) => {          
               const { title, price, imageUrl, category, description, id } = item;
               const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === id);
                {
@@ -154,7 +189,10 @@ navigate('/Category')  };
     </div>
         <div id='products-container-parent' className='flex flex-row'>
           <div className='w-[25vw] ' id='left'>
-            <Filtersss/>
+            <Filter2 size={sizef} setSize={setSizef} clearFilter={clearFilter} 
+        maxPrice={maxPrice} setMaxPrice={setMaxPrice} fabric={fabric} 
+        setFabric={setFabric} selectedFabric={selectedFabric} setSelectedFabric={setSelectedFabric}
+         selectedSize={selectedSize} setSelectedSize={setSelectedSize}/>
           </div>
           <div id='right' className='w-[75vw] flex flex-col'>
             <div className='flex flex-row justify-start items-start gap-[5vw]  my-[3vw]'>

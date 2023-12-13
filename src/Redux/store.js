@@ -7,7 +7,7 @@ import productSlice from './Product/ProductSlice.js'
 import filtersReducer from './Product/filter.js'
 import { userReducer,userProfileReducer } from "./User/userReducer";
 // import { modalsDescriptionReducer, modalsReducer } from "./AdminP/mobileReducer";
-// import {orderReducer} from './Orders/orderReducers.js'
+import {orderReducer} from './Orders/orderReducers.js'
 
 const rootReducer = combineReducers({
   users :userReducer,
@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
   filters: filtersReducer,
   // modals:modalsReducer,
   // modalDescription:modalsDescriptionReducer,
-  // order: orderReducer
+  order: orderReducer
 });
 
 const persistConfig = {

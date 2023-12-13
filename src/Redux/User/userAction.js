@@ -31,9 +31,10 @@ import {
   getDocs,
   onSnapshot
 } from "firebase/firestore";
-import {createUserWithEmailAndPassword, sendEmailVerification,signInWithEmailAndPassword,signOut,signInWithPopup} from "firebase/auth"
+import {createUserWithEmailAndPassword, sendEmailVerification,signInWithEmailAndPassword,
+  signOut,signInWithPopup} from "firebase/auth"
 
-export const signUpUsingEmail = (email,password,name,phone) => async (dispatch) =>{
+export const signUpUsingEmail = (email,password,name) => async (dispatch) =>{
   try{
   dispatch({ type: REGISTER_USER_REQUEST });
   const userRef = collection(fireDB, "user");
@@ -79,22 +80,25 @@ export const signUpUsingEmail = (email,password,name,phone) => async (dispatch) 
 export const loginUsingEmail = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
-
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
-
-    // Fetch additional user data if needed
-    const userData = await getDoc(doc(fireDB, "user", user.uid));
-
-    dispatch({ type: LOGIN_SUCCESS, payload: { uid: user.uid, email: user.email, ...userData.data() } });
     
-  } catch (err) {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    
+    // If successful, dispatch LOGIN_SUCCESS
+    const user = userCredential.user;
+    dispatch({ type: LOGIN_SUCCESS, payload: user.uid });
+    
+    // ...
+  } catch (error) {
+    // If there's an error, dispatch LOGIN_FAIL
+    const errorCode = error.code;
+    const errorMessage = error.message;
     dispatch({
       type: LOGIN_FAIL,
-      payload: err.message,
+      payload: errorMessage,
     });
   }
 };
+
 
 export const loadUser = (uid) => async (dispatch) => {
   try {

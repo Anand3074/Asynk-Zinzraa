@@ -6,39 +6,50 @@ import { addItemsToCart } from '../../Redux/cartActions'
 import { addToWishlist } from '../../Redux/Wishlist/wishActions';
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 
 
-const Productsize = () => {   
+const Productsize = (item) => {   
     const selectedProduct = useSelector((state) => state.product.selectedProduct)
         // console.log(selectedProduct)
-        const [isWishlistClicked, setIsWishlistClicked] = useState(false);
         // console.log(isWishlistClicked)
 
 
         const dispatch = useDispatch()
         const handleAddToCart = (item) => {
             // console.log(item)
+            toast("Product Added to Cart")
             dispatch(addItemsToCart(item))
         }
         
         const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
-        const handleAddToWishlist = (item) => {
-            const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
+        const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === selectedProduct.id);
+        // console.log('item', isItemInWishlist)
+        const [isWishlistClicked, setIsWishlistClicked] = useState(isItemInWishlist);
+
+        //console.log(isWishlistClicked)
+        const handleAddToWishlist = () => {
+            const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === selectedProduct.id);
             
             //  console.log(isItemInWishlist)
             
             if (isItemInWishlist) {
-              dispatch(removeItemFromWishlist(item.id));
+              dispatch(removeItemFromWishlist(selectedProduct.id));
             } else {
-              dispatch(addToWishlist(item));
+              dispatch(addToWishlist(selectedProduct));
             }
             setIsWishlistClicked(!isItemInWishlist);
           };
+        //   console.log(isWishlistClicked)
 
   return (
     <div>
         <div className=''>
+        <Link to="/Cart">
+        <div className=''><ToastContainer/></div>
+        </Link>
             <div className='flex sm:flex-row flex-col '>
                 <div className='flex flex-row justify-center'>
                     <div>
@@ -62,7 +73,8 @@ const Productsize = () => {
             <div><ProductChart         
             isWishlisted={isWishlistClicked}
              price={selectedProduct.price} Description={selectedProduct.description}
-             addCart={ () => handleAddToCart(selectedProduct)} addWish={() => handleAddToWishlist(selectedProduct)}/></div>
+             addCart={ () => handleAddToCart(selectedProduct)} 
+             addWish={() => handleAddToWishlist(selectedProduct)}/></div>
             </div>
         </div>
     </div>
