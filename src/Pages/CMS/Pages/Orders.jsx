@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import SidebarNav from '../Component/Layout/Sidebar'
+import SidebarNav from '../Component/Layout/sidebar.jsx'
 import { doc, getDocs, onSnapshot,collection,deleteDoc,orderBy,query } from "firebase/firestore";
 import {database,fireDB} from '../../../firebase/firebase'
 import OrderList from '../Component/Orders/OrderList';

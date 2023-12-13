@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import {useParams,useNavigate} from "react-router-dom"
 import {useSelector,useDispatch} from "react-redux"
-import SidebarNav from '../Component/Layout/Sidebar'
-import EditDetails from '../Component/Orders/EditDetail'
+import SidebarNav from '../Component/Layout/sidebar.jsx'
+import EditDetails from '../Component/Orders/EditDetail.jsx'
 import { collection, query, where, getDoc,doc,updateDoc } from "firebase/firestore";
 import { fireDB } from '../../../firebase/firebase';
 // import { newShippingHandler } from '../actions/deliveryActions'
