@@ -6,42 +6,58 @@ import {Checkbox} from "@material-tailwind/react";
 const Filter = ({ size, setSize, 
     selectedSize, selectedFabric,
      initialSizes , initialFabric,
-     clearFilter , maxPrice, setMaxPrice,
+     clearFilter , maxPrice, setMaxPrice, min, setmin,
     fabric, setFabric}) => {    
-        // console.log(size)
-    const handleSizeChange = (selectedSize, item) => {
-        // console.log(selectedSize)
-
-            if (size.includes(selectedSize)) {
-                console.log(size)
-                // Size is already in the array, remove it
-                setSize((prevState) => prevState.filter((prevSize) => prevSize !== selectedSize));
-
+    const handleSizeChange = (data) => {
+            if (!size.includes(data)) {
+                setSize(() => [...size, data]);
             } else {
-                // Size is not in the array, add it
-                console.log(size)
-                setSize((prevState) => [...prevState, selectedSize]);
-                console.log(selectedSize)
-
+                setSize((prevState) => prevState.filter((prevSize) => prevSize !== data));
             }
-            // setOpen(false);
-        };
+            console.log(size)
 
-         const handleFabricChange = (selectedFabric) => {
-           if (fabric.includes(selectedFabric)) {
-             // Fabric option is already selected, remove it
-             setFabric((prevState) => prevState.filter((prevFabric) => prevFabric !== selectedFabric));
+        };
+        // const handleSizeChange = (selectedSize, item) => {
+        //     // console.log(selectedSize)
+    
+        //         if (size.includes(selectedSize)) {
+        //             console.log(size)
+        //             // Size is already in the array, remove it
+        //             setSize((prevState) => prevState.filter((prevSize) => prevSize !== selectedSize));
+    
+        //         } else {
+        //             // Size is not in the array, add it
+        //             console.log(size)
+        //             setSize((prevState) => [...prevState, selectedSize]);
+        //             console.log(selectedSize)
+    
+        //         }
+        //         // setOpen(false);
+        //     };
+        // const handleRamChange = (data) => {
+        //     if (!ram.includes(data)) {
+        //         setram(() => [...ram, data])
+    
+        //     }
+        //     else {
+        //         setram((prevState) => prevState.filter((prevItem) => prevItem !== data))
+        //     }
+        //     setOpen(false)
+        // }
+        
+         const handleFabricChange = (data) => {
+           if (!fabric.includes(data)) {
+            setFabric(() => [...fabric, data]);
            } else {
-             // Fabric option is not selected, add it
-             setFabric((prevState) => [...prevState, selectedFabric]);
+            setFabric((prevState) => prevState.filter((prevFabric) => prevFabric !== data));
            }
          };
          
 
     return (
         <>
-            <div className=' border-[1px] h-[75vw] w-[27.5vw] md:w-[24vw] solid 
-            border-slate-100 px-[1.5vw] md:px-[1.5vw] py-[3vw]'>
+            <div className=' border-[1px] h-[75vw] w-[20vw] md:w-[20vw] solid 
+            border-slate-100 px-[1.5vw] md:px-[2vw] py-[1.5vw]'>
                 <div className='flex items-center justify-between'>
                     <div>
                         <h4 className='xl:text-[1.5rem] lg:text-[1.1rem] text-teal-dark font-[600]'>
@@ -127,8 +143,11 @@ const Filter = ({ size, setSize,
 <div class="relative mb-4">
 <label for="default-range" class="block mb-2 text-sm font-medium text-gray-900
 [&::-webkit-slider-thumb]:bg-purple-500 dark:text-white">Default range</label>
-<input type="range" defaultValue={0} min={0} max={10000}
-onChange={(e)=>setMaxPrice(e.target.value)} value={maxPrice}
+<input type="range" 
+// defaultValue={0} 
+min={0} max={10000}
+onChange={(e)=>setMaxPrice(e.target.value)} 
+value={maxPrice}
  class="w-full
  h-[1vw] md:h-[0.5vw] rounded-lg appearance-none cursor-pointer bg-[#875A33]
  thumb:bg-yellow-600"/>

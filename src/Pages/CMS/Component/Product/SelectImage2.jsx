@@ -4,18 +4,20 @@ import { Button } from '@material-tailwind/react';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/solid';
 import { Fragment, useState, useEffect } from "react";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
-const SelectCover = ({setOpenModel,closeModal,openModel,image,setImage,totalImageList,setTotalImagelist,handleRemove,handleAddCover,type}) => {
+
+
+const SelectImages = ({setOpenModel,closeModal,openModel,image,setImage,
+  totalImageList,setTotalImagelist,handleRemove,handleAddImage,type}) => {
     const handleSelect = (asset) =>{
         setTotalImagelist((prev)=>[...prev,asset])
     }
-    // console.log(totalImageList)
   return (
     <>
       <div className="flex items-center justify-center ">
         <div className='my-4 flex items-center justify-center flex-col' >
-              <Button onClick={()=>setOpenModel(true)} className='flex 
-              items-center justify-center gap-3' size="lg"> <ArrowUpTrayIcon
-               className='w-[30px]' /> Upload Image</Button> 
+              <button onClick={()=>setOpenModel(true)} className='flex items-center 
+              justify-center gap-3' size="lg"> <ArrowUpTrayIcon className='w-[30px]' /> 
+              Upload Image</button> 
                
             </div>
       </div>
@@ -45,14 +47,17 @@ const SelectCover = ({setOpenModel,closeModal,openModel,image,setImage,totalImag
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full  transform overflow-scroll rounded-2xl bg-white px-12 py-8 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full  transform overflow-scroll rounded-2xl 
+                bg-white px-12 py-8 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-center text-gray-900"
                   >
                     Choose a Image
                   </Dialog.Title>
-                  <div onClick={()=>setOpenModel(false)} className='absolute cursor-pointer top-5 flex items-center justify-center text-white text-[15px] bg-blue-500 w-[30px] rounded-[50px] h-[30px] px-2 py-2 right-10 text-lg ' >
+                  <div onClick={()=>setOpenModel(false)} className='absolute cursor-pointer
+                   top-5 flex items-center justify-center text-white text-[15px] bg-blue-500 
+                   w-[30px] rounded-[50px] h-[30px] px-2 py-2 right-10 text-lg ' >
                     X
                   </div>
                   {/* <Dialog.Title
@@ -84,8 +89,7 @@ const SelectCover = ({setOpenModel,closeModal,openModel,image,setImage,totalImag
             <Masonry>
                {
                     image && image.map((asset)=>(
-                        <div onClick={()=>handleSelect(asset)}  className='border-gray-200 
-                        border-[1px] mx-3 my-3 px-6 py-4 rounded-[15px]' >
+                        <div onClick={()=>handleSelect(asset)}  className='border-gray-200 border-[1px] mx-3 my-3 px-6 py-4 rounded-[15px]' >
                             <img className='w-[150px]' src={asset} alt="" />
                       </div>
                     ))
@@ -98,13 +102,14 @@ const SelectCover = ({setOpenModel,closeModal,openModel,image,setImage,totalImag
           
              {totalImageList && totalImageList?.map((ima, index) => (
                 <div className='relative border-[1px] border-gray-300 px-6 py-6 rounded-xl ' >
-              {!type === "update" && <p onClick={()=>handleRemove(ima)} className='absolute cursor-pointer text-red-500 font-[600] top-2 right-1 w-[20px] ' >X</p>}
+              { !type==="update" &&  <p onClick={()=>handleRemove(ima)} className='absolute cursor-pointer text-red-500 font-[600] top-2 right-1 w-[20px] ' >X</p>}
                 <img className='w-[150px]' key={index} src={ima} alt="Product Preview" />
                </div>
               ))}
+             
          </div>
           <div className='flex items-center justify-center my-6 ' >
-                <button className='bg-blue-400 px-6 py-3 text-white rounded-lg ' onClick={closeModal} >
+                <button className='bg-blue-400 px-6 py-3 text-white rounded-lg ' onClick={handleRemove}>
                   Add Images
                 </button>
               </div>
@@ -119,4 +124,4 @@ const SelectCover = ({setOpenModel,closeModal,openModel,image,setImage,totalImag
   )
 }
 
-export default SelectCover
+export default SelectImages

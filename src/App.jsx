@@ -12,13 +12,13 @@ import Detail from './Pages/Prodctdetail.jsx'
 import Orders from './Pages/CMS/Pages/Orders.jsx'
 import ViewOrder from './Components/Orders/ViewOrder.jsx'
 import { loadUser } from './Redux/User/userAction.js';
-
+import Product2 from './Pages/ProductMap.jsx'
 
 
 //import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'
-// import Dashboard from './Pages/CMS/Pages/DashPanel.jsx'
-import DashboardTab from './Pages/admin/dashboard/DashboardTab.jsx'
-import UpdateProduct from './Pages/admin/dashboard/page/UpdateProduct.jsx'
+import Dashboard from './Pages/CMS/Pages/DashPanel.jsx'
+// import DashboardTab from './Pages/admin/dashboard/DashboardTab.jsx'
+// import UpdateProduct from './Pages/admin/dashboard/page/UpdateProduct.jsx'
 import AdminNav from './Pages/admin/dashboard/page/AdminNav.jsx'
 import AddProduct from './Pages/CMS/Pages/AddProduct.jsx'
 import AllProduct from './Pages/CMS/Pages/AllProducts.jsx'
@@ -155,6 +155,7 @@ const App = ({}) => {
       <Route exact path='/Westrend' element={<Westrend/>}/>
       <Route exact path='/Kalki' element={<KalkiCollection/>}/>
       <Route exact path='/Search' element={<Search/>}/>
+      <Route exact path='/Product3' element={<Product2/>}/>
       
 
             

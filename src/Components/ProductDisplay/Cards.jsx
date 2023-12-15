@@ -8,9 +8,11 @@ import myContext from '../../context/myContext';
 // import { ADD_TO_CART } from '../../Redux/CartSlice'
 
 
-const Cards = ({title, price, imageUrl, category, description, date, addCart, addWish, isWishlisted, Detail}) => {
-    const context = useContext(myContext);
-    const { product } = context;
+// const Cards = ({title, price, imageUrl, category, description, date, addCart, addWish, isWishlisted, Detail}) => {
+    const Cards = ({products, addCart, addWish, isWishlisted, Detail, title, price, imageUrl, category, description}) => {
+
+// const context = useContext(myContext);
+    // const { product } = context;
   return (
     
         <div className='w-[30vw] h-[45vw] md:w-[20vw] bg-[#fafafa] md:h-[34vw] rounded-[2px]
@@ -20,8 +22,9 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
                 <div className='mb-[0.25vww]'>
                 {/* <Link to='/Detail'><img src="" alt='' */}
                 <Link to='/Detail'>
-                    <img src={imageUrl} onClick={Detail} alt=''
-                className='object-cover md:w-[20vw]  w-[30vw] object-top h-[37vw] md:h-[25vw] rounded-[1vw] overflow-hidden'/></Link>
+                {/* <img src={imageUrl || products.coverImage} onClick={Detail} alt='' */}
+                    <img src={products.coverImage} onClick={Detail} alt=''
+ className='object-cover md:w-[20vw]  w-[30vw] object-top h-[37vw] md:h-[25vw] rounded-[1vw] overflow-hidden'/></Link>
                 </div>
                 {/* <div className='' onClick={handleAddToWishlist}> */}
                 <div className='' onClick={addWish}>
@@ -42,16 +45,16 @@ const Cards = ({title, price, imageUrl, category, description, date, addCart, ad
             <div className='flex text-black  wrap 
             justify-start
             text-[1.6vw] md:text-[1.2vw] md:h-[1.8vw] mt-[0.5vw]'>
-                {description} 
+                {products.description} 
             </div>
             <div className='flex flex-row md:justify-start items-center mt-[1.5vw] pb-[0.5vw] '>
                 <div className='font-bold mr-[2vw] font-lora text-[2vw]
                 md:text-[1.55vw]'>
-                        ₹{price}     
+                        ₹{products.price }     
                 </div>
                 <div className='flex text-red-400 font-bold font-lora justify-center items-center
                     line-through text-[1.6vw]  md:text-[1.55vw]'>
-                        ₹{Math.floor(price * (1 + 43 / 100))}
+                        ₹{Math.floor(products.price* (1 + 43 / 100))}
                 </div>
             </div>
             </div>

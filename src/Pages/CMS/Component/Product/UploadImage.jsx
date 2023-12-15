@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dialog, Transition } from "@headlessui/react";
-import { Button } from '@material-tailwind/react';
+import { Button, progress } from '@material-tailwind/react';
 import { ArrowUpTrayIcon } from '@heroicons/react/24/solid';
 import { Fragment, useState, useEffect } from "react";
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
@@ -116,6 +116,7 @@ const UploadImage = ({
     handleSubmit,
     setTotalImageList,
     totalImageList,
+    progress
   }) => {
     const handleFileChange = (e) => {
       const file = e.target.files[0];
@@ -225,7 +226,7 @@ const UploadImage = ({
                           ))}
                       </Masonry>
                     </ResponsiveMasonry>
-                    <div></div>
+                    <div>{progress}</div>
                   </Dialog.Panel>
                 </Transition.Child>
               </div>

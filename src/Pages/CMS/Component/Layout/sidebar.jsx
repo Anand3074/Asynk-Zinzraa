@@ -48,12 +48,12 @@ const SidebarNav = () => {
   const { error, loading, isAuthenticated, user } = useSelector(
     (state) => state.users
   )
-  console.log(isAuthenticated)
+  // console.log(isAuthenticated)
   const navigate = useNavigate()
   const { userProfile } = useSelector(
     (state) => state.userProfile
   );
-  console.log(userProfile?.name)
+  // console.log(userProfile?.name)
   const dispatch = useDispatch()
   const handleOpen = (value) => {
     setOpen(open === value ? 0 : value);
