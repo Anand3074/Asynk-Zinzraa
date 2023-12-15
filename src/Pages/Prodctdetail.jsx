@@ -74,13 +74,13 @@ const Prodctdetail = () => {
         </div>
         */}
         <div>
-            <Recommended group={Group1}/>
+            {/* <Recommended group={Group1}/> */}
         </div>
         <div>
             <Modern/>
         </div>
         <div>
-            <Recommended group={Group2}/>
+            {/* <Recommended group={Group2}/> */}
         </div>
     </div>
     

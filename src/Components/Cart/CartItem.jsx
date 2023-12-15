@@ -1,24 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const CartItem = ({products,title, price, imageUrl, category, description, date, removeItemFromCart, moveToWishlist}) => {
+const CartItem = ({product, removeItemFromCart, moveToWishlist}) => {
+    console.log(product)
 
   return (
     <div className='flex justify-center items-center sm:w-[50vw] m-[2vw]'>
         <div className='flex flex-row gap-[10vw] sm:gap-[1vw] '>
             <div>
-                <img src={imageUrl} alt='' className='w-[18vw] sm:w-[8vw] sm:h-[10vw] h-[22vw]'/>
+                <img src={product.coverImage} alt='' className='w-[18vw] sm:w-[8vw] sm:h-[10vw] h-[22vw]'/>
             </div>
 
             <div className='flex flex-col sm:text-[1.2vw] text-[2.2vw]'>
-                <div className=''>{description}</div>
+                <div className=''>{product.description}</div>
                 <div className=''>Size: </div>
                 <div className='flex flex-col'>
                    <div>
-                    Rs. {price}
+                    Rs. {(product.price)}
                     </div>
                     <div className='text-red-400 sm:text-[1vw] text-[1.6vw] line-through'>
-                    Rs.{Math.floor(price * (1 + 43 / 100))}
+                    Rs.{Math.floor((product.price) * (1 + 43 / 100))}
                     </div>
                 </div>
                 <p className=''>Delivered on </p>

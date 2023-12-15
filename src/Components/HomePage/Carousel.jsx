@@ -21,7 +21,7 @@ const Carousel = () => {
       onClick={onClick}
 
     >
-  <IoIosArrowDropright className="w-full h-full" fill="" />
+  <IoIosArrowDropright className="w-full h-full text-[#546e7a]" fill="[#546e7a]" />
     </div>
   );
 
@@ -33,7 +33,7 @@ const Carousel = () => {
       style={{ zIndex: 1 }}
     >
       <IoIosArrowDropleft  className="w-[4vw] rounded-full 
-      h-[4vw] overflow-hidden" fill='' />
+      h-[4vw] overflow-hidden text-[#546e7a]" fill='[#546e7a]' />
     </div>
   );
 

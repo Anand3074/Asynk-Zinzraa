@@ -1,41 +1,30 @@
 import React from 'react'
 import WishItem from './WishItem.jsx'
-// import { Link } from 'react-router-dom'
-// import EmptyWish from './EmptyWish.jsx'
-// import WishHead from './WishHead.jsx'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions.js'
 import { addItemsToCart } from '../../Redux/cartActions.js'
     
-    const WishProducts= () => {
-        const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
+  const WishProducts= () => {
+  
+    const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
   const dispatch = useDispatch();
-
-  const removeWishlist = (itemId) =>{
-      dispatch(removeItemFromWishlist(itemId))
+  const removeWishlist = (product) => {
+      dispatch(removeItemFromWishlist(product.id))
       console.log('delete')
-      // console.log(itemId) 
   }
 
-  // console.log(Wishlist)
-  const handleAddToCart = (item) => {
-      // console.log(item)
-      dispatch(addItemsToCart(item))
+  const handleAddToCart = (product) => {
+      dispatch(addItemsToCart(product))
   }
  return(
     <div className='' >
-         {Wishlist.map((item, index) => {          
-            const { title, price, imageUrl, category, description, id } = item;
+         {Wishlist.map((product, index) => {          
             return (        
               <WishItem 
                 key={index}
-                title={title}
-                price={price}
-                imageUrl={imageUrl}
-                category={category}
-                description={description}
-                removeItemFromWishlist={ () => removeWishlist(id)}
-                addCart={() => handleAddToCart(item)}
+                product={product}
+                removeItemFromWishlist={ () => removeWishlist(product)}
+                addCart={() => handleAddToCart(product)}
                 // date={date}
 
               />

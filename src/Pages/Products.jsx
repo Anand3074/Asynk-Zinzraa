@@ -119,24 +119,28 @@ const Products = () => {
         <Categ1/>
       </div>
       <div className='mt-[3vw] md:mt-[3vw]'>
-      <SliderCa/>
+      
+      {/* <SliderCa/> */}
       {/* <Recommended group={Group1}/> */}
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
         <Wtrends/>
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
-        {/* <Recommended group={Group2}/> */}<SliderCa/>
+        {/* <Recommended group={Group2}/> */}
+        {/* <SliderCa/> */}
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
         <Kalki/>
       </div>
       <div>
       {/* <Recommended group={Group3}/>*/}
-      <SliderCa/> 
+      
+      {/* <SliderCa/>  */}
       </div>
       <div>
-      {/* <Recommended group={Group4}/> */}<SliderCa/>
+      {/* <Recommended group={Group4}/> */}
+      {/* <SliderCa/> */}
       </div>
       <div className='mt-[1.5vw]'>
       <Testimonial/> 

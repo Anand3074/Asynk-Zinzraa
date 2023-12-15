@@ -9,20 +9,21 @@ import { Link } from 'react-router-dom'
 
     // const dispatch = useDispatch();
    
-const WishItem = ({products,title, price, imageUrl, category, description, date,addCart, removeItemFromWishlist}) => {
+const WishItem = ({product, date, addCart, removeItemFromWishlist}) => {
+    console.log(product)
 return (
 <div className='flex flex-col m-[1.5vw]'>
     <div className='flex flex-row'>
         <div className='w-[13.5vw]'>
             <Link to='/Detail'>
-            <img src={imageUrl} alt='' className='w-[11vw] h-[14vw] rounded-[1vw]'/>
+            <img src={product.coverImage} alt='' className='w-[11vw] h-[14vw] rounded-[1vw]'/>
 
             </Link>
         </div>
         <div className='flex flex-col items-start font-poppins w-[25vw] justify-center' id='product-detail'>
             <div className='mb-[0.3vw] text-[1.84vw]'>
             <Link to='/Detail'>
-                {description}
+                {product.description}
             </Link>
             </div>
             <div className='mb-[0.3vw] text-[#454545] text-[1.3vw]'>
@@ -39,8 +40,9 @@ return (
             </div>
         </div>
         <div className='flex flex-row font-[600] justify-center items-center gap-[2vw] w-[15vw] pl-[2vw]'>
-            <div className='text-[2vw] md:text-[1.6vw]'>Rs.{price}</div>
-            <div className='text-red-500 text-[1.2vw] md:text-[1.2vw] line-through'>Rs.{Math.floor(price * (1 + 43 / 100))}</div>
+            <div className='text-[2vw] md:text-[1.6vw]'>Rs.{product.price}</div>
+            <div className='text-red-500 text-[1.2vw] md:text-[1.2vw] line-through'>Rs.
+            {Math.floor(product.price * (1 + 43 / 100))}</div>
         </div>
         <div className='w-[15vw] text-[#04C500] text-[1.3vw] font-semibold font-poppins flex
          justify-center items-center ml-[3vw]'>

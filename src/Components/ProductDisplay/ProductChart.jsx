@@ -14,7 +14,7 @@ import { Button } from '@material-tailwind/react'
 
 
 
-const ProductChart = ({price, Description, addCart, addWish, isWishlisted}) => {
+const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
 
 
     const Products = {
@@ -69,7 +69,7 @@ const ProductChart = ({price, Description, addCart, addWish, isWishlisted}) => {
                     <div className='flex sm:items-start items-center justify-center
                      font-[lora] text-[#875A33] 
                     sm:text-[2.5vw] text-[5vw] font-medium wrap '>
-                        {Description}
+                        {product.description}
                     </div>
                     <div className='flex flex-row sm:flex-col gap-[1.5vw] sm:gap-[1vw]  '>
                     <div className='flex flex-row gap-[0.6vw]
@@ -86,7 +86,7 @@ const ProductChart = ({price, Description, addCart, addWish, isWishlisted}) => {
                     </div>
                     <div className=' font-inter flex sm:flex-row items-center justify-center gap-[1.4vw]'>
                     <div className='font-lora text-[#875A33] sm:text-[2vw] text-[2.65vw]  font-bold '>
-                         $ {price}
+                         $ {product.price}
                     </div>
                     <div className='text-[#00AA07] font-medium sm:text-[2vw] text-[2.65vw]'>
                             47% off
@@ -95,7 +95,7 @@ const ProductChart = ({price, Description, addCart, addWish, isWishlisted}) => {
 
                     <div className='flex flex-row items-center gap-[1vw]'>
                     <div className='text-[2.65vw] sm:text-[1.65vw] text-[##7C7C7C]'>MRP ₹</div>
-                    <div className='text-[1.47vw] text-red-400 line-through'>{Math.floor(price * (1 + 43 / 100))}</div>
+                    <div className='text-[1.47vw] text-red-400 line-through'>{Math.floor(product.price * (1 + 43 / 100))}</div>
                     <div className='text-[1.47vw] text-[##7C7C7C]'>Inclusive of all taxes</div>
                     </div>
                     </div>

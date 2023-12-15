@@ -7,18 +7,11 @@ import {
   } from "./WishConstants";
   // 
   export const addToWishlist = (item) => async (dispatch, getState) => {
-    const { title, price, imageUrl, category, description, id } = item;
+    // const { title, price, imageUrl, category, description, id } = item;
   
     dispatch({
       type: ADD_TO_WISHLIST,
-      payload: {
-        id,
-        title,
-        price,
-        imageUrl,
-        category,
-        description,
-      },
+      payload: item
     });
   
     localStorage.setItem(
