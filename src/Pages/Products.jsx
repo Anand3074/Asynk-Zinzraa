@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import { useState, useEffect } from 'react'
 // import Hero from '../Components/Hero.jsx'
 // import Hero1 from '../Components/Hero1.jsx'
@@ -13,11 +13,65 @@ import Trusty from '../Components/HomePage/Trusty.jsx'
 import Footer from '../Components/Footer.jsx'
 import Carousel from '../Components/HomePage/Carousel.jsx'
 import ele1 from '../assets/ele1.png'
-import SliderCa from '../Components/HomePage/Slider.jsx'
+import SliderCa from '../Components/HomePage/Slider1.jsx'
+import { fireDB } from '../firebase/firebase.jsx'
+// import { addItemsToCart } from '../Redux/cartActions';
+// import { addToWishlist } from '../Redux/Wishlist/wishActions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { setSelectedProduct } from '../Redux/Product/productActions';
+// import { removeItemFromWishlist } from '../Redux/Wishlist/wishActions';
+import { doc, getDocs, onSnapshot, collection, deleteDoc, query, where,
+   or, and, orderBy, limit, startAfter, startAt, endBefore } from "firebase/firestore";
 
 
 const Products = () => {
+ const [products, setProducts] = useState([])
 
+//  const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
+//   const dispatch = useDispatch();
+
+//   const handleAddToCart = (products) => {
+//     dispatch(addItemsToCart(products));
+//   };
+
+//   const handleAddToWishlist = (products) => {
+//     const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === products.id);
+//     if (isItemInWishlist) {
+//       dispatch(removeItemFromWishlist(products.id));
+//     } else {
+//       dispatch(addToWishlist(products));
+//     }
+//   };
+
+//   const handleCardDetail = (products) => {
+//     dispatch(setSelectedProduct(products));
+//     console.log(products)
+//   };
+
+  
+ const fetchProduct = async () => {
+  setProducts([]);
+  try {
+    const productsQuery = query(collection(fireDB, "products"), orderBy("createdAt", "desc"))
+    const querySnapshot = await getDocs(productsQuery);
+    
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      setProducts((prev) => [...prev, {
+        id: doc.id,
+        ...data
+      }])
+
+    })
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  }
+};
+
+// Use useEffect to fetch products when the component mounts
+useEffect(() => {
+  fetchProduct();
+}, []);
   const Group1 = {
     title:"Best Collections",
     icon : ele1,
@@ -120,7 +174,9 @@ const Products = () => {
       </div>
       <div className='mt-[3vw] md:mt-[3vw]'>
       
-      {/* <SliderCa/> */}
+      <SliderCa product={products} 
+      // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist} handleCardDetail={handleCardDetail}
+      />
       {/* <Recommended group={Group1}/> */}
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
@@ -128,7 +184,10 @@ const Products = () => {
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
         {/* <Recommended group={Group2}/> */}
-        {/* <SliderCa/> */}
+        <SliderCa product={products} 
+        // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
+        // handleCardDetail={handleCardDetail}
+        />
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
         <Kalki/>
@@ -136,11 +195,17 @@ const Products = () => {
       <div>
       {/* <Recommended group={Group3}/>*/}
       
-      {/* <SliderCa/>  */}
+      <SliderCa product={products} 
+      // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
+      // handleCardDetail={handleCardDetail}
+      /> 
       </div>
       <div>
       {/* <Recommended group={Group4}/> */}
-      {/* <SliderCa/> */}
+      <SliderCa product={products} 
+      // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
+      // handleCardDetail={handleCardDetail}
+      />
       </div>
       <div className='mt-[1.5vw]'>
       <Testimonial/> 

@@ -43,6 +43,7 @@ import MyOrders from './Pages/MyOrders.jsx'
 import Users from './Pages/CMS/Pages/Users.jsx'
 import ProductsAll from './Components/ProductDisplay/ProductsAll.jsx'
 import EditOrder from './Pages/CMS/Pages/EditOrder.jsx'
+import SliderCa from './Components/HomePage/Slider.jsx'
 // import Ethnic from './Pages/Ethnic'
 // import Western from './Pages/Western'
 
@@ -156,6 +157,7 @@ const App = ({}) => {
       <Route exact path='/Kalki' element={<KalkiCollection/>}/>
       <Route exact path='/Search' element={<Search/>}/>
       <Route exact path='/Product3' element={<Product2/>}/>
+      <Route exact path='/Slider' element={<SliderCa/>}/>
       
 
             

@@ -13,37 +13,37 @@ import { IoIosArrowDropright   } from "react-icons/io";
 import { IoIosArrowDropleft } from "react-icons/io";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useParams } from 'react-router-dom';
 
 // Assuming `products` is an array of items with a `category` property
-const SliderCa = ({ group }) => {
-  const context = useContext(myContext);
-  const { product } = context;
+const SliderCa = ({product}) => {
+  // const context = useContext(myContext);
+  // const { product } = context;
+  // const {id} = useParams()
   const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
   const categories = ['Saree', 'Kurta', 'Dresses', 'Western', 'Ethnic'];
   const maxItemsPerCategory = 3;
 
-
-
   const shuffledProducts = _shuffle(product);
   const dispatch = useDispatch();
 
-  const handleAddToCart = (item) => {
-    dispatch(addItemsToCart(item));
+  const handleAddToCart = (product) => {
+    dispatch(addItemsToCart(product));
   };
 
-  const handleAddToWishlist = (item) => {
-    const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
+  const handleAddToWishlist = (product) => {
+    const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === product.id);
     if (isItemInWishlist) {
-      dispatch(removeItemFromWishlist(item.id));
+      dispatch(removeItemFromWishlist(product.id));
     } else {
-      dispatch(addToWishlist(item));
+      dispatch(addToWishlist(product));
     }
   };
 
-  const handleCardDetail = (item) => {
-    const { title, price, imageUrl, category, description, id } = item;
-    const cardDetails = { title, price, imageUrl, category, description, id };
-    dispatch(setSelectedProduct(cardDetails));
+  const handleCardDetail = (product) => {
+    // const { title, price, imageUrl, category, description, id } = item;
+    // const cardDetails = { title, price, imageUrl, category, description, id };
+    dispatch(setSelectedProduct(product));
   };
 
   const renderRandomCards = () => {
@@ -52,16 +52,11 @@ const SliderCa = ({ group }) => {
     for (const category of categories.slice(0, 5)) {
       const matchingProducts = shuffledProducts.filter((item) => item.category === category);
       const selectedProduct = matchingProducts.slice(0, maxItemsPerCategory)[0];
-
       if (selectedProduct) {
         selectedCards.push(
           <Cards
             key={selectedProduct.id}
-            title={selectedProduct.title}
-            price={selectedProduct.price}
-            imageUrl={selectedProduct.imageUrl}
-            category={selectedProduct.category}
-            description={selectedProduct.description}
+
             isWishlisted={Wishlist.some((wishlistItem) => wishlistItem.id === selectedProduct.id)}
             addCart={() => handleAddToCart(selectedProduct)}
             addWish={() => handleAddToWishlist(selectedProduct)}

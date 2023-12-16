@@ -22,8 +22,8 @@ const ProductList = () => {
 //   const [categoryList, setCategoryList] = useState([])
   const [min, setmin] = useState(0)
   const [maxPrice, setMaxPrice] = useState(10000)
-  console.log('Size', size)
-  console.log('fabric', fabric)
+  // console.log('Size', size)
+  // console.log('fabric', fabric)
   const clearFilter = () => {
     setFabric([])
     setSize([])
@@ -105,11 +105,11 @@ const fetchProduct = async () => {
         const productsCategoryQuery = query(collection(fireDB, "products"), 
         and(where("price", "<=", Number(maxPrice))))
         const querySnapshot = await getDocs(productsCategoryQuery);
-        console.log(querySnapshot)
+        // console.log(querySnapshot)
         querySnapshot.forEach(
           (doc) => {
           const data = doc.data()
-          console.log(data)
+          // console.log(data)
           setProducts((prev) => [...prev, {
             id: doc.id,
             ...data

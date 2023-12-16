@@ -33,7 +33,7 @@ import myContext from '../../context/myContext';
                         < IoEllipse className='w-[3.5vw] h-[3.5vw] '
                     fill={isWishlisted ? '#fce4ec' : 'white'}/> 
                     </div>
-                    <div className='absolute z-100 right-[2.5vw] md:right-[2.01vw] top-[2vw]'>
+                    <div className='absolute z-100 right-[2.5vw] md:right-[2.05vw] top-[2.05vw]'>
                         <FiHeart  className='w-[1.7vw] h-[1.7vw] md:w-[1.45vw] md:h-[1.45vw] text-[#e91e63]'
                         // fill='none'/>
                          fill={isWishlisted ? '#e91e63' : 'none'}/> 

@@ -10,28 +10,29 @@ import { ToastContainer, toast } from 'react-toastify';
 // import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline'
 
 const ProductList = ({ products}) => {
+  console.log(products)
     const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
     const {id} = useParams()
     // console.log(id)
     const dispatch = useDispatch()
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (item) => {
     toast("Product Added to Cart")
-      dispatch(addItemsToCart(product))
-    console.log(product)
+      dispatch(addItemsToCart(item))
+    // console.log(item)
   }
   
-  const handleAddToWishlist = (product) => {
-    const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === product.id);
+  const handleAddToWishlist = (item) => {
+    const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === item.id);
     if (isItemInWishlist) {
-      dispatch(removeItemFromWishlist(product.id));
+      dispatch(removeItemFromWishlist(item.id));
     } else {
-      dispatch(addToWishlist(product));
+      dispatch(addToWishlist(item));
     }
 
   };
-  const handleCardDetail = (product) => {
-    dispatch(setSelectedProduct({product}));
-    // console.log(product)
+  const handleCardDetail = (item) => {
+    dispatch(setSelectedProduct(item));
+    // console.log(item)
   };
 
 
@@ -44,19 +45,19 @@ const ProductList = ({ products}) => {
     </Link>
     <div className='grid md:grid-cols-3 grid-cols-2 ml-[3vw] mb-[0.5vw] gap-[2.5vw] justify-center items-center'>
     {
-          products && products.map((product , index) => {
+          products && products.map((item , index) => {
             // const {id} = useParams()
-            const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === product.id);
+            const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === item.id);
             // console.log('isItemInWishlist', isItemInWishlist)
-            // console.log(product.id)
+            // console.log(item.id)
 {
     return(
         <div key={index}>
-        <Cards products={product}
+        <Cards products={item}
          isWishlisted={isItemInWishlist}
-         addCart={ () => handleAddToCart(product)}
-         addWish={() => handleAddToWishlist(product)}
-         Detail={() => handleCardDetail(product)} />
+         addCart={ () => handleAddToCart(item)}
+         addWish={() => handleAddToWishlist(item)}
+         Detail={() => handleCardDetail(item)} />
       </div>
              )
         }

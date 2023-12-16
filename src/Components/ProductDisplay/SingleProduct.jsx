@@ -13,9 +13,10 @@ import { Link, useParams } from 'react-router-dom'
 
 const Productsize = ({}) => {   
     const selectedProduct = useSelector((state) => state.product.selectedProduct)
+    // console.log('selectedProduct' , selectedProduct)
 
     const {id} = useParams()
-        console.log('selectedProduct', selectedProduct.product)
+        // console.log('selectedProductID', selectedProduct.product)
         // console.log(isWishlistClicked)
         const dispatch = useDispatch()
         const handleAddToCart = (item) => {
@@ -25,13 +26,15 @@ const Productsize = ({}) => {
         }
         
         const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
-        const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === selectedProduct.id);
+        const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id ===
+         selectedProduct.id);
         // console.log('item', isItemInWishlist)
         const [isWishlistClicked, setIsWishlistClicked] = useState(isItemInWishlist);
 
         //console.log(isWishlistClicked)
         const handleAddToWishlist = () => {
-            const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === selectedProduct.id);
+            const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === 
+            selectedProduct.id);
             
             //  console.log(isItemInWishlist)
             
@@ -55,25 +58,25 @@ const Productsize = ({}) => {
                     <div>
                         <div className='flex flex-col mr-[1.2vw]'>
                             <div>
-                                <img src={selectedProduct.product.image[0]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw] '/>
+                                <img src={selectedProduct.image[0]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw] '/>
                             </div>
                             <div>
-                                <img src={selectedProduct.product.image[1]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw]'/>
+                                <img src={selectedProduct.image[1]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw]'/>
                             </div>
                             <div>
-                                <img src={selectedProduct.product.image[2]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] '/>
+                                <img src={selectedProduct.image[2]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] '/>
                             </div>
                         </div>
                     </div> 
                     <div className='h-[83vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'>
-                        <img src={selectedProduct.product.coverImage} className='h-[81vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'/>
+                        <img src={selectedProduct.coverImage} className='h-[81vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'/>
                     </div>
                 </div>
 {/* Image above1  */}
             <div><ProductChart         
             isWishlisted={isWishlistClicked}
-            product={selectedProduct.product}
-             price={selectedProduct.price} Description={selectedProduct.product.description}
+            product={selectedProduct}
+             price={selectedProduct.price} Description={selectedProduct.description}
              addCart={ () => handleAddToCart(selectedProduct)} 
              addWish={() => handleAddToWishlist(selectedProduct)}/></div>
             </div>
