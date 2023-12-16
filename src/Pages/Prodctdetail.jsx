@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Collections from '../Components/ProductDisplay/Collections.jsx'
 import Modern from '../Components/HomePage/Modern.jsx'
 import ele1 from '../assets/ele1.png'
@@ -11,11 +11,95 @@ import c3 from '../assets/c3.png'
 import Size from '../Components/ProductDisplay/SingleProduct.jsx'
 import Ethnic from '../Pages/Category/Ethnic.jsx'
 import Recommended from '../Components/ProductDisplay/Recommended.jsx'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+// import { addItemsToCart } from '../../Redux/cartActions'
+// import { addToWishlist } from '../../Redux/Wishlist/wishActions';
+// import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions'
 // import AddReviewModal from '../Components/ProductDisplay/AddReviewModal.jsx'
 // import Review from '../Components/ProductDisplay/Review.jsx'
 import { ToastContainer } from 'react-toastify'
+import { fireDB } from '../firebase/firebase.jsx'
+import SliderMa from '../Components/HomePage/Slider1.jsx'
+import { doc, getDocs, onSnapshot, collection, deleteDoc,
+     query, where, or, and, orderBy, limit, startAfter, startAt, endBefore } from "firebase/firestore";
+import { useParams } from 'react-router-dom'
+
 
 const Prodctdetail = () => {
+    const selectedProduct = useSelector((state) => state.product.selectedProduct)
+    // console.log('selectedProduct' , selectedProduct)
+
+    // const {id} = useParams()
+    //     // console.log('selectedProductID', selectedProduct.product)
+    //     // console.log(isWishlistClicked)
+    //     const dispatch = useDispatch()
+    //     const handleAddToCart = (item) => {
+    //         // console.log(item)
+    //         toast("Product Added to Cart")
+    //         dispatch(addItemsToCart(selectedProduct))
+    //     }
+        
+    //     const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
+    //     const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id ===
+    //      selectedProduct.id);
+    //     // console.log('item', isItemInWishlist)
+    //     const [isWishlistClicked, setIsWishlistClicked] = useState(isItemInWishlist);
+
+    //     //console.log(isWishlistClicked)
+    //     const handleAddToWishlist = () => {
+    //         const isItemInWishlist = Wishlist.some((wishlistItems) => wishlistItems.id === 
+    //         selectedProduct.id);
+            
+    //         //  console.log(isItemInWishlist)
+            
+    //         if (isItemInWishlist) {
+    //           dispatch(removeItemFromWishlist(selectedProduct.id));
+    //         } else {
+    //           dispatch(addToWishlist(selectedProduct));
+    //         }
+    //         setIsWishlistClicked(!isItemInWishlist);
+    //       };
+    // const {category} = useParams()
+    // console.log('category', category)
+    const[relatedProduct, setRelatedProduct] = useState([])
+    const[related, setRelated] = useState([])
+
+    const fetchRelatedProducts = async () =>{
+        const productsCategoryQuery = query(collection(fireDB, "products"), 
+        (where("category", "==",  selectedProduct.category)))
+          const querySnapshot = await getDocs(productsCategoryQuery);
+      querySnapshot.forEach((doc) => {
+        const data = doc.data()
+        setRelatedProduct((prev) => [...prev, {
+          id: doc.id,
+          ...data
+        }])
+
+      })
+    
+    
+  }  
+   const relatedFetchProducts = async () =>{
+    const productsCategoryQuery = query(collection(fireDB, "products"), 
+    (where("fabric", "==",  selectedProduct.fabric)))
+      const querySnapshot = await getDocs(productsCategoryQuery);
+  querySnapshot.forEach((doc) => {
+    const data = doc.data()
+    setRelated((prev) => [...prev, {
+      id: doc.id,
+      ...data
+    }])
+
+  })
+
+
+}
+      useEffect(() => {
+        fetchRelatedProducts()
+        relatedFetchProducts()
+    
+      }, [])
 
     const Group1 = {
         title:"Similar Products",
@@ -64,7 +148,8 @@ const Prodctdetail = () => {
   return (
     <div>
         <div className='m-[3vw]'>
-            <Size/>
+            <Size />
+            {/* // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}/> */}
         </div>
         {/* <div className='m-[3vw]'> */}
             {/* <Review/> */}
@@ -72,15 +157,19 @@ const Prodctdetail = () => {
         {/* <div className='m-[3vw]'>
             <AddReviewModal/>
         </div>
+        
         */}
+        <SliderMa product={relatedProduct} slides={3}/>
         <div>
             {/* <Recommended group={Group1}/> */}
         </div>
         <div>
             <Modern/>
         </div>
+
         <div>
-            {/* <Recommended group={Group2}/> */}
+                <SliderMa product={related} slides={related.length}/>
+    {/* <Recommended group={Group2}/> */}
         </div>
     </div>
     

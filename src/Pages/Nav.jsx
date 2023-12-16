@@ -106,10 +106,10 @@ const Nav = () => {
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
               </Link>
               {/* <Link to='/Kurtas'> */}
-              <Link to='/Kurtas'>
+              <Link to='/Category'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
               </Link>
-              <Link to='/Dresses'>
+              <Link to='/Category'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
               </Link>
               <Link to='/Dashboard'>

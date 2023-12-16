@@ -13,7 +13,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedProduct } from '../../Redux/Product/productActions';
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
 
-const SliderMa = ({product}) => {
+const SliderMa = ({product}, slides) => {
+  console.log('item', product)
     // ,handleAddToCart,handleAddToWishlist,handleCardDetail
     // console.log(product)
 
@@ -66,16 +67,20 @@ const SliderMa = ({product}) => {
     speed: 500,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    slidesToShow: 3, 
+    slidesToShow: {slides}, 
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
   };
+  console.log('slides', sliderSettings.slidesToShow)
+
 
   return (
     <div className='ml-[10vw] my-[2vw]'>
       <Slider {...sliderSettings} className=''>
         {product && product.map((products, index) => {
+          // console.log('product', product)
+          // console.log('productlength', product.length)
           const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === products.id);
           return ( 
             <div key={index}>

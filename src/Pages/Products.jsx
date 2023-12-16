@@ -173,8 +173,14 @@ useEffect(() => {
         <Categ1/>
       </div>
       <div className='mt-[3vw] md:mt-[3vw]'>
-      
-      <SliderCa product={products} 
+      <div className='flex justify-center items-center h-[2vw]'>
+                <img src={Group1.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
+            </div>
+            <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
+             md:mb-[24px] mb-[8px]' >
+                <span>{Group1.title}</span>
+            </div>
+      <SliderCa slides={3} product={products} 
       // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist} handleCardDetail={handleCardDetail}
       />
       {/* <Recommended group={Group1}/> */}
@@ -184,7 +190,14 @@ useEffect(() => {
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
         {/* <Recommended group={Group2}/> */}
-        <SliderCa product={products} 
+        <div className='flex justify-center items-center h-[2vw]'>
+                <img src={Group2.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
+            </div>
+            <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
+             md:mb-[24px] mb-[8px]' >
+                <span>{Group2.title}</span>
+            </div>
+        <SliderCa slides={3} product={products} 
         // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
         // handleCardDetail={handleCardDetail}
         />
@@ -194,15 +207,28 @@ useEffect(() => {
       </div>
       <div>
       {/* <Recommended group={Group3}/>*/}
-      
-      <SliderCa product={products} 
+      <div className='flex justify-center items-center h-[2vw]'>
+                <img src={Group3.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
+            </div>
+            <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
+             md:mb-[24px] mb-[8px]' >
+                <span>{Group3.title}</span>
+            </div>
+      <SliderCa slides={3} product={products} 
       // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
       // handleCardDetail={handleCardDetail}
       /> 
       </div>
       <div>
       {/* <Recommended group={Group4}/> */}
-      <SliderCa product={products} 
+      <div className='flex justify-center items-center h-[2vw]'>
+                <img src={Group4.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
+            </div>
+            <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
+             md:mb-[24px] mb-[8px]' >
+                <span>{Group4.title}</span>
+            </div>
+      <SliderCa slides={3} product={products} 
       // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
       // handleCardDetail={handleCardDetail}
       />
