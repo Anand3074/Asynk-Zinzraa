@@ -19,6 +19,7 @@ const Cart = () => {
           };
           const discountedPrice = (calculateTotalPrice() * 0.73); // Assuming a 27% discount
           const convenienceprice = (discountedPrice * 0.6)
+          const OrderPrice = (discountedPrice + convenienceprice).toFixed(2)
 
 
 
@@ -67,7 +68,7 @@ const Cart = () => {
                         Your Pay
                     </div>
                     <div className="w-[10vw] font-bold text-green-500 ">
-                        ₹{(discountedPrice + convenienceprice).toFixed(2)}
+                        ₹{}
                     </div>
                 </div>
             </div>

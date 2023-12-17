@@ -6,7 +6,11 @@ import { BuildingLibraryIcon, HomeIcon } from "@heroicons/react/24/outline";
 import { BuildingOfficeIcon } from "@heroicons/react/20/solid";
 
 const AddAddress = ({
-name,setName,setEmail,email,phone,setPhone,addresses,setAddresses,updateProfileInfo,isOpen,setIsOpen,updateAddressInfo,briefAddress,setBriefAddress,city,setCity,pinCode,setPinCode,alternateNumber,setAlternateNumber,state,setState,addressPersonName,setAddressPersonName,addressAdded,setAddressAdded,isDefault,setIsDefault,addressType,setAddressType
+name,setName,setEmail,email,phone,setPhone,addresses,setAddresses,
+updateProfileInfo,isOpen,setIsOpen,updateAddressInfo,briefAddress,
+setBriefAddress,city,setCity,pinCode,setPinCode,alternateNumber,
+setAlternateNumber,state,setState,addressPersonName,setAddressPersonName,
+addressAdded,setAddressAdded,isDefault,setIsDefault,addressType,setAddressType
 }) => {
   const activeType = "bg-gray-300"
   const notActive ="bg-white"

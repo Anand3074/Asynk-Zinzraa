@@ -1,12 +1,69 @@
 import React from 'react'
 import AddAddress from './AddAddress'
-import { database } from "../../firebase/firebase";
+import {fireDB, database } from "../../firebase/firebase";
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { collection, query, where, getDocs, doc , deleteDoc} from "firebase/firestore";
+import { ToastContainer, toast } from 'react-toastify';
+
+
 import { HomeIcon, BuildingOfficeIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 const SavedAddress = ({name,setName,setEmail,email,phone,setPhone,addresses,setAddresses,
   updateProfileInfo,isOpen,setIsOpen,updateAddressInfo,briefAddress,setBriefAddress,city,
   setCity,pinCode,setPinCode,alternateNumber,setAlternateNumber,state,setState,addressPersonName,
   setAddressPersonName,addressAdded,setAddressAdded,isDefault,setIsDefault,addressType,setAddressType,
-  removeAddresss}) => {
+  }) => {
+const [deliveryAd, setDeliveryAd] = useState([])
+const [addressRemoved, setAddressRemoved] = useState(false)
+
+const { error, loading, isAuthenticated,user,userProfile } = useSelector(
+  (state) => state.users
+);
+const removeAddress = async (id) => {
+  try {
+    const addressDocRef = doc(fireDB, "addresses", id);
+    await deleteDoc(addressDocRef);
+    // toast("Address Removed Successfully");
+    setAddressRemoved(true);
+  } catch (error) {
+    console.error("Error removing address:", error.message);
+  }
+};
+
+// ...
+
+const removeAddresss = (id) => {
+  // console.log(id)
+  removeAddress(id);
+};
+
+
+const fetchAddresses = async () => {
+  const addressesQuery = query(collection(fireDB, "addresses"), where("userId", "==", userProfile?.uid));
+
+  const addressesSnapshot = await getDocs(addressesQuery);
+  const addressesData = [];
+  
+  addressesSnapshot.forEach((doc) => {
+    addressesData.push({
+      id: doc.id,
+      ...doc.data(),
+    });
+  });
+  // console.log('deliveryAd' , addressesData)
+  setDeliveryAd(addressesData);
+};
+useEffect(() => {
+  // fetchOrders();
+  fetchAddresses();
+  // removeAddresss()
+    // setAddressRemoved(false);
+
+}, [user, deliveryAd]);
+
+// console.log(deliveryAd)
+
 
   return (
     <div className='my-6 px-3 lg:px-24' >
@@ -25,8 +82,8 @@ const SavedAddress = ({name,setName,setEmail,email,phone,setPhone,addresses,setA
                  addresses={addresses} setAddresses={setAddresses}/>
         </div>
         <div className='flex items-start my-6 flex-wrap justift-start' >
-        {addresses && addresses?.map((address)=>(
-           <div className={`${address.default ? "bg-white border-[1px] border-gray-400" : "bg-gray-200" } lg:w-[280px] w-full px-8 my-4 mx-3 py-4 rounded-[10px]`} >
+        {deliveryAd && deliveryAd?.map((address)=>(
+           <div key={address.id} className={`${address.default ? "bg-white border-[1px] border-gray-400" : "bg-gray-200" } lg:w-[280px] w-full px-8 my-4 mx-3 py-4 rounded-[10px]`} >
            {
             address.addressType === "home" &&   <HomeIcon className="w-[25px] text-[#DE562C]" />
            }

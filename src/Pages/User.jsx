@@ -21,7 +21,7 @@ import {
   query,
   getDoc,
   getDocs,
-  onSnapshot
+  onSnapshot,deleteDoc, 
 } from "firebase/firestore";
 // import EditProfile from '../components/profile/EditProfile'
 import { ToastContainer, toast } from 'react-toastify';
@@ -39,7 +39,6 @@ const User = () => {
   const [name, setName] = useState(userProfile?.name ? userProfile.name : "")
   const [email, setEmail] = useState(userProfile?.email ? userProfile?.email : "")
   const [emailChange, setEmailChange] = useState(false)
-
   const [emailError, setEmailError] = useState(false)
   const [emailErrorMessage, setEmailErrorMessage] = useState("")
   const [phone, setPhone] = useState(userProfile?.phone ? userProfile.phone : "")
@@ -187,16 +186,24 @@ const User = () => {
     // },);
     // }
     // const removeAddresss = (id) =>{
-      const removeAddresss = () =>{
-        remove(ref(fireDB, "addresses/"+user+"/"+id)).
-    then(()=>{
-      toast("Address Removed Succesfully")
-      setAddressRemoved(true)
-    }).catch((err)=>{
-      console.log(err.message)
-    })
-    }
-
+      const removeAddress = async (id) => {
+        try {
+          const addressDocRef = doc(fireDB, "addresses", user, id);
+          await deleteDoc(addressDocRef);
+          toast("Address Removed Successfully");
+          setAddressRemoved(true);
+        } catch (error) {
+          console.error("Error removing address:", error.message);
+        }
+      };
+      
+      // ...
+      
+      const removeAddresss = () => {
+        removeAddress(id);
+      };
+      
+    
   useEffect(() => {
      dispatch(loadUser(user))
      setAddressAdded(false)
@@ -219,7 +226,7 @@ const User = () => {
                         active==="profile" && <ProfileDetails userProfile={userProfile} />}
                      {
                         active==="address" && <SavedAddress
-                         removeAddresss={removeAddresss} addressType={addressType} 
+                        addressType={addressType} 
                          setAddressType={setAddressType} setIsDefault={setIsDefault}
                           isDefault={isDefault} addressAdded={addressAdded} 
                           setAddressAdded={setAddressAdded

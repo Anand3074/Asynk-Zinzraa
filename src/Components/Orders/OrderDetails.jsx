@@ -13,7 +13,7 @@ const OrderDetails = ({orderDetails,id}) => {
             <div>
                 {/* <p className='mt-3' >{orderDetails.name && orderDetails.name }</p> */}
                 <p className='' >{orderDetails.alternateNumber && orderDetails.alternameNumber }</p>
-                <p className='' >{orderDetails.addressLineOne && orderDetails.addressLineOne }, {orderDetails.city && orderDetails.city }, {orderDetails.pinCode && orderDetails.pinCode}, {orderDetails.state && orderDetails.state } </p>
+                <p className='' >{orderDetails.address && orderDetails.address }, {orderDetails.city && orderDetails.city }, {orderDetails.pinCode && orderDetails.pinCode}, {orderDetails.state && orderDetails.state } </p>
             </div>
             <div className='my-8' >
                 <TrackingSteps orderStatus={orderDetails?.orderStatus && orderDetails?.orderStatus} />

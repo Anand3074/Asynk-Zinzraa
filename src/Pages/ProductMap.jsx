@@ -299,7 +299,7 @@ const ProductList = () => {
          min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
           fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
           </div>
-          <div className='mt-[2vw]'>
+          <div className='pt-[2vw]'>
         {products.length !== 0 ? <ProductList3 products={products} maxPrice={maxPrice} setMaxPrice={setMaxPrice}/> : (
           <div className='lg:col-span-2 my-[1vw] '>
             <h4 className='flex text-[0.5rem] text-center justify-center ' >###</h4>

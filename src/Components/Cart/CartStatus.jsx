@@ -29,12 +29,13 @@ const CartStatus = ({icon}) => {
               <div>
                 <img src={icon.img2} alt='' className='sm:w-[8vw] w-[15vw] sm:h-[0.6vw] h-[1vw] flex justify-center items-center'/>
               </div>
-              <Link to={`${isAuthenticated? '/Payment' : '/Login'}`}><div className='flex flex-col justify-center items-center'>
+              {/* <Link to={`${isAuthenticated? '/Payment' : '/Login'}`}> */}
+                <div className='flex flex-col justify-center items-center'>
                   <FaRupeeSign className='sm:w-[1.8vw] sm:h-[2.2vw] w-[5vw] h-[4vw]'
                   fill={icon.clr2}/>
                   <p className='text-[2.5vw] sm:text-[1.4vw] text-teal-dark'>Payments</p>
               </div>
-              </Link>
+              {/* </Link> */}
               
             </div>
         </div>

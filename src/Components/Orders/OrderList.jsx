@@ -1,8 +1,9 @@
 import { Card, Typography } from "@material-tailwind/react";
 import { Link } from 'react-router-dom';
 const OrderList = ({orders}) => {
-    const TABLE_HEAD = ["","Order Id","User Name", "Price", "Order Status", ];
-    // console.log(orders)
+  
+    const TABLE_HEAD = ['Sr.no',"","Date", "Price", "Order Status", ];
+    console.log(orders)
     const TABLE_ROWS = [
         {
           name: "John Michael",
@@ -51,24 +52,25 @@ return(
           </tr>
         </thead>
         <tbody>
-        {orders && orders?.map(({ id,totalPrice,orderStatus,name  }, index) => {
+        {orders && orders?.map(({ id,totalPrice,orderStatus,name,   }, index) => {
             const isLast = index === TABLE_ROWS.length - 1;
             const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
  
             return (
               <tr key={index}>
-              <Link to={`/orderDetails/${id}`} >
+             
+                <td className={classes}>
+                  <Typography variant="small" color="blue-gray" className="font-normal">
+                  {(index+1)}.
+                  </Typography>
+                </td>
+                <Link to={`/orderDetails/${id}`} >
                 <td className={classes}>
                   <Typography as="a" href="#" variant="small" color="blue" className="font-medium">
                     View
                   </Typography>
                 </td>
                 </Link>
-                <td className={classes}>
-                  <Typography variant="small" color="blue-gray" className="font-normal">
-                  Order no  #{index+1}
-                  </Typography>
-                </td>
                 <td className={classes}>
                   <Typography variant="small" color="blue-gray" className="font-normal">
                     {name}

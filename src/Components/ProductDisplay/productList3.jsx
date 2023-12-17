@@ -10,8 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 // import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline'
 
 const ProductList = ({ products, maxPrice}) => {
-
-  console.log(products, maxPrice)
+  // console.log(products, maxPrice)
     const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
     const {id} = useParams()
     // console.log(id)
@@ -61,7 +60,7 @@ const ProductList = ({ products, maxPrice}) => {
           // && parseFloat(item.price) <= parseFloat(maxPrice))   
           filteredProducts.map((item , index) => {
             // const {id} = useParams()
-            console.log(item.price, maxPrice)
+            // console.log(item.price, maxPrice)
             const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === item.id);
             // console.log('isItemInWishlist', isItemInWishlist)
             // console.log(item.id)

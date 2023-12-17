@@ -33,7 +33,7 @@ const MyOrders = () => {
     useEffect(() => {
           const fetchOrders = async () =>{
       const q = query(collection(fireDB, "orders"), where("userId", "==", user));
-       console.log("newOrder")
+      //  console.log("newOrder")
  
    
   const querySnapshot = await getDocs(q);

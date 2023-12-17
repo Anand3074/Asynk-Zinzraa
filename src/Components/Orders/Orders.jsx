@@ -8,10 +8,11 @@ import CancelOrder from "../../assets/CancelOrder.png"
 import { Link } from 'react-router-dom';
 const MyOrders = () => {
     
-    const [orders, setOrders] = useState([])
    const { error, loading, isAuthenticated,user ,userProfile } = useSelector(
     (state) => state.users
   );
+  const [orders, setOrders] = useState([])
+
 
   const fetchOrders = async () =>{
       const q = query(collection(fireDB, "orders"), where("data.userId", "==", user));
