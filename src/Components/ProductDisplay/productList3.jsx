@@ -9,8 +9,9 @@ import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
 import { ToastContainer, toast } from 'react-toastify';
 // import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline'
 
-const ProductList = ({ products}) => {
-  console.log(products)
+const ProductList = ({ products, maxPrice}) => {
+
+  console.log(products, maxPrice)
     const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
     const {id} = useParams()
     // console.log(id)
@@ -34,7 +35,17 @@ const ProductList = ({ products}) => {
     dispatch(setSelectedProduct(item));
     // console.log(item)
   };
-
+  const filteredProducts = products
+  ? products
+      .filter((item) => parseFloat(item.price) >= 0 && parseFloat(item.price) <= parseFloat(maxPrice))
+      .reduce((uniqueProducts, item) => {
+        // Check if item.id is not already present in uniqueProducts array
+        if (!uniqueProducts.some((uniqueItem) => uniqueItem.id === item.id)) {
+          uniqueProducts.push(item);
+        }
+        return uniqueProducts;
+      }, [])
+  : [];
 
   return (
     
@@ -45,8 +56,12 @@ const ProductList = ({ products}) => {
     </Link>
     <div className='grid md:grid-cols-3 grid-cols-2 ml-[3vw] mb-[0.5vw] gap-[2.5vw] justify-center items-center'>
     {
-          products && products.map((item , index) => {
+          // products && products
+          // .filter((item) => parseFloat(item.price) >= 0 
+          // && parseFloat(item.price) <= parseFloat(maxPrice))   
+          filteredProducts.map((item , index) => {
             // const {id} = useParams()
+            console.log(item.price, maxPrice)
             const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === item.id);
             // console.log('isItemInWishlist', isItemInWishlist)
             // console.log(item.id)

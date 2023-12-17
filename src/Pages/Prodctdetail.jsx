@@ -159,6 +159,13 @@ const Prodctdetail = () => {
         </div>
         
         */}
+              <div className='flex justify-center items-center h-[2vw]'>
+                <img src={Group1.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
+            </div>
+            <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
+             md:mb-[24px] mb-[8px]' >
+                <span>{Group1.title}</span>
+            </div>
         <SliderMa product={relatedProduct} slides={3}/>
         <div>
             {/* <Recommended group={Group1}/> */}
@@ -168,7 +175,14 @@ const Prodctdetail = () => {
         </div>
 
         <div>
-                <SliderMa product={related} slides={related.length}/>
+        <div className='flex justify-center items-center h-[2vw]'>
+                <img src={Group2.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
+            </div>
+            <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
+             md:mb-[24px] mb-[8px]' >
+                <span>{Group2.title}</span>
+            </div>
+                <SliderMa product={related} />
     {/* <Recommended group={Group2}/> */}
         </div>
     </div>

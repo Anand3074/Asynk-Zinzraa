@@ -1,13 +1,13 @@
 import React from 'react'
-import Category from '../Pages/Category/Category'
+import Saree12 from '../Pages/Category/Saree12'
 
-const Saree = () => {
+const Dresses = () => {
   const index = 1;
   return (
     <div>
-      <Category defaultTab={index}/>
+      <Saree12 defaultTab={index}/>
     </div>
   )
 }
 
-export default Saree
+export default Dresses

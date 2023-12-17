@@ -98,18 +98,18 @@ const Nav = () => {
          items-center pt-[0.8vw] md:pt-0 md:pt-0 align-center'>
           <div className='flex md:my-[2.6vw] hidden md:flex lg:flex md:ml-[3vw]'>
             <ul className='flex text-white gap-[1.45vw] font-[Poppins] text-[1.5vw]'>
-              <Link to='/All'>
+              <Link to='/Product3'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Products</li>
               </Link>
               {/* <Link to='/Saree'> */}
-              <Link to='/Product3'>
+              <Link to='/Saree'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
               </Link>
               {/* <Link to='/Kurtas'> */}
-              <Link to='/Category'>
+              <Link to='/Kurtas'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
               </Link>
-              <Link to='/Category'>
+              <Link to='/Dresses'>
                 <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
               </Link>
               <Link to='/Dashboard'>

@@ -61,7 +61,7 @@ const Categ1 = () => {
               </span></Link>
           </div>
         </div>
-        <div className='w-full my-[3vw]  md:h-[3.5vw] h-[4vw]'>
+        <div className='w-full my-[2vw]  md:h-[3.5vw] h-[4vw]'>
           <img src={Vec3} className='w-full  md:h-[3.5vw] h-[4vw]'/>
         </div>
         

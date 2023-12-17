@@ -1,13 +1,27 @@
-import React from 'react'
-import Category from '../Pages/Category/Category'
+// import React from 'react'
+// import Category from '../Pages/Category/Category'
 
-const Saree = () => {
+// const Saree = () => {
+//   const index = 0;
+//   return (
+//     <div>
+//       <Category defaultTab={index}/>
+//     </div>
+//   )
+// }
+
+// export default Saree
+import Saree12 from '../Pages/Category/Saree12'
+
+import React from 'react'
+
+const Kurtas = () => {
   const index = 3;
   return (
     <div>
-      <Category defaultTab={index}/>
+      <Saree12 defaultTab={index}/>
     </div>
   )
 }
 
-export default Saree
+export default Kurtas

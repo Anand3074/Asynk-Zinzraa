@@ -10,8 +10,9 @@ import { ToastContainer, toast } from 'react-toastify'
 import elestar from '../../assets/ele1.png'
 import Poster from '../../Components/HomePage/Modern.jsx'
 import Saree from '../Kurtas.jsx';
-const ProductList = () => {
+const ProductList = ({defaultTab}) => {
   const { id, description, category, price, } = useParams()
+
 //   console.log(price)
 //   console.log(type)
 //   console.log(brand)
@@ -31,19 +32,30 @@ const ProductList = () => {
     setSize([])
     setMaxPrice(10000)
     }
-
+    const categories = {
+      0: 'Western'  , 
+      1: 'Dresses'  ,
+      2: 'Saree'  ,
+      3: 'Kurta' ,
+      4: 'Ethnic' 
+    }
+    // console.log('tab',defaultTab)
   
 
-const [activeTab, setActiveTab] = useState(2);
-const [categoryTab, setCategoryTab] = useState('Saree');
+const [activeTab, setActiveTab] = useState(defaultTab || 0);
+const [categoryTab, setCategoryTab] = useState(categories[defaultTab]);
+
+// console.log(categoryTab)
 
 const handleClick = (index, category) => {
   setActiveTab(index === activeTab ? activeTab : index);
-  setCategoryTab(category);
-  console.log(categoryTab)
-console.log(activeTab)
+  setCategoryTab(categories[index]);
+//   console.log(categories[index])
+// console.log(activeTab)
 
 };
+
+
 
 const tabStyles = (index) => {
   return `cursor-pointer ${
@@ -53,37 +65,38 @@ const tabStyles = (index) => {
 
 // Update activeTab when the defaultTab prop changes
 useEffect(() => {
-  setActiveTab(2);
-  setCategoryTab('Saree')
-}, []);
-console.log(categoryTab)
-console.log(activeTab)
+  setActiveTab(defaultTab || 0);
+ setCategoryTab(categories[defaultTab]);
+}, [defaultTab]);
+// console.log(categoryTab)
+// console.log(activeTab)
+// console.log("cat", categories[1])
 
 const fetchProduct = async () => {
-    console.log('categoryTab', categoryTab)
+    // console.log('categoryTab', categoryTab)
 
     setProducts([]);
-    if (min !== 0 && maxPrice !== 0) {
-        // console.log(min, max)
-        // console.log("queried")
-        const productsCategoryQuery = query(collection(fireDB, "products"), 
-        and(where("price", "<=", Number(maxPrice))))
-        const querySnapshot = await getDocs(productsCategoryQuery);
-        // console.log(querySnapshot)
-        querySnapshot.forEach(
-          (doc) => {
-          const data = doc.data()
-          // console.log(data)
-          setProducts((prev) => [...prev, {
-            id: doc.id,
-            ...data
-          }])
+    // if (min !== 0 && maxPrice !== 0) {
+    //     // console.log(min, max)
+    //     // console.log("queried")
+    //     const productsCategoryQuery = query(collection(fireDB, "products"), 
+    //     and(where("price", "<=", Number(maxPrice))))
+    //     const querySnapshot = await getDocs(productsCategoryQuery);
+    //     // console.log(querySnapshot)
+    //     querySnapshot.forEach(
+    //       (doc) => {
+    //       const data = doc.data()
+    //       // console.log(data)
+    //       setProducts((prev) => [...prev, {
+    //         id: doc.id,
+    //         ...data
+    //       }])
   
-        })
-    }
+    //     })
+    // }
 
   
-    else if (size.length !== 0 && fabric.length !== 0) {
+    if (size.length !== 0 && fabric.length !== 0) {
       // Fetch products that match both size and fabric criteria
       const productsCategoryQuery = query(
         collection(fireDB, "products"),
@@ -115,18 +128,18 @@ const fetchProduct = async () => {
         setProducts((prev) => [...prev, { id: doc.id, ...data }]);
       });
     }
-     else if (price !== undefined) {
-      const productsBrandQuery = query(collection(fireDB, "products"), where("price", "<=", Number(maxPrice)))
-      const querySnapshot = await getDocs(productsBrandQuery);
-      querySnapshot.forEach((doc) => {
-        const data = doc.data()
-        setProducts((prev) => [...prev, {
-          id: doc.id,
-          ...data
-        }])
+    //  else if (price !== undefined) {
+    //   const productsBrandQuery = query(collection(fireDB, "products"), where("price", "<=", Number(maxPrice)))
+    //   const querySnapshot = await getDocs(productsBrandQuery);
+    //   querySnapshot.forEach((doc) => {
+    //     const data = doc.data()
+    //     setProducts((prev) => [...prev, {
+    //       id: doc.id,
+    //       ...data
+    //     }])
 
-      })
-    }
+    //   })
+    // }
      else {
       // Fetch all products if no specific criteria are provided
       const productsQuery = query(collection(fireDB, "products"), where("category", "in", [categoryTab]) );
@@ -155,7 +168,7 @@ const fetchProduct = async () => {
         </div> */}
          <div>
       <div>
-          {/* <Poster/> */}
+          <Poster/>
       </div>
       <div className='mt-[0vw]'>
         <div className='flex justify-center '>
@@ -169,7 +182,7 @@ const fetchProduct = async () => {
          <div id='navbar' className='flex justify-center mx-[17vw] mt-[0.5vw] text-[2.2vw]'>
         <nav>
           <ul className='flex flex-row font-poppins text-[#454545] gap-[3vw]'>
-            <li onClick={() => handleClick(0, 'Western')} className={tabStyles(0)}>
+            <li onClick={() => handleClick(0, 'Western')} className={tabStyles('0')}>
               WESTERN
             </li>
             <li onClick={() => handleClick(1, 'Dresses')} className={tabStyles(1)}>
@@ -189,31 +202,10 @@ const fetchProduct = async () => {
       </div>
     </div>
         <div id='products-container-parent' className='flex flex-row'>
-          {/* <div className='w-[25vw] ' id='left'> */}
-            {/* <ProductsAll/> */}
-           {/* <div className='w-[25vw] mt-[3vw] pl-[3vw]'>
-             <Filter2 size={sizef} setSize={setSizef} clearFilter={clearFilter} 
-        maxPrice={maxPrice} setMaxPrice={setMaxPrice} fabric={fabric} 
-        setFabric={setFabric} selectedFabric={selectedFabric} setSelectedFabric={setSelectedFabric}
-         selectedSize={selectedSize} setSelectedSize={setSelectedSize}/>
-        </div> */}
-          {/* </div> */}
           <div id='right' className='w-[75vw] flex flex-col'>
-            {/* <div className='flex flex-row justify-start items-start gap-[5vw]  my-[3vw]'>
-              {activeTab !== null && tabComponents[activeTab]}
-            </div> */}
           </div>
         </div>
-    </div> 
-        <div className='flex flex-col justify-center items-center pt-[7vw] h-[2vw] ' >
-                <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1.5vw] md:w-auto '/>
-            
-            <div className='flex justify-center font-semibold items-center font-lora text-[#875A33] 
-            md:text-[2.5vw] 
-            md:mb-[7vw] mb-[1.5vw]' >
-                <span>Our Products</span>
-            </div> 
-            </div>
+    </div>  
       <div className='flex flex-row gap-[1vw] justify-start items-start'>
         <div className='w-[25vw] mt-[2vw] pl-[3vw]'>
         <Filter stock={stock} 
@@ -222,7 +214,7 @@ const fetchProduct = async () => {
           fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
           </div>
           <div className='mt-[2vw]'>
-        {products.length !== 0 ? <Saree14 products={products} /> : (
+        {products.length !== 0 ? <Saree14 products={products} maxPrice={maxPrice}/> : (
           <div className='lg:col-span-2 my-[1vw] '>
             <h4 className='flex text-[0.5rem] text-center justify-center ' >###</h4>
           </div>
@@ -235,39 +227,4 @@ const fetchProduct = async () => {
 }
 
 export default ProductList
- //  else if (fabric.length !== 0 && fabric !== []) {
-    //   const productsCategoryQuery = query(collection(fireDB, "products"), where("fabric", "==", fabric))
-    //   const querySnapshot = await getDocs(productsCategoryQuery);
-    //   querySnapshot.forEach((doc) => {
-    //     const data = doc.data()
-    //     setProducts((prev) => [...prev, {
-    //       id: doc.id,
-    //       ...data
-    //     }])
-
-    //   })
-    // }
-    // else if (stock.length !== 0 && stock !== []) {
-    //   const productsCategoryQuery = query(collection(fireDB, "products"), where("stock", "==", stock))
-    //   const querySnapshot = await getDocs(productsCategoryQuery);
-    //   querySnapshot.forEach((doc) => {
-    //     const data = doc.data()
-    //     setProducts((prev) => [...prev, {
-    //       id: doc.id,
-    //       ...data
-    //     }])
-
-    //   })
-    // }
-    // else if (price !== undefined) {
-    //   const productsBrandQuery = query(collection(fireDB, "products"), where("price", "<=", Number(price)))
-    //   const querySnapshot = await getDocs(productsBrandQuery);
-    //   querySnapshot.forEach((doc) => {
-    //     const data = doc.data()
-    //     setProducts((prev) => [...prev, {
-    //       id: doc.id,
-    //       ...data
-    //     }])
-
-    //   })
-    // }
+ 

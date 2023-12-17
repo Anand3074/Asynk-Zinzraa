@@ -8,177 +8,272 @@ import { doc, getDocs, onSnapshot, collection, deleteDoc, query, where, or, and,
 import { fireDB } from '../firebase/firebase.jsx';
 import { ToastContainer, toast } from 'react-toastify'
 import elestar from '../assets/ele1.png'
+import { log } from '@swiper/core/dist/log.js'
 const ProductList = () => {
-  const { id, description, category, price, } = useParams()
-//   console.log(price)
-//   console.log(type)
-//   console.log(brand)
+  // const { id, description, category, price, } = useParams()
+  const {  category, price, type } = useParams()
+  // console.log(price)
+
   const [products, setProducts] = useState([])
-//   const [mainProductData, setMainProductData] = useState([])
-//   const [prevActive, setPrevActive] = useState(false)
   const [size, setSize] = useState([])
   const [stock, setStock] = useState([])
   const [fabric, setFabric] = useState([])
-//   const [categoryList, setCategoryList] = useState([])
   const [min, setmin] = useState(0)
   const [maxPrice, setMaxPrice] = useState(10000)
-  // console.log('Size', size)
-  // console.log('fabric', fabric)
   const clearFilter = () => {
     setFabric([])
     setSize([])
     setMaxPrice(10000)
     }
-//   const [condition, setCondition] = useState([])
-//   console.log(categoryName)
-//   console.log(brandName)
-//   const fetchProduct = async () => {
+    // console.log(min , maxPrice.toString())
 
-//     setProducts([])
-//     if (
-//         size.length == 0 &&
-//          fabric.length == 0){
-//     // (min !== 0 && maxPrice !== 0) {
-//     //   console.log(min, max)
-//     //   console.log("queried")
-//       const productsCategoryQuery = query(collection(fireDB, "products"))
-//     //   and(where("price", "<=", Number(maxPrice)), where("price", ">", Number(min))))
-//       const querySnapshot = await getDocs(productsCategoryQuery);
-//     //   console.log(querySnapshot)
-//       querySnapshot.forEach((doc) => {
-//         const data = doc.data()
-//         // console.log(data)
-//         setProducts((prev) => [...prev, {
-//           id: doc.id,
-//           ...data
-//         }])
-
-//     })
-// }
+    const fetchProduct = async () => {
+      setProducts([]);
+      // if (min !== 0 && maxPrice !== 0) {
+      //     // console.log(min, max)
+      //     // console.log("queried")
+      //     const productsCategoryQuery = query(collection(fireDB, "products"), 
+      //     and(where("price", "<=", Number(maxPrice))))
+      //     const querySnapshot = await getDocs(productsCategoryQuery);
+      //     // console.log(querySnapshot)
+      //     querySnapshot.forEach(
+      //       (doc) => {
+      //       const data = doc.data()
+      //       // console.log(data)
+      //       setProducts((prev) => [...prev, {
+      //         id: doc.id,
+      //         ...data
+      //       }])
     
-//     else if
-//      (size.length !== 0) {
-//       const productsCategoryQuery = query(collection(fireDB, "products"), where("size", "in", size))
-//       const querySnapshot = await getDocs(productsCategoryQuery);
-//       querySnapshot.forEach((doc) => {
-//         const data = doc.data()
-//         setProducts((prev) => [...prev, {
-//           id: doc.id,
-//           ...data
-//         }])
-
-//       })
-//     }
-//       else if (fabric.length !== 0) {
-//       const productsCategoryQuery = query(collection(fireDB, "products"), where("fabric", "in", fabric))
-//       const querySnapshot = await getDocs(productsCategoryQuery);
-//       querySnapshot.forEach((doc) => {
-//         const data = doc.data()
-//         setProducts((prev) => [...prev, {
-//           id: doc.id,
-//           ...data
-//         }])
-
-//       })
-//     }
-   
-//     else {
-//       const productsQuery = query(collection(fireDB, "products"), orderBy("createdAt", "desc"))
-//       const querySnapshot = await getDocs(productsQuery);
-//       querySnapshot.forEach((doc) => {
-//         const data = doc.data()
-//         setProducts((prev) => [...prev, {
-//           id: doc.id,
-//           ...data
-//         }])
-
-//       })
-//     }
-
-
-//   }
-const fetchProduct = async () => {
-    setProducts([]);
-    if (min !== 0 && maxPrice !== 0) {
-        // console.log(min, max)
-        // console.log("queried")
-        const productsCategoryQuery = query(collection(fireDB, "products"), 
-        and(where("price", "<=", Number(maxPrice))))
+      //     })
+      // }
+  
+    
+      if (size.length !== 0 && fabric.length !== 0) {
+        // Fetch products that match both size and fabric criteria
+        const productsCategoryQuery = query(
+          collection(fireDB, "products"),
+          where("size", "in", size),
+          where("fabric", "in", fabric)
+        );
         const querySnapshot = await getDocs(productsCategoryQuery);
-        // console.log(querySnapshot)
-        querySnapshot.forEach(
-          (doc) => {
+    
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+        });
+      } else if (size.length !== 0) {
+        // Fetch products based on size criteria
+        const productsCategoryQuery = query(collection(fireDB, "products"), where("size", "in", size));
+        const querySnapshot = await getDocs(productsCategoryQuery);
+    
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+        });
+      } else if (fabric.length !== 0) {
+        // Fetch products based on fabric criteria
+        const productsCategoryQuery = query(collection(fireDB, "products"), where("fabric", "in", fabric));
+        const querySnapshot = await getDocs(productsCategoryQuery);
+    
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+        });
+      }
+       else if (price !== undefined) {
+        const productsBrandQuery = query(collection(fireDB, "products"), where("price", "<=", Number(maxPrice)))
+        const querySnapshot = await getDocs(productsBrandQuery);
+        querySnapshot.forEach((doc) => {
           const data = doc.data()
-          // console.log(data)
           setProducts((prev) => [...prev, {
             id: doc.id,
             ...data
           }])
   
         })
-    }
+      }
+       else {
+        // Fetch all products if no specific criteria are provided
+        const productsQuery = query(collection(fireDB, "products"), orderBy("createdAt", "desc"));
+        const querySnapshot = await getDocs(productsQuery);
+    
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+        });
+      }
+    };
+// const fetchProduct = async () => {
+//     setProducts([]);
+    // console.log(min , maxPrice)
+    // if (
+    //   // min !== 0 && 
+    //   maxPrice !== 0 && maxPrice !== 10000 ) {
+    //   // console.log(min, maxPrice);
+    //   try {
+    //     const productsQuery = query(
+    //       collection(fireDB, "products"),
+    //       where('price', "<", (maxPrice).toString()),
+    //       );
+    //     const querySnapshot = await getDocs(productsQuery);       
+    //       querySnapshot.forEach((doc) => {
+    //         const data = doc.data();
+    //         setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //       });
+    //     console.log('Products fetched successfully:', '1');
+    //   } catch (error) {
+    //     console.error('Error fetching products:', error);
+    //   }
+    // }
+    
+   
+    // else if (size.length !== 0 && fabric.length !== 0 ) {
+    //   // Fetch products that match both size and fabric criteria
+    //   const productsCategoryQuery = query(
+    //     collection(fireDB, "products"),
+    //     where("size", "in", size),
+    //     where("fabric", "in", fabric),
+    //   );
+    //   const querySnapshot = await getDocs(productsCategoryQuery);
+    //   console.log('Products fetched successfully:', '3');
 
   
-    else if (size.length !== 0 && fabric.length !== 0) {
-      // Fetch products that match both size and fabric criteria
-      const productsCategoryQuery = query(
-        collection(fireDB, "products"),
-        where("size", "in", size),
-        where("fabric", "in", fabric)
-      );
-      const querySnapshot = await getDocs(productsCategoryQuery);
-  
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        setProducts((prev) => [...prev, { id: doc.id, ...data }]);
-      });
-    } else if (size.length !== 0) {
-      // Fetch products based on size criteria
-      const productsCategoryQuery = query(collection(fireDB, "products"), where("size", "in", size));
-      const querySnapshot = await getDocs(productsCategoryQuery);
-  
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        setProducts((prev) => [...prev, { id: doc.id, ...data }]);
-      });
-    } else if (fabric.length !== 0) {
-      // Fetch products based on fabric criteria
-      const productsCategoryQuery = query(collection(fireDB, "products"), where("fabric", "in", fabric));
-      const querySnapshot = await getDocs(productsCategoryQuery);
-  
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        setProducts((prev) => [...prev, { id: doc.id, ...data }]);
-      });
-    }
-     else if (price !== undefined) {
-      const productsBrandQuery = query(collection(fireDB, "products"), where("price", "<=", Number(maxPrice)))
-      const querySnapshot = await getDocs(productsBrandQuery);
-      querySnapshot.forEach((doc) => {
-        const data = doc.data()
-        setProducts((prev) => [...prev, {
-          id: doc.id,
-          ...data
-        }])
+    //   querySnapshot.forEach((doc) => {
+    //     const data = doc.data();
+    //     setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //   });
+    // }
+    // else if (size.length !== 0  && maxPrice !== 0 ) {
+    //   // Fetch products that match both size and fabric criteria
+    //   const productsCategoryQuery = query(
+    //     collection(fireDB, "products"),
+    //     where("size", "in", size),
+    //     where('price', "<=", (maxPrice).toString()),
+    //   );
+      
+    //   const querySnapshot = await getDocs(productsCategoryQuery);
+    //   console.log('Products fetched successfully:', '4');
 
-      })
-    }
-     else {
-      // Fetch all products if no specific criteria are provided
-      const productsQuery = query(collection(fireDB, "products"), orderBy("createdAt", "desc"));
-      const querySnapshot = await getDocs(productsQuery);
   
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        setProducts((prev) => [...prev, { id: doc.id, ...data }]);
-      });
-    }
-  };
+    //   querySnapshot.forEach((doc) => {
+    //     const data = doc.data();
+    //     setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //   });
+    // }
+    // else if (fabric.length !== 0 && maxPrice !== 0 ) {
+    //   // Fetch products that match both size and fabric criteria
+    //   const productsCategoryQuery = query(
+    //     collection(fireDB, "products"),
+    //     where("fabric", "in", fabric),
+    //     where('price', "<=", (maxPrice).toString()),
+    //   );
+      
+    //   const querySnapshot = await getDocs(productsCategoryQuery);
+    //   console.log('Products fetched successfully:', '5');
+
   
+    //   querySnapshot.forEach((doc) => {
+    //     const data = doc.data();
+    //     setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //   });
+    // }
+    
+    // else
+    
+    // if (size.length !== 0 && 
+    //   // fabric.length !== 0 && 
+    //   maxPrice !== 0 
+    //   && maxPrice !== 10000) {
+    //   // Fetch products that match both size and fabric criteria
+    //   const productsCategoryQuery = query(
+    //     collection(fireDB, "products"),
+    //     where("size", "in", size),
+    //     // where("fabric", "in", fabric),
+    //     where('price', "<=", (maxPrice).toString()),
+    //   );
+      
+    //   const querySnapshot = await getDocs(productsCategoryQuery);
+    //   console.log('Products fetched successfully:', '2');
+
+  
+    //   querySnapshot.forEach((doc) => {
+    //     const data = doc.data();
+    //     setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //   });
+    // }
+    // else if (maxPrice !== 0 && maxPrice !== 10000 && size.length == 0 
+    //   // && fabric.length == 0 
+    //    ) {
+    //     console.log(min, maxPrice);
+    //     try {
+    //       const productsQuery = query(
+    //         collection(fireDB, "products"),
+    //         where('price', "<=", (maxPrice).toString()),
+    //         );
+    //       const querySnapshot = await getDocs(productsQuery);       
+    //         querySnapshot.forEach((doc) => {
+    //           const data = doc.data();
+    //           setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //         });
+    //       console.log('Products fetched successfully:', '3');
+    //     } catch (error) {
+    //       console.error('Error fetching products:', error);
+    //     }
+    //   }
+    // else if (size.length !== 0) {
+    //   // Fetch products based on size criteria
+    //   const productsCategoryQuery = query(collection(fireDB, "products"), where("size", "in", size));
+    //   const querySnapshot = await getDocs(productsCategoryQuery);
+    //   querySnapshot.forEach((doc) => {
+    //     const data = doc.data();
+    //     setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //     console.log('Products fetched successfully:', '6');
+
+    //   });
+    // }
+    //  else if (fabric.length !== 0 && maxPrice == 10000) {
+    //   // Fetch products based on fabric criteria
+    //   const productsCategoryQuery = query(collection(fireDB, "products"), where("fabric", "in", fabric));
+    //   const querySnapshot = await getDocs(productsCategoryQuery);
+    //   console.log('Products fetched successfully:', '7');
+
+    //   querySnapshot.forEach((doc) => {
+    //     const data = doc.data();
+    //     setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //   });
+    // }
+    // else if (fabric.length !== 0 && size !== 0) {
+    //   // Fetch products based on fabric criteria
+    //   const productsCategoryQuery = query(collection(fireDB, "products"), where("fabric", "in", fabric));
+    //   const querySnapshot = await getDocs(productsCategoryQuery);
+    //   console.log('Products fetched successfully:', '7');
+
+    //   querySnapshot.forEach((doc) => {
+    //     const data = doc.data();
+    //     setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+    //   });
+    // }
+  //   else{
+  //     const productsQuery = query(collection(fireDB, "products"), orderBy("createdAt", "desc"));
+  //     const querySnapshot = await getDocs(productsQuery);
+  //     console.log('Products fetched successfully:', '8');
+
+  
+  //     querySnapshot.forEach((doc) => {
+  //       const data = doc.data();
+  //       setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+  //     });
+  //   }
+  // }
   useEffect(() => {
     fetchProduct()
-
-  }, [size, fabric, maxPrice])
+  }, [
+    size,
+     fabric, 
+    // maxPrice
+  ])
+  console.log(products,size , fabric)
 
   return (
     <div style={{ fontFamily: "DM Sans" }} className='bg-[#FFFFEF]' >
@@ -205,7 +300,7 @@ const fetchProduct = async () => {
           fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
           </div>
           <div className='mt-[2vw]'>
-        {products.length !== 0 ? <ProductList3 products={products} /> : (
+        {products.length !== 0 ? <ProductList3 products={products} maxPrice={maxPrice} setMaxPrice={setMaxPrice}/> : (
           <div className='lg:col-span-2 my-[1vw] '>
             <h4 className='flex text-[0.5rem] text-center justify-center ' >###</h4>
           </div>
@@ -218,39 +313,3 @@ const fetchProduct = async () => {
 }
 
 export default ProductList
- //  else if (fabric.length !== 0 && fabric !== []) {
-    //   const productsCategoryQuery = query(collection(fireDB, "products"), where("fabric", "==", fabric))
-    //   const querySnapshot = await getDocs(productsCategoryQuery);
-    //   querySnapshot.forEach((doc) => {
-    //     const data = doc.data()
-    //     setProducts((prev) => [...prev, {
-    //       id: doc.id,
-    //       ...data
-    //     }])
-
-    //   })
-    // }
-    // else if (stock.length !== 0 && stock !== []) {
-    //   const productsCategoryQuery = query(collection(fireDB, "products"), where("stock", "==", stock))
-    //   const querySnapshot = await getDocs(productsCategoryQuery);
-    //   querySnapshot.forEach((doc) => {
-    //     const data = doc.data()
-    //     setProducts((prev) => [...prev, {
-    //       id: doc.id,
-    //       ...data
-    //     }])
-
-    //   })
-    // }
-    // else if (price !== undefined) {
-    //   const productsBrandQuery = query(collection(fireDB, "products"), where("price", "<=", Number(price)))
-    //   const querySnapshot = await getDocs(productsBrandQuery);
-    //   querySnapshot.forEach((doc) => {
-    //     const data = doc.data()
-    //     setProducts((prev) => [...prev, {
-    //       id: doc.id,
-    //       ...data
-    //     }])
-
-    //   })
-    // }

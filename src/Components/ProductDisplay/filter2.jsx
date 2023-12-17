@@ -14,7 +14,7 @@ const Filter = ({ size, setSize,
             } else {
                 setSize((prevState) => prevState.filter((prevSize) => prevSize !== data));
             }
-            console.log(size)
+            // console.log(size)
 
         };
         // const handleSizeChange = (selectedSize, item) => {

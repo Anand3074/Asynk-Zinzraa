@@ -1,11 +1,11 @@
 import React from 'react'
-import Category from '../Pages/Category/Category'
+import Saree12 from '../Pages/Category/Saree12'
 
 const Saree = () => {
   const index = 2;
   return (
     <div>
-      <Category defaultTab={index}/>
+      <Saree12 defaultTab={index}/>
     </div>
   )
 }

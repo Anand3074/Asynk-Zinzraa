@@ -14,7 +14,7 @@ import { setSelectedProduct } from '../../Redux/Product/productActions';
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
 
 const SliderMa = ({product}, slides) => {
-  console.log('item', product)
+  // console.log('item', product)
     // ,handleAddToCart,handleAddToWishlist,handleCardDetail
     // console.log(product)
 
@@ -38,7 +38,7 @@ const SliderMa = ({product}, slides) => {
     
       const handleCardDetail = (products) => {
         dispatch(setSelectedProduct(products));
-        console.log(products)
+        // console.log(products)
       };
 
   
@@ -67,13 +67,12 @@ const SliderMa = ({product}, slides) => {
     speed: 500,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    slidesToShow: {slides}, 
+    slidesToShow: product.length > 3 ? 3 : product.length,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
   };
-  console.log('slides', sliderSettings.slidesToShow)
-
+  // console.log('slides', sliderSettings.slidesToShow)
 
   return (
     <div className='ml-[10vw] my-[2vw]'>

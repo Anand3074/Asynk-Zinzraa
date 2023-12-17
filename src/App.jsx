@@ -58,18 +58,17 @@ const App = ({}) => {
 
   const navigate = useNavigate()
    const dispatch = useDispatch();
-  useEffect(() => {
-    if(!isAuthenticated){
-      navigate("/login")
-    }
-   if (isAuthenticated) {
-      dispatch(loadUser(user));
-    }
-  }, [isAuthenticated])
+  // useEffect(() => {
+  //   if(!isAuthenticated){
+  //     navigate("/login")
+  //   }
+  //  if (isAuthenticated) {
+  //     dispatch(loadUser(user));
+  //   }
+  // }, [isAuthenticated])
   return (
     <div>
       <MyState>
-      
       <Nav/>
       <Routes>
       <Route exact path='/' element={<Products/>}/>
