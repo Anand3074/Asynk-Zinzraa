@@ -63,7 +63,7 @@ const handleLogout = () => {
          >
             <ul className="flex flex-col justify-center py-[8vw]
              items-center text-center text-x1 px-[3vw] h-[100vw]">
-                <Link to="/" >
+                <Link to="/Product3" >
                     <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
                     font-nunito  justify-start my-[3vw] pt-[3vw]  hover:text-black text-[#004d40]' 
                     onClick={closeMenu}>Products</li>

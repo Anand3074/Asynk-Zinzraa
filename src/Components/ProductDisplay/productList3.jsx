@@ -1,5 +1,5 @@
 import React from 'react'
-import Cards from './Cards.jsx'
+import Card2 from './Card2.jsx'
 import { Link, useParams } from 'react-router-dom'
 import { addItemsToCart } from '../../Redux/cartActions'
 import { addToWishlist } from '../../Redux/Wishlist/wishActions';
@@ -67,7 +67,7 @@ const ProductList = ({ products, maxPrice}) => {
 {
     return(
         <div key={index}>
-        <Cards products={item}
+        <Card2 products={item}
          isWishlisted={isItemInWishlist}
          addCart={ () => handleAddToCart(item)}
          addWish={() => handleAddToWishlist(item)}
