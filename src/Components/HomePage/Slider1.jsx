@@ -1,9 +1,9 @@
 import _shuffle from 'lodash/shuffle';
 import React, { useState } from 'react';
-import Slider from 'react-slick'; 
 import Cards from '../ProductDisplay/Cards';
 import { IoIosArrowDropright } from "react-icons/io";
 import { IoIosArrowDropleft } from "react-icons/io";
+import Slider from 'react-slick'; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import { useSelector, useDispatch } from 'react-redux';

@@ -42,13 +42,13 @@ import myContext from '../../context/myContext';
                 </div>
             </div>
             <div className='relative  rounded-[0.3vw]'>
-                <div className='px-[0.5vw] leading-[3vw] font-metro md:leading-[1.35vw]'>
-            <div className='flex text-black  wrap 
-            justify-start
-            text-[2.5vw] md:text-[1.2vw] md:h-[1.8vw] mt-[0.5vw]'>
+                <div className='px-[0.5vw] h-[3vw] leading-[3vw] font-metro md:leading-[1.35vw]'>
+            <div className='text-black 
+            justify-start font-medium overflow-hidden
+            text-[2.25vw] md:text-[1.2vw] md:h-[1.8vw] mt-[0.5vw]'>
                 {products.description} 
             </div>
-            <div className='flex flex-row md:justify-start items-center mt-[1.5vw] pb-[0.5vw] '>
+            <div className='flex flex-row md:justify-start items-center pt-[1.5vw] pb-[0.5vw] '>
                 <div className='font-bold mr-[2vw] font-lora text-[3vw]
                 md:text-[1.55vw]'>
                         ₹{products.price }     
@@ -62,8 +62,8 @@ import myContext from '../../context/myContext';
                 <div className='absolute top-[7vw] sm:top-[8vw] md:right-[0.5vw]  md:top-[5.3vw] 
                  items-start'>
                     <button onClick={addCart} className=' bg-teal-dark font-semibold 
-                    font-poppins text-white  w-[46vw]  md:w-[19vw]  h-[4.5vw] md:h-[3vw]
-                     text-[1.2vw]  rounded-[0.4vw] pt-[0.5vw] '>
+                     text-white  w-[46vw]  md:w-[19vw]  h-[4.5vw] md:h-[3vw]
+                     text-[2.5vw]  md:text-[1.3vw] rounded-[0.4vw] pt-[0.5vw] '>
                         Add to Cart
                     </button>
                 </div>

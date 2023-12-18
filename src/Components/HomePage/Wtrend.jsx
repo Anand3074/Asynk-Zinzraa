@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const Wtrend = () => {
   return (
-    <div className='w-full h-[44vw] '>
-        <div className='grid grid-cols-2 md:mx-[3vw] mx-[5vw] bg-[#EFE5D8]'>
+    <div className='w-full md:h-[44vw] h-[55vw] '>
+        <div className='grid grid-cols-2 md:mx-[1.5vw] mx-[1.5vw] h-[55vw] md:h-[44vw] bg-[#EFE5D8]'>
             <div className='flex flex-col items-center justify-center '>
                 <div className='text-[#515233] font-fashion md:text-[48px] text-[16px]'>
                     <span>The Western Trend</span>
@@ -27,8 +27,8 @@ const Wtrend = () => {
                 </div>
 
             </div>
-                <div className='w-[40vw] h-[44vw]'>
-                    <img src={Wtren} alt='' className='object-cover object-top ml-[8vw] w-[40vw] h-[44vw]'/>
+                <div className='w-[45vw] h-[44vw]'>
+                    <img src={Wtren} alt='' className='object-cover object-top ml-[3vw] w-[45vw] h-[55vw] md:h-[44vw]'/>
                 </div>
 
         </div>

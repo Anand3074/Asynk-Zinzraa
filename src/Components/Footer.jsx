@@ -55,7 +55,7 @@ const Footer = () => {
               </ul>
             </div >
 
-            <div className='flex flex-col mx-[30vw] w-[40vw] md:pl-[8vw]  sm:mx-0 sm:w-[32vw] 
+            <div className='flex flex-col mx-[30vw] w-[40vw] md:pl-[5vw]  sm:mx-0 sm:w-[32vw] 
             sm:h-[17vw] md:w-[28vw]' >
                <ul className=' sm:mx-[0vw] '>
                 <li className='flex 
@@ -72,7 +72,7 @@ const Footer = () => {
                  justify-start  md:mx[1vw]'>Terms & Conditions</li>
               </ul>
            </div>
-           <div className='flex flex-col md:pl-[6.5vw] mx-[30vw] justify-start sm:mx-0 sm:w-[30vw]
+           <div className='flex flex-col md:pl-[0vw] mx-[30vw]  justify-start sm:mx-0 sm:w-[30vw]
             sm:h-[17vw]   md:w-[20vw] w-[40vw]'>
               <ul className=' sm:mx-[0vw] '>
                 <li className='sm:text-[2.2vw] text-[4.5vw] mb-[1.5vw] font-semibold'>Shop By Category</li>

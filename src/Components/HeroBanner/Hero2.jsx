@@ -19,7 +19,7 @@ const Hero2 = () => {
                     <img src={vec6} className='' alt='vector'/>
             </div>
             <div className='flex justify-center'>
-            <Link to='Category'>  <button className='bg-[#883D6A] font-playfair 
+            <Link to='Westrend'>  <button className='bg-[#883D6A] font-playfair 
             opacity-100
             font-playfair md:text-[32px] text-[11px] mx-[4.5vw] 
             mb-[3.5vw] py-[1vw] rounded-[0.5vw]  w-[25vw] text-white 

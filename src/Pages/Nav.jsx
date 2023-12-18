@@ -33,6 +33,7 @@ const handleLogout = () => {
       dispatch(setSearchTerm(searchValue));
       navigate('/Search');
     setSearchValue('')
+    // console.log(searchTerm, searchValue)
   }
 
   };

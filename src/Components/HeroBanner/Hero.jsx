@@ -22,7 +22,7 @@ const Hero = () => {
 </div>
 
 <div className='justify-center z-9'>
-  <Link to='/Dresses'>
+  <Link to='/Kalki'>
     <button className='bg-yellow-600 opacity-100
                    font-playfair md:text-[32px] text-[11px] mx-[4.5vw] 
                    mt-[12vw] py-[1vw] rounded-[0.5vw]  w-[25vw] text-white relative z-10'>

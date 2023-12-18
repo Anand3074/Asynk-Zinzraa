@@ -208,7 +208,7 @@ const fetchProduct = async () => {
         </div>
     </div>  
       <div className='flex flex-row gap-[1vw] justify-start items-start'>
-        <div className='w-[25vw] mt-[2vw] pl-[3vw]'>
+        <div className=' md:flex hidden w-[25vw] mt-[2vw] pl-[3vw]'>
         <Filter stock={stock} 
         setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
          min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}

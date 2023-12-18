@@ -17,7 +17,7 @@ const Hero1 = () => {
             <div className='flex justify-center'>India.</div> 
             </div>
             <div className='flex justify-center'>
-            <Link to='/Kurtas'><button className='bg-white opacity-100
+            <Link to='/Saree'><button className='bg-white opacity-100
                    font-playfair md:text-[32px] text-[11px] mx-[4.5vw] 
                    mt-[1.5vw] py-[1vw] rounded-[0.5vw]  w-[25vw] text-black 
                    relative z-10'>

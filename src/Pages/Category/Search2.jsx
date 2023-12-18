@@ -62,6 +62,8 @@ const [categoryTab, setCategoryTab] = useState(categories[defaultTab]);
 const handleClick = (index, category) => {
   setActiveTab(index === activeTab ? activeTab : index);
   setCategoryTab(categories[index]);
+  dispatch(setSearchTerm(''))
+  console.log(searchTerm)
 //   console.log(categories[index])
 // console.log(activeTab)
 
@@ -150,6 +152,8 @@ const fetchProduct = async () => {
     //   })
     // }
     else if (searchTerm.length !== 0) {
+      let defaultTab = 5
+
         // Fetch all products if no specific criteria are provided
         const productsQuery = query(collection(fireDB, "products"), orderBy("createdAt", "desc"));
         const querySnapshot = await getDocs(productsQuery);
@@ -158,8 +162,7 @@ const fetchProduct = async () => {
           const data = doc.data();
           setProducts((prev) => [...prev, { id: doc.id, ...data }]);
         });
-        let defaultTab = 5
-        dispatch(setSearchTerm(''))
+        // dispatch(setSearchTerm(''))
       }
 
      else {
@@ -229,7 +232,7 @@ const fetchProduct = async () => {
         </div>
     </div>  
       <div className='flex flex-row gap-[1vw] justify-start items-start'>
-        <div className='w-[25vw] mt-[2vw] pl-[3vw]'>
+        <div className='md:flex hidden w-[25vw] mt-[2vw] pl-[3vw]'>
         <Filter stock={stock} 
         setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
          min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}

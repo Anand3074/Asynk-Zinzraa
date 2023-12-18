@@ -1,5 +1,5 @@
 import React from 'react'
-import Cards from '../../Components/ProductDisplay/Cards.jsx'
+import Card2 from '../../Components/ProductDisplay/Card2.jsx'
 import { Link, useParams } from 'react-router-dom'
 import { addItemsToCart } from '../../Redux/cartActions'
 import { addToWishlist } from '../../Redux/Wishlist/wishActions';
@@ -7,6 +7,8 @@ import { useDispatch , useSelector } from 'react-redux';
 import { setSelectedProduct } from '../../Redux/Product/productActions';
 import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions';
 import { ToastContainer, toast } from 'react-toastify';
+import { setSearchTerm } from '../../Redux/Product/filter.js';
+import { useEffect } from 'react';
 // import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline'
 
 const ProductList = ({ products, maxPrice}) => {
@@ -41,6 +43,7 @@ const ProductList = ({ products, maxPrice}) => {
       .filter((item) => {
         const isPriceMatch = parseFloat(item.price) >= 0 && parseFloat(item.price) <= parseFloat(maxPrice);
         const isSearchMatch = item.title.toLowerCase().includes(searchTerm.toLowerCase()) || item.description.toLowerCase().includes(searchTerm.toLowerCase());
+        // dispatch(setSearchTerm(''))        ;
         return isPriceMatch && isSearchMatch;
       })
       .reduce((uniqueProducts, item) => {
@@ -50,6 +53,7 @@ const ProductList = ({ products, maxPrice}) => {
         return uniqueProducts;
       }, [])
  : [];
+
 
 
   return (
@@ -72,7 +76,7 @@ const ProductList = ({ products, maxPrice}) => {
 {
     return(
         <div key={item.id}>
-        <Cards products={item}
+        <Card2 products={item}
          isWishlisted={isItemInWishlist}
          addCart={ () => handleAddToCart(item)}
          addWish={() => handleAddToWishlist(item)}

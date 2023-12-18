@@ -8,6 +8,11 @@ import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions'
 import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { Link, useParams } from 'react-router-dom'
+import Slider from 'react-slick'; 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { IoIosArrowForward  } from "react-icons/io";
+
 
 
 
@@ -45,8 +50,25 @@ const Productsize = ({}) => {
             }
             setIsWishlistClicked(!isItemInWishlist);
           };
+          const NextArrow = ({ onClick }) => (
+            <div
+              className="absolute flex justify-center items-center top-[39.5vw] right-[1vw] bg-gray-500  transform rounded-full w-[6vw] h-[6vw] -translate-y-1/2 cursor-pointer overflow-hidden"
+              onClick={onClick}
+            >
+              <IoIosArrowForward  className="pl-[1vw] w-[5vw] h-[5vw] text-yellow-[700]"  />
+            </div>
+          );
         //   console.log(isWishlistClicked)
-
+        const sliderSettings = {
+            dots: true, 
+            infinite: true,
+            speed: 500,
+            nextArrow: <NextArrow />,
+            prevArrow:false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false,
+        }
   return (
     <div>
         <div className=''>
@@ -58,22 +80,27 @@ const Productsize = ({}) => {
                     <div>
                         <div className='flex flex-col mr-[1.2vw]'>
                             <div>
-                                <img src={selectedProduct.image[0]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw] '/>
+                                <img src={selectedProduct.image[0]}  className='sm:h-[17vw] sm:w-[16vw] object-cover object-top h-[25.7vw] w-[21] mb-[2vw] '/>
                             </div>
                             <div>
-                                <img src={selectedProduct.image[1]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] mb-[2vw]'/>
+                                <img src={selectedProduct.image[1]}  className='sm:h-[17vw] sm:w-[16vw] object-cover object-top h-[25.7vw] w-[21] mb-[2vw]'/>
                             </div>
                             <div>
-                                <img src={selectedProduct.image[2]}  className='sm:h-[17vw] sm:w-[16vw] h-[25.7vw] w-[21] '/>
+                                <img src={selectedProduct.image[2]}  className='sm:h-[17vw] sm:w-[16vw] object-cover object-top h-[25.7vw] w-[21] '/>
                             </div>
                         </div>
                     </div> 
-                    <div className='h-[83vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'>
-                        <img src={selectedProduct.coverImage} className='h-[81vw] sm:h-[55vw] sm:w-[50vw] w-[70vw]'/>
+                    <div className='h-[83vw] sm:h-[55vw] sm:w-[50vw] w-[72.5vw]'>
+                    <Slider {...sliderSettings} className=''>
+                    <img src={selectedProduct.coverImage} className='h-[81vw] object-cover object-top sm:h-[55vw] sm:w-[50vw] w-[72.5vw]'/>
+                    <img src={selectedProduct.image[0]} className='h-[81vw] object-cover object-top sm:h-[55vw] sm:w-[50vw] w-[72.5vw]'/>
+                    <img src={selectedProduct.image[1]} className='h-[81vw] object-cover object-top sm:h-[55vw] sm:w-[50vw] w-[72.5vw]'/>
+                    <img src={selectedProduct.image[2]} className='h-[81vw] object-cover object-top sm:h-[55vw] sm:w-[50vw] w-[72.5vw]'/>
+                    </Slider>
                     </div>
                 </div>
 {/* Image above1  */}
-            <div><ProductChart         
+            <div className='mt-[4vw]'><ProductChart         
             isWishlisted={isWishlistClicked}
             product={selectedProduct}
              price={selectedProduct.price} Description={selectedProduct.description}
