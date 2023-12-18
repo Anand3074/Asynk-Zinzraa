@@ -13,7 +13,7 @@ import Filter2 from './filter2.jsx';
 import elestar from '../../assets/ele1.png'
 import { set } from 'lodash';
 import { Checkbox } from '@material-tailwind/react';
-import ProductList from './productList2.jsx';
+// import ProductList from './productList2.jsx';
 import { Link } from 'react-router-dom';
 
 
@@ -160,7 +160,7 @@ const ProductsAll = ({categoryToRender}) => {
         </div>
         </div> */}
         <div className='mt-[2.5vw]'>
-        <ProductList sizef={sizef} fabricm={fabric} maxPrice={maxPrice}/>
+        {/* <ProductList sizef={sizef} fabricm={fabric} maxPrice={maxPrice}/> */}
 
         </div>
 
