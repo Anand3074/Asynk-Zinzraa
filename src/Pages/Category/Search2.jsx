@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 // import Navbar from '../Pages/Nav.jsx'
 // import Footer from '../Components/Footer.jsx'
 import { useParams, Link } from 'react-router-dom'
-import Saree14 from '../../Pages/Category/Saree14.jsx'
+import SearchList from '../../Pages/Category/SearchList.jsx'
 import Filter from '../../Components/ProductDisplay/filter2.jsx'
 import { doc, getDocs, onSnapshot, collection, deleteDoc, query, where, or, and, orderBy, limit, startAfter, startAt, endBefore } from "firebase/firestore";
 import { fireDB } from '../../firebase/firebase.jsx';
@@ -11,12 +11,18 @@ import elestar from '../../assets/ele1.png'
 import Poster from '../../Components/HomePage/Modern.jsx'
 import Saree from '../Kurtas.jsx';
 import { setSearchTerm } from '../../Redux/Product/filter.js';
-const ProductList = ({defaultTab}) => {
+import { useDispatch, useSelector } from 'react-redux';
+
+const ProductList = () => {
+let defaultTab = null
+
   const { id, description, category, price, } = useParams()
+  const dispatch = useDispatch()
 
 //   console.log(price)
 //   console.log(type)
 //   console.log(brand)
+// const defaultTab = 5
   const [products, setProducts] = useState([])
 //   const [mainProductData, setMainProductData] = useState([])
 //   const [prevActive, setPrevActive] = useState(false)
@@ -28,17 +34,22 @@ const ProductList = ({defaultTab}) => {
   const [maxPrice, setMaxPrice] = useState(10000)
   // console.log('Size', size)
   // console.log('fabric', fabric)
+  const searchTerm = useSelector((state) => state.filters.searchTerm);
+
+
   const clearFilter = () => {
     setFabric([])
     setSize([])
     setMaxPrice(10000)
+    setSearchTerm('')
     }
     const categories = {
       0: 'Western'  , 
       1: 'Dresses'  ,
       2: 'Saree'  ,
       3: 'Kurta' ,
-      4: 'Ethnic' 
+      4: 'Ethnic' ,
+      5: null
     }
     // console.log('tab',defaultTab)
   
@@ -56,17 +67,14 @@ const handleClick = (index, category) => {
 
 };
 
-
-
 const tabStyles = (index) => {
   return `cursor-pointer ${
     index === activeTab ? 'underline text-[#875A33]' : 'hover:text-[#875A33]'
   } flex justify-center items-center w-[13vw] h-[4vw] font-[poppins]`;
 };
-
 // Update activeTab when the defaultTab prop changes
 useEffect(() => {
-  setActiveTab(defaultTab || 0);
+  setActiveTab(defaultTab = 5);
  setCategoryTab(categories[defaultTab]);
 }, [defaultTab]);
 // console.log(categoryTab)
@@ -141,6 +149,19 @@ const fetchProduct = async () => {
 
     //   })
     // }
+    else if (searchTerm.length !== 0) {
+        // Fetch all products if no specific criteria are provided
+        const productsQuery = query(collection(fireDB, "products"), orderBy("createdAt", "desc"));
+        const querySnapshot = await getDocs(productsQuery);
+    
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          setProducts((prev) => [...prev, { id: doc.id, ...data }]);
+        });
+        let defaultTab = 5
+        dispatch(setSearchTerm(''))
+      }
+
      else {
       // Fetch all products if no specific criteria are provided
       const productsQuery = query(collection(fireDB, "products"), where("category", "in", [categoryTab]) );
@@ -215,7 +236,7 @@ const fetchProduct = async () => {
           fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
           </div>
           <div className='mt-[2vw]'>
-        {products.length !== 0 ? <Saree14 products={products} maxPrice={maxPrice}/> : (
+        {products.length !== 0 ? <SearchList products={products} maxPrice={maxPrice}/> : (
           <div className='lg:col-span-2 my-[1vw] '>
             <h4 className='flex text-[0.5rem] text-center justify-center ' >###</h4>
           </div>

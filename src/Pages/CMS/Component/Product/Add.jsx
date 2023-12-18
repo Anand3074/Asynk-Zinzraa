@@ -107,8 +107,7 @@ const handleSubmit = (e) =>{
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
         setImage((prev)=>[...prev,downloadURL])
-        console.log(downloadURL)
-       
+        // console.log(image)
       });
     }
   );
@@ -204,7 +203,59 @@ const handleSubmit = (e) =>{
 <div>
 <UploadImage totalImageList={totalImageList} setTotalImageList={setTotalImageList} handleRemove={handleRemove} handleSubmit={handleSubmit} image={image}
     setImage={setImage} openModel={openModel} setOpenModel={setOpenModel} closeModal={closeModal} />
-     <div className='flex items-center justify-center flex-wrap gap-3 mb-12' id="createProductFormImage">
+
+<div className='my-16 border-[1px] rounded-xl border-gray-300 px-12 py-3' > 
+             <div className='flex items-center justify-between' >
+            <h4 className='text-[1.4rem] font-[600] my-4' >Select Product Images: </h4>
+
+            <SelectImages closeModal={closeSelectModal} openModel={openSelectModel}
+             setOpenModel={setOpenSelectModel} image={image} setImage={setImage} 
+             totalImageList={totalImageList} setTotalImagelist={setTotalImageList}
+              handleRemove={handleRemove} />
+            </div>
+            <div className='flex items-center justify-center flex-wrap gap-6 my-12' id="createProductFormImage">
+
+              {totalImageList && totalImageList?.map((ima, index) => (
+                <div className='relative border-[1px] border-gray-300 px-6 py-6 rounded-xl ' >
+                <p onClick={()=>handleRemove(ima)} className='absolute cursor-pointer text-red-500 font-[600] top-2 right-1 w-[20px] ' >X</p>
+                <img className='w-[150px]' key={index} src={ima} alt="Product Preview" />
+               </div>
+              ))}
+            </div>
+            </div>
+              <div className='my-16 border-[1px] rounded-xl border-gray-300 px-12 py-3 ' > 
+             <div className='flex items-center justify-between' >
+            <h4 className='text-[1.4rem] font-[600] my-4' >Select Cover Images: </h4>  
+            <SelectCover closeModal={closeCoverModal} openModel={openCoverModel}
+             setOpenModel={setOpenCoverModel} image={image} setImage={setImage}
+              totalImageList={coverImage} setTotalImagelist={setCoverImage}
+               handleRemove={handleCoverRemove} />
+            </div>
+            <div className='flex items-center justify-center flex-wrap gap-6 my-12' id="createProductFormImage">
+
+              {coverImage!==[] ? coverImage?.map((ima, index) => (
+                <div className='relative border-[1px] border-gray-300 px-6 py-6 rounded-xl ' >
+                <p onClick={()=>handleCoverRemove(ima)} className='absolute cursor-pointer text-red-500 font-[600] top-2 right-1 w-[20px] ' >X</p>
+                <img className='w-[150px]' key={index} src={ima} alt="Product Preview" />
+               </div>
+              )) : (
+                <div className='flex items-center justify-center' >
+                  <h4 className='text-gray-400' >Select a Image</h4>
+                </div>
+              )}
+            </div>
+            </div>
+            <div className='my-6' >
+                <Button onClick={addProduct}  size="lg">Submit</Button>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  )
+}
+export default AddProduct
+     {/* <div className='flex items-center justify-center flex-wrap gap-3 mb-12' id="createProductFormImage">
          {image && image.map((ima, index) => (
            <div className='relative border-[1px] border-gray-300 px-6 py-6 rounded-xl ' >
            <p onClick={()=>deleteStorageImage(ima)} className='flex cursor-pointer text-red-500 
@@ -212,8 +263,8 @@ const handleSubmit = (e) =>{
           <img  className='w-[120px] cursor-pointer ' key={index} src={ima} alt="Product Preview" />
           </div>
          ))}
-       </div>
-   </div>
+       </div>*/}
+   {/* </div>  */}
        {/* <div> 
        <h4 className='text-[1.4rem] font-[600] my-4' >Choose  Images: </h4>  
        <div className='flex items-center justify-center flex-wrap gap-3' id="createProductFormImage">
@@ -226,7 +277,7 @@ const handleSubmit = (e) =>{
        </div>
        </div> */}
        
-         <div className='my-16 border-[1px] rounded-xl border-gray-300 px-12 py-3' > 
+         {/* <div className='my-16 border-[1px] rounded-xl border-gray-300 px-12 py-3' >  */}
         {/*<div className='flex items-center justify-between' >
        <h4 className='text-[1.4rem] font-[600] my-4' >Select Product Images: </h4>  
        <SelectImages closeModal={closeSelectModal} openModel={openSelectModel}
@@ -234,7 +285,7 @@ const handleSubmit = (e) =>{
         totalImageList={totalImageList} setTotalImagelist={setTotalImageList}
          handleRemove={handleRemove} handleAddImage={handleAddImage} />
        </div> */}
-       <div className='flex items-center justify-between' >
+       {/* <div className='flex items-center justify-between' >
        <h4 className='text-[1.4rem] font-[600] my-4' >Select Cover Images: </h4>  
        <SelectImages closeModal={closeSelectModal} openModel={openSelectModel}
         setOpenModel={setOpenSelectModel} image={image} setImage={setImage} 
@@ -284,4 +335,4 @@ const handleSubmit = (e) =>{
 )
 }
 
-export default ProductForm
+export default ProductForm */}

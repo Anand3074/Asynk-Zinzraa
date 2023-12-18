@@ -12,7 +12,7 @@ import Detail from './Pages/Prodctdetail.jsx'
 import Orders from './Pages/CMS/Pages/Orders.jsx'
 import ViewOrder from './Components/Orders/ViewOrder.jsx'
 import { loadUser } from './Redux/User/userAction.js';
-import Product2 from './Pages/ProductMap.jsx'
+import Product3 from './Pages/ProductMap.jsx'
 
 
 //import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'
@@ -35,9 +35,9 @@ import Category from './Pages/Category/Saree12.jsx'
 import Kurtas from './Pages/Kurtas.jsx'
 import Dresses from './Pages/Dresses.jsx'
 import Saree from './Pages/Saree.jsx'
-import Westrend from './Pages/Western1.jsx'
-import KalkiCollection from './Pages/KalkiCollection.jsx'
-import Search from './Pages/Category/Search.jsx'
+import Westrend from './Pages/Western2.jsx'
+import KalkiCollection from './Pages/KalkiPage.jsx'
+import Search from './Pages/Category/Search2.jsx'
 import MyOrders from './Pages/MyOrders.jsx'
 // import SidebarNav from './Pages/CMS/Component/Layout/sidebar.jsx'
 import Users from './Pages/CMS/Pages/Users.jsx'
@@ -155,7 +155,7 @@ const App = ({}) => {
       <Route exact path='/Westrend' element={<Westrend/>}/>
       <Route exact path='/Kalki' element={<KalkiCollection/>}/>
       <Route exact path='/Search' element={<Search/>}/>
-      <Route exact path='/Product3' element={<Product2/>}/>
+      <Route exact path='/Product3' element={<Product3/>}/>
       <Route exact path='/Slider' element={<SliderCa/>}/>
       
 

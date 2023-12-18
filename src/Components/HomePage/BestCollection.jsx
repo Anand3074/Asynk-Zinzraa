@@ -1,5 +1,5 @@
 import _shuffle from 'lodash/shuffle';
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import Slider from 'react-slick'; 
 import Cards from '../ProductDisplay/Cards';
 import { IoIosArrowDropright } from "react-icons/io";
@@ -61,6 +61,13 @@ const SliderMa = ({product}, slides) => {
       <IoIosArrowDropleft className="w-full h-full text-gray-600" fill='' />
     </div>
   );
+    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+   
+    useEffect(() => {
+       const handleWindowResize = () => setViewportWidth(window.innerWidth);
+       window.addEventListener('resize', handleWindowResize);
+       return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
 
   const sliderSettings = {
     dots: false, 
@@ -103,11 +110,16 @@ const SliderMa = ({product}, slides) => {
   // console.log('slides', sliderSettings.slidesToShow)
 
   return (
-    <div className='md:pl-[5vw] pl-[1.5vw] my-[2vw]'>
-      <Slider {...sliderSettings} className=''>
-        {product && product.map((products, index) => {
-          // console.log('product', product)
-          // console.log('productlength', product.length)
+    <div className='md:pl-[3vw] sm:px-[0.5vw] px-[1.5vw] my-[2vw]'>
+      {/* <div className='flex flex-row gap-[3vw]'>
+      {product && product.map((products, index) => { */}
+
+          {/* // console.log('product', product)
+          // console.log('productlength', product.length) */}
+
+          <div className='flex justify-center items-center grid grid-cols-3 gap-[1.5vw] sm:gap-[1vw] md:gap-[3vw] sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4'>
+      {product && product.slice(0, viewportWidth > 1280 ? 4 : viewportWidth > 1024 ?
+       4 : viewportWidth > 768 ? 4 : 3).map((products, index) => {
           const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === products.id);
           return ( 
             <div key={index}>
@@ -121,7 +133,7 @@ const SliderMa = ({product}, slides) => {
             </div>
           );
         })}
-      </Slider>
+      </div>
     </div>
   );
 };

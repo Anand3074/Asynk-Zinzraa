@@ -28,17 +28,17 @@ const Categ1 = () => {
           }}>
         <div className=''>     
         <Link to='/Kurtas'><img src={Category1img} alt=''
-         className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
+         className='rounded-t-full object-cover object-top  border border-[0.4px] border-solid border-[#875A33] 
          p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>
           </div>
         <div>     
         <Link to='/Saree'><img src={Category2img} alt='' 
-        className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
+        className='rounded-t-full object-cover object-top  border border-[0.4px] border-solid border-[#875A33] 
         p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>
           </div>
           <div>     
           <Link to='/Dresses'> <img src={Category3img} alt='' 
-          className='rounded-t-full  border border-[0.4px] border-solid border-[#875A33] 
+          className='rounded-t-full object-cover object-top  border border-[0.4px] border-solid border-[#875A33] 
           p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>
           </div>
         </div>

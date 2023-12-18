@@ -18,25 +18,28 @@ const Nav = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMenu = () => setClick(false);
+  const [searchValue, setSearchValue] = useState(null)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { error, loading, isAuthenticated,user } = useSelector((state) => state.users);
 // console.log(user?.email)
-  const handleSearchTermChange = (value) => {
-    dispatch(setSearchTerm(value));
-    console.log(value);
-  };
-
-  const handleLogout = () => {
+const handleLogout = () => {
     dispatch(logout());
   };
-
+  const searchTerm = useSelector((state) => state.filters.searchTerm);
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
+      dispatch(setSearchTerm(searchValue));
       navigate('/Search');
-      dispatch(setSearchTerm('')); // Clear the search term
-    }
+    setSearchValue('')
+  }
 
+  };
+  const handleSearchTermChange = (value) => {
+    dispatch(setSearchTerm(value));
+    // console.log(value);
+    // let searchValue = ''
   };
 
   useEffect(() => {
@@ -54,7 +57,7 @@ const Nav = () => {
   const content =
     <>
     <div className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
-     relative top-[0.6vw]  sm:top-[1.2vw]
+     relative top-[0.5vw]  sm:top-[1.2vw]
          font-bold text-[5vw]  right-0 bg-grey-ray transition'  
               style={{ zIndex: 9999}}
          >
@@ -136,8 +139,10 @@ const Nav = () => {
               <input
                 placeholder='search your product'
                 className='bg-transparent border-none text-xs focus:outline-none'
-                onChange={(e) => handleSearchTermChange(e.target.value)}
+                onChange={(e) => setSearchValue(e.target.value) && handleSearchTermChange(searchValue)}
                 onKeyDown={(e) => handleKeyPress(e)}
+                value={searchValue}
+
               />
             </div>
             <div className='flex gap-[10vw] mr-[3vw] md:gap-[0.5vw] md:space-x-[16px] 
@@ -165,8 +170,10 @@ const Nav = () => {
         <input
             placeholder='search your product'
             className='bg-transparent border-none text-[3vw] sm:text-[2vw]  focus:outline-none mx-[3vw]'
-            onChange={(e) => handleSearchTermChange(e.target.value)}
+            onChange={(e) => setSearchValue(e.target.value)
+            }
             onKeyDown={(e) => handleKeyPress(e)}
+            value={searchValue}
           />
         </div>
     </div>

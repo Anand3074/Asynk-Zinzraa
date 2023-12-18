@@ -283,7 +283,7 @@ const ProductList = () => {
         {/* <div className='md:mb-[5vw]'>
         <Fashion/>
         </div> */}
-        <div className='flex flex-col justify-center items-center pt-[7vw] h-[2vw] ' >
+        <div className='flex flex-col justify-center items-center pt-[7.25vw] h-[2vw] ' >
                 <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1.5vw] md:w-auto '/>
             
             <div className='flex justify-center font-semibold items-center font-lora text-[#875A33] 
@@ -293,13 +293,13 @@ const ProductList = () => {
             </div> 
             </div>
       <div className='flex flex-row gap-[1vw] justify-start items-start'>
-        <div className='w-[25vw] mt-[2vw] pl-[3vw]'>
+        <div className='w-[25vw] mt-[0vw] pl-[3vw]'>
         <Filter stock={stock} 
         setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
          min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
           fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
           </div>
-          <div className='pt-[2vw]'>
+          <div className='pt-[0vw]'>
         {products.length !== 0 ? <ProductList3 products={products} maxPrice={maxPrice} setMaxPrice={setMaxPrice}/> : (
           <div className='lg:col-span-2 my-[1vw] '>
             <h4 className='flex text-[0.5rem] text-center justify-center ' >###</h4>

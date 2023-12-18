@@ -28,7 +28,7 @@ const Wtrend = () => {
 
             </div>
                 <div className='w-[40vw] h-[44vw]'>
-                    <img src={Wtren} alt='' className=' ml-[8vw] w-[40vw] h-[44vw]'/>
+                    <img src={Wtren} alt='' className='object-cover object-top ml-[8vw] w-[40vw] h-[44vw]'/>
                 </div>
 
         </div>

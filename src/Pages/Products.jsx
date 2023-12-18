@@ -15,6 +15,7 @@ import Carousel from '../Components/HomePage/Carousel.jsx'
 import ele1 from '../assets/ele1.png'
 import SliderCa from '../Components/HomePage/Slider1.jsx'
 import { fireDB } from '../firebase/firebase.jsx'
+import BestCollection from '../Components/HomePage/BestCollection.jsx'
 // import { addItemsToCart } from '../Redux/cartActions';
 // import { addToWishlist } from '../Redux/Wishlist/wishActions';
 // import { useDispatch, useSelector } from 'react-redux';
@@ -26,6 +27,8 @@ import { doc, getDocs, onSnapshot, collection, deleteDoc, query, where,
 
 const Products = () => {
  const [products, setProducts] = useState([])
+ const [best, setBest] = useState([])
+ const [variety, setVariety] = useState([])
 
 //  const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
 //   const dispatch = useDispatch();
@@ -49,7 +52,7 @@ const Products = () => {
 //   };
 
   
- const fetchProduct = async () => {
+ const Recommended = async () => {
   setProducts([]);
   try {
     const productsQuery = query(collection(fireDB, "products"), orderBy("createdAt", "desc"))
@@ -67,10 +70,49 @@ const Products = () => {
     console.error('Error fetching products:', error);
   }
 };
+const BestCollec = async () => {
+  setBest([]);
+  try {
+     const productsQuery = query(collection(fireDB, "products"), orderBy("price", "desc"))
+     const querySnapshot = await getDocs(productsQuery);
+     querySnapshot.forEach((doc) => {
+       const data = doc.data();
+       setBest((prev) => [...prev, {
+         id: doc.id,
+         ...data
+       }])
+      //  console.log(best)
+ 
+     })
+  } catch (error) {
+     console.error('Error fetching products:', error);
+  }
+ };
+
+ const WatchShop = async () => {
+  setVariety([]);
+  try {
+     const productsQuery = query(collection(fireDB, "products"), where("category", 'in' ,["Ethnic", "Kurta"]))
+     const querySnapshot = await getDocs(productsQuery);
+     querySnapshot.forEach((doc) => {
+       const data = doc.data();
+       setVariety((prev) => [...prev, {
+         id: doc.id,
+         ...data
+       }])
+      //  console.log(best)
+ 
+     })
+  } catch (error) {
+     console.error('Error fetching products:', error);
+  }
+ };
 
 // Use useEffect to fetch products when the component mounts
 useEffect(() => {
-  fetchProduct();
+  Recommended();
+  BestCollec();
+  WatchShop()
 }, []);
   const Group1 = {
     title:"Best Collections",
@@ -180,7 +222,7 @@ useEffect(() => {
              md:mb-[24px] mb-[8px]' >
                 <span>{Group1.title}</span>
             </div>
-      <SliderCa slides={3} product={products} 
+      <BestCollection product={best} 
       // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist} handleCardDetail={handleCardDetail}
       />
       {/* <Recommended group={Group1}/> */}
@@ -197,7 +239,7 @@ useEffect(() => {
              md:mb-[24px] mb-[8px]' >
                 <span>{Group2.title}</span>
             </div>
-        <SliderCa slides={3} product={products} 
+        <SliderCa product={products} 
         // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
         // handleCardDetail={handleCardDetail}
         />
@@ -214,7 +256,7 @@ useEffect(() => {
              md:mb-[24px] mb-[8px]' >
                 <span>{Group3.title}</span>
             </div>
-      <SliderCa slides={3} product={products} 
+      <SliderCa product={products} 
       // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
       // handleCardDetail={handleCardDetail}
       /> 
@@ -228,7 +270,7 @@ useEffect(() => {
              md:mb-[24px] mb-[8px]' >
                 <span>{Group4.title}</span>
             </div>
-      <SliderCa slides={3} product={products} 
+      <BestCollection product={variety} 
       // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
       // handleCardDetail={handleCardDetail}
       />

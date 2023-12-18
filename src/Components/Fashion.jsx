@@ -35,7 +35,7 @@ const Modern = () => {
         </div>
         <div className='w-[40vw] h-[22vw] mt-[3vw] flex justify-end items-end rounded-tr-[94px]
          rounded-bl-[94px]'>
-                <img src={fashion} alt='' className='w-[34vw] h-[25vw] '/>
+                <img src={fashion} alt='' className='w-[40vw] object-cover object-top h-[25vw] '/>
         </div>  
       </div>
         

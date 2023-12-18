@@ -24,7 +24,8 @@ import myContext from '../../context/myContext';
                 <Link to='/Detail'>
                 {/* <img src={imageUrl || products.coverImage} onClick={Detail} alt='' */}
                     <img src={products.coverImage} onClick={Detail} alt=''
- className='object-cover md:w-[20vw]  w-[30vw] object-top h-[37vw] md:h-[25vw] rounded-[1vw] overflow-hidden'/></Link>
+ className='object-cover md:w-[20vw]  w-[30vw] object-top h-[37vw] md:h-[25vw] rounded-[1vw] 
+ overflow-hidden'/></Link>
                 </div>
                 {/* <div className='' onClick={handleAddToWishlist}> */}
                 <div className='' onClick={addWish}>

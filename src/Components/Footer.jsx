@@ -37,15 +37,15 @@ const Footer = () => {
           </div>
           <div id='col-links' className='flex flex-col sm:flex-row gap-[6vw] mt-[7vw]  sm:mx-0 sm:mt-[3vw]'>
             
-            <div className='flex flex-col  ml-[22.5vw] mr-[18vw] sm:mx-0 sm:w-[32vw] sm:h-[17vw] 
+            <div className='flex flex-col  ml-[20vw] mr-[15vw] sm:mx-0 sm:w-[32vw] sm:h-[17vw] 
             sm:text-[1.6vw] md:-w-[35vw]'>
               <ul className=' sm:mx-[0vw]  '>
                 <li className='sm:text-[2.2vw] text-[4.5vw] flex justify-start 
                 font-semibold pl-[1.5vw] mb-[2vw]'>Follow us on Social media</li>
-                <li className='flex justify-start pl-[1.5vw] sm:text-[1.5vw]'>Email: Zinzraa@gmail.com</li>
-                <li className='flex justify-start pl-[1.5vw] sm:text-[1.5vw]'>Contact: +91 1234-4567-890</li>
-                <li className='flex justify-start pl-[1.5vw] wrap sm:text-[1.5vw]'>Address: abc, abc road, Ahmdebad-398475, Gujarat, India</li>
-                <li className='flex justify-start pl-[1.5vw] sm:text-[1.5vw]'>
+                <li className='flex justify-start pl-[1.5vw] sm:text-[1.5vw] text-[4vw]'>Email: Zinzraa@gmail.com</li>
+                <li className='flex justify-start pl-[1.5vw] sm:text-[1.5vw] text-[4vw]'>Contact: +91 1234-4567-890</li>
+                <li className='flex justify-start pl-[1.5vw] wrap sm:text-[1.5vw] text-[4vw]'>Address: abc, abc road, Ahmdebad-398475, Gujarat, India</li>
+                <li className='flex justify-start pl-[1.5vw] sm:text-[1.5vw] text-[4vw]'>
                 <div className='flex items-center my-3 mx-5  sm:justify-start justify-center' >
                   <img className='xl:w-[40px] lg:w-[40px] w-[30px] mr-8 my' src={Instagram} alt="" />
                   <img className='xl:w-[40px] lg:w-[40px] w-[30px] mr-8 my' src={Facebook} alt="" />
@@ -55,41 +55,41 @@ const Footer = () => {
               </ul>
             </div >
 
-            <div className='flex flex-col mx-[35vw] w-[40vw] md:pl-[8vw]  sm:mx-0 sm:w-[32vw] 
+            <div className='flex flex-col mx-[30vw] w-[40vw] md:pl-[8vw]  sm:mx-0 sm:w-[32vw] 
             sm:h-[17vw] md:w-[28vw]' >
                <ul className=' sm:mx-[0vw] '>
                 <li className='flex 
                  sm:text-[2.2vw] text-[4.5vw] font-semibold mb-[1.5vw]'>Important Links</li>
                 <Link to='/User'><li className='flex font-normal
                  justify-start  md:mx[1vw] sm:text-[1.5vw]'>My Profile</li></Link>
-                <li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                <li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>My Orders</li>
-                <li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                <li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>Refund Policy</li>
-                <li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                <li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>Privacy Policy</li>
-                <li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                <li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>Terms & Conditions</li>
               </ul>
            </div>
-           <div className='flex flex-col md:pl-[6.5vw] mx-[35vw] justify-start sm:mx-0 sm:w-[30vw]
-            sm:h-[17vw]   md:-w-[20vw] w-[40vw]'>
+           <div className='flex flex-col md:pl-[6.5vw] mx-[30vw] justify-start sm:mx-0 sm:w-[30vw]
+            sm:h-[17vw]   md:w-[20vw] w-[40vw]'>
               <ul className=' sm:mx-[0vw] '>
                 <li className='sm:text-[2.2vw] text-[4.5vw] mb-[1.5vw] font-semibold'>Shop By Category</li>
                 <Link to='/Dresses'>
-                   <li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                   <li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>
                   Western</li></Link>
-                <Link to='/Dresses'><li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                <Link to='/Dresses'><li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>
                   Ethnic</li></Link>
-                <Link to='/Sarees'><li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                <Link to='/Sarees'><li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>
                   Saree</li></Link>
-                <Link to='/Kurtas'><li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                <Link to='/Kurtas'><li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>
                  Dresses </li></Link>
-                  <Link to='/Kurtas'><li className='flex sm:text-[1.5vw] text-[3.5vw] font-normal
+                  <Link to='/Kurtas'><li className='flex sm:text-[1.5vw] text-[4vw] font-normal
                  justify-start  md:mx[1vw]'>
                   Kurtas</li></Link>
                 {/* <Link to='/Dresses'><li className='flex sm:text-[1.6vww] text-[2.5vw] font-normal
@@ -98,14 +98,14 @@ const Footer = () => {
               </ul>
            </div>
         </div>
-        <div className='sm:text-[1.5vw] text-[3vw] mt-[5vw]'>
+        <div className='sm:text-[1.5vw] text-[3.5vw] mt-[5vw]'>
         <div className='flex justify-center items-center '>
              We accept all major credit cards / debit cards and Netbanking
         </div>
         <div className="">
           <hr className="border-t border-gray-500 mt-[1vw]"/>   
         </div>
-        <div className='flex justify-center items-center sm:mt-[1.2vw] mt-[3vw] sm:text-[1.5vw] text-[3vw] '>
+        <div className='flex justify-center items-center sm:mt-[1.2vw] mt-[3vw] sm:text-[1.5vw] text-[3.5vw] '>
           © 2023 Zinzraa Fashion Pvt. Ltd. All Rights Reserved
         </div>
         </div>

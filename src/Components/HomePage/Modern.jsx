@@ -4,7 +4,7 @@ import Vec5 from '../../assets/vec5.png'
 const Modern = () => {
   return (
     <div className='flex'>
-      <div id='main-container' className='bg-[#da9e6a42] flex flex-row  m-[3vw]   h-[25vw]'> 
+      <div id='main-container' className='bg-[#da9e6a42] flex flex-row  m-[1.5vw]   h-[25vw]'> 
         <div>
           <img src={Vec5} alt=''  className='h-[25vw] w-[4vw]'/>
         </div>
@@ -27,10 +27,9 @@ const Modern = () => {
               Shop Now
             </button>
           </div>
-            
         </div>
-        <div className='w-[36vw] h-[22vw] m-[1.5vw]'>
-                <img src={modern} alt='' className='w-[34vw] h-[22vw] '/>
+        <div className='w-[36vw] h-[22vw] m-[1.2vw]'>
+                <img src={modern} alt='' className='w-[34vw] object-cover object-top h-[22vw] '/>
         </div>  
       </div>
         
