@@ -19,7 +19,7 @@ const Dashboard = () => {
   const fetchOrder =  async () =>{
     
     
-    console.log("newOrder")
+    // console.log("newOrder")
    const querySnapshot = await getDocs(collection(fireDB, "orders"));
     querySnapshot.forEach((doc) => {
      setOrdersList((prev)=>[...prev,{
@@ -57,14 +57,14 @@ const Dashboard = () => {
  fetchProducts()
  fetchUsers()
   },[] )
-  console.log(users)
-  console.log(ordersList)
+  // console.log(users)
+  // console.log(ordersList)
 
   return (
     <div className='grid grid-cols-4 grid-flow-col' >
         <SidebarNav />
         <RightContent ordersList={ordersList} users={users} products={products} />
-    </div>
+        </div>
   )
 }
 

@@ -3,7 +3,7 @@ import { Card, Typography } from "@material-tailwind/react";
 import { Breadcrumbs } from "@material-tailwind/react";
 import {Link} from "react-router-dom"
 import {TrashIcon} from "@heroicons/react/24/outline"
-const TABLE_HEAD = ["Name", "Price", "Brand","Product Category","type", "Edit","Delete"];
+const TABLE_HEAD = ["Category", "Price", "Image","Description", "Edit","Delete"];
  
 const TABLE_ROWS = [
   
@@ -14,11 +14,11 @@ const ProductList = ({deleteProduct,productsList}) => {
     <div className='my-3' >
     <h4 className='my-2 font-[600] text-[2rem] ' >Total  Products</h4>
         <Breadcrumbs className='my-2' >
-      <a href="#" className="opacity-60">
+      <Link to="/Dashboard" className="opacity-60">
         Dashboard
-      </a>
+      </Link>
      
-      <a href="#">Total Products</a>
+      <Link to="products">Total Products</Link>
     </Breadcrumbs>
     </div>
          <Card className="overflow-scroll h-[100vh] w-full">
@@ -39,15 +39,15 @@ const ProductList = ({deleteProduct,productsList}) => {
           </tr>
         </thead>
         <tbody>
-          {productsList &&  productsList?.map(({ productName, price, brand,category, id,type }, index) => {
+          {productsList &&  productsList?.map(({ productName, price, brand,category,description, id,type, coverImage }, index) => {
             const isLast = index === TABLE_ROWS.length - 1;
-            const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+            const classes = isLast ? "p-4" : "p-3 border-b border-blue-gray-50";
  
             return (
-              <tr key={productName}>
+              <tr key={id}>
                 <td className={classes}>
-                  <Typography variant="small" color="blue-gray" className="font-normal">
-                    {productName}
+                  <Typography variant="small" color="blue-gray" className="font-normal pl-[2vw]">
+                    {category}
                   </Typography>
                 </td>
                 <td className={`${classes} bg-blue-gray-50/50`}>
@@ -57,19 +57,19 @@ const ProductList = ({deleteProduct,productsList}) => {
                 </td>
                 <td className={classes}>
                   <Typography variant="small" color="blue-gray" className="font-normal">
-                    {brand}
+                    <img src={coverImage} alt='' className='w-[8vw] h-[8vw] object-cover object-top overflow-hidden'/>
                   </Typography>
                 </td>
                   <td className={classes}>
-                  <Typography variant="small" color="blue-gray" className="font-normal">
-                    {category}
+                  <Typography variant="small" color="blue-gray" className="font-normal w-[10vw]">
+                    {description}
                   </Typography>
                 </td>
-                 <td className={classes}>
+                 {/* <td className={classes}>
                   <Typography variant="small" color="blue-gray" className="font-normal">
                     {type}
                   </Typography>
-                </td>
+                </td> */}
                 <td className={`${classes} bg-blue-gray-50/50`}>
                 <Link to={`/product/${id}`} >
                   <Typography as="a" href="#" variant="small" color="blue" className="font-medium">

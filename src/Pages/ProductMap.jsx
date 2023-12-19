@@ -4,11 +4,14 @@ import Footer from '../Components/Footer.jsx'
 import { useParams, Link } from 'react-router-dom'
 import ProductList3 from '../Components/ProductDisplay/productList3.jsx'
 import Filter from '../Components/ProductDisplay/filter2.jsx'
+import Filter3 from '../Components/ProductDisplay/Filter3.jsx'
 import { doc, getDocs, onSnapshot, collection, deleteDoc, query, where, or, and, orderBy, limit, startAfter, startAt, endBefore } from "firebase/firestore";
 import { fireDB } from '../firebase/firebase.jsx';
 import { ToastContainer, toast } from 'react-toastify'
 import elestar from '../assets/ele1.png'
-import { log } from '@swiper/core/dist/log.js'
+import BottomFilter from '../Components/ProductDisplay/Bottomfilter.jsx'
+import FilterClose from '../Components/ProductDisplay/FilterClose.jsx'
+
 const ProductList = () => {
   // const { id, description, category, price, } = useParams()
   const {  category, price, type } = useParams()
@@ -25,6 +28,11 @@ const ProductList = () => {
     setSize([])
     setMaxPrice(10000)
     }
+    const [isFilterVisible, setFilterVisible] = useState(false);
+
+  const toggleFilter = () => {
+    setFilterVisible((prev) => !prev);
+  };
     // console.log(min , maxPrice.toString())
 
     const fetchProduct = async () => {
@@ -273,13 +281,34 @@ const ProductList = () => {
      fabric, 
     // maxPrice
   ])
-  console.log(products,size , fabric)
+  // console.log(products,size , fabric)
+//  console.log('filter', isFilterVisible)  
+useEffect(() => {
+  if (isFilterVisible) {
+    document.body.classList.add('overflow-hidden');
+  } else {
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  return () => {
+    document.body.classList.remove('overflow-hidden');
+  };
+}, [isFilterVisible]);
+
 
   return (
     <div style={{ fontFamily: "DM Sans" }} className='bg-[#FFFFEF]' >
         <Link to="/Cart">
-        <div className=''><ToastContainer/></div>
+        <div className='relative'><ToastContainer/></div>
         </Link>
+     {isFilterVisible && <Filter3
+        className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
+        relative top-[0.5vw]  sm:top-[1.2vw]
+            font-bold text-[5vw]  right-0 bg-grey-ray transition'
+      stock={stock} 
+        setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
+         min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>}
         {/* <div className='md:mb-[5vw]'>
         <Fashion/>
         </div> */}
@@ -306,8 +335,20 @@ const ProductList = () => {
           </div>
         )}
         </div>
-
       </div>
+      <div>
+      <Footer/>
+      </div>
+      <div>
+      
+   {/* closeMenu={closeMenu} />} */}
+  {/* {is && <Hamburger closeMenu={closeMenu} />} */}
+  {/* </div> */}
+          {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
+           setFilterVisible={setFilterVisible}
+           className='bottom-0 w-full h-[7vw] fixed'/>}
+          {/* hello */}
+        </div>
     </div>
   )
 }

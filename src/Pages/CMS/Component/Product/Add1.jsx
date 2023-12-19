@@ -11,14 +11,12 @@ import SelectImages from './SelectImage2.jsx';
 import SelectCover from './SelectCover.jsx';
 // import { categoryData } from '../../data/categoryData';
 import Select, { components } from "react-select";
-const AddProduct = ({brandList,brand,setBrand,
-  brandSpecifications,setBrandSpecifications,modelName,setModelName,productName,
-  setProductName,ram,setram,storageData,setStorageData,color,setColor,
-  conditions,
-  setConditions,type,setType, coverImage,setCoverImage,
+const AddProduct = ({ coverImage,setCoverImage,
     addProduct,
     description,setDescription,
     title,setTitle,
+    size, setSize,
+    fabric, setFabric,
     price,setPrice,image,
     setImage,
     totalImageList,setTotalImageList,
@@ -26,8 +24,7 @@ const AddProduct = ({brandList,brand,setBrand,
     stock,setStock,
     realPrice,setRealPrice,
     showPrice,setShowPrice,
-    size, setSize,
-    fabric, setFabric,
+   
   }) => {
   const dispatch = useDispatch();
 
@@ -208,7 +205,7 @@ const AddProduct = ({brandList,brand,setBrand,
             </div> */}
             
              <div className='my-16 border-[1px] rounded-xl border-gray-300 px-12 py-3' > 
-             <div className='flex items-center justify-between' >
+             <div className='flex md:flex-row flex-col items-center justify-between' >
             <h4 className='text-[1.4rem] font-[600] my-4' >Select Product Images: </h4>  
             <SelectImages closeModal={closeSelectModal} openModel={openSelectModel}
              setOpenModel={setOpenSelectModel} image={image} setImage={setImage} 
@@ -226,7 +223,7 @@ const AddProduct = ({brandList,brand,setBrand,
             </div>
             </div>
               <div className='my-16 border-[1px] rounded-xl border-gray-300 px-12 py-3 ' > 
-             <div className='flex items-center justify-between' >
+             <div className='flex md:flex-row flex-col  items-center justify-between' >
             <h4 className='text-[1.4rem] font-[600] my-4' >Select Cover Images: </h4>  
             <SelectCover closeModal={closeCoverModal} openModel={openCoverModel}
              setOpenModel={setOpenCoverModel} image={image} setImage={setImage}

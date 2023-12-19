@@ -59,7 +59,7 @@ const TopSelling = ({users,orders}) => {
             </Typography>
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-           <Link to="/repairOrders" > <Button variant="outlined" color="blue-gray" size="sm">
+           <Link to="/orders" > <Button variant="outlined" color="blue-gray" size="sm">
               view all
             </Button></Link>
             
@@ -127,30 +127,6 @@ const TopSelling = ({users,orders}) => {
                      
                     </div>
                   </td>
-                 
-                 
-                  {/* <td className={classes}>
-                    <div className="w-max">
-                      <Chip
-                        variant="ghost"
-                        size="sm"
-                        value={online ? "online" : "offline"}
-                        color={online ? "green" : "blue-gray"}
-                      />
-                    </div>
-                  </td>
-                  <td className={classes}>
-                    <Typography variant="small" color="blue-gray" className="font-normal">
-                      {date}
-                    </Typography>
-                  </td>
-                  <td className={classes}>
-                    <Tooltip content="Edit User">
-                      <IconButton variant="text" color="blue-gray">
-                        <PencilIcon className="h-4 w-4" />
-                      </IconButton>
-                    </Tooltip>
-                  </td> */}
                 </tr>
               );
             })}
@@ -173,7 +149,7 @@ const TopSelling = ({users,orders}) => {
             </Typography>
           </div>
           <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-             <Link to="/shieldOrders" ><Button variant="outlined" color="blue-gray" size="sm">
+             <Link to="/users" ><Button variant="outlined" color="blue-gray" size="sm">
               view all
             </Button></Link>
             

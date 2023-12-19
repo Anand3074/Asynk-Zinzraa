@@ -44,23 +44,27 @@ import Users from './Pages/CMS/Pages/Users.jsx'
 import ProductsAll from './Components/ProductDisplay/ProductsAll.jsx'
 import EditOrder from './Pages/CMS/Pages/EditOrder.jsx'
 import SliderCa from './Components/HomePage/Slider.jsx'
+// import EditUsers from './Pages/CMS/Component/Users/EditUser.jsx'
+import EditUserForm from './Pages/CMS/Pages/EditUser23.jsx'
+import EditProduct from './Pages/CMS/Pages/EditProduct.jsx'
 // import Ethnic from './Pages/Ethnic'
 // import Western from './Pages/Western'
 
 const App = ({}) => {
-  const {  isAuthenticated, user  } = useSelector(
+  const {  isAuthenticated, user , userProfile } = useSelector(
     (state) => state.users
   )
-  // const  userProfile  = useSelector(
-  //   (state) => state.userProfile
-  // );
-  // console.log(userProfile?.name)
+
+  console.log(userProfile?.role)
 
   const navigate = useNavigate()
    const dispatch = useDispatch();
   // useEffect(() => {
-  //   if(!isAuthenticated){
-  //     navigate("/login")
+  //   if(isAuthenticated  && userProfile?.role=== "user"     ) {
+  //     navigate("/")
+  //   }
+  //   if(isAuthenticated  && userProfile?.role=== "admin"     ) {
+  //     navigate("/Dashboard")
   //   }
   //  if (isAuthenticated) {
   //     dispatch(loadUser(user));
@@ -87,30 +91,40 @@ const App = ({}) => {
 
       {/* <Route exact path={`/orderDetails/${id}`} element={<OrderDetails/>}/>  */}
       <Route exact path="/orderDetails/:id" element={<ViewOrder/>}/> 
-      {isAuthenticated &&
+      {isAuthenticated && userProfile?.role=== "admin"  && 
       // && user.email === 'anandsaeiou@gmail.com' &&
        (
       <Route exact path='/Dashboard' element={<Dashboard />} />)}
-       {isAuthenticated &&
+       {isAuthenticated        && userProfile?.role=== "admin" 
+        &&
       // && user.email === 'anandsaeiou@gmail.com' &&
        (
       <Route exact path='/Adminorder/:id' element={<EditOrder />} />)}
       {isAuthenticated 
-      //  && userProfile?.role=== "admin" 
+       && userProfile?.role=== "admin" 
       && (<Route exact path='/addProduct' element={<AddProduct />} />) }
 
       {isAuthenticated 
-      // && userProfile?.role === "admin" 
+      && userProfile?.role === "admin" 
       &&   
       (<Route exact path='/products' element={<AllProduct />} />) }
 
         {isAuthenticated 
-    // && userProfile?.role === "admin" 
+    && userProfile?.role === "admin" 
     && <Route exact path='/orders' element={<Orders />} /> }
 
       {isAuthenticated 
-      // && userProfile?.role === "admin"
+      && userProfile?.role === "admin"
        &&  <Route exact path='/users' element={<Users />} /> }
+
+{isAuthenticated 
+&& userProfile?.role === "admin" 
+&&   <Route exact path='/users/:id' element={<EditUserForm />} /> }
+
+{isAuthenticated && 
+userProfile?.role === "admin" &&
+  <Route exact path='/product/:id' element={<EditProduct />} /> }
+
 
       {/* Admin CMS Link */}
 

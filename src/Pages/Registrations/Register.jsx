@@ -216,7 +216,7 @@ const Register = () => {
       </CardBody>
       <CardFooter className="pt-0">
         <button onClick={handleRegister} 
-         className='bg-teal-dark h-[3vw]  text-white font-[300] rounded-[0.5vw] w-full rounded-[1vw'>
+         className='bg-teal-dark h-[8vw] md:h-[3vw]  text-white font-[300] rounded-[1vw] md:rounded-[0.5vw]  w-full rounded-[1vw'>
           Sign Up
         </button>
         <Typography variant="small" className="mt-6 flex justify-center">

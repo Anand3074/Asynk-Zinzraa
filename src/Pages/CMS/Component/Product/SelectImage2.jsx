@@ -15,9 +15,9 @@ const SelectImages = ({setOpenModel,closeModal,openModel,image,setImage,
     <>
       <div className="flex items-center justify-center ">
         <div className='my-4 flex items-center justify-center flex-col' >
-              <button onClick={()=>setOpenModel(true)} className='flex items-center 
-              justify-center gap-3' size="lg"> <ArrowUpTrayIcon className='w-[30px]' /> 
-              Upload Image</button> 
+              <Button onClick={()=>setOpenModel(true)} className='flex items-center 
+              justify-center gap-3' size="lg"> <ArrowUpTrayIcon className='md:w-[30px]' /> 
+              Upload Image</Button> 
                
             </div>
       </div>

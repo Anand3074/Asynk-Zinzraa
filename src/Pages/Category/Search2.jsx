@@ -12,6 +12,7 @@ import Poster from '../../Components/HomePage/Modern.jsx'
 import Saree from '../Kurtas.jsx';
 import { setSearchTerm } from '../../Redux/Product/filter.js';
 import { useDispatch, useSelector } from 'react-redux';
+import Footer from '../../Components/Footer.jsx';
 
 const ProductList = () => {
 let defaultTab = null
@@ -245,8 +246,12 @@ const fetchProduct = async () => {
           </div>
         )}
         </div>
+       
 
       </div>
+      <div>
+          <Footer/>
+        </div>
     </div>
   )
 }

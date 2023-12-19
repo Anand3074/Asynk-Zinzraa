@@ -10,9 +10,10 @@ const Users = () => {
   const deleteUser = async (id) =>{
     
   await deleteDoc(doc(fireDB, "user", id));
-  
-  navigate("/users")
-  }
+  // navigate("/users")
+  window.location.reload()
+
+}
   
    const fetchUsers =  async () =>{
     const querySnapshot = await getDocs(collection(fireDB, "user"));

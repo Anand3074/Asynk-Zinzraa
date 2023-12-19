@@ -18,7 +18,7 @@ const EditDetails = ({order,orderStatus,setOrderStatus,updateOrder,handleShippin
                 <img className='w-[120px] rounded-lg ' src={product.coverImage} alt="" />
               </div>
               <div className='ml-4' >
-                <p className='text-[1.3rem] font-[500]' >{product.productName}</p>
+                <p className='text-[1.3rem] font-[500]' >{product.title}</p>
                 <p className='text-[1.3rem] font-[600] text-green-400 '>Rs.{product.price}</p>
               </div>
           </div>
@@ -43,32 +43,12 @@ const EditDetails = ({order,orderStatus,setOrderStatus,updateOrder,handleShippin
                   <p>{order?.shipRocketDetails?.shipment_id}</p>
 
                 </div>}
-                 { order?.paymentMethod !== '' &&  <div className='flex  items-center justify-between' >
+                 { order?.paymentStatus !== '' &&  
+                 <div className='flex  items-center justify-between' >
                   <p>Payment Method</p>
-                  <p>{order?.paymentMethod}</p>
-
-                </div>}
-                { order?.shipRocketDetails &&  <div className='flex  items-center justify-between' >
-                  <p>Shipment Status</p>
-                  <p>{order?.shipRocketDetails?.status}</p>
-                  
-                </div>}
-            </div>
-            <div className='flex items-start justify-between my-3  ' >
-              <div className='mt-2  ' >
-               
-                {
-                  order?.invoiceUrl && <a href={order?.invoiceUrl?.invoice_url} download={true}><button  className='w-full mt-2 px-4 py-2 bg-blue-400 text-white rounded-[10px]'  >Download Invoice</button></a>
-                }
+                  <p>{order?.paymentStatus}</p>
+                   </div>}
               </div>
-             
-               <div className='mt-2' >
-               {order?.shipRocketDetails && <button onClick={generateLabel} className='w-full px-4 py-2 bg-black text-white rounded-[10px]'  >Generate Label</button>}
-                 {
-                  order?.labelUrl && <a href={order?.invoiceUrl?.invoice_url} download={true}><button  className='w-full mt-2 px-4 py-2 bg-blue-400 text-white rounded-[10px]'  >Download Invoice</button></a>
-                }
-              </div>
-            </div>
           </div>
         </div>
       </div>

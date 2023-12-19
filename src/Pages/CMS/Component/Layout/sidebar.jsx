@@ -64,7 +64,7 @@ const SidebarNav = () => {
   }
 
   return (
-    <div className='col-span-1 mt-[5vw] ml-[vw]'  >
+    <div className='sm:flex hidden col-span-1 mt-[5vw] ml-[vw]'  >
       {/* <Card className="fixed overflow-scroll top-4 left-4 h-full w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5"> */}
       <Card className="flex h-full w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
         <div className="mb-0 flex items-center justify-center flex-col gap-4 p-4">
@@ -165,7 +165,7 @@ const SidebarNav = () => {
             </ListItem>
           </Link>
 
-          <hr className="my-2 border-blue-gray-50" />
+          {/* <hr className="my-2 border-blue-gray-50" />
           <Link to="/productRequest" >
             <ListItem>
               <ListItemPrefix>
@@ -194,7 +194,7 @@ const SidebarNav = () => {
               Shipping Token
 
             </ListItem>
-          </Link>
+          </Link> */}
           <Link to="/users">
             <ListItem>
               <ListItemPrefix>

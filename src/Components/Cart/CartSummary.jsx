@@ -26,7 +26,7 @@ const Cart = () => {
 
   return (
     <div>
-        <div className='flex flex-col justify-start items-start ml-[10vw] '>
+        <div className='flex flex-col justify-start items-start ml-[10vw] my-[5vw] md:my-[0vw] '>
             <div id='cart-detail' className='w-[40vw] h-[22vw] md:h-[20vw] md:w-[33vw] border border-solid border-1px
              border-text-slate-400 rounded-[3vw] p-[1.5vw]'>
                 <div className='text-[2.5vw]'>Order Summary</div>

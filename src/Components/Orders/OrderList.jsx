@@ -2,7 +2,7 @@ import { Card, Typography } from "@material-tailwind/react";
 import { Link } from 'react-router-dom';
 const OrderList = ({orders}) => {
   
-    const TABLE_HEAD = ['Sr.no',"","Date", "Price", "Order Status", ];
+    const TABLE_HEAD = ['Sr.no',"Track-Order","Date", "Price", "Order Status", ];
     console.log(orders)
     const TABLE_ROWS = [
         {

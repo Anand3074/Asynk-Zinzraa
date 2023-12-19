@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductType from './ProductType.jsx'
 import Fashion from'../Components/Fashion.jsx'
+import Footer from '../Components/Footer.jsx'
 
 
 const Western2 = () => {
@@ -8,6 +9,7 @@ const Western2 = () => {
     return (
       <div>
           <ProductType PosterType={Western} Poster={<Fashion/>}/>
+          <Footer/>
       </div>
     )
 }

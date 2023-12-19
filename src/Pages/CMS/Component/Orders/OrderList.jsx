@@ -20,12 +20,11 @@ const OrderList = ({orderList,deleteProduct}) => {
     <div className='my-3' >
     <h4 className='my-2 font-[600] text-[2rem] ' >Total Orders</h4>
         <Breadcrumbs className='my-2' >
-      <a href="#" className="opacity-60">
+        <Link to="/Dashboard" className="opacity-60">
         Dashboard
-      </a>
-      <a href="#" >
-        Orders
-     </a>
+      </Link>
+     
+      <Link to="orders">Orders</Link>
    
     </Breadcrumbs>
     </div>

@@ -29,6 +29,8 @@ import {
   onSnapshot
 } from "firebase/firestore";
 import { auth, fireDB } from '../../firebase/firebase.jsx';
+import { loadUser } from '../../Redux/User/userAction.js';
+
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -39,7 +41,7 @@ const Login = () => {
   const [passwordErrorMessage, setPasswordErrorMessage] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [active, setActive] = useState("phone")
-  const { error, loading, isAuthenticated,users } = useSelector(
+  const { error, loading, isAuthenticated,user , userProfile } = useSelector(
   (state) => state.users
   );
   const dispatch = useDispatch()
@@ -98,11 +100,27 @@ const Login = () => {
           dispatch(signUpUsingGoogle())
         }
       
+        // useEffect(() => {
+        //   if(isAuthenticated){
+        //     navigate(-1)
+        //   }
+        // }, [isAuthenticated])
+
         useEffect(() => {
-          if(isAuthenticated){
-            navigate(-1)
+          if (isAuthenticated) {
+            dispatch(loadUser(user));
+          } 
+          },[isAuthenticated]) 
+          useEffect(() => {
+          console.log(userProfile?.role, isAuthenticated)
+
+          if(isAuthenticated  && userProfile?.role=== "user"     ) {
+            navigate("/")
           }
-        }, [isAuthenticated])
+          if(isAuthenticated  && userProfile?.role=== "admin"     ) {
+            navigate("/Dashboard")
+          }
+        }, [userProfile])
 
   return(
     <div className='flex justify-center items-center'>

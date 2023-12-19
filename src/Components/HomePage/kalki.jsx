@@ -25,24 +25,24 @@ const kalki = () => {
         <div className='flex flex-col md:ml-[5vw] px-[5vw] py-[5vw]'>
             <div className='flex flex-rows gap-[1vw]'>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
-                    <img src={K1} alt='' className=' h-[19.7vw] object-cover object-top rounded-tr-[10vw] sm:rounded-tr-[10vw] 
+                    <img src={K1} alt='' className=' h-[19.65vw] object-cover object-top rounded-tr-[10vw] sm:rounded-tr-[10vw] 
                     rounded-bl-[10vw] sm:rounded-bl-[10vw]  sm:h-[16vw] h-[90px] sm:w-[15vw]  
                     sm:m-[1vw] m-[1vw]' />
                 </div>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
-                    <img src={K2} alt='' className=' h-[19.7vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 
+                    <img src={K2} alt='' className=' h-[19.65vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 
                 rounded-br-[10vw] sm:rounded-br-[10vw]  sm:h-[16vw] h-[90px] sm:w-[15vw]  
                 sm:m-[1vw] m-[1vw]' />
                 </div>
             </div>
             <div className=' flex flex-rows gap-[1vw]'>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
-                <img src={K3} alt='' className=' h-[19.7vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 
+                <img src={K3} alt='' className=' h-[19.65vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 
                  rounded-br-[10vw] sm:rounded-br-[10vw]  sm:h-[16vw] h-[90px] sm:w-[15vw]  
                  sm:m-[1vw] m-[1vw]' />
                  </div>
                 <div className='h-[22vw] sm:w-[15vw] sm:h-[16vw] my-[0.3vw] '>
-                <img src={K4} alt='' className=' h-[19.7vw] object-cover object-top rounded-tr-[10vw] sm:rounded-tr-[10vw] 
+                <img src={K4} alt='' className=' h-[19.65vw] object-cover object-top rounded-tr-[10vw] sm:rounded-tr-[10vw] 
                  rounded-bl-[10vw] sm:rounded-bl-[10vw]  sm:h-[16vw] h-[90px] 
                  sm:w-[15vw]  sm:m-[1vw] m-[1vw]' />
             </div>

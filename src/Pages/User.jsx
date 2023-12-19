@@ -30,6 +30,7 @@ import { auth, fireDB, googleProvider } from '../firebase/firebase.jsx'
 import { ref, set, push, onValue,remove } from "firebase/database";
 // import EditProfile from '../Components/UserInfo/EditProfile.jsx'
 import MyOrders from '../Pages/MyOrders.jsx'
+import Footer from '../Components/Footer.jsx'
 const User = () => {
     const { error, loading, isAuthenticated,user,userProfile } = useSelector(
     (state) => state.users
@@ -264,7 +265,7 @@ const User = () => {
 
             </div>
         </div>
-          {/* <div><Footer/></div> */}
+          <div><Footer/></div>
     </div>
   )
 }

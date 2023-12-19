@@ -11,6 +11,8 @@ import { setSearchTerm } from '../Redux/Product/filter';
 import { useDispatch , useSelector} from 'react-redux';
 import { logout } from '../Redux/User/userAction';
 import Loader from '../Components/loader/Loader';
+import { removeCart } from '../Redux/cartActions';
+import { clearWishlist } from '../Redux/Wishlist/wishActions';
 
 
 const Nav = () => {
@@ -23,9 +25,29 @@ const Nav = () => {
   const dispatch = useDispatch()
   const { error, loading, isAuthenticated,user } = useSelector((state) => state.users);
 // console.log(user?.email)
-const handleLogout = () => {
-    dispatch(logout());
-  };
+
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const Wishlist = useSelector((state) => state.wishlist.wishlistItems);
+  const handleLogout = () => {
+    if(isAuthenticated){
+      dispatch(logout());
+      dispatch(removeCart());
+      dispatch(clearWishlist());
+      
+    }
+  
+  
+    }
+  useEffect(() => {
+    console.log(isAuthenticated)
+    if(!isAuthenticated) {
+      navigate("/")
+      
+
+    }
+    
+  }, [isAuthenticated])
+    
   const searchTerm = useSelector((state) => state.filters.searchTerm);
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {

@@ -11,6 +11,7 @@ import elestar from '../../assets/ele1.png'
 import Poster from '../../Components/HomePage/Modern.jsx'
 import Saree from '../Kurtas.jsx';
 import { setSearchTerm } from '../../Redux/Product/filter.js';
+import Footer from '../../Components/Footer.jsx';
 const ProductList = ({defaultTab}) => {
   const { id, description, category, price, } = useParams()
 
@@ -221,8 +222,10 @@ const fetchProduct = async () => {
           </div>
         )}
         </div>
+      
 
       </div>
+      <Footer/>
     </div>
   )
 }

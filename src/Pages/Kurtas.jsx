@@ -11,6 +11,7 @@
 // }
 
 // export default Saree
+import Footer from '../Components/Footer';
 import Saree12 from '../Pages/Category/Saree12'
 
 import React from 'react'
@@ -20,6 +21,7 @@ const Kurtas = () => {
   return (
     <div>
       <Saree12 defaultTab={index}/>
+      <Footer/>
     </div>
   )
 }
