@@ -4,13 +4,14 @@ import Footer from '../Components/Footer.jsx'
 import { useParams, Link } from 'react-router-dom'
 import ProductList3 from '../Components/ProductDisplay/productList3.jsx'
 import Filter from '../Components/ProductDisplay/filter2.jsx'
-import Filter3 from '../Components/ProductDisplay/Filter3.jsx'
 import { doc, getDocs, onSnapshot, collection, deleteDoc, query, where, or, and, orderBy, limit, startAfter, startAt, endBefore } from "firebase/firestore";
 import { fireDB } from '../firebase/firebase.jsx';
 import { ToastContainer, toast } from 'react-toastify'
 import elestar from '../assets/ele1.png'
 import BottomFilter from '../Components/ProductDisplay/Bottomfilter.jsx'
 import FilterClose from '../Components/ProductDisplay/FilterClose.jsx'
+import Filter3 from '../Components/ProductDisplay/Filter3.jsx'
+
 
 const ProductList = () => {
   // const { id, description, category, price, } = useParams()
@@ -335,6 +336,7 @@ useEffect(() => {
           </div>
         )}
         </div>
+        {/*  */}
       </div>
       <div>
       <Footer/>

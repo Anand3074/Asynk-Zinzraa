@@ -103,7 +103,7 @@ const SliderMa = ({product}, slides) => {
   // console.log('slides', sliderSettings.slidesToShow)
 
   return (
-    <div className='md:pl-[5vw] pl-[1.5vw] my-[2vw]'>
+    <div className='md:pl-[5vw] pl-[1.5vw] my-[3vw]'>
       <Slider {...sliderSettings} className=''>
         {product && product.map((products, index) => {
           // console.log('product', product)

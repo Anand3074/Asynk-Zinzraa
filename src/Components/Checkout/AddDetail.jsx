@@ -84,7 +84,8 @@ import { removeCart } from '../../Redux/cartActions.js'
   const isOrderDataValid = () => {
     const { name, email, address, city, state, pinCode, userId } = orderData;
 
-    if (!name || !email || !city || !state || !pinCode || !userId || !address) {
+    if ((!name || !email || !city || !state || !pinCode || !userId || !address ) &&
+     (!firstName || !lastName || !address1)) {
       setErrorMessage('Incomplete order data. Please fill in all required fields.');
       return false;
     }
@@ -92,11 +93,12 @@ import { removeCart } from '../../Redux/cartActions.js'
     return true;
   };
   const delivery = () =>{
+
     setCashonDelivery(!CashonDelivery)
+
   }
   const handlePayment = () => {
-    console.log(isOrderDataValid());
-
+    // console.log(isOrderDataValid());
     if (isOrderDataValid()) {
       dispatch(saveOrder(orderData, cartItems));
 
@@ -134,19 +136,19 @@ import { removeCart } from '../../Redux/cartActions.js'
 
             <div>
               <div className='text-[4vw] font-semibold mt-[1.5vw] text-[#875A33] font-lora sm:text-[1.4vw]'>Shipping Address</div>
-              <div className='flex flex-row gap-[2vw] mt-[1vw]'>
-                <div className=''>
+              <div className='flex md:flex-row flex-col gap-[2vw] mt-[1vw]'>
+                <div className='w-[40vw] md:w-auto'>
                   <Input type="text" value={firstName}
                     onChange={(e) => setFirstName(e.target.value)} placeholder='First Name'
                   className=''/>
                 </div>
-                <div className=''>
+                <div className='w-[40vw] md:w-auto'>
                   <Input type="text" value={lastName}
                     onChange={(e) => setLastName(e.target.value)} placeholder='Last Name'
                   className=''/>
                 </div>
               </div>
-              <div className='mt-[1vw] w-[40vw]'>
+              <div className='mt-[1vw] md:w-[40vw]'>
                   <Input type="text" value={address1}
                     onChange={(e) => setAddress1(e.target.value)} placeholder='Find Delivery Address'
                   className='' 
@@ -170,19 +172,23 @@ import { removeCart } from '../../Redux/cartActions.js'
                 <div className='text-[2vw] sm:text-[1.2vw]'>Enter your address to see 
                 when you'll get your order</div>
               </div> */}
-              <div className={`${CashonDelivery ? 'bg-green-300' : 'bg-red-100'} 
+              <div 
+              // onClick={() => delivery()}  
+              className={`${CashonDelivery ? 'bg-green-300' : 'bg-red-100'} 
               border border-solid border-1px 
              border-text-black-900 rounded-[1.5vw] p-[1vw]  w-[85vw] md:w-[45vw]`}>
-                <div className='flex flex-row  gap-[10vw] md:gap-[25vw]'>
-                <div className='font-semibold text-[3vw] sm:text-[1.4vw]'>
+                <div className='flex flex-row  gap-[40vw] md:gap-[25vw]'>
+                <div className=' flex justify-start items-center font-semibold text-[3vw] sm:text-[1.4vw]'>
                     Cash on Delivery
                 </div>
-                <div className='flex justify-end items-start'>
+                <div  className='flex justify-end items-start'>
                   <Checkbox 
                   onClick={() => delivery()}  
-                  className='w-[2vw] h-[2vw] mt-[0.3vw] ml-[0.5vw]'/></div>
+                  checked={CashonDelivery ? true : false }
+                  // checked={}
+                  className='md:w-[2vw] w-[5vw] h-[5vw] md:h-[2vw] mt-[0.3vw] ml-[0.5vw]'/></div>
                 </div>
-                <div className='text-[2vw] sm:text-[1.2vw]'>
+                <div className='text-[3vw] sm:text-[1.2vw]'>
                     Pay now, Collect in store
                 </div>
               </div>

@@ -19,7 +19,7 @@ const kalki = () => {
             md:text-[38px] md:mb-[24px] mb-[8px]' >
                 <span>Top Picks Of Kalki koechlin</span>
             </div>
-        <div className='bg-[#3D3F31] h-[55vw]  md:h-[45vw] '>
+        <div className='bg-[#3D3F31] h-[60vw]  md:h-[45vw] '>
         <div className='grid grid-cols-2  gap-[5vw] '>
         {/* <div className='grid grid-cols-2  grid-rows-2 items-center md:gap-[17.94px] gap-[5.4px]'> */}
         <div className='flex flex-col md:ml-[5vw] px-[5vw] py-[5vw]'>
@@ -80,7 +80,7 @@ const kalki = () => {
     </div>
     </div>
     <div className='w-full my-[2vw]  md:h-[3vw] h-[4vw]'>
-          <img src={Vec3} className='w-full  md:h-[4vw] h-[4vw]'/>
+          <img src={Vec3} className='w-full  md:h-[3.75vw] h-[4.25vw] object-cover object-center'/>
         </div>
         </div>
     

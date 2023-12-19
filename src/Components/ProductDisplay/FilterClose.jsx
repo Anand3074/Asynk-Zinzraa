@@ -4,9 +4,9 @@ import { FaFilter } from "react-icons/fa";
 const BottomFilter = ({toggleFilter , isFilterVisible,
   setFilterVisible}) => {
  return (
-    <div className="fixed h-[10vw] bottom-[0vw] sm:hidden w-full bg-white"       style={{ zIndex: 1000 }}
+    <div className="fixed h-[10vw] bottom-[0vw] sm:hidden w-full bg-white "       style={{ zIndex: 1000 }}
     >
-      <div className="grid grid-cols-1 h-full p-[2vw] bg-gray-300">
+      <div className="grid grid-cols-1 h-full p-[2vw] bg-gray-300 border-gray-800 border-[0.1vw] shadow-xl">
         {/* <button className=" text-center text-[3vw] font-semibold font-metro text-gray-800  border-r-[0.2vw] border-r-gray-400">
           
         </button> */}

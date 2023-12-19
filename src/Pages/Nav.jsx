@@ -153,9 +153,9 @@ const Nav = () => {
             </Link>
           </div>
 
-          <div className='flex gap-[16px] ml-[1vw] '>
+          <div className='flex gap-[16px] ml-[1vw]'>
           {/* <div className='flex md:flex bg-grey-ray w-[20vw]  h-[28px] md:gap-[1.5vw] */}
-            <div className='flex md:flex bg-[#fffde7] w-[20vw]  h-[28px] md:gap-[1.5vw]
+            <div className='flex md:flex bg-white w-[20vw]  h-[28px] md:gap-[1.5vw]
             
              rounded-[2px] py-[1.35vw] items-center hidden'>
               <Link to='/Search'><FaSearch className='text-[#848484] ml-[1.5vw]' /></Link>
@@ -185,7 +185,7 @@ const Nav = () => {
         </div>
         <div className='flex flex-row justify-center items-center md:hidden mt-[3.5vw] sm:mt-[0.5vw]'>
     <div className='flex md:hidden'>
-        <div className='flex bg-[#fffde7] h-[9vw] sm:h-[5vw] w-[75vw] sm:w-[70vw] gap-[3vw] 
+        <div className='flex bg-white h-[9vw] sm:h-[5vw] w-[75vw] sm:w-[70vw] gap-[3vw] 
         rounded-[20px] items-center mb-[10px] '>
         <Link to='/Search'><FaSearch className='text-[#848484] w-[3.5vw] mx-[5vw] sm:mx-[3vw]' 
         fill='black' /></Link>
@@ -209,6 +209,7 @@ const Nav = () => {
   <div className='h-[760px]'>
      {click && content}
    {/* closeMenu={closeMenu} />} */}
+   {/*  */}
   {/* {click && <Hamburger closeMenu={closeMenu} />} */}
   </div>
 </div>

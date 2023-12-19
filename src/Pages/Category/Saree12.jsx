@@ -12,6 +12,10 @@ import Poster from '../../Components/HomePage/Modern.jsx'
 import Saree from '../Kurtas.jsx';
 import { setSearchTerm } from '../../Redux/Product/filter.js';
 import Footer from '../../Components/Footer.jsx';
+import BottomFilter from '../../Components/ProductDisplay/Bottomfilter.jsx'
+import FilterClose from '../../Components/ProductDisplay/FilterClose.jsx'
+import Filter3 from '../../Components/ProductDisplay/Filter3.jsx'
+
 const ProductList = ({defaultTab}) => {
   const { id, description, category, price, } = useParams()
 
@@ -34,6 +38,11 @@ const ProductList = ({defaultTab}) => {
     setSize([])
     setMaxPrice(10000)
     }
+    const [isFilterVisible, setFilterVisible] = useState(false);
+
+  const toggleFilter = () => {
+    setFilterVisible((prev) => !prev);
+  };
     const categories = {
       0: 'Western'  , 
       1: 'Dresses'  ,
@@ -160,11 +169,31 @@ const fetchProduct = async () => {
 
   }, [size, fabric, maxPrice, categoryTab])
 
+  useEffect(() => {
+    if (isFilterVisible) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isFilterVisible]);
+  
   return (
     <div style={{ fontFamily: "DM Sans" }} className='bg-[#FFFFEF]' >
         <Link to="/Cart">
         <div className=''><ToastContainer/></div>
         </Link>
+        {isFilterVisible && <Filter3
+        className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
+        relative top-[0.5vw]  sm:top-[1.2vw]
+            font-bold text-[5vw]  right-0 bg-grey-ray transition'
+      stock={stock} 
+        setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
+         min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>}
         {/* <div className='md:mb-[5vw]'>
         <Fashion/>
         </div> */}
@@ -209,13 +238,13 @@ const fetchProduct = async () => {
         </div>
     </div>  
       <div className='flex flex-row gap-[1vw] justify-start items-start'>
-        <div className=' md:flex hidden w-[25vw] mt-[2vw] pl-[3vw]'>
+      <div className='hidden md:flex w-[25vw] mt-[0vw] pl-[3vw]'>
         <Filter stock={stock} 
         setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
          min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
           fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
           </div>
-          <div className='mt-[2vw]'>
+          <div className='mt-[2vw] mb-[25vw] md:mb-[0vw]'>
         {products.length !== 0 ? <Saree14 products={products} maxPrice={maxPrice}/> : (
           <div className='lg:col-span-2 my-[1vw] '>
             <h4 className='flex text-[0.5rem] text-center justify-center ' >###</h4>
@@ -225,7 +254,13 @@ const fetchProduct = async () => {
       
 
       </div>
-      <Footer/>
+      <div>
+      <Footer />
+
+      </div>
+      {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
+           setFilterVisible={setFilterVisible}
+           className='bottom-0 w-full h-[7vw] fixed'/>}
     </div>
   )
 }

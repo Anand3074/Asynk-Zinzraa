@@ -28,7 +28,8 @@ const EditRight = ({order,orderStatus,setOrderStatus,updateOrder,handleShipping}
         <option value='Return' >Return</option>
       </select>
        <div className='my-3 flex items-center justify-center' >
-        <button className='px-6 py-3 bg-blue-400 border-[1px] text-white rounded-lg w-full ' onClick={updateOrder}  >Save</button>
+        <button className='px-6 py-3 bg-blue-400 border-[1px] text-white rounded-lg w-full '
+         onClick={updateOrder}  >Save</button>
       </div>
       
         </div>

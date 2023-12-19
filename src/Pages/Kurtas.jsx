@@ -21,7 +21,6 @@ const Kurtas = () => {
   return (
     <div>
       <Saree12 defaultTab={index}/>
-      <Footer/>
     </div>
   )
 }
