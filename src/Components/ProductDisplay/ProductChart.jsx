@@ -96,7 +96,7 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
 
                     <div className='flex flex-row items-center gap-[1vw]'>
                     <div className='text-[2.65vw] sm:text-[1.65vw] text-[##7C7C7C]'>MRP </div>
-                    <div className='text-[2.47vw] md:text-[1.50] text-red-400 line-through'>₹{Math.floor(product.price * (1 + 43 / 100))}</div>
+                    <div className='text-[2.47vw] md:text-[1.50vw] text-red-400 line-through'>₹{Math.floor(product.price * (1 + 43 / 100))}</div>
                     <div className='text-[1.47vw] text-[##7C7C7C]'>Inclusive of all taxes</div>
                     </div>
                     </div>
