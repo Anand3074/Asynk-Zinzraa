@@ -18,24 +18,24 @@ const kalki = () => {
         {/* <div className='grid grid-cols-2  grid-rows-2 items-center md:gap-[17.94px] gap-[5.4px]'> */}
         <div className='flex flex-col md:ml-[5vw]  md:px-[2.5vw] md:py-[2.5vw]'>
             <div className='flex flex-rows gap-[1vw]'>
-                <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] my-[0.3vw]'>
+                <div className='h-[21vw] sm:w-[15vw] md:h-[16vw]'>
                     <img src={K1} alt='' className=' h-[19.4vw] object-cover object-top rounded-tr-[10vw] sm:rounded-tr-[10vw] 
                     rounded-bl-[10vw] sm:rounded-bl-[10vw]  md:h-[16vw] h-[90px] sm:w-[15vw]  
                     sm:m-[1vw] m-[1vw]' />
                 </div>
-                <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] my-[0.3vw] '>
+                <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] '>
                     <img src={K2} alt='' className=' h-[19.4vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 
                 rounded-br-[10vw] sm:rounded-br-[10vw]  md:h-[16vw] h-[90px] sm:w-[15vw]  
                 sm:m-[1vw] m-[1vw]' />
                 </div>
             </div>
-            <div className=' flex flex-rows gap-[1vw] mt-[2.5vw] md:mt-[0.3vw]'>
-                <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] my-[0.3vw] '>
+            <div className=' flex flex-rows gap-[1vw] mt-[3.5vw] md:mt-[0.3vw]'>
+                <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] '>
                 <img src={K3} alt='' className=' h-[19.4vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 
                  rounded-br-[10vw] sm:rounded-br-[10vw]  md:h-[16vw] h-[90px] sm:w-[15vw]  
                  sm:m-[1vw] m-[1vw]' />
                  </div>
-                <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] my-[0.3vw] '>
+                <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] '>
                 <img src={K4} alt='' className=' h-[19.4vw] object-cover object-top rounded-tr-[10vw] sm:rounded-tr-[10vw] 
                  rounded-bl-[10vw] sm:rounded-bl-[10vw]  md:h-[16vw] h-[90px] 
                  sm:w-[15vw]  sm:m-[1vw] m-[1vw]' />

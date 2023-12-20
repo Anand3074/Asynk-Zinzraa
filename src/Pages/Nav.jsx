@@ -97,7 +97,7 @@ const Nav = () => {
                  Logout <IoLogOutOutline/>
                  </div> */}
                   <ul className="flex flex-col justify-center py-[8vw]
-             items-center text-center text-xl px-[3vw] h-[100vw]">
+             items-center text-center text-xl px-[3vw] font-[400] h-[100vw]">
                 <Link to="/Product3" >
                     <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
                     font-nunito  justify-start my-[3vw] pt-[3vw]  hover:text-black text-[#004d40]' 
@@ -125,7 +125,7 @@ const Nav = () => {
                     onClick={closeMenu}>Contact us</li>
                 </Link>
             </ul>
-            <div className='flex font-nunito pl-[12vw] justify-center pr-[3vw] mt-[3vw] '>
+            <div className='flex font-nunito pl-[9vw] justify-center pr-[3vw] mt-[3vw] '>
             <Link to='/MyOrders'>
             <div onClick={closeMenu} className='flex flex-row text-xl 
              gap-[1.5vw] sm:text-[2vw] justify-center items-center '>
