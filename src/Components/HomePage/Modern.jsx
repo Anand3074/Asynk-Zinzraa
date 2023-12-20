@@ -1,6 +1,8 @@
 import React from 'react'
 import modern from '../../assets/modern.png'
 import Vec5 from '../../assets/vec5.png'
+import { Link } from 'react-router-dom'
+
 const Modern = () => {
   return (
     <div className='flex'>
@@ -23,9 +25,11 @@ const Modern = () => {
             </div>
           </div>
           <div className='flex justify-center mt-[3vw]'>
+            <Link to='/Westrend'>
             <button className='bg-[#515233] text-nunito text-[1.5vw] text-white px-[6vw] py-[1vw]'>
               Shop Now
             </button>
+            </Link>
           </div>
         </div>
         <div className='w-[36vw] h-[22vw] m-[1.2vw]'>
