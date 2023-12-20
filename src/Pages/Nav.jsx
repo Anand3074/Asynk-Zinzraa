@@ -13,7 +13,11 @@ import { logout } from '../Redux/User/userAction';
 import Loader from '../Components/loader/Loader';
 import { removeCart } from '../Redux/cartActions';
 import { clearWishlist } from '../Redux/Wishlist/wishActions';
-
+import { GoStack } from "react-icons/go";
+import {  UserCircleIcon
+} from "@heroicons/react/24/solid";
+import { IoLogOutOutline } from "react-icons/io5";
+import { Button } from '@material-tailwind/react';
 
 const Nav = () => {
   // for hamburger menu
@@ -23,7 +27,7 @@ const Nav = () => {
   const [searchValue, setSearchValue] = useState(null)
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { error, loading, isAuthenticated,user } = useSelector((state) => state.users);
+  const { error, loading, isAuthenticated,user , userProfile} = useSelector((state) => state.users);
 // console.log(user?.email)
 
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -76,16 +80,24 @@ const Nav = () => {
       document.body.classList.remove('overflow-hidden');
     };
   }, [click]);
-
   const content =
     <>
     <div className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
      relative top-[0.5vw]  sm:top-[1.2vw]
          font-bold text-[5vw]  right-0 bg-grey-ray transition'  
-              style={{ zIndex: 9999}}
-         >
-            <ul className="flex flex-col justify-center py-[8vw]
-             items-center text-center text-x1 px-[3vw] h-[100vw]">
+              style={{ zIndex: 9999}}>
+                
+                <div className=' flex flex-col pl-[3vw] justify-start  items-center
+                 text-[1rem] font-[600] text-[#489DCC] pt-[4vw]'> 
+                 <UserCircleIcon className='w-[25px] mr-4' /> 
+                 <span className='mr-3  ' > Hii, {userProfile?.name ? userProfile?.name : "User"}
+                 </span>
+                 </div>
+                 {/* <div className='text-gray-800 flex justify-end '>
+                 Logout <IoLogOutOutline/>
+                 </div> */}
+                  <ul className="flex flex-col justify-center py-[8vw]
+             items-center text-center text-xl px-[3vw] h-[100vw]">
                 <Link to="/Product3" >
                     <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
                     font-nunito  justify-start my-[3vw] pt-[3vw]  hover:text-black text-[#004d40]' 
@@ -107,12 +119,25 @@ const Nav = () => {
                     onClick={closeMenu}>Dresses</li>
                 </Link>
                 <Link to="/User">
-                    <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
+                    <li className='flex w-[50vw] pl-[15vw] border-b-[2px] 
                     font-nunito  justify-start my-[3vw] 
-                    py-[3vw]  border-teal-dark hover:text-black text-[#004d40]'
+                    py-[3vw] border-b-[#ff8f00]  border-teal-dark hover:text-black text-[#004d40]'
                     onClick={closeMenu}>Contact us</li>
                 </Link>
             </ul>
+            <div className='flex font-nunito pl-[12vw] justify-center pr-[3vw] mt-[3vw] '>
+            <Link to='/MyOrders'>
+            <div onClick={closeMenu} className='flex flex-row text-xl 
+             gap-[1.5vw] sm:text-[2vw] justify-center items-center '>
+      
+                My Orders 
+                <GoStack/>
+            </div>  
+        </Link>
+            </div>
+            {/* <Button className='text-gray-800 flex justify-end '>
+                 Logout <IoLogOutOutline className='text-white'/>
+                 </Button> */}
         </div>
       </>
   return (
