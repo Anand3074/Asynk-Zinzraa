@@ -66,7 +66,7 @@ const BottomFilter = ({ size, setSize,
          };
 
  return (
-    <div className="fixed h-[10vw] top-[0vw] sm:hidden w-full"       style={{ zIndex: 1000 }}
+    <div className="fixed sm:hidden w-full"       style={{ zIndex: 1000 }}
     >
       {(isFilterVisible) &&
       (<>
