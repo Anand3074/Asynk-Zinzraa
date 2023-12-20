@@ -247,13 +247,13 @@ useEffect(() => {
       <div className='mt-[3vw] md:mt-[1.5vw]'>
         <Kalki/>
       </div>
-      <div>
+      <div className='mt-[20vw] md:mt-[1.5vw]'>
       {/* <Recommended group={Group3}/>*/}
       <div className='flex justify-center items-center h-[2vw]'>
                 <img src={Group3.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
             </div>
             <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
-             md:mb-[24px] mb-[8px]' >
+             md:mb-[24px] mb-[3vw]' >
                 <span>{Group3.title}</span>
             </div>
       <SliderCa product={products} 
@@ -275,7 +275,7 @@ useEffect(() => {
       // handleCardDetail={handleCardDetail}
       />
       </div>
-      <div className='mt-[1.5vw]'>
+      <div className='mt-[3vw] md:mt-[1.5vw]'>
       <Testimonial/> 
       </div>
       <div>
