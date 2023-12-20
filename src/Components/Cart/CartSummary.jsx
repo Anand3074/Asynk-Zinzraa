@@ -27,10 +27,10 @@ const Cart = () => {
   return (
     <div>
         <div className='flex flex-col justify-start items-start ml-[10vw] my-[5vw] md:my-[0vw] '>
-            <div id='cart-detail' className='w-[40vw] h-[22vw] md:h-[20vw] md:w-[33vw] border border-solid border-1px
+            <div id='cart-detail' className='w-[60vw] h-[37vw] md:h-[20vw] md:w-[33vw] border border-solid border-1px
              border-text-slate-400 rounded-[3vw] p-[1.5vw]'>
-                <div className='text-[2.5vw]'>Order Summary</div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
+                <div className='text-[3.5vw] md:text-[2.5vw] font-semibold'>Order Summary</div>
+                <div className='md:text-[1.4vw] text-[2.5vw] mt-[3vw] md:mt-[1.5vw] flex flex-row gap-[17.5vw] md:gap-[6vw] '>
                     <div className="w-[24vw]">
                         Big Total
                     </div>
@@ -38,7 +38,7 @@ const Cart = () => {
                         ₹{(calculateTotalPrice().toFixed(2))}
                     </div>
                 </div>
-                <div className='text-[1.4vw] my-[0.5vw] md:my-[0.3vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
+                <div className='md:text-[1.4vw] text-[2.5vw] my-[0.5vw] md:my-[0.3vw] flex flex-row gap-[17.5vw] md:gap-[6vw] '>
                     <div className='font-semibold w-[24vw] '>
                         Discount on MRP 
                     </div>
@@ -47,7 +47,7 @@ const Cart = () => {
   
                     </div>
                 </div>
-                <div className='text-[1.4vw] my-[0.5vw] md:my-[0.3vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
+                <div className='md:text-[1.4vw] text-[2.5vw] my-[0.5vw] md:my-[0.3vw] flex flex-row gap-[17.5vw] md:gap-[6vw] '>
                     <div className="font-semibold w-[24vw]">
                         Sub Total
                     </div>
@@ -55,7 +55,7 @@ const Cart = () => {
                         ₹{(discountedPrice).toFixed(2)}
                     </div>
                 </div>
-                <div className='text-[1.4vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
+                <div className='md:text-[1.4vw] text-[2.5vw] flex flex-row gap-[17.5vw] md:gap-[6vw] '>
                     <div className="w-[24vw]">
                         Convenience Charges
                     </div>
@@ -63,28 +63,29 @@ const Cart = () => {
                         ₹{(convenienceprice).toFixed(2)}
                     </div>
                 </div>
-                <div className='text-[1.6vw] md:text-[1.4vw]  my-[0.5vw] md:my-[0.3vw] md:mr-[0.5vw] flex flex-row gap-[10vw] md:gap-[6vw] '>
+                <div className='md:text-[1.4vw] text-[2.85vw]  my-[0.5vw] md:my-[0.3vw] md:mr-[0.5vw] flex flex-row gap-[17.5vw] md:gap-[6vw] '>
                     <div className="w-[24vw]">
                         Your Pay
                     </div>
-                    <div className="w-[10vw] font-bold text-green-500 ">
-                        ₹{}
+                    <div className="w-[10vw] font-[900] text-green-500 ">
+                        ₹{OrderPrice}
                     </div>
                 </div>
             </div>
             <div>
-                <div className='py-[0.5vw] px-[1.5vw] w-[32vw] sm:h-[3vw] h-[4vw] 
+                <div className='py-[0.5vw] px-[1.5vw] w-[35vw] sm:h-[3vw] h-[4vw] 
                 mt-[1vw] border border-solid border-1px
-             border-text-slate-400 rounded-[3vw] text-[1.5vw]'>
+             border-text-slate-400 rounded-[3vw] text-[2vw] md:text-[1.5vw]'>
                     <input  
                     placeholder='Apply Coupon Code'/>
                 </div>
             </div>
             <div className='h-[3vw] w-[27vw]'>
-                <Link to={`${isAuthenticated? '/AddDetail' : '/Login'}`} ><button
+                <Link
+                 to={`${isAuthenticated? '/AddDetail' : '/Login'}`} ><button
                  className='bg-teal-dark text-white font-semibold
-                         text-[1.2vw] rounded-[2vw] px-[12vw] py-[1vw] mt-[1vw]'>
-                    Checkout
+                         text-[2.75vw]  md:text-[1.2vw] rounded-[2vw] px-[12vw] py-[1vw] mt-[1vw]'>
+                Checkout
                 </button></Link>
             </div>
         </div>

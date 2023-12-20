@@ -10,10 +10,10 @@ import { Link } from 'react-router-dom'
 
 const kalki = () => {
   return (
-    <div className=' w-full md:h-[50vw] '>
+    <div className=' w-full md:h-[50vw] h-[55vw] '>
         <div className=''>
          
-        <div className='bg-[#3D3F31] h-[55vw] md:h-[45vw] p-[3vw]'>
+        <div className='bg-[#3D3F31] h-[55vw] md:h-[45vw] p-[4vw]'>
         <div className='grid grid-cols-2  gap-[5vw] '>
         {/* <div className='grid grid-cols-2  grid-rows-2 items-center md:gap-[17.94px] gap-[5.4px]'> */}
         <div className='flex flex-col md:ml-[5vw]  md:px-[2.5vw] md:py-[2.5vw]'>
@@ -29,7 +29,7 @@ const kalki = () => {
                 sm:m-[1vw] m-[1vw]' />
                 </div>
             </div>
-            <div className=' flex flex-rows gap-[1vw]'>
+            <div className=' flex flex-rows gap-[1vw] mt-[1vw] md:mt-[0.3vw]'>
                 <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] my-[0.3vw] '>
                 <img src={K3} alt='' className=' h-[19.4vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 
                  rounded-br-[10vw] sm:rounded-br-[10vw]  md:h-[16vw] h-[90px] sm:w-[15vw]  
@@ -54,7 +54,7 @@ const kalki = () => {
                 <div className='md:text-[2vw] mt-[2vw] text-[9px] font-inria'>
                     <span>Fresh Style for you !</span>
                 </div>
-                <div className='md:py-[4vw] py-[4vw]'>
+                <div className='md:py-[3vw] py-[3vw]'>
                     <img src={ele} alt='' className='text-white w-[3vw] md:w-[1.5vw]'/>
                     
                 </div>
