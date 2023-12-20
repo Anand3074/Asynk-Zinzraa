@@ -211,14 +211,14 @@ const fetchProduct = async () => {
         <Link to="/Cart">
         <div className=''><ToastContainer/></div>
         </Link>
-        {isFilterVisible && <Filter3
+        {/* {isFilterVisible && <Filter3
         className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
         relative top-[0.5vw]  sm:top-[1.2vw]
             font-bold text-[5vw]  right-0 bg-grey-ray transition'
       stock={stock} 
         setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
          min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
-          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>}
+          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>} */}
         {/* <div className='md:mb-[5vw]'>
         <Fashion/>
         </div> */}
@@ -281,9 +281,18 @@ const fetchProduct = async () => {
       </div>
       <div>
           <Footer/>
-          {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
+          <div>
+      <BottomFilter 
+      stock={stock} 
+      setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
+      min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+      fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}
+      toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
            setFilterVisible={setFilterVisible}
-           className='bottom-0 w-full h-[7vw] fixed'/>}
+           className='bottom-0 w-full h-[7vw] fixed'/>
+    
+      
+    </div>
         </div>
     </div>
   )

@@ -64,8 +64,8 @@ const Filter = ({ size, setSize,
 
     return (
         <>
-        <div className='bg-gray-400 h-[200vw]'> 
-        <div className='flex flex-row w-[100vw] gap-[1vw]'>
+        <div className='flex bg-gray-400 h-full'> 
+        <div className='flex flex-row w-full gap-[1vw]'>
             <div>
         <Card className="flex h-full w-[27.5vw] bg-gray-300">
         <List className=' w-[8vw] font-bold text-[4vw]'>

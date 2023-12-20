@@ -153,9 +153,21 @@ const ProductType = ({Poster, PosterType}) => {
 
       </div>
       <Footer/>
-      {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
+      {/* {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
            setFilterVisible={setFilterVisible}
-           className='bottom-0 w-full h-[7vw] fixed'/>}
+           className='bottom-0 w-full h-[7vw] fixed'/>} */}
+           <div>
+      <BottomFilter 
+      stock={stock} 
+      setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
+      min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+      fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}
+      toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
+           setFilterVisible={setFilterVisible}
+           className='bottom-0 w-full h-[7vw] fixed'/>
+    
+      
+    </div>
     </div>
   )
 }

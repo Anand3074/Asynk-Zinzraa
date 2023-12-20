@@ -63,9 +63,9 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
     
   return (
     <div>
-        <div className='flex flex-col justify-center sm:justify-start
-         sm:items-start sm:mx-[2.5vw] mx-[1.5vw] w-[91.5vw] sm:w-[40vw] 
-         sm:border-none border border-solid border-1px border-[#875A33] '>
+        <div className='flex flex-col justify-center md:h-auto h-[60vw] sm:justify-start
+         sm:items-start sm:mx-[2.5vw] md:mx-[2.5vw] w-[95vw] sm:w-[40vw] 
+         sm:border-none border border-solid border-1px border-[#875A33] p-[1.5vw] md:p-[0vw] '>
                     <div className='flex sm:items-start items-center justify-center
                      font-[lora] text-[#875A33] 
                     sm:text-[2.5vw] text-[5vw] font-medium wrap '>
@@ -84,9 +84,10 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
                             Based on {Products.RatingNo} ratings
                         </div>
                     </div>
-                    <div className=' font-inter flex sm:flex-row items-center justify-center gap-[1.4vw]'>
-                    <div className='font-lora text-[#875A33] sm:text-[2vw] text-[2.65vw]  font-bold '>
-                         $ {product.price}
+                    <div className=' font-inter flex sm:flex-row items-center justify-center 
+                    gap-[1.4vw]'>
+                    <div className='font-lora text-[#875A33] sm:text-[2vw] text-[3.65vw]  font-bold '>
+                    ₹ {product.price}
                     </div>
                     <div className='text-[#00AA07] font-medium sm:text-[2vw] text-[2.65vw]'>
                             47% off
@@ -94,25 +95,28 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
                     </div>
 
                     <div className='flex flex-row items-center gap-[1vw]'>
-                    <div className='text-[2.65vw] sm:text-[1.65vw] text-[##7C7C7C]'>MRP ₹</div>
-                    <div className='text-[1.47vw] text-red-400 line-through'>{Math.floor(product.price * (1 + 43 / 100))}</div>
+                    <div className='text-[2.65vw] sm:text-[1.65vw] text-[##7C7C7C]'>MRP </div>
+                    <div className='text-[2.47vw] md:text-[1.50] text-red-400 line-through'>₹{Math.floor(product.price * (1 + 43 / 100))}</div>
                     <div className='text-[1.47vw] text-[##7C7C7C]'>Inclusive of all taxes</div>
                     </div>
                     </div>
                     <div>
                         <hr className=' border-t border-gray-600 sm:w-[40vw] h-[0.2vw] mt-[1vw]' />
                     </div>
-                    <div className='flex flex-row text-[1.2vw] sm:gap-[22vw] gap-[61.5vw] mt-[1vw]'>
-                        <div className='w-[12vw] h-[1.2vw]'>
+                    <div className='flex flex-row text-[1.2vw] text-[3vw] md:text-[1.45vw]
+                     ml-[2vw] md:ml-[0.1vw]
+                     sm:gap-[22vw] gap-[55vw] mt-[1vw] md:mt-[0.3vw]'>
+                        <div className='w-[20vw] h-[4vw] md:w-[12vw] md:h-[1.2vw] '>
                             Select Size
                         </div>
-                        <div className='w-[6vw] h-[1.2vw]'>
+                        <div className='w-[20vw] h-[4vw] md:w-[12vw] md:h-[1.2vw]'>
                         Size Guide
                         </div> 
                     </div>
                     
-                    <div className='flex flex-row sm:gap-[0.7vw] gap-[4vw] text-[1.5vw] 
-                    sm:w-[40vw] h-[8vw] md:mt-[0.5vw] mt-[0.5vw]'>
+                    <div className='flex flex-row justify-center items-center 
+                    sm:gap-[0.7vw] gap-[4vw] text-[2.75vw] md:text-[1.5vw]  
+                    sm:w-[40vw] h-[8vw] md:mt-[0.5vw] mt-[2.5vw]'>
       {sizeOptions.map((option, index) => (
         <div key={index} className='flex flex-col justify-center'>
           <button
@@ -128,7 +132,7 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
           >
             {option.size}
           </button>
-          <div className={`h-[2.5vw] text-[1vw] justify-center flex 
+          <div className={`h-[2.5vw] text-[2vw] md:text-[1vw] justify-center flex 
           ${option.availability ? 'text-green-400' : 'text-red-400'}`}>
             {option.availability ? ''
             // 'Available' 
@@ -137,8 +141,10 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
         </div>
       ))}
     </div>
-                    <div className='flex flex-row gap-[2vw] sm:w-[30vw] h-[4vw] text-[1.47vw]
-                     mb-[1vw] sm:mt-[1.5vw] mt-[1vw]'>
+                    <div className='flex justify-center items-center
+                    md:justify-right md:pl-[10vw] 
+                     flex-row gap-[2vw] sm:w-[30vw] h-[4vw] text-[1.47vw]
+                     mb-[1vw] sm:mt-[1.5vw] md:mt-[3vw] mt-[1vw]'>
                         <div>
                             <Button onClick={addWish}
                              className={`flex flex-row sm:w-[18vw] text-black  w-[30vw] h-[5vw] sm:h-[3.5vw] 
@@ -183,16 +189,21 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
                                 Apply
                             </div>
                      </div> */}
-                     <div className='flex flex-row h-[4vw] w-[40vw] text-[0.92vw]
-                       mt-[4vw] md:mt-[4vw] justify-between'>
-                        <div className='flex flex-col w-[10vw] font-semibold justify-center items-center mb-[3vw] sm:mb-[0vw] '>
-                            <img src={szi1} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                     <div className='flex flex-row h-[4vw] w-[80vw] mx-[5vw] md:mx-[0vw]
+                      md:w-[40vw] text-[1.5vw] md:text-[0.92vw]
+                       mt-[7vw] md:mt-[5.5vw] justify-between'>
+                        <div className='flex flex-col w-[20vw]  md:w-[10vw] font-semibold justify-center items-center
+                         mb-[3vw] sm:mb-[0vw] '>
+                            <img src={szi1} alt='' className='mb-[0.5vw] h-[6vw] w-[5vw]
+                            object-cover  md:h-[3vw] md:w-[3vw]'/>
                             <div>
                                 COD Available
                             </div>
                         </div>
-                     <div className='flex flex-col w-[10vw] font-semibold justify-center items-center mb-[3vw] sm:mb-[0vw]'>
-                            <img src={szi2} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                     <div className='flex flex-col w-[20vw]  md:w-[10vw] font-semibold justify-center items-center
+                      mb-[3vw] sm:mb-[0vw]'>
+                            <img src={szi2} alt='' className='mb-[0.5vw] h-[6vw] w-[5vw]
+                            object-cover  md:h-[3vw] md:w-[3vw]'/>
                             <div>
                                 <div>
                                     7 Days Return
@@ -202,8 +213,10 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
                                 </div>
                             </div>
                         </div>
-                     <div className='flex flex-col w-[10vw] font-semibold justify-center items-center mb-[3vw] sm:mb-[0vw]'>
-                            <img src={szi3} alt='' className='mb-[0.5vw] h-[3vw] w-[3vw]'/>
+                     <div className='flex flex-col w-[20vw]  md:w-[10vw] font-semibold justify-center
+                      items-center mb-[3vw] sm:mb-[0vw]'>
+                            <img src={szi3} alt='' className='mb-[0.5vw] h-[6vw] w-[5vw]
+                            object-cover  md:h-[3vw] md:w-[3vw]'/>
                             <div>
                                 <div>
                                     Usually ship in 

@@ -100,7 +100,7 @@ const Productsize = ({}) => {
                     </div>
                 </div>
 {/* Image above1  */}
-            <div className=''><ProductChart         
+            <div className='mt-[4vw] md:mt-[1vw]'><ProductChart         
             isWishlisted={isWishlistClicked}
             product={selectedProduct}
              price={selectedProduct.price} Description={selectedProduct.description}

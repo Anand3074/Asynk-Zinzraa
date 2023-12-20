@@ -281,7 +281,15 @@ const ProductList = () => {
     size,
      fabric, 
     // maxPrice
-  ])
+  ]) 
+  // useEffect(() => {
+  //   if(isFilterVisible){
+  //     <Filter/>
+  //   }
+  // }, [
+  // isFilterVisible
+  // ])
+
   // console.log(products,size , fabric)
 //  console.log('filter', isFilterVisible)  
 useEffect(() => {
@@ -298,21 +306,10 @@ useEffect(() => {
 
 
   return (
-    <div style={{ fontFamily: "DM Sans" }} className='bg-[#FFFFEF]' >
+  <div style={{ fontFamily: "DM Sans" }} className='bg-[#FFFFEF] relative' >
         <Link to="/Cart">
-        <div className='relative'><ToastContainer/></div>
+        <div className=''><ToastContainer/></div>
         </Link>
-     {isFilterVisible && <Filter3
-        className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
-        relative top-[0.5vw]  sm:top-[1.2vw]
-            font-bold text-[5vw]  right-0 bg-grey-ray transition'
-      stock={stock} 
-        setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
-         min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
-          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>}
-        {/* <div className='md:mb-[5vw]'>
-        <Fashion/>
-        </div> */}
         <div className='flex flex-col justify-center items-center pt-[7.25vw] md:my-[0vw] mt-[1vw] md:mb-[0vw] mb-[3vw] h-[2vw] ' >
                 <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1.5vw] md:w-auto '/>
             
@@ -330,7 +327,8 @@ useEffect(() => {
           fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
           </div>
           <div className='pt-[0vw]'>
-        {products.length !== 0 ? <ProductList3 products={products} maxPrice={maxPrice} setMaxPrice={setMaxPrice}/> : (
+        {products.length !== 0 ? <ProductList3 products={products} maxPrice={maxPrice} 
+        setMaxPrice={setMaxPrice}/> : (
           <div className='lg:col-span-2 my-[1vw] '>
             <h4 className='flex text-[0.5rem] text-center justify-center ' >###</h4>
           </div>
@@ -342,17 +340,69 @@ useEffect(() => {
       <Footer/>
       </div>
       <div>
+      <BottomFilter 
+      stock={stock} 
+      setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
+      min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+      fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}
+      toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
+           setFilterVisible={setFilterVisible}
+           className='bottom-0 w-full h-[7vw] fixed'/>
+    
+      
+    </div>
+      {/* {false ? <FilterClose toggleFilter={toggleFilter}/> :  */}
+           {/* } */}
+
+      <div>
       
    {/* closeMenu={closeMenu} />} */}
   {/* {is && <Hamburger closeMenu={closeMenu} />} */}
   {/* </div> */}
-          {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
-           setFilterVisible={setFilterVisible}
-           className='bottom-0 w-full h-[7vw] fixed'/>}
           {/* hello */}
         </div>
     </div>
+    // ) : <div><Filter3
+    //     className=''
+    //   stock={stock} 
+    //     setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
+    //      min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+    //       fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
+    //      <div> {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
+    //        setFilterVisible={setFilterVisible}
+    //        className='bottom-0 w-full h-[7vw] fixed'/>}
+    //        </div>
+    //        </div>}
+    
+        
+      //  sm:hidden fixed relative w-[85vw] h-[760px] left-[15vw]
+      //  top-[0.5vw]
+      //       font-bold text-[5vw]  right-0 bg-grey-ray transition 
+        // <div>
+        //   {/* <Footer/> */}
+        // </div>
+
+
+       
+
+    //      <div>
+   
+    // </div>
+    //         </div>
+
   )
 }
 
 export default ProductList
+
+          {/* {isFilterVisible && <Filter3
+        className='sm:hidden relative w-[85vw] h-[760px] left-[15vw]
+       top-[0.5vw]
+            font-bold text-[5vw]  right-0 bg-grey-ray transition'
+      stock={stock} 
+        setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
+         min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
+          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>} */}
+           {/* <div className='md:mb-[5vw]'>
+        <Fashion/>
+        </div> */}
