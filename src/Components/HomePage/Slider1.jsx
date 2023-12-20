@@ -117,8 +117,8 @@ const SliderMa = ({product}, slides) => {
   // console.log('slides', sliderSettings.slidesToShow)
 
   return (
-    <div className='md:pl-[5vw] pl-[2vw] my-[3vw]'>
-      <Slider {...sliderSettings} className='w-[91vw] md:w-[90vw]'>
+    <div className='md:pl-[5vw] pl-[4vw] my-[3vw] w-[96vw] overflow-hidden'>
+      <Slider {...sliderSettings} className='w-[100vw] overflow-hidden md:w-[90vw]'>
         {product && product.map((products, index) => {
           // console.log('product', product)
           // console.log('productlength', product.length)

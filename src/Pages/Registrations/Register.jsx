@@ -146,7 +146,7 @@ const Register = () => {
 
   
   return (
-    <div className='w-full h-[100vh] flex items-center ' >
+    <div className='w-full h-[100vw] flex items-center ' >
          <Card shadow={false} className="xl:w-[550px] w-full mx-2 xl:mx-0 py-1 px-6 ">
       <CardHeader
         // variant="gradient"

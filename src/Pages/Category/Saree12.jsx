@@ -182,7 +182,7 @@ const fetchProduct = async () => {
   }, [isFilterVisible]);
   
   return (
-    <div style={{ fontFamily: "DM Sans" }} className='bg-[#FFFFEF]' >
+    <div style={{ fontFamily: "DM Sans" }} className='' >
         <Link to="/Cart">
         <div className=''><ToastContainer/></div>
         </Link>

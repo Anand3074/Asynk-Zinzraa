@@ -111,18 +111,18 @@ const ProductType = ({Poster, PosterType}) => {
   
 
   return (
-    <div style={{ fontFamily: "DM Sans" }} className='bg-[#FFFFEF]' >
+    <div style={{ fontFamily: "DM Sans" }} className='' >
         <Link to="/Cart">
         <div className=''><ToastContainer/></div>
         </Link>
-        {isFilterVisible && <Filter3
+        {/* {isFilterVisible && <Filter3
         className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
         relative top-[0.5vw]  sm:top-[1.2vw]
             font-bold text-[5vw]  right-0 bg-grey-ray transition'
       stock={stock} 
         setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
          min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
-          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>}
+          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>} */}
         <div className='md:mb-[5vw]'>
             {Poster}
         </div>

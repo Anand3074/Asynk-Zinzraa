@@ -29,7 +29,7 @@ const kalki = () => {
                 sm:m-[1vw] m-[1vw]' />
                 </div>
             </div>
-            <div className=' flex flex-rows gap-[1vw] mt-[1vw] md:mt-[0.3vw]'>
+            <div className=' flex flex-rows gap-[1vw] mt-[2.5vw] md:mt-[0.3vw]'>
                 <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] my-[0.3vw] '>
                 <img src={K3} alt='' className=' h-[19.4vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 
                  rounded-br-[10vw] sm:rounded-br-[10vw]  md:h-[16vw] h-[90px] sm:w-[15vw]  
