@@ -233,16 +233,13 @@ useEffect(() => {
       <div className='mt-[3vw] md:mt-[1.5vw]'>
         {/* <Recommended group={Group2}/> */}
         <div className='flex justify-center items-center h-[2vw]'>
-                <img src={Group2.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
+                <img src={Group2.icon} alt='' className='w-[2vw] h-[2vw] '/>
             </div>
             <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
              md:mb-[1.5vw] mb-[3vw]' >
                 <span>{Group2.title}</span>
             </div>
-        <SliderCa product={products} 
-        // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
-        // handleCardDetail={handleCardDetail}
-        />
+        <SliderCa product={products}/>
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
       <div className='flex justify-center h-[2vw] '>
@@ -264,8 +261,6 @@ useEffect(() => {
                 <span>{Group3.title}</span>
             </div>
       <SliderCa product={products} 
-      // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
-      // handleCardDetail={handleCardDetail}
       /> 
       </div>
       <div>

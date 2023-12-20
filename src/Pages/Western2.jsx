@@ -9,7 +9,7 @@ const Western2 = () => {
     return (
       <div>
           <ProductType PosterType={Western} Poster={<Fashion/>}/>
-          <Footer/>
+          {/* <Footer/> */}
       </div>
     )
 }

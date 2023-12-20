@@ -63,7 +63,7 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
     
   return (
     <div>
-        <div className='flex flex-col justify-center sm:h-auto h-[60vw] sm:justify-start
+        <div className='flex flex-col justify-center sm:h-auto h-[62.5vw] sm:justify-start
          sm:items-start sm:mx-[2.5vw] sm:mx-[2.5vw] w-[95vw] sm:w-[40vw] 
          sm:border-none border border-solid border-1px border-[#875A33] p-[1.5vw] sm:p-[0vw] '>
                     <div className='flex sm:items-start items-center justify-center
@@ -71,7 +71,7 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
                     sm:text-[2.5vw] text-[5vw] font-medium wrap '>
                         {product.description}
                     </div>
-                    <div className='flex flex-row sm:flex-col gap-[1.5vw] sm:gap-[1vw]   '>
+                    <div className='flex flex-row sm:flex-col gap-[1vw] sm:gap-[1vw]   '>
                     <div className='flex flex-row gap-[0.6vw]
                      items-center sm:text-[1.6vw] text-[2.5vw]   '>
                         <div className=''>
@@ -80,7 +80,7 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
                         <div className='text-[#FFB800]'>
                             <AiFillStar/>
                         </div>
-                        <div className='font-lora mr-[10vw] sm:mr-[0vw]'>
+                        <div className='font-lora mr-[5vw] sm:mr-[0vw]'>
                             Based on {Products.RatingNo} ratings
                         </div>
                     </div>
@@ -144,7 +144,7 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
                     <div className='flex justify-center items-center
                     sm:justify-right sm:pl-[10vw] 
                      flex-row gap-[2vw] sm:w-[30vw] h-[4vw] text-[1.47vw]
-                     mb-[1vw] sm:mt-[1.5vw] sm:mt-[2vw] md:mt-[3vw] mt-[1vw]'>
+                     mb-[1vw] sm:mt-[1.5vw] sm:mt-[2vw] md:mt-[3vw] mt-[4vw]'>
                         <div>
                             <Button onClick={addWish}
                              className={`flex flex-row sm:w-[18vw] text-black  w-[30vw] h-[5vw] sm:h-[3.5vw] 
@@ -163,7 +163,7 @@ const ProductChart = ({product, isWishlisted, addWish, addCart}) => {
                         </div>
                     </div>
                     <div>
-                        <hr className='border-t border-gray-600 sm:w-[40vw] w-[80vw] sm:mt-[1vw] mt-[3vw]' />
+                        <hr className='border-t  border-gray-600 sm:w-[40vw] w-[90vw]  sm:mt-[1vw] mt-[3vw]' />
                     </div>
                     {/* <div className='mt-[1vw] font-inter font-semibold text-[1.65vw]'>
                         Select Delivery Location

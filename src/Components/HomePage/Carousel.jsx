@@ -41,6 +41,7 @@ const Carousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
+    width: '[100vw]',
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     slidesToShow: 1, // Number of slides to show at a time

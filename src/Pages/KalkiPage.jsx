@@ -8,7 +8,7 @@ const KalkiPage = () => {
   return (
     <div>
         <ProductType PosterType={Western} Poster={<WesternPost/>}/>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

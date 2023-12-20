@@ -15,7 +15,7 @@ import myContext from '../../context/myContext';
     // const { product } = context;
   return (
     
-        <div className='w-[30vw] h-[45vw] md:w-[20vw] bg-[#fafafa] my-[2vw] md:my-[0vw] md:h-[34vw] rounded-[2px]
+        <div className='w-[30vw] h-[48vw] md:w-[20vw] bg-[#fafafa] my-[2vw] md:my-[0vw] md:h-[34vw] rounded-[2px]
          shadow-md dark:shadow-md' >
         <div className='' id='container'>
             <div className='flex relative'>
@@ -42,10 +42,11 @@ import myContext from '../../context/myContext';
                 </div>
             </div>
             <div className='relative  rounded-[0.3vw]'>
-                <div className='px-[0.5vw] leading-[1.8vw] font-metro sm:leading-[1.35vw]'>
-            <div className='flex text-black  wrap overflow-hidden h-[3.5vw] sm:h-[2vw]
+                <div className='px-[0.5vw] leading-[1.8vw] font-metro sm:leading-[1.5vw] 
+                sm:leading-[1.35vw]'>
+            <div className='flex text-black  wrap overflow-hidden h-[4.5vw]  md:h-[2vw]
             justify-start
-            text-[1.6vw] sm:text-[1.2vw] sm:h-[1.8vw] mt-[0.5vw]'>
+            text-[1.6vw] sm:text-[1.4vw] sm:h-[1.8vw] mt-[0.5vw]'>
                 {products.description} 
             </div>
             <div className='flex  flex-row md:justify-start items-center pb-[0.5vw] '>
@@ -59,11 +60,11 @@ import myContext from '../../context/myContext';
                 </div>
             </div>
             </div>
-                <div className='absolute right-[0.5vw]   md:top-[5.3vw] 
-                top-[3vw] items-start'>
+                <div className='absolute   md:top-[5.3vw] 
+                top-[7vw] items-start'>
                     <button onClick={addCart} className=' bg-teal-dark font-semibold 
-                    font-poppins text-white  w-[30vw] md:w-[19vw]  h-[3vw]
-                     text-[1.2vw]  rounded-[0.4vw] pt-[0.5vw] '>
+                    font-metro text-white  w-[30vw] md:w-[20vw]  h-[4vw] md:h-[3vw]
+                     text-[2vw] md:text-[1.2vw]  rounded-[0.4vw] pt-[0.5vw] '>
                         Add to Cart
                     </button>
                 </div>

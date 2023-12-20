@@ -91,7 +91,7 @@ const Productsize = ({}) => {
                         </div>
                     </div> 
                     <div className='h-[83vw] sm:h-[45vw] sm:w-[35vw] w-[72.5vw]'>
-                    <Slider {...sliderSettings} className=''>
+                    <Slider {...sliderSettings} className=' w-[70vw] sm:w-[32vw]'>
                     <img src={selectedProduct.coverImage} className='h-[81vw] object-cover object-top md:h-[45vw] sm:h-[47vw] sm:w-[40vw] w-[72.5vw]'/>
                     <img src={selectedProduct.image[0]} className='h-[81vw] object-cover object-top md:h-[45vw] sm:h-[47vw] sm:w-[40vw] w-[72.5vw]'/>
                     <img src={selectedProduct.image[1]} className='h-[81vw] object-cover object-top md:h-[45vw] sm:h-[47vw] sm:w-[40vw] w-[72.5vw]'/>

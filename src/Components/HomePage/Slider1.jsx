@@ -66,12 +66,14 @@ const SliderMa = ({product}, slides) => {
     dots: false, 
     infinite: true,
     speed: 500,
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
+    nextArrow:null,
+    prevArrow: null,
     slidesToShow: product.length > 3 ? 4 : product.length,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    
+
     responsive: [
       {
         breakpoint: 1024,
@@ -79,7 +81,11 @@ const SliderMa = ({product}, slides) => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: false
+          dots: false,
+          nextArrow:null,
+        prevArrow: null,
+          
+
         }
       },
       {
@@ -87,14 +93,22 @@ const SliderMa = ({product}, slides) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          initialSlide: 1
+          initialSlide: 1,
+          nextArrow:null,
+    prevArrow: null,
+          
+
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          nextArrow:null,
+         prevArrow: null,
+          
+
         }
       }
     ]
@@ -103,8 +117,8 @@ const SliderMa = ({product}, slides) => {
   // console.log('slides', sliderSettings.slidesToShow)
 
   return (
-    <div className='md:pl-[5vw] pl-[1.5vw] my-[3vw]'>
-      <Slider {...sliderSettings} className=''>
+    <div className='md:pl-[5vw] pl-[2vw] my-[3vw]'>
+      <Slider {...sliderSettings} className='w-[91vw] md:w-[90vw]'>
         {product && product.map((products, index) => {
           // console.log('product', product)
           // console.log('productlength', product.length)

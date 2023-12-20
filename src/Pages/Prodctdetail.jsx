@@ -167,7 +167,10 @@ const Prodctdetail = () => {
              md:mb-[24px] mb-[8px]' >
                 <span>{Group1.title}</span>
             </div>
-        <SliderMa product={relatedProduct} slides={3}/>
+            <div  className=''>
+            <SliderMa product={relatedProduct} slides={3}/>
+
+            </div>
         <div>
             {/* <Recommended group={Group1}/> */}
         </div>
@@ -183,7 +186,10 @@ const Prodctdetail = () => {
              md:mb-[24px] mb-[8px]' >
                 <span>{Group2.title}</span>
             </div>
-                <SliderMa product={related} />
+            <div  className=''>
+            <SliderMa product={related} />
+
+            </div>
     {/* <Recommended group={Group2}/> */}
         </div>
         <Footer/>
