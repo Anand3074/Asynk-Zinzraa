@@ -119,7 +119,7 @@ const SliderMa = ({product}, slides) => {
 
           <div className='flex justify-center items-center grid grid-cols-3 gap-[1.5vw] sm:gap-[1vw] md:gap-[3vw] sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4'>
       {product && product.slice(0, viewportWidth > 1280 ? 4 : viewportWidth > 1024 ?
-       4 : viewportWidth > 768 ? 4 : 3).map((products, index) => {
+       4 : viewportWidth > 768 ? 3 : 3).map((products, index) => {
           const isItemInWishlist = Wishlist.some((wishlistItem) => wishlistItem.id === products.id);
           return ( 
             <div key={index}>

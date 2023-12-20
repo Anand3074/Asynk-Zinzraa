@@ -236,7 +236,7 @@ useEffect(() => {
                 <img src={Group2.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
             </div>
             <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
-             md:mb-[24px] mb-[8px]' >
+             md:mb-[1.5vw] mb-[3vw]' >
                 <span>{Group2.title}</span>
             </div>
         <SliderCa product={products} 
@@ -245,15 +245,22 @@ useEffect(() => {
         />
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
+      <div className='flex justify-center h-[2vw] '>
+                <img src={Group1.icon} alt='' className='w-[2vw] h-[2vw]' />
+            </div>
+            <div className='flex justify-center text-[#875A33] font-lora 
+            md:text-[38px] md:mb-[24px] mb-[8px]' >
+                <span>Top Picks Of Kalki koechlin</span>
+            </div>
         <Kalki/>
       </div>
-      <div className='mt-[20vw] md:mt-[1.5vw]'>
+      <div className='mt-[3vw] md:mt-[1.5vw]'>
       {/* <Recommended group={Group3}/>*/}
       <div className='flex justify-center items-center h-[2vw]'>
                 <img src={Group3.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
             </div>
             <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
-             md:mb-[24px] mb-[3vw]' >
+             md:mb-[1.5vw] mb-[3vw]' >
                 <span>{Group3.title}</span>
             </div>
       <SliderCa product={products} 
@@ -267,7 +274,7 @@ useEffect(() => {
                 <img src={Group4.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>
             </div>
             <div className='flex justify-center font-lora items-center text-[#875A33] md:text-[38px]
-             md:mb-[24px] mb-[8px]' >
+             md:mb-[1.5vw] mb-[3vw]' >
                 <span>{Group4.title}</span>
             </div>
       <BestCollection product={variety} 

@@ -117,7 +117,6 @@ export const loadUser = (uid) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
     try {
     signOut(auth).then(() => {
-      console.log("user logged out")
 }).catch((error) => {
     console.log(error.message)
 });

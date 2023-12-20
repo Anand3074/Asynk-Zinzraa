@@ -16,7 +16,7 @@ import myContext from '../../context/myContext';
   return (
     
         <div className='w-[30vw] h-[45vw] md:w-[20vw] bg-[#fafafa] my-[2vw] md:my-[0vw] md:h-[34vw] rounded-[2px]
-         shadow-xl dark:shadow-2xl' >
+         shadow-md dark:shadow-md' >
         <div className='' id='container'>
             <div className='flex relative'>
                 <div className='mb-[0.25vww]'>
@@ -42,10 +42,10 @@ import myContext from '../../context/myContext';
                 </div>
             </div>
             <div className='relative  rounded-[0.3vw]'>
-                <div className='px-[0.5vw] leading-[1.8vw] font-metro md:leading-[1.35vw]'>
-            <div className='flex text-black  wrap overflow-hidden h-[3.5vw] md:h-[2vw]
+                <div className='px-[0.5vw] leading-[1.8vw] font-metro sm:leading-[1.35vw]'>
+            <div className='flex text-black  wrap overflow-hidden h-[3.5vw] sm:h-[2vw]
             justify-start
-            text-[1.6vw] md:text-[1.2vw] md:h-[1.8vw] mt-[0.5vw]'>
+            text-[1.6vw] sm:text-[1.2vw] sm:h-[1.8vw] mt-[0.5vw]'>
                 {products.description} 
             </div>
             <div className='flex  flex-row md:justify-start items-center pb-[0.5vw] '>
