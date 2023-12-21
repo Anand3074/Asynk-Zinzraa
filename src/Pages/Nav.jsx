@@ -24,7 +24,7 @@ const Nav = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMenu = () => setClick(false);
-  const [searchValue, setSearchValue] = useState(null)
+  const [searchValue, setSearchValue] = useState('')
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { error, loading, isAuthenticated,user , userProfile} = useSelector((state) => state.users);

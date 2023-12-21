@@ -10,10 +10,10 @@ import { Link } from 'react-router-dom'
 
 const kalki = () => {
   return (
-    <div className=' w-full md:h-[50vw] h-[55vw] '>
+    <div className=' w-full md:h-[50vw] h-[58vw] '>
         <div className=''>
          
-        <div className='bg-[#3D3F31] h-[55vw] md:h-[45vw] p-[4vw]'>
+        <div className='bg-[#3D3F31] h-[58vw] md:h-[45vw] p-[4vw]'>
         <div className='grid grid-cols-2  gap-[5vw] '>
         {/* <div className='grid grid-cols-2  grid-rows-2 items-center md:gap-[17.94px] gap-[5.4px]'> */}
         <div className='flex flex-col md:ml-[5vw]  md:px-[2.5vw] md:py-[2.5vw]'>
@@ -29,6 +29,7 @@ const kalki = () => {
                 sm:m-[1vw] m-[1vw]' />
                 </div>
             </div>
+
             <div className=' flex flex-rows gap-[1vw] mt-[3.5vw] md:mt-[0.3vw]'>
                 <div className='h-[21vw] sm:w-[15vw] md:h-[16vw] '>
                 <img src={K3} alt='' className=' h-[19.4vw] object-cover object-top rounded-tl-[10vw] sm:rounded-tl-[10vw] 

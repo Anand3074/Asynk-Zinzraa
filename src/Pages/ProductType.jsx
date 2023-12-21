@@ -152,7 +152,10 @@ const ProductType = ({Poster, PosterType}) => {
         </div>
 
       </div>
+      <div className='mb-[12.5vw] md:mb-[0vw]'>
       <Footer/>
+
+      </div>
       {/* {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
            setFilterVisible={setFilterVisible}
            className='bottom-0 w-full h-[7vw] fixed'/>} */}

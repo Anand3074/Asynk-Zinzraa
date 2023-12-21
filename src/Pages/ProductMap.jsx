@@ -336,8 +336,9 @@ useEffect(() => {
         </div>
         {/*  */}
       </div>
-      <div>
+      <div className='mb-[12.5vw] md:mb-[0vw]'>
       <Footer/>
+
       </div>
       <div>
       <BottomFilter 

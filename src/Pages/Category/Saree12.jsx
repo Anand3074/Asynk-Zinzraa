@@ -255,7 +255,10 @@ const fetchProduct = async () => {
 
       </div>
       <div>
-      <Footer />
+      <div className='mb-[12.5vw] md:mb-[0vw]'>
+      <Footer/>
+
+      </div>
 
       </div>
       {/* {isFilterVisible ? <FilterClose toggleFilter={toggleFilter}/> : <BottomFilter toggleFilter={toggleFilter} isFilterVisible={isFilterVisible}
