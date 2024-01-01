@@ -24,7 +24,7 @@ import SliderMa from '../Components/HomePage/Slider1.jsx'
 import { doc, getDocs, onSnapshot, collection, deleteDoc,
      query, where, or, and, orderBy, limit, startAfter, startAt, endBefore } from "firebase/firestore";
 import { useParams } from 'react-router-dom'
-import Footer from '../Components/Footer.jsx'
+import Footer from '../Components/Layout/Footer.jsx'
 
 
 const Prodctdetail = () => {

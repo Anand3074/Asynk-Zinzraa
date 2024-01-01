@@ -43,26 +43,26 @@ const Categ1 = () => {
           </div>
         </div>
         
-        <div className='flex flex-row text-[#C99359] md:h-[3vw] h-[7vw] items-center 
-        md:text-[4vw]  md:gap-[10vw] md:px-[9vw] text-[16px] font-playfair w-full gap-[3vw]'>
+        <div className='flex flex-row text-[#875A33] md:h-[3vw] h-[7vw] items-center 
+        md:text-[4vw]  md:gap-[10vw] md:px-[9vw] text-[16px] font-playfair font-[700] w-full gap-[3vw]'>
           <div className='md:w-[20vw] w-[30vw] flex justify-center'>
               <Link to='/Kurtas'><span className='text-[4vw] sm:text-[2.5vw]' >
-                {Category1}
+                KURTAS
               </span></Link>
           </div>
           <div className='md:w-[20vw] w-[30vw] flex justify-center'>
           <Link to='/Saree'><span className='text-[4vw] sm:text-[2.5vw]' >
-                {Category2}
-              </span></Link>
+                SAREES   
+           </span></Link>
           </div>
           <div className='md:w-[20vw] w-[30vw] flex justify-center'>
           <Link to='/Dresses'><span className='text-[4vw] sm:text-[2.5vw]' >
-                {Category3}
+                DRESSES
               </span></Link>
           </div>
         </div>
         <div className='w-full my-[2vw]  md:h-[3.5vw] h-[4vw]'>
-          <img src={Vec3} className='w-full  md:h-[3.75vw] h-[4.25vw] object-cover object-center'/>
+          <img src={Vec3} className='w-full opactiy-100 md:h-[3.75vw] h-[4.25vw] object-cover object-center'/>
         </div>
         
 

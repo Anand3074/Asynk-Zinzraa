@@ -12,7 +12,7 @@ import Poster from '../../Components/HomePage/Modern.jsx'
 import Saree from '../Kurtas.jsx';
 import { setSearchTerm } from '../../Redux/Product/filter.js';
 import { useDispatch, useSelector } from 'react-redux';
-import Footer from '../../Components/Footer.jsx';
+import Footer from '../../Components/Layout/Footer.jsx';
 import BottomFilter from '../../Components/ProductDisplay/Bottomfilter.jsx'
 import FilterClose from '../../Components/ProductDisplay/FilterClose.jsx'
 import Filter3 from '../../Components/ProductDisplay/Filter3.jsx'

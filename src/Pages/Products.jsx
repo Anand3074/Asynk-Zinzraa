@@ -10,8 +10,8 @@ import Wtrends from '../Components/HomePage/Wtrend.jsx'
 import Kalki from '../Components/HomePage/kalki.jsx'
 import Testimonial from '../Components/HomePage/Testimonial.jsx'
 import Trusty from '../Components/HomePage/Trusty.jsx'
-import Footer from '../Components/Footer.jsx'
-import Carousel from '../Components/HomePage/Carousel.jsx'
+import Footer from '../Components/Layout/Footer.jsx'
+import Carousel2 from '../Components/HomePage/Carousel.jsx'
 import ele1 from '../assets/ele1.png'
 import SliderCa from '../Components/HomePage/Slider1.jsx'
 import { fireDB } from '../firebase/firebase.jsx'
@@ -209,7 +209,7 @@ useEffect(() => {
   return (
     <div>
       <div>
-        <Carousel/>
+        <Carousel2/>
       </div>
       <div className=''>
         <Categ1/>

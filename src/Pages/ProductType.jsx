@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../Pages/Nav.jsx'
-import Footer from '../Components/Footer.jsx'
+import Navbar from '../Components/Layout/Nav.jsx'
+import Footer from '../Components/Layout/Footer.jsx'
 import { useParams, Link } from 'react-router-dom'
 import ProductList3 from '../Components/ProductDisplay/productList3.jsx'
 import Filter from '../Components/ProductDisplay/filter2.jsx'

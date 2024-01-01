@@ -1,7 +1,6 @@
 import React from 'react'
 import ProductType from './ProductType.jsx'
 import Fashion from'../Components/Fashion.jsx'
-import Footer from '../Components/Footer.jsx'
 
 
 const Western2 = () => {

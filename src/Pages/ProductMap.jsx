@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../Pages/Nav.jsx'
-import Footer from '../Components/Footer.jsx'
+import Navbar from '../Components/Layout/Nav.jsx'
+import Footer from '../Components/Layout/Footer.jsx'
 import { useParams, Link } from 'react-router-dom'
 import ProductList3 from '../Components/ProductDisplay/productList3.jsx'
-import Filter from '../Components/ProductDisplay/filter2.jsx'
+import Filter from '../Components/ProductDisplay/Filter1.jsx'
 import { doc, getDocs, onSnapshot, collection, deleteDoc, query, where, or, and, orderBy, limit, startAfter, startAt, endBefore } from "firebase/firestore";
 import { fireDB } from '../firebase/firebase.jsx';
 import { ToastContainer, toast } from 'react-toastify'
@@ -11,6 +11,8 @@ import elestar from '../assets/ele1.png'
 import BottomFilter from '../Components/ProductDisplay/Bottomfilter.jsx'
 import FilterClose from '../Components/ProductDisplay/FilterClose.jsx'
 import Filter3 from '../Components/ProductDisplay/Filter3.jsx'
+import { Button } from '@material-tailwind/react'
+import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 
 const ProductList = () => {
@@ -30,6 +32,7 @@ const ProductList = () => {
     setMaxPrice(10000)
     }
     const [isFilterVisible, setFilterVisible] = useState(false);
+    
 
   const toggleFilter = () => {
     setFilterVisible((prev) => !prev);
@@ -306,40 +309,88 @@ useEffect(() => {
 
 
   return (
-  <div style={{ fontFamily: "DM Sans" }} className='bg-[#FFFFEF] relative' >
+  <div style={{ fontFamily: "DM Sans" }} className='px-[5vw] md:px-[1vw] py-[1vw]' >
         <Link to="/Cart">
         <div className=''><ToastContainer/></div>
         </Link>
-        <div className='flex flex-col justify-center items-center pt-[7.25vw] md:my-[0vw] mt-[1vw] md:mb-[0vw] mb-[3vw] h-[2vw] ' >
-                <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1.5vw] md:w-auto '/>
-            
-            <div className='flex justify-center font-semibold items-center font-lora text-[#875A33] 
-            md:text-[2.5vw] 
-            md:mb-[7vw] mb-[1.5vw]' >
-                <span>Our Products</span>
-            </div> 
-            </div>
-      <div className='flex flex-row gap-[1vw] justify-start items-start'>
-        <div className='hidden md:flex w-[25vw] mt-[0vw] pl-[3vw]'>
+        
+      <div className='flex flex-row gap-[0vw] justify-start items-start '>
+        <div className='hidden md:flex w-[22.5vw] md:w-[20vw] mt-[0vw] pl-[0.25vw] h-full'>
         <Filter stock={stock} 
         setStock={setStock} size={size} setSize={setSize} fetchProduct={fetchProduct}
          min={min} setmin={setmin} maxPrice={maxPrice} setMaxPrice={setMaxPrice}
-          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}/>
+          fabric={fabric} setFabric={setFabric} clearFilter={clearFilter}          />
           </div>
-          <div className='pt-[0vw]'>
+          <div className='flex flex-col'>
+            <div className='flex flex-col justify-center items-center'>
+              <div>
+              {/* <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1vw] md:w-auto '/> */}
+              </div>
+              <div className='flex flex-row justify-between w-[90%]'>
+              <div className='flex flex-col w-[20vw] items-start font-metro  
+               text-gray-600 mt-[1.5vw]'>
+                <Button variant="outlined" color='' className='flex gap-[7vw] w-[15vw] p-3 rounded-none'>
+                  <span>
+                  Sort By
+                  </span>
+                  <ChevronDownIcon className='h-[1.5vw]'/>
+                </Button>
+
+              <span className='text-md m-[0.35vw]'>
+              {products.length} products   
+
+                </span>
+              </div>
+              <div className='flex flex-col justify-center w-[15vw] font-semibold items-center font-lora text-[#875A33] 
+            md:text-[2vw]'>
+
+              <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1vw] md:w-auto '/>
+
+              <div className='flex justify-center w-[20vw] font-semibold items-center font-lora text-[#875A33] 
+            md:text-[2vw]'>
+              Our Products
+
+                </div>
+                </div>
+                <div className='w-[20vw]'>
+                  {/* Hello! */}
+                  </div>
+
+              </div>
+
+
+
+
+            </div>
+
+          {/* <div className='flex flex-col justify-center items-center' >
+                <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1vw] md:w-auto '/>
+            <div className='flex flex-row'>
+              <div className='flex justfiy-start items-bottom text-metro text-md  text-gray-400'>
+                  {products.length} products
+              </div>
+            <div className='flex justify-center font-semibold items-center font-lora text-[#875A33] 
+            md:text-[2vw] 
+            md:mb-[7vw] mb-[1.5vw] p-0' >
+                <span>Our Products</span>
+            </div> 
+            </div>
+            </div> */}
+          <div className='pt-[0.25vw]'>
         {products.length !== 0 ? <ProductList3 products={products} maxPrice={maxPrice} 
         setMaxPrice={setMaxPrice}/> : (
           <div className='lg:col-span-2 my-[1vw] '>
-            <h4 className='flex text-[0.5rem] text-center justify-center ' >###</h4>
+            <h4 className='flex text-[0.5rem] text-center justify-start ' >###</h4>
           </div>
         )}
         </div>
         {/*  */}
       </div>
-      <div className='mb-[12.5vw] md:mb-[0vw]'>
+      </div>
+      {/* <div className='mb-[12.5vw] md:mb-[0vw]'>
       <Footer/>
 
-      </div>
+      </div> */}
       <div>
       <BottomFilter 
       stock={stock} 

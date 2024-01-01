@@ -15,8 +15,8 @@ import myContext from '../../context/myContext';
     // const { product } = context;
   return (
     
-        <div className='w-[30vw] h-[48vw] md:w-[20vw] bg-[#fafafa] my-[2vw] md:my-[0vw] md:h-[34vw] rounded-[2px]
-         shadow-md dark:shadow-md' >
+        <div className='w-[30vw] h-[48vw] md:w-[20vw] bg-[#fafafa] my-[2vw] md:my-[0vw] md:h-[34vw] 
+        rounded-[2px] shadow-2xl dark:shadow-2xl' >
         <div className='' id='container'>
             <div className='flex relative'>
                 <div className='mb-[0.25vww]'>

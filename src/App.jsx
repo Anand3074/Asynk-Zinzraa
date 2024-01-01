@@ -3,7 +3,7 @@ import { useNavigate, } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import React from 'react'
-import Nav from './Pages/Nav.jsx'
+import Nav from './Components/Layout/Nav.jsx'
 import Products from './Pages/Products.jsx'
 import Login from './Pages/Registrations/Log.jsx'
 import Wishlist from './Pages/Wishlist.jsx'
@@ -13,6 +13,7 @@ import Orders from './Pages/CMS/Pages/Orders.jsx'
 import ViewOrder from './Components/Orders/ViewOrder.jsx'
 import { loadUser } from './Redux/User/userAction.js';
 import Product3 from './Pages/ProductMap.jsx'
+import Footer from './Components/Layout/Footer.jsx'
 
 
 //import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'

@@ -1,9 +1,9 @@
 import React from 'react'
-import logo from '../assets/logo.png'
+import logo from '../../assets/logo.png'
 import {Link } from 'react-router-dom'
-import Instagram from "../assets/instagram.png"
-import Linkedin from "../assets/linkedin.png"
-import Facebook from "../assets/facebook.png"
+import Instagram from "../../assets/instagram.png"
+import Linkedin from "../../assets/linkedin.png"
+import Facebook from "../../assets/facebook.png"
 
 const Footer = () => {
     const contact = {

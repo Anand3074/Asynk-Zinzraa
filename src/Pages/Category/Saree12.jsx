@@ -11,7 +11,7 @@ import elestar from '../../assets/ele1.png'
 import Poster from '../../Components/HomePage/Modern.jsx'
 import Saree from '../Kurtas.jsx';
 import { setSearchTerm } from '../../Redux/Product/filter.js';
-import Footer from '../../Components/Footer.jsx';
+import Footer from '../../Components/Layout/Footer.jsx';
 import BottomFilter from '../../Components/ProductDisplay/Bottomfilter.jsx'
 import FilterClose from '../../Components/ProductDisplay/FilterClose.jsx'
 import Filter3 from '../../Components/ProductDisplay/Filter3.jsx'
@@ -257,7 +257,6 @@ const fetchProduct = async () => {
       <div>
       <div className='mb-[12.5vw] md:mb-[0vw]'>
       <Footer/>
-
       </div>
 
       </div>

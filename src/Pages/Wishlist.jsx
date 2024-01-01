@@ -3,7 +3,7 @@ import WishProduct from '../Components/Wishlist/WishProducts'
 import WishHead from '../Components/Wishlist/WishHead'
 import {useState, useEffect} from 'react'
 import { useSelector } from 'react-redux'
-import Footer from '../Components/Footer'
+import Footer from '../Components/Layout/Footer.jsx'
 import EmptyWish from '../Components/Wishlist/EmptyWish'
 
 const Wishlist = () => {

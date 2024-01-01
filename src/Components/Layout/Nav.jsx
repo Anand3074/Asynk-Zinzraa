@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import { CiMenuFries } from 'react-icons/ci';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
 import { AiFillHeart } from 'react-icons/ai';
 import { HiShoppingBag } from 'react-icons/hi';
-import Hamburger from '../Components/HomePage/hamburger';
-import { setSearchTerm } from '../Redux/Product/filter';
+import Hamburger from '../HomePage/hamburger';
+import { setSearchTerm } from '../../Redux/Product/filter';
 import { useDispatch , useSelector} from 'react-redux';
-import { logout } from '../Redux/User/userAction';
-import Loader from '../Components/loader/Loader';
-import { removeCart } from '../Redux/cartActions';
-import { clearWishlist } from '../Redux/Wishlist/wishActions';
+import { logout } from '../../Redux/User/userAction';
+import Loader from '../loader/Loader';
+import { removeCart } from '../../Redux/cartActions';
+import { clearWishlist } from '../../Redux/Wishlist/wishActions';
 import { GoStack } from "react-icons/go";
 import {  UserCircleIcon
 } from "@heroicons/react/24/solid";
 import { IoLogOutOutline } from "react-icons/io5";
 import { Button } from '@material-tailwind/react';
+import { Badge } from '@material-tailwind/react'
 
 const Nav = () => {
   // for hamburger menu
@@ -148,26 +149,26 @@ const Nav = () => {
         <div id='parent-container' className='flex w-full justify-between
          items-center pt-[0.8vw] md:pt-0 md:pt-0 align-center'>
           <div className='flex md:my-[2.6vw] hidden md:flex lg:flex md:ml-[3vw]'>
-            <ul className='flex text-white gap-[1.45vw] font-[Poppins] text-[1.5vw]'>
+            <ul className='flex text-white gap-[1.45vw] font-metro font-[600] text-[1.05vw]'>
               <Link to='/Product3'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>Products</li>
+                <li className='hover:text-[#CC911D] transition cursor-pointer'>PRODUCTS</li>
               </Link>
               {/* <Link to='/Saree'> */}
               <Link to='/Saree'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>Saree</li>
+                <li className='hover:text-[#CC911D] transition cursor-pointer'>SAREE</li>
               </Link>
               {/* <Link to='/Kurtas'> */}
               <Link to='/Kurtas'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>Kurtas</li>
+                <li className='hover:text-[#CC911D] transition cursor-pointer'>KURTAS</li>
               </Link>
               <Link to='/Dresses'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>Dresses</li>
+                <li className='hover:text-[#CC911D] transition cursor-pointer'>DRESSES</li>
               </Link>
               <Link to='/Dashboard'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>Orders</li>
+                <li className='hover:text-[#CC911D] transition cursor-pointer'>ORDERS</li>
               </Link>
               <Link onClick={handleLogout}>
-                <li className='hover:text-[#CC911D] text-red transition cursor-pointer'>Logout</li>
+                <li className='hover:text-[#CC911D] text-red transition cursor-pointer'>LOGOUT</li>
               </Link>
             </ul>
           </div>
@@ -193,18 +194,27 @@ const Nav = () => {
 
               />
             </div>
-            <div className='flex gap-[10vw] mr-[3vw] md:gap-[0.5vw] md:space-x-[16px] 
-            items-center ml-[1.5vw] '>
+            <div className='flex w-[40vw] md:w-auto gap-[10vw] mr-[3vw] md:gap-[0.5vw] md:space-x-[16px] 
+            items-center ml-[0vw] md:ml-[1.5vw] mt-[3vw]  md:mt-[0vw]'>
             <Link to={`${isAuthenticated? '/User' : '/Signup'}`}>
-            {/* <Link to='/Signup'> */}
-                <FaUser className='text-white'  />
-              </Link>
+              <FaUser className='text-white'  />
+            </Link>
               <Link to='/Wishlist'>
                 <AiFillHeart className='text-white'  />
               </Link>
-              <Link to='/Cart'>
-                <HiShoppingBag className='text-white'  />
-              </Link>
+              
+            <Link to={`${!isAuthenticated? '/Cart' : '/Signup'}`}>
+              <div>
+              {cartItems?.length !== 0 ? (
+              <Badge content={ cartItems?.length} className='w-[1.05vw] ' color='amber'>
+              
+                <HiShoppingBag className=' text-white'  />
+              </Badge>)
+              : 
+              <HiShoppingBag className=' text-white'  />
+            }
+              </div>
+            </Link>
             </div>
           </div>
         </div>
