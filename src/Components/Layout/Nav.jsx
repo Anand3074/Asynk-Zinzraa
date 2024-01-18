@@ -83,10 +83,13 @@ const Nav = () => {
   }, [click]);
   const content =
     <>
-    <div className='sm:hidden fixed block  w-[85vw] h-[760px] left-[15vw]
+    {/* <div className={`sm:hidden   w-[85vw] h-[760px] left-[15vw]
      relative top-[0.5vw]  sm:top-[1.2vw]
-         font-bold text-[5vw]  right-0 bg-grey-ray transition'  
-              style={{ zIndex: 9999}}>
+         font-bold text-[5vw]  right-0 bg-grey-ray transition   ease-in-out duration-5
+         transform ${click ? 'translate-x-[0vw]' : 'translate-x-[-85vw]'}
+      `}  
+              style={{ zIndex: 9999}}> */}
+              <div>
                 
                 <div className=' flex flex-col pl-[3vw] justify-start  items-center
                  text-[1rem] font-[600] text-[#489DCC] pt-[4vw]'> 
@@ -141,6 +144,63 @@ const Nav = () => {
                  </Button> */}
         </div>
       </>
+       useEffect(() => {
+        const conditionalDiv = document.getElementById('conditionalDiv');
+        const overlay = document.getElementById('overlay');
+    
+        const closeDiv = () => {
+          setClick(false);
+        };
+    
+        const openDiv = () => {
+          if (conditionalDiv) {
+            // Apply initial position at x-[85vw]
+            conditionalDiv.style.transition = 'transform 0.25s ease-in-out';
+            conditionalDiv.style.transform = 'translateX(85vw)';
+    
+            // After 0.25s, smoothly transition to x-[0vw]
+            const transitionTimeout = setTimeout(() => {
+              conditionalDiv.style.transition = 'transform 0.75s ease-in-out';
+              conditionalDiv.style.transform = 'translateX(0)';
+            }, 250);
+    
+            // Attach the timeout ID to the element using a custom property
+            conditionalDiv.transitionTimeout = transitionTimeout;
+          }
+        };
+    
+        if (click) {
+          openDiv();
+        } else {
+          // Clear any ongoing transition timeout when closing
+          if (conditionalDiv && conditionalDiv.transitionTimeout) {
+            clearTimeout(conditionalDiv.transitionTimeout);
+          }
+    
+          // Apply transition when click is false
+          if (conditionalDiv) {
+            conditionalDiv.style.transition = 'transform 0.5s ease-in-out';
+            conditionalDiv.style.transform = 'translateX(-85vw)';
+          }
+        }
+    
+        if (overlay) {
+          overlay.addEventListener('click', closeDiv);
+        }
+    
+        // Remove event listener and clear transition timeout when component unmounts
+        return () => {
+          if (overlay) {
+            overlay.removeEventListener('click', closeDiv);
+          }
+    
+          // Clear any ongoing transition timeout when unmounting
+          if (conditionalDiv && conditionalDiv.transitionTimeout) {
+            clearTimeout(conditionalDiv.transitionTimeout);
+          }
+        };
+      }, [click]);
+
   return (
     <nav className='w-full'>
       <div className='h-[27.5vw] sm:h-[17vw]  w-full md:h-[8.5vw] lg:h-[7vw] align-center 
@@ -241,12 +301,25 @@ const Nav = () => {
   </button>
 </div>
   </div>
-  <div className='h-[760px]'>
-     {click && content}
-   {/* closeMenu={closeMenu} />} */}
-   {/*  */}
-  {/* {click && <Hamburger closeMenu={closeMenu} />} */}
-  </div>
+  
+  {click && 
+  <>
+  <div
+            id="overlay"
+            className="fixed inset-0 bg-black opacity-50"
+            style={{ zIndex: 9998 }}
+          ></div>
+  <div
+       id="conditionalDiv"
+       className={`sm:hidden relative justify-center w-[85vw] h-[760px] left-[15vw]
+         top-[0vw] sm:top-[1.2vw] font-bold text-[5vw] right-0  bg-black `}
+       style={{ zIndex: 9999 }}>
+   {content}    
+</div>
+  </>}
+       
+
+
 </div>
     </nav>
   );
