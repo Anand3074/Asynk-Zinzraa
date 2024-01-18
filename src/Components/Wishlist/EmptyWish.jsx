@@ -8,7 +8,7 @@ const EmptyWish = () => {
         img: EWish,
         msg1:'Your wishlist is empty!',
         msg2:"Save your favorite items so you don't lose sight of them.",
-        button: 'Start shopping now'
+        button: 'Start Shopping Now'
 
     }
   return (

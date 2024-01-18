@@ -213,7 +213,7 @@ const fetchProduct = async () => {
          <div id='navbar' className='flex justify-center mx-[17vw] mt-[0.5vw] text-[2.2vw]'>
         <nav>
           <ul className='flex flex-row font-poppins text-[#454545] gap-[3vw]'>
-            <li onClick={() => handleClick(0, 'Western')} className={tabStyles('0')}>
+            <li onClick={() => handleClick(0, 'Western')} className={tabStyles(0)}>
               WESTERN
             </li>
             <li onClick={() => handleClick(1, 'Dresses')} className={tabStyles(1)}>

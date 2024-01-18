@@ -17,7 +17,7 @@ import { useDispatch } from 'react-redux'
 // import { addToWishlist } from '../../Redux/Wishlist/wishActions';
 // import { removeItemFromWishlist } from '../../Redux/Wishlist/wishActions'
 // import AddReviewModal from '../Components/ProductDisplay/AddReviewModal.jsx'
-// import Review from '../Components/ProductDisplay/Review.jsx'
+import Review from '../Components/ProductDisplay/Review.jsx'
 import { ToastContainer } from 'react-toastify'
 import { fireDB } from '../firebase/firebase.jsx'
 import SliderMa from '../Components/HomePage/Slider1.jsx'
@@ -152,13 +152,12 @@ const Prodctdetail = () => {
             <Size />
             {/* // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}/> */}
         </div>
-        {/* <div className='m-[3vw]'> */}
-            {/* <Review/> */}
-        {/* </div> */}
+          <div className='m-[3vw]'> 
+              <Review productId={selectedProduct.id}/> 
+         </div> 
         {/* <div className='m-[3vw]'>
             <AddReviewModal/>
         </div>
-        
         */}
               <div className='flex justify-center items-center h-[2vw]'>
                 <img src={Group1.icon} alt='' className='w-[2vw] h-[2vw] md:w-auto '/>

@@ -200,6 +200,7 @@ const EditProduct = () => {
           openSelectModel={openSelectModel}
           setOpenCoverModel={setOpenCoverModel}
           setOpenSelectModel={setOpenSelectModel}
+          openModel={openModel}
         />
       </div>
     </div>

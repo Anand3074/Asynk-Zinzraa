@@ -44,7 +44,7 @@ const TopSelling = ({users,orders}) => {
     console.log(users)
   
   return (
-    <div className='my-12 ' >
+    <div className='my-1 ' >
         <div className='' >
           <div className='mr-12 my-6' >
              <Card className="max-h-[600px] h-full w-full">

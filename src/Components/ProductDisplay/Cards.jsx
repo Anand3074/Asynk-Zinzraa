@@ -11,21 +11,70 @@ import myContext from '../../context/myContext';
 // const Cards = ({title, price, imageUrl, category, description, date, addCart, addWish, isWishlisted, Detail}) => {
     const Cards = ({products, addCart, addWish, isWishlisted, Detail, title, price, imageUrl, category, description}) => {
 
+        const diagonalStrikethrough = {
+            position: 'relative',
+          };
+          
+          const diagonalLine = {
+            content: "''",
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            width: '100%',
+            height: '1.5px',
+            backgroundColor: 'red', // Change the color as needed
+            transform: 'rotate(-15deg)',
+          };
+// const context = useContext(myContext);
+    // const { product } = context;
+    const [isHovered, setIsHovered] = useState(false);
+
+
 // const context = useContext(myContext);
     // const { product } = context;
   return (
     
-        <div className='w-[30vw] h-[48vw] md:w-[20vw] bg-[#fafafa] my-[2vw] md:my-[0vw] md:h-[34vw] 
-        rounded-[2px] shadow-2xl dark:shadow-2xl' >
+        <div className='w-[30vw] h-[48vw] md:w-[20vw] rounded-[1.5vw] bg-[#fafafa]
+        my-[2vw] md:my-[0vw] md:h-[31.5vw] shadow-xl dark:shadow-xl
+        transition transform duration-3000 ease-in-out
+        md:scale-y-95 md:scale-x-95 md:opacity-100  scale-y-0 opacity-0 hover:scale-100'
+        onMouseEnter={() => setIsHovered(true)}
+         onMouseLeave={() => setIsHovered(false)} >
         <div className='' id='container'>
             <div className='flex relative'>
                 <div className='mb-[0.25vww]'>
                 {/* <Link to='/Detail'><img src="" alt='' */}
                 <Link to='/Detail'>
-                {/* <img src={imageUrl || products.coverImage} onClick={Detail} alt='' */}
-                    <img src={products.coverImage} onClick={Detail} alt=''
- className='object-cover md:w-[20vw]  w-[30vw] object-top h-[37vw] md:h-[25vw] rounded-[1vw] 
- overflow-hidden'/></Link>
+  <img
+    src={products.coverImage}
+    onClick={Detail}
+    alt='Product image'  className='
+      object-cover
+      md:w-[20vw] w-[30vw]
+      object-top
+      h-[37vw] md:h-[25vw]
+      rounded-[1vw]
+      overflow-hidden
+      transition transform duration-3000 ease-in-out
+      md:scale-y-100 md:scale-x-100 md:opacity-100  scale-y-0 opacity-0 hover:scale-100 
+    '
+    onLoad={(e) => e.target.classList.add("scale-y-100", "opacity-100")}
+  />
+</Link>
+            {isHovered && (
+                    <div className='absolute transition bottom-[0vw] sm:top-[8vw] md:right-[0vw] md:top-[22vw] 
+                    items-start'>
+                    <button
+                        onClick={addCart}
+                        className='transition  duration-400 hover:md:text-[1.55vw] bg-teal-dark hover:bg-opacity-[90%] 
+                         font-semibold font-playfair text-white w-[46vw] md:w-[20vw] h-[4.5vw] md:h-[3vw]
+                         text-[2.5vw] md:text-[1.5vw] rounded-[0.4vw] md:rounded-[1.5vw]'>
+                        <div>
+                        Add to Cart
+                        </div>
+                    </button>
+                    </div>
+                )}
                 </div>
                 {/* <div className='' onClick={handleAddToWishlist}> */}
                 <div className='' onClick={addWish}>
@@ -41,7 +90,7 @@ import myContext from '../../context/myContext';
                         </div>
                 </div>
             </div>
-            <div className='relative  rounded-[0.3vw]'>
+            {/* <div className='relative  rounded-[0.3vw]'>
                 <div className='px-[0.5vw] leading-[1.8vw] font-metro sm:leading-[1.5vw] 
                 sm:leading-[1.35vw]'>
             <div className='flex text-black  wrap overflow-hidden h-[4.5vw]  md:h-[2vw]
@@ -68,6 +117,29 @@ import myContext from '../../context/myContext';
                         Add to Cart
                     </button>
                 </div>
+            </div> */}
+              <div className='  rounded-[0.3vw]'>
+                <div className='px-[1vw] h-[3vw] leading-[3vw] md:leading-[1.35vw]'>
+            <div className='text-black 
+            justify-start font-[400] tracking-[0.5px]  truncate py-[0.25vw]
+            text-[2.25vw] md:text-[14px] md:h-[1.8vw] mt-[0.5vw] font-metro '>
+                {products.description} 
+            </div>
+            <div className='flex flex-row md:justify-start items-center pt-[1.25vw] pb-[0.5vw] px-[1vw]'>
+            <span className="" style={diagonalStrikethrough}>
+          <span style={diagonalLine}></span>
+            <span className='text-[#455a64] font-[600] text-xl'>
+            ₹{Math.floor(products.price* (1 + 43 / 100))}
+            </span>
+        </span>
+                <div className='font-bold ml-[2vw] font-metro text-[3vw]
+                md:text-[1.65vw] text-red-900'>
+                        ₹{products.price }     
+                </div>    
+            </div>
+            </div>
+            
+                
             </div>
         </div>
     </div>

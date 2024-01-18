@@ -53,34 +53,57 @@ const AddProduct = ({ coverImage,setCoverImage,
     
      
   }
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    const file =e.target[0]?.files[0] ;
-    // console.log()
-
-    if (!file) return;
-    const storageRef = uploadRef(storage, `files/${file.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, file);
-
-    uploadTask.on("state_changed",
-      (snapshot) => {
-        const progress =
-          Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-        setProgressPercent(progress);
-      },
-      (error) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const files = e.target[0]?.files;
+  
+    if (!files || files.length === 0) return;
+  
+    const uploadPromises = [];
+  
+    const filesToUpload = Array.from(files).slice(0, 4);
+  
+    filesToUpload.forEach((file) => {
+      const storageRef = uploadRef(storage, `files/${file.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+  
+      const promise = new Promise((resolve, reject) => {
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const progress = Math.round(
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+            setProgressPercent(progress);
+          },
+          (error) => {
+            reject(error);
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref)
+              .then((downloadURL) => {
+                resolve(downloadURL);
+              })
+              .catch((error) => {
+                reject(error);
+              });
+          }
+        );
+      });
+  
+      uploadPromises.push(promise);
+    });
+  
+    Promise.all(uploadPromises)
+      .then((downloadURLs) => {
+        setImage((prev) => [...prev, ...downloadURLs]);
+        setOpenModel(false); // Close the modal after successful upload
+      })
+      .catch((error) => {
         alert(error);
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setImage((prev)=>[...prev,downloadURL])
-        //   console.log(downloadURL)
-         
-        });
-      }
-    );
-
-  }
+      });
+  };
+  
 
   const deleteStorageImage = (myImage) =>{
   const newImageList = image.filter((im) =>  im!== myImage)
@@ -91,6 +114,7 @@ const AddProduct = ({ coverImage,setCoverImage,
     const newImageList = totalImageList.filter((im) =>  im!== ima)
     // console.log(totalImageList)
     setTotalImageList(newImageList)
+    setOpenSelectModel(false)
   }
    const handleCoverRemove = (ima) =>{
     const newImageList = coverImage.filter((im) =>  im!== ima)

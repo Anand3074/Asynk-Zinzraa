@@ -99,7 +99,6 @@ const AddProduct = () => {
 
   return (
     <div>
-      <div><ToastContainer/></div>
          <div className='grid grid-cols-4 grid-flow-col ' >
       <SidebarNav />
       <ProductForm size={size} setSize={setSize} 

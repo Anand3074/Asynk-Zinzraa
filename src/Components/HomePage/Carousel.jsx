@@ -61,6 +61,7 @@ const Carousel = () => {
           position: 'absolute',
           bottom: '5px', // Adjust the distance from the bottom
           width:  '100%',
+          color: 'black', 
           textAlign: 'center',
         }}
       >

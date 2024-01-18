@@ -144,7 +144,7 @@ const UploadImage = ({
             {previewImage && <img className="w-[150px] my-4 " src={previewImage} />}
           </div>
         </div>
-  
+  {/*  */}
         <Transition appear show={openModel} as={Fragment}>
           <Dialog as="div" className="relative z-10" onClose={closeModal}>
 
@@ -207,7 +207,7 @@ const UploadImage = ({
                     </div> */}
                      <div className='flex items-center justify-center my-6' >
                      <form onSubmit={handleSubmit}>
-        <input   accept="image/*" type='file'  />
+        <input   accept="image/*" type='file' multiple/>
         <Button  className='my-6' type='submit' size="md">Upload</Button>
         </form>
                   </div>

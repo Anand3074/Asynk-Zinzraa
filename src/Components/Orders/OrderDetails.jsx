@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from 'react'
 import {Button} from "@material-tailwind/react"
 import TrackingSteps from './Tracking'
-const OrderDetails = ({orderDetails,id}) => {
+import AddReviewModal from '../ProductDisplay/AddReviewModal.jsx'
+import Review from '../ProductDisplay/Review.jsx'
+const OrderDetails = ({orderDetails,id, } , product) => {
     console.log(orderDetails)
   
   
@@ -13,7 +15,8 @@ const OrderDetails = ({orderDetails,id}) => {
             <div>
                 {/* <p className='mt-3' >{orderDetails.name && orderDetails.name }</p> */}
                 <p className='' >{orderDetails.alternateNumber && orderDetails.alternameNumber }</p>
-                <p className='' >{orderDetails.address && orderDetails.address }, {orderDetails.city && orderDetails.city }, {orderDetails.pinCode && orderDetails.pinCode}, {orderDetails.state && orderDetails.state } </p>
+                <p className='' >{orderDetails.address && orderDetails.address }, 
+                {orderDetails.city && orderDetails.city }, {orderDetails.pinCode && orderDetails.pinCode}, {orderDetails.state && orderDetails.state } </p>
             </div>
             <div className='my-8' >
                 <TrackingSteps orderStatus={orderDetails?.orderStatus && orderDetails?.orderStatus} />
@@ -78,6 +81,13 @@ const OrderDetails = ({orderDetails,id}) => {
                 <div>
                     <p className='text-gray-400  xl:text-[1rem] text-[0.5rem]' >Free Delivery . Cod Avaliable</p>
                 </div>
+                {/* <div className='mt-[12vw] sm:py-[1vw] sm:px-[4vw] sm:m-[0vw]'>
+         <Button className='bg-transparent text-blue-600 text-[1.3vw]'>Add Review</Button>
+        </div> */}
+        <div className='m-[3vw]'>
+            <AddReviewModal id={product.id}/>
+            {/* <Review/> */}
+        </div>
             </div>
         </div>
     </div>

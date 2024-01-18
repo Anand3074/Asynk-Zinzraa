@@ -219,12 +219,7 @@ console.log('click', click)}
                     </div>
                 </div>
             </div>
-        </div>
-        <div className='h-[760px]'>
-     {click && content}
-  
-  </div>
-        
+        </div>    
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 // import { categoryData } from '../../data/categoryData';
 import SelectCover from './SelectCover.jsx';
 import SelectImages from './SelectImage2.jsx';
+import UploadImage from './UploadImage.jsx'
 const EditProductForm = ({price,setPrice,category,description,setDescription,
     title,setTitle,
     size, setSize,
@@ -11,7 +12,7 @@ const EditProductForm = ({price,setPrice,category,description,setDescription,
   handleCoverRemove, handleRemove,totalImageList,setTotalImageList,closeCoverModal,closeSelectModal,
   openCoverModel,openSelectModel,setOpenCoverModel,setOpenSelectModel,image,setImage,
   handleAddImage,handleAddCover,handleUpdateForm,realPrice,setRealPrice,stock,setStock,
-showPrice,setShowPrice,}) => {
+showPrice,setShowPrice,handleSubmit, openModel, setOpenModel, closeModal}) => {
 
   return (
       <div className='col-span-3 flex items-center justify-center     ' >
@@ -105,7 +106,11 @@ showPrice,setShowPrice,}) => {
            <div>
            
           
-        {/* <UploadImage totalImageList={totalImageList} setTotalImageList={setTotalImageList} handleRemove={handleRemove} handleSubmit={handleSubmit} image={image} setImage={setImage} openModel={openModel} setOpenModel={setOpenModel} closeModal={closeModal} /> */}
+        {/* <UploadImage 
+        totalImageList={totalImageList} setTotalImageList={setTotalImageList} 
+        handleRemove={handleRemove} handleSubmit={handleSubmit} image={image} setImage={setImage} 
+        openModel={openModel} setOpenModel={setOpenModel} closeModal={closeModal} 
+        /> */}
           <div className='flex items-center justify-center flex-wrap gap-3 mb-12' id="createProductFormImage">
               {/* {totalImageList && totalImageList.map((ima, index) => (
                 <div className='relative border-[1px] border-gray-300 px-6 py-6 rounded-xl ' >

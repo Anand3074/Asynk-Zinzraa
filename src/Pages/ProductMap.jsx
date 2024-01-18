@@ -16,6 +16,13 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 
 const ProductList = () => {
+
+
+
+
+
+  
+
   // const { id, description, category, price, } = useParams()
   const {  category, price, type } = useParams()
   // console.log(price)
@@ -309,11 +316,10 @@ useEffect(() => {
 
 
   return (
-  <div style={{ fontFamily: "DM Sans" }} className='px-[5vw] md:px-[1vw] py-[1vw]' >
+  <div style={{ fontFamily: "DM Sans" }} className='px-[0vw] md:px-[1vw] py-[1vw]' >
         <Link to="/Cart">
-        <div className=''><ToastContainer/></div>
+         <div className=''><ToastContainer/></div> 
         </Link>
-        
       <div className='flex flex-row gap-[0vw] justify-start items-start '>
         <div className='hidden md:flex w-[22.5vw] md:w-[20vw] mt-[0vw] pl-[0.25vw] h-full'>
         <Filter stock={stock} 
@@ -326,14 +332,15 @@ useEffect(() => {
               <div>
               {/* <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1vw] md:w-auto '/> */}
               </div>
-              <div className='flex flex-row justify-between w-[90%]'>
-              <div className='flex flex-col w-[20vw] items-start font-metro  
-               text-gray-600 mt-[1.5vw]'>
-                <Button variant="outlined" color='' className='flex gap-[7vw] w-[15vw] p-3 rounded-none'>
+              <div className='flex flex-row justify-between md:w-[90%] w-[95%]'>
+              <div className='flex flex-col w-[32vw] md:w-[20vw] items-start font-metro  
+               text-gray-600  mt-[1.5vw]'>
+                <Button variant="outlined" color='' className='flex  gap-[3vw]  md:gap-[7vw]  
+                md:w-[15vw] w-[25vw] md:p-3 p-2 rounded-none'>
                   <span>
                   Sort By
                   </span>
-                  <ChevronDownIcon className='h-[1.5vw]'/>
+                  <ChevronDownIcon className='md:h-[1.5vw]  h-[4vw]'/>
                 </Button>
 
               <span className='text-md m-[0.35vw]'>
@@ -346,13 +353,13 @@ useEffect(() => {
 
               <img src={elestar} alt='' className='w-[2vw] font-bold h-[2vw] md:h-[1vw] md:w-auto '/>
 
-              <div className='flex justify-center w-[20vw] font-semibold items-center font-lora text-[#875A33] 
+              <div className='flex justify-center w-[32vw] md:w-[20vw] font-semibold items-center font-lora text-[#875A33] 
             md:text-[2vw]'>
               Our Products
 
                 </div>
                 </div>
-                <div className='w-[20vw]'>
+                <div className='w-[32vw] md:w-[20vw]'>
                   {/* Hello! */}
                   </div>
 

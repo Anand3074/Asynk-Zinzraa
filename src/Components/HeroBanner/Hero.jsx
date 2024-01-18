@@ -16,8 +16,8 @@ const Hero = () => {
                         <div>kalki koechlin</div>
                     </div> 
                 </div>
-                <div className='absolute lg:right-[19.9vw] right-[19.8vw] xl:left-[50vw]
-              md:right-[18.5vw] top-[22.4vw] w-[30vw] sm:right-[17.8vw] z-5'>
+                <div className='absolute  right-[19.8vw]
+              md:right-[19.5vw] top-[21.9vw] w-[30vw] sm:right-[17.8vw] z-5'>
   <img src={vec1} className='z-250' alt='vector'/>
 </div>
 

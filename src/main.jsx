@@ -7,7 +7,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import  { store, persistor } from './Redux/store.js';
 import ScrollToTop from './Components/Layout/ScrollOnTop.jsx';
 // import { GoogleOAuthProvider } from '@react-oauth/google';
-import App from './App.jsx';
+import App from './App1.jsx';
 import './index.css';
 
 
