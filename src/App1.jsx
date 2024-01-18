@@ -6,7 +6,7 @@ import { loadUser } from './Redux/User/userAction.js';
 import MyState from './context/myState.jsx'
 import Nav from './Components/Layout/Nav.jsx'
 import Products from './Pages/Products.jsx'
-import hour from './assets/Hourglass.gif'
+// import hour from './assets/Hourglass.gif'
 import Loading from './Loading.jsx'
 const Product3 = lazy(() =>  import('./Pages/ProductMap.jsx'))
 const Login = lazy(() => import('./Pages/Registrations/Log.jsx'));
