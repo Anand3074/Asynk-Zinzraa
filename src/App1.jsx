@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {React, useEffect, useState, lazy, Suspense } from 'react';
 import { loadUser } from './Redux/User/userAction.js';
-import logo from './assets/Logo.png'
 import MyState from './context/myState.jsx'
 import Nav from './Components/Layout/Nav.jsx'
 import Products from './Pages/Products.jsx'
