@@ -1,6 +1,6 @@
 import _shuffle from 'lodash/shuffle';
 import React, { useState } from 'react';
-import Cards from '../ProductDisplay/Cards';
+import Cards from '../ProductDisplay/Card2';
 import { IoIosArrowDropright } from "react-icons/io";
 import { IoIosArrowDropleft } from "react-icons/io";
 import Slider from 'react-slick'; 

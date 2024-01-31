@@ -2,8 +2,9 @@ import { BrowserRouter as  Router, Routes , Route, BrowserRouter, Navigate } fro
 import { useNavigate, } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import MyState from './context/myState.jsx'
 import React from 'react'
-import Nav from './Components/Layout/Nav.jsx'
+import Nav from './Components/Layout/Nav3.jsx'
 import Products from './Pages/Products.jsx'
 import Login from './Pages/Registrations/Log.jsx'
 import Wishlist from './Pages/Wishlist.jsx'
@@ -12,14 +13,9 @@ import Detail from './Pages/Prodctdetail.jsx'
 import Orders from './Pages/CMS/Pages/Orders.jsx'
 import ViewOrder from './Components/Orders/ViewOrder.jsx'
 import { loadUser } from './Redux/User/userAction.js';
-import Product3 from './Pages/ProductMap.jsx'
+const Product3 = React.lazy(() =>  import('./Pages/ProductMap.jsx'))
 import Footer from './Components/Layout/Footer.jsx'
-
-
-//import AddProduct from './Pages/admin/dashboard/page/AddProduct.jsx'
 import Dashboard from './Pages/CMS/Pages/DashPanel.jsx'
-// import DashboardTab from './Pages/admin/dashboard/DashboardTab.jsx'
-// import UpdateProduct from './Pages/admin/dashboard/page/UpdateProduct.jsx'
 import AdminNav from './Pages/admin/dashboard/page/AdminNav.jsx'
 import AddProduct from './Pages/CMS/Pages/AddProduct.jsx'
 import AllProduct from './Pages/CMS/Pages/AllProducts.jsx'
@@ -31,7 +27,6 @@ import Payment from './Components/Checkout/Payment.jsx'
 import OrderSuccess from './Components/Checkout/OrderSuccess.jsx'
 import MobileLogin from './Pages/Login/Login.jsx'
 import OtpVerify from './Pages/Login/OtpVerify.jsx'
-import MyState from './context/myState.jsx'
 import Category from './Pages/Category/Saree12.jsx'
 import Kurtas from './Pages/Kurtas.jsx'
 import Dresses from './Pages/Dresses.jsx'
@@ -48,6 +43,7 @@ import SliderCa from './Components/HomePage/Slider.jsx'
 // import EditUsers from './Pages/CMS/Component/Users/EditUser.jsx'
 import EditUserForm from './Pages/CMS/Pages/EditUser23.jsx'
 import EditProduct from './Pages/CMS/Pages/EditProduct.jsx'
+// import LoadingBar from './Loading.jsx'
 // import Ethnic from './Pages/Ethnic'
 // import Western from './Pages/Western'
 
@@ -75,6 +71,7 @@ const App = ({}) => {
     <div>
       <MyState>
       <Nav/>
+      {/* <LoadingBar /> */}
       <Routes>
       <Route exact path='/' element={<Products/>}/>
       <Route exact path='/All' element={<ProductsAll/>}/>
@@ -170,7 +167,11 @@ userProfile?.role === "admin" &&
       <Route exact path='/Westrend' element={<Westrend/>}/>
       <Route exact path='/Kalki' element={<KalkiCollection/>}/>
       <Route exact path='/Search' element={<Search/>}/>
-      <Route exact path='/Product3' element={<Product3/>}/>
+      <Route exact path='/Product3' element={
+        <React.Suspense fallback='loading'>
+          <Product3/>
+        </React.Suspense>
+      }/>
       <Route exact path='/Slider' element={<SliderCa/>}/>
       
 

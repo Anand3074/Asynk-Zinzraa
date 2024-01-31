@@ -5,6 +5,9 @@ import cat2 from '../../assets/cat2.png'
 import cat3 from '../../assets/cat3.png'
 import Vec3 from '../../assets/vec3.png'
 import { Link } from 'react-router-dom'
+// import 'aos/dist/aos.css'; // Import AOS styles
+// import AOS from 'aos'; // Import AOS library
+import { useEffect } from 'react'
 
 const Categ1 = () => {
   let Category1='KURTA SET'
@@ -13,6 +16,12 @@ const Categ1 = () => {
   let Category1img=cat1
   let Category2img=cat2
   let Category3img=cat3
+
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 2000,
+  //   });
+  // }, []);
 
 
 
@@ -26,17 +35,17 @@ const Categ1 = () => {
             backgroundPosition: 'center center',  // 'left top', 'right bottom', '50% 50%', etc.
             width: '100%',  // Set width as needed
           }}>
-        <div className=''>     
+        <div className='' data-aos='zoom-out' >     
         <Link to='/Kurtas'><img src={Category1img} alt=''
          className='rounded-t-full object-cover object-top  border border-[0.4px] border-solid border-[#875A33] 
          p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>
           </div>
-        <div>     
+        <div data-aos='zoom-out'>     
         <Link to='/Saree'><img src={Category2img} alt='' 
         className='rounded-t-full object-cover object-top  border border-[0.4px] border-solid border-[#875A33] 
         p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>
           </div>
-          <div>     
+          <div data-aos='zoom-out'>     
           <Link to='/Dresses'> <img src={Category3img} alt='' 
           className='rounded-t-full object-cover object-top  border border-[0.4px] border-solid border-[#875A33] 
           p-[0.5vw] md:max-h-[37vw] md:mt-[2.5vw] mt-[2.5vw]'></img></Link>

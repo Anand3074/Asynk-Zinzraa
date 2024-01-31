@@ -39,10 +39,20 @@ const Nav = () => {
       dispatch(removeCart());
       dispatch(clearWishlist());
       
+    }  
+
     }
-  
-  
-    }
+    const [activeTab, setActiveTab] = useState('');
+
+    const handleActiveTab = (index, category) => {
+      setActiveTab(index === activeTab ? activeTab : index);
+    };
+    
+      const tabStyles = (index) => {
+        return `cursor-pointer ${
+          index === activeTab ? 'shadow-xl dark:shadow-xl text-[#CC911D] text-[1.55vw] font-[600]' : 'hover:text-[#875A33]'
+        } flex justify-center items-center`;
+      };
   useEffect(() => {
     console.log(isAuthenticated)
     if(!isAuthenticated) {
@@ -93,7 +103,7 @@ const Nav = () => {
                 
                 <div className=' flex flex-col pl-[3vw] justify-start  items-center
                  text-[1rem] font-[600] text-[#489DCC] pt-[4vw]'> 
-                 <UserCircleIcon className='w-[25px] mr-4' /> 
+                 <UserCircleIcon className='w-[25px] mr-4 text-black' fill='black'  /> 
                  <span className='mr-3  ' > Hii, {userProfile?.name ? userProfile?.name : "User"}
                  </span>
                  </div>
@@ -101,44 +111,45 @@ const Nav = () => {
                  Logout <IoLogOutOutline/>
                  </div> */}
                   <ul className="flex flex-col justify-center py-[8vw]
-             items-center text-center text-xl px-[3vw] font-[400] h-[100vw]">
+             items-center text-center text-[6vw] px-[3vw] font-[500] h-[100vw]">
                 <Link to="/Product3" >
                     <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
-                    font-nunito  justify-start my-[3vw] pt-[3vw]  hover:text-black text-[#004d40]' 
+                    font-nunito  justify-start my-[3vw] pt-[3vw]  hover:text-black' 
                     onClick={closeMenu}>Products</li>
                 </Link>
                 <Link to="/Saree">
                     <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
-                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black text-[#004d40] ' 
+                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black ' 
                     onClick={closeMenu}> Saree</li>
                 </Link>
                 <Link to="/Kurtas">
                     <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
-                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black text-[#004d40]' 
+                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black' 
                     onClick={closeMenu}>Kurtas</li>
                 </Link>
                 <Link to="/Dresses">
                     <li className='flex w-[50vw] pl-[15vw] border-b-[2px] border-b-[#ff8f00] 
-                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black text-[#004d40]' 
+                    font-nunito  justify-start my-[3vw] py-[3vw]  hover:text-black' 
                     onClick={closeMenu}>Dresses</li>
                 </Link>
                 <Link to="/User">
                     <li className='flex w-[50vw] pl-[15vw] border-b-[2px] 
                     font-nunito  justify-start my-[3vw] 
-                    py-[3vw] border-b-[#ff8f00]  border-teal-dark hover:text-black text-[#004d40]'
+                    py-[3vw] border-b-[#ff8f00]  border-teal-dark hover:text-black'
                     onClick={closeMenu}>Contact us</li>
                 </Link>
             </ul>
             <div className='flex font-nunito pl-[9vw] justify-center pr-[3vw] mt-[3vw] '>
             <Link to='/MyOrders'>
             <div onClick={closeMenu} className='flex flex-row text-xl 
-             gap-[1.5vw] sm:text-[2vw] justify-center items-center '>
+             gap-[1.5vw] sm:text-[2vw] text-white justify-center items-center '>
       
                 My Orders 
                 <GoStack/>
             </div>  
         </Link>
             </div>
+            <hr className='w-full'/>
             {/* <Button className='text-gray-800 flex justify-end '>
                  Logout <IoLogOutOutline className='text-white'/>
                  </Button> */}
@@ -155,12 +166,12 @@ const Nav = () => {
         const openDiv = () => {
           if (conditionalDiv) {
             // Apply initial position at x-[85vw]
-            conditionalDiv.style.transition = 'transform 0.25s ease-in-out';
+            conditionalDiv.style.transition = 'transform 0.010s ease-in-out';
             conditionalDiv.style.transform = 'translateX(85vw)';
     
             // After 0.25s, smoothly transition to x-[0vw]
             const transitionTimeout = setTimeout(() => {
-              conditionalDiv.style.transition = 'transform 0.75s ease-in-out';
+              conditionalDiv.style.transition = 'transform 0.5s ease-in-out';
               conditionalDiv.style.transform = 'translateX(0)';
             }, 250);
     
@@ -202,52 +213,57 @@ const Nav = () => {
       }, [click]);
 
   return (
-    <nav className='w-full'>
+        <nav className='w-full'>
       <div className='h-[27.5vw] sm:h-[17vw]  w-full md:h-[8.5vw] lg:h-[7vw] align-center 
       bg-teal-dark w-full text-xl '>
       {/* md:py-[24px] */}
         <div id='parent-container' className='flex w-full justify-between
          items-center pt-[0.8vw] md:pt-0 md:pt-0 align-center'>
           <div className='flex md:my-[2.6vw] hidden md:flex lg:flex md:ml-[3vw]'>
-            <ul className='flex text-white gap-[1.45vw] font-metro font-[600] text-[1.05vw]'>
+            <ul className='flex text-white w-[32.5vw] gap-[1.75vw] font-metro font-[500] text-[1.4vw]'>
               <Link to='/Product3'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>PRODUCTS</li>
+                <li onClick={() => handleActiveTab(0)} className={`hover:text-[#CC911D] 
+                ${tabStyles(0)} transition cursor-pointer`}>Products</li>
               </Link>
               {/* <Link to='/Saree'> */}
               <Link to='/Saree'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>SAREE</li>
+                <li onClick={() => handleActiveTab(1)} className={`hover:text-[#CC911D] 
+                ${tabStyles(1)} transition cursor-pointer`}>Saree</li>
               </Link>
               {/* <Link to='/Kurtas'> */}
               <Link to='/Kurtas'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>KURTAS</li>
+                <li onClick={() => handleActiveTab(2)} className={`hover:text-[#CC911D] 
+                ${tabStyles(2)} transition cursor-pointer`}>Kurtas</li>
               </Link>
               <Link to='/Dresses'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>DRESSES</li>
+                <li onClick={() => handleActiveTab(3)} className={`hover:text-[#CC911D] 
+                ${tabStyles(3)} transition cursor-pointer`}>Dresses</li>
               </Link>
               <Link to='/Dashboard'>
-                <li className='hover:text-[#CC911D] transition cursor-pointer'>ORDERS</li>
+                <li onClick={() => handleActiveTab(4)} className={`hover:text-[#CC911D] 
+                ${tabStyles(4)} transition cursor-pointer`}>Orders</li>
               </Link>
-              <Link onClick={handleLogout}>
-                <li className='hover:text-[#CC911D] text-red transition cursor-pointer'>LOGOUT</li>
-              </Link>
+              {/* <Link onClick={handleLogout}>
+                <li className='hover:text-[#CC911D] text-red transition cursor-pointer'>Logout</li>
+              </Link> */}
             </ul>
           </div>
           <div className='flex ml-7 md:ml-0 justify-self-start  align-center '>
           {/* md:max-lg:justify-center */}
             <Link to='/'>
-              <img src={logo} alt='logo' className='  md:w-[10vw] md:mb-[1vw] w-[25vw] sm:w-[15vw]'/>
+              <img onClick={() => handleActiveTab('')} src={logo} alt='logo' className='  md:w-[10vw] md:mb-[1vw] w-[25vw] sm:w-[15vw]'/>
             </Link>
           </div>
 
           <div className='flex gap-[16px] ml-[1vw]'>
           {/* <div className='flex md:flex bg-grey-ray w-[20vw]  h-[28px] md:gap-[1.5vw] */}
-            <div className='flex md:flex bg-white w-[20vw]  h-[28px] md:gap-[1.5vw]
+            <div  className='flex md:flex bg-white w-[20vw]  h-[28px] md:gap-[1.5vw]
             
              rounded-[2px] py-[1.35vw] items-center hidden'>
-              <Link to='/Search'><FaSearch className='text-[#848484] ml-[1.5vw]' /></Link>
+              <Link to='/Search'><FaSearch onClick={() => handleActiveTab('')} className='text-[#848484] ml-[1.5vw]' /></Link>
               <input
                 placeholder='search your product'
-                className='bg-transparent border-none text-xs focus:outline-none'
+                className='bg-transparent border-none text-[1.1vw] focus:outline-none'
                 onChange={(e) => setSearchValue(e.target.value) && handleSearchTermChange(searchValue)}
                 onKeyDown={(e) => handleKeyPress(e)}
                 value={searchValue}
@@ -257,21 +273,21 @@ const Nav = () => {
             <div className='flex w-[40vw] md:w-auto gap-[10vw] mr-[3vw] md:gap-[0.5vw] md:space-x-[16px] 
             items-center ml-[0vw] md:ml-[1.5vw] mt-[3vw]  md:mt-[0vw]'>
             <Link to={`${isAuthenticated? '/User' : '/Signup'}`}>
-              <FaUser className='text-white'  />
+              <FaUser onClick={() => handleActiveTab('')} className='text-white'  />
             </Link>
               <Link to='/Wishlist'>
-                <AiFillHeart className='text-white'  />
+                <AiFillHeart onClick={() => handleActiveTab('')} className='text-white'  />
               </Link>
-              
-            <Link to={`${!isAuthenticated? '/Cart' : '/Signup'}`}>
+            
+            <Link to={`${isAuthenticated? '/Cart' : '/Signup'}`}>
               <div>
               {cartItems?.length !== 0 ? (
               <Badge content={ cartItems?.length} className='w-[1.05vw] ' color='amber'>
               
-                <HiShoppingBag className=' text-white'  />
+                <HiShoppingBag onClick={() => handleActiveTab('')} className=' text-white'  />
               </Badge>)
               : 
-              <HiShoppingBag className=' text-white'  />
+              <HiShoppingBag onClick={() => handleActiveTab('')} className=' text-white'  />
             }
               </div>
             </Link>
@@ -311,8 +327,8 @@ const Nav = () => {
           ></div>
   <div
        id="conditionalDiv"
-       className={`sm:hidden relative justify-center w-[85vw] h-[760px] left-[15vw]
-         top-[0vw] sm:top-[1.2vw] font-bold text-[5vw] right-0  bg-black `}
+       className={`sm:hidden absolute flex justify-center pt-[15vw] w-[85vw] h-[760px] left-[15vw]
+         top-[0vw] font-bold text-[5vw] right-0  bg-gold-pi `}
        style={{ zIndex: 9999 }}>
    {content}    
 </div>

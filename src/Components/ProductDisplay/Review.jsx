@@ -108,7 +108,7 @@ const Review = ({ userProfile, productId, ratings, isAuthenticated }) => {
   return (
     <div className='xl:px-8 px-6 py-12' >
         <div>
-            <h4 className='font-[500] text-[1.4rem] ' >Add a Review:</h4>
+            <h4 className='font-[600] font-metro text-[1.4rem]' >Customer Reviews:</h4>
             {/* <div className='mt-4' >
                 
             </div> */}
@@ -116,9 +116,9 @@ const Review = ({ userProfile, productId, ratings, isAuthenticated }) => {
               <div className='lg:grid grid-cols-5 grid-flow-col items-center ' >
               <div className=' lg:border-r-[1px] col-span-1 mx-2 border-gray-400 ' >
               <div className='border-[1px] w-full lg:w-[150px]  xl:w-[200px] rounded-[10px]  border-green-400 ' >
-              <div className=' rounded-[10px]   flex items-center justify-center px-3 py-2 lg:py-3 ' >
-                <p className='text-green-400 lg:text-[1.8rem] font-[600]' >{reviews ? reviews.length : 0}
-                 <span className='text-gray-400 font-[400] text-[0.9rem]' >(reviews)</span></p>
+              <div className=' rounded-[10px]   flex flex-row items-center justify-center gap-[0.3vw] px-3 py-2 lg:py-3 ' >
+                <div className='text-green-400 lg:text-[1.8rem] font-[600]' >{reviews ? reviews.length : 0}</div>
+                 <div className='text-gray-400 font-[400] text-[0.9rem]' >(reviews)</div>
               </div>
               <div>
               </div>
@@ -146,22 +146,23 @@ const Review = ({ userProfile, productId, ratings, isAuthenticated }) => {
                   { reviews !==[] ? (reviews.map((review)=>(
                 <div className='w-full  my-2 bg-white border-b-[1px] border-gray-200 
                 rounded-[20px] px-0 py-3 xl:py-6 flex items-start flex-col justify-start ' >
-                  <div className='flex flex-row gap-[55vw]'>
+                  <div className='flex flex-row w-full px-[1.5vw] justify-between '>
                     <div className='flex items-center justify-start ml-2'>
                 <div className='' >
-                       <h4 className='xl:text-[1.3rem] text-[1rem] font-[600] text-center ' >{review.userName}</h4>
+                       <h4 className='xl:text-[1.3rem] text-[1rem] font-[600] text-center ' >
+                        {review.userName}</h4>
                        </div>
                      <div className='text-center my-1 ml-2' >
                         <Rating value={review.rating} readonly />
                         </div>
     
                         </div>
-                        <div>
-                          12/01/2024
+                        <div className='text-gray-500 text-[1vw] font-[500] flex items-center'>
+                          {review.date}       
                         </div>
                         </div>
 
-                        <p className='text-gray-600 my-1 lg:my-2 text-[0.7rem] xl:text-[1rem] ml-2 ' >
+                        <p className='text-gray-600 my-1 lg:my-2 px-[1.5vw] text-[0.7rem] xl:text-[1rem] ml-2 ' >
                           {review.review}</p>
                         
                 </div>

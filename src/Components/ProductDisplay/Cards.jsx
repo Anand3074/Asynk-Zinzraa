@@ -34,7 +34,8 @@ import myContext from '../../context/myContext';
     // const { product } = context;
   return (
     
-        <div className='w-[30vw] h-[48vw] md:w-[20vw] rounded-[1.5vw] bg-[#fafafa]
+        <div data-aos='zoom-out'
+        className='w-[30vw] h-[48vw] md:w-[20vw] rounded-[1.5vw] bg-[#fafafa]
         my-[2vw] md:my-[0vw] md:h-[31.5vw] shadow-xl dark:shadow-xl
         transition transform duration-3000 ease-in-out
         md:scale-y-95 md:scale-x-95 md:opacity-100  scale-y-0 opacity-0 hover:scale-100'

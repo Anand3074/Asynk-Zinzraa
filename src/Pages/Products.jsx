@@ -260,8 +260,7 @@ useEffect(() => {
              md:mb-[1.5vw] mb-[1vw]' >
                 <span>{Group3.title}</span>
             </div>
-      <SliderCa product={products} 
-      /> 
+      <SliderCa product={products}/> 
       </div>
       <div>
       {/* <Recommended group={Group4}/> */}
@@ -272,10 +271,9 @@ useEffect(() => {
              md:mb-[1vw] mb-[1vw]' >
                 <span>{Group4.title}</span>
             </div>
-      <BestCollection product={variety} 
-      // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
-      // handleCardDetail={handleCardDetail}
-      />
+      {/* <BestCollection product={variety}       /> */}
+      {/* // handleAddToCart={handleAddToCart} handleAddToWishlist={handleAddToWishlist}
+      // handleCardDetail={handleCardDetail} */}
       </div>
       <div className='mt-[3vw] md:mt-[1.5vw]'>
       <Testimonial/> 

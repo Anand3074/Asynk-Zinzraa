@@ -9,7 +9,14 @@ import ScrollToTop from './Components/Layout/ScrollOnTop.jsx';
 // import { GoogleOAuthProvider } from '@react-oauth/google';
 import App from './App1.jsx';
 import './index.css';
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; // Import AOS library
 
+// Initialize AOS once the application starts
+AOS.init({
+  duration: 3000,
+  once: true,
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <GoogleOAuthProvider 

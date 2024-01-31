@@ -34,6 +34,7 @@ import { IconButton } from '@material-tailwind/react'
         <div className='w-[46vw] h-[67.5vw] rounded-[1.5vw] md:w-[22.5vw]
          bg-[#fafafa] md:h-[38vw] 
          shadow-xl dark:shadow-2xl'
+        //  data-aos='zoom-out'
          onMouseEnter={() => setIsHovered(true)}
          onMouseLeave={() => setIsHovered(false)} >
         <div className='' id='container'>

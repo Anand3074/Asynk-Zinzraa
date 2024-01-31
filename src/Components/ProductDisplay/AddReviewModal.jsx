@@ -39,8 +39,15 @@ const AddReviewModal = ({id}) => {
         review: reviewContent,
         rating: stars,
         product: id,
-        userName: userProfile.name
-        // Add other fields as needed
+        userName: userProfile.name,
+date: new Date().toLocaleString(
+            "en-US",
+            {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+            }
+        )     
       });
   
       console.log("Review added successfully:", newReviewDocRef.id);
